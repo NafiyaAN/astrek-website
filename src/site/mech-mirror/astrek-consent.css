@@ -1,0 +1,95 @@
+/* Cookie / analytics consent — loads on every page, above site chrome */
+
+.astrek-consent {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 280;
+  display: none;
+  padding: max(0.85rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-right)) 0.85rem max(1rem, env(safe-area-inset-left));
+  pointer-events: none;
+}
+
+.astrek-consent.is-open {
+  display: block;
+}
+
+.astrek-consent__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem 1.25rem;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 0.95rem 1.1rem;
+  border: 1px solid rgba(63, 224, 197, 0.22);
+  border-radius: 0.85rem;
+  background: rgba(8, 12, 16, 0.94);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  pointer-events: auto;
+}
+
+.astrek-consent__copy {
+  flex: 1 1 18rem;
+  margin: 0;
+  font-family: var(--mech-body, Manrope, system-ui, sans-serif);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: rgba(244, 246, 248, 0.82);
+}
+
+.astrek-consent__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.astrek-consent__accept,
+.astrek-consent__essential {
+  min-height: 44px;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-family: var(--mech-body, Manrope, system-ui, sans-serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.astrek-consent__accept {
+  border: 1px solid #00c4b4;
+  background: #00c4b4;
+  color: #041012;
+}
+
+.astrek-consent__essential {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: transparent;
+  color: #f4f6f8;
+}
+
+.astrek-cookie-settings {
+  display: inline;
+  margin-inline-start: 0.55rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+@media (max-width: 639px) {
+  .astrek-consent__inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .astrek-consent__accept,
+  .astrek-consent__essential {
+    width: 100%;
+  }
+}

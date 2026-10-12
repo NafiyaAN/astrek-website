@@ -1,0 +1,780 @@
+/* =====================================================================
+   DENSITY PASS: tighter type, image caps, section spacing.
+   Additive overlay. Loads last. Does not retouch overlay filters
+   (Exercise Mode, Clinician Interface) or partner-logo filters.
+   ===================================================================== */
+
+/* ---- Global type: headings −18%, body −10%, section chrome −35% ---- */
+#astrek-site > section:not(.hero) .rf-h2.ux-h2,
+#astrek-site > section:not(.hero) h2.rf-h2,
+#astrek-site > section:not(.hero) .ux-h2 {
+  font-size: clamp(1.85rem, 3.35vw, 3.25rem) !important;
+  line-height: 1.08 !important;
+  max-width: 22ch !important;
+  margin-bottom: 0.45em !important;
+}
+
+#astrek-site > section:not(.hero) .rf-section-head p,
+#astrek-site > section:not(.hero) .rf-product-intro > p,
+#astrek-site .ux-impact > p {
+  font-size: clamp(0.9375rem, 0.95vw, 1.05rem) !important;
+  line-height: 1.55 !important;
+}
+
+#astrek-site > section.rf-section,
+#astrek-site > section.ux-section,
+#astrek-site > .rf-section {
+  padding-top: clamp(80px, 8vw, 120px) !important;
+  padding-bottom: clamp(80px, 8vw, 120px) !important;
+}
+
+#astrek-site .rf-section-head {
+  margin-bottom: clamp(28px, 3.5vw, 44px) !important;
+}
+
+/* =====================================================================
+   HERO: ~16% smaller title, capped product, slightly shorter stage
+   ===================================================================== */
+#astrek-site .hero.rf-hero,
+#astrek-site .rf-hero,
+#astrek-site .hero.rf-hero.hero--tronix {
+  min-height: 88dvh !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+#astrek-site .hero--tronix h1.ux-h1 {
+  font-size: clamp(1.95rem, 4.5vw, 3.85rem) !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-visual {
+  padding: calc(var(--site-header-h, 72px) + 7vh) 0 7vh !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix .rf-hero-visual img,
+#astrek-site .hero.rf-hero.hero--tronix #heroProductImg {
+  max-width: min(48vw, 600px) !important;
+  max-height: min(64vh, 680px) !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-copy {
+  inset: auto auto 5.5vh var(--ux-gutter, 48px) !important;
+  width: min(30rem, 36vw) !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-copy .sub,
+#astrek-site .rf-hero-copy .sub {
+  font-size: 0.9375rem !important;
+  line-height: 1.55 !important;
+}
+
+/* =====================================================================
+   KEY FEATURES: image cap + proportional copy
+   ===================================================================== */
+@media (min-width: 1024px) {
+  #astrek-site .ux-feature-stack {
+    gap: clamp(56px, 7vw, 96px) !important;
+  }
+
+  #astrek-site .ux-feature-row,
+  #astrek-site .ux-feature-row--reverse {
+    gap: clamp(32px, 4vw, 56px) !important;
+  }
+
+  #astrek-site .ux-feature-media {
+    aspect-ratio: 5 / 4 !important;
+    min-height: 0 !important;
+    max-height: 380px !important;
+  }
+
+  #astrek-site .ux-feature-media img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  #astrek-site .ux-feature-copy h3 {
+    font-size: clamp(1.7rem, 2.55vw, 2.4rem) !important;
+    margin: 8px 0 12px !important;
+  }
+
+  #astrek-site .ux-feature-copy p {
+    font-size: 1rem !important;
+  }
+}
+
+/* Product showcase (same page flow as features → stats) */
+@media (min-width: 1024px) {
+  #astrek-site .rf-product-intro {
+    margin: 0 auto 36px !important;
+  }
+
+  #astrek-site #product .rf-product-showcase {
+    gap: clamp(28px, 3.5vw, 48px) !important;
+  }
+
+  #astrek-site .rf-product-stage {
+    width: 100% !important;
+    aspect-ratio: auto !important;
+    min-height: min(56vh, 560px) !important;
+    height: min(56vh, 560px) !important;
+    max-height: min(56vh, 560px) !important;
+    padding: clamp(12px, 2vw, 28px) !important;
+    display: grid !important;
+    grid-template-rows: minmax(0, 1fr) !important;
+    place-items: stretch !important;
+    align-content: stretch !important;
+  }
+
+  #astrek-site .rf-product-stage #product3DStage {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: auto !important;
+    min-height: 0 !important;
+    align-self: stretch !important;
+  }
+
+  #astrek-site #product .product-face {
+    place-items: stretch !important;
+  }
+
+  #astrek-site .rf-product-stage img,
+  #astrek-site #productHeroImg,
+  #astrek-site .rf-product-stage #product3DStage img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  #astrek-site .rf-product-points .rf-point {
+    padding: 16px 0 !important;
+  }
+
+  #astrek-site .rf-product-points .rf-point h3 {
+    font-size: 1.05rem !important;
+    margin: 4px 0 6px !important;
+  }
+
+  #astrek-site .rf-product-points .rf-point p {
+    font-size: 0.9375rem !important;
+  }
+}
+
+/* =====================================================================
+   STATS: tighter tiles, numbers −18%
+   ===================================================================== */
+#astrek-site .ux-impact {
+  margin-top: clamp(32px, 4vw, 48px) !important;
+  padding-top: clamp(32px, 4vw, 48px) !important;
+}
+
+#astrek-site .ux-impact .ux-stats,
+#astrek-site .ux-impact .rf-impact-grid {
+  margin-top: 28px !important;
+  gap: 12px !important;
+}
+
+#astrek-site .ux-impact .ux-stat,
+#astrek-site .ux-impact .rf-impact-grid > div {
+  min-height: 132px !important;
+  padding: 16px 18px !important;
+}
+
+#astrek-site .ux-impact .ux-stat:first-child {
+  padding: 22px 20px !important;
+}
+
+#astrek-site .ux-impact .ux-stat strong {
+  font-size: clamp(2.25rem, 4.2vw, 3.85rem) !important;
+  margin: 0 0 8px !important;
+}
+
+#astrek-site .ux-impact .ux-stat:first-child strong {
+  font-size: clamp(2.85rem, 5.6vw, 4.85rem) !important;
+}
+
+@media (min-width: 1024px) {
+  #astrek-site .ux-stats {
+    gap: clamp(20px, 3vw, 36px) !important;
+    margin-top: 36px !important;
+  }
+
+  #astrek-site .ux-stat strong {
+    font-size: clamp(3rem, 5.2vw, 4.65rem) !important;
+    margin-bottom: 10px !important;
+  }
+
+  #astrek-site .ux-stat span {
+    font-size: 0.9375rem !important;
+  }
+}
+
+/* =====================================================================
+   SUPPORT STAGES (modes bento): cap tile height, smaller captions
+   Overlay filters on Exercise Mode are not restated here.
+   ===================================================================== */
+@media (min-width: 1024px) {
+  #astrek-site #modes .rf-mode-grid {
+    grid-template-rows: minmax(180px, 200px) minmax(180px, 200px) minmax(200px, 240px) !important;
+    gap: 12px !important;
+  }
+
+  #astrek-site #modes .rf-mode-card,
+  #astrek-site #modes .rf-mode-card:nth-child(1),
+  #astrek-site #modes .rf-mode-card:nth-child(2),
+  #astrek-site #modes .rf-mode-card:nth-child(3) {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 412px !important;
+  }
+
+  #astrek-site #modes .rf-mode-card:nth-child(4) {
+    min-height: 200px !important;
+    max-height: 240px !important;
+  }
+
+  #astrek-site #modes .rf-mode-meta {
+    padding: 18px 18px !important;
+  }
+
+  #astrek-site #modes .rf-mode-meta h3 {
+    font-size: 1.2rem !important;
+  }
+
+  #astrek-site #modes .rf-mode-meta p {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* =====================================================================
+   DETAIL GRID (specs): shorter tiles, capped clinician row
+   Overlay/filter on Clinician Interface is not restated here.
+   ===================================================================== */
+@media (min-width: 1024px) {
+  #astrek-site #specs .rf-part-grid {
+    grid-auto-rows: minmax(160px, 180px) !important;
+    gap: 12px !important;
+  }
+
+  #astrek-site #specs .rf-part-card {
+    min-height: 160px !important;
+  }
+
+  /* Hip hero tile must fill its 2-row grid area: max-height:372px left ~344px
+     dead black space because sibling imgs inflate rows to ~716px each. */
+  #astrek-site #specs .rf-part-grid .rf-part-card:first-child {
+    min-height: 0 !important;
+    max-height: none !important;
+    height: 100% !important;
+    align-self: stretch !important;
+  }
+
+  #astrek-site #specs .rf-part-grid .rf-part-card:last-child {
+    min-height: 200px !important;
+    max-height: 240px !important;
+  }
+
+  /* Absolute fill stops intrinsic img height from blowing up grid-auto-rows */
+  #astrek-site #specs .rf-part-card img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  #astrek-site #specs .rf-part-meta {
+    padding: 14px 16px !important;
+  }
+
+  #astrek-site #specs .rf-part-meta h3 {
+    font-size: 1.05rem !important;
+  }
+}
+
+/* =====================================================================
+   TESTIMONIAL: capped still, smaller quote
+   ===================================================================== */
+@media (min-width: 1024px) {
+  #astrek-site .rf-story-grid {
+    gap: clamp(32px, 4.5vw, 64px) !important;
+  }
+
+  #astrek-site .rf-story-media,
+  #astrek-site #testimonials .rf-story-media {
+    aspect-ratio: 4 / 5 !important;
+    min-height: 0 !important;
+    max-height: 460px !important;
+  }
+
+  #astrek-site .rf-story-media img,
+  #astrek-site #testimonials .rf-story-media img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  #astrek-site #testimonials .rf-h2 {
+    font-size: clamp(2.15rem, 3.5vw, 3.2rem) !important;
+  }
+
+  #astrek-site .rf-quote {
+    font-size: clamp(1.125rem, 1.75vw, 1.5rem) !important;
+    line-height: 1.45 !important;
+  }
+}
+
+/* =====================================================================
+   TEAM: shorter portraits, tighter meta
+   Grid columns unchanged.
+   ===================================================================== */
+@media (min-width: 1024px) {
+  #astrek-site .rf-people-grid {
+    gap: clamp(16px, 2vw, 24px) !important;
+  }
+
+  #astrek-site .rf-person-media {
+    aspect-ratio: 4 / 5 !important;
+    max-height: 260px !important;
+    margin-bottom: 12px !important;
+  }
+
+  #astrek-site .rf-person-meta {
+    padding: 0 2px 4px !important;
+  }
+
+  #astrek-site .rf-person-meta h4 {
+    font-size: 0.9375rem !important;
+  }
+
+  #astrek-site .rf-person-meta .role,
+  #astrek-site .rf-person-meta .org {
+    font-size: 0.8125rem !important;
+  }
+}
+
+/* =====================================================================
+   MENTORS: same portrait cap; less gap above this block
+   Grid columns unchanged.
+   ===================================================================== */
+@media (min-width: 1024px) {
+  #astrek-site .ux-people-block + .ux-people-block {
+    margin-top: 56px !important;
+    padding-top: 56px !important;
+  }
+}
+
+#astrek-site #mentors .rf-person-media {
+  max-height: 260px !important;
+}
+
+/* =====================================================================
+   PARTNERS: section spacing only; tile/grid styling in astrek-system.css
+   Final wins below for unik-premium `all:unset` + fix-layer transparent tiles.
+   ===================================================================== */
+#astrek-site #partners .rf-section-head {
+  margin-bottom: 20px !important;
+}
+
+/* =====================================================================
+   SPOTLIGHT (press) + INSIGHTS (blog)
+   ===================================================================== */
+@media (min-width: 1024px) {
+  #astrek-site .rf-press-grid,
+  #astrek-site .rf-blog-grid {
+    gap: clamp(20px, 2.5vw, 32px) !important;
+  }
+
+  #astrek-site .rf-press-media,
+  #astrek-site .rf-blog-cover {
+    aspect-ratio: 16 / 10 !important;
+    min-height: 0 !important;
+    max-height: 280px !important;
+  }
+
+  #astrek-site .rf-press-body h3,
+  #astrek-site .rf-blog-featured h4 {
+    font-size: clamp(1.3rem, 1.9vw, 1.75rem) !important;
+    margin: 8px 0 10px !important;
+  }
+
+  #astrek-site .rf-press-body,
+  #astrek-site .rf-blog-featured .blog-body {
+    padding: 16px 16px 18px !important;
+  }
+
+  #astrek-site .rf-press-side a,
+  #astrek-site .rf-blog-row {
+    padding: 14px 0 !important;
+  }
+
+  #astrek-site .rf-press-side h4,
+  #astrek-site .rf-blog-row h4 {
+    font-size: 0.975rem !important;
+  }
+}
+
+#astrek-site .rf-press-body,
+#astrek-site .rf-blog-featured .blog-body {
+  padding: 16px 16px 18px !important;
+}
+
+#astrek-site .rf-blog-row {
+  grid-template-columns: 96px 1fr !important;
+  gap: 12px !important;
+  padding: 10px !important;
+}
+
+/* =====================================================================
+   FAQ
+   ===================================================================== */
+#astrek-site .rf-faq-list {
+  gap: 8px !important;
+}
+
+#astrek-site .rf-faq-item {
+  padding: 0 16px !important;
+}
+
+#astrek-site .rf-faq-item summary {
+  padding: 14px 32px 14px 0 !important;
+  font-size: clamp(0.875rem, 1.2vw, 1.05rem) !important;
+}
+
+#astrek-site .rf-faq-item p {
+  font-size: 0.9375rem !important;
+  padding-bottom: 16px !important;
+}
+
+/* =====================================================================
+   CTA + CONTACT + FOOTER
+   ===================================================================== */
+#astrek-site .rf-cta-band {
+  min-height: 0 !important;
+  padding: clamp(96px, 10vw, 120px) 0 !important;
+}
+
+#astrek-site .rf-cta-inner .rf-h2 {
+  font-size: clamp(2.15rem, 4.4vw, 3.65rem) !important;
+  margin: 0 auto 14px !important;
+}
+
+#astrek-site .rf-cta-inner p {
+  font-size: 1.05rem !important;
+  margin: 0 auto 24px !important;
+}
+
+#astrek-site .rf-foot {
+  padding: 36px 0 24px !important;
+  gap: 20px 16px !important;
+}
+
+#astrek-site .rf-foot-bottom {
+  padding: 14px 0 28px !important;
+}
+
+/* =====================================================================
+   Mobile / tablet: keep existing breakpoints, scaled ~30% tighter
+   ===================================================================== */
+@media (max-width: 1023px) {
+  #astrek-site > section.rf-section,
+  #astrek-site > section.ux-section {
+    padding-top: clamp(56px, 10vw, 80px) !important;
+    padding-bottom: clamp(56px, 10vw, 80px) !important;
+  }
+
+  #astrek-site > section:not(.hero) .rf-h2.ux-h2,
+  #astrek-site > section:not(.hero) h2.rf-h2,
+  #astrek-site .ux-h2,
+  #astrek-site .rf-h2 {
+    font-size: clamp(1.5rem, 5.8vw, 2rem) !important;
+  }
+
+  #astrek-site .rf-section-head {
+    margin-bottom: 20px !important;
+    gap: 12px !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+  #astrek-site .hero--tronix h1.ux-h1 {
+    font-size: clamp(1.45rem, 6.4vw, 2rem) !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix .rf-hero-visual img,
+  #astrek-site .hero.rf-hero.hero--tronix #heroProductImg {
+    max-height: min(42vh, 360px) !important;
+  }
+
+  #astrek-site .ux-feature-stack {
+    gap: 32px !important;
+  }
+
+  #astrek-site .ux-feature-media {
+    max-height: 260px !important;
+  }
+
+  #astrek-site .ux-feature-copy h3 {
+    font-size: clamp(1.2rem, 4.6vw, 1.5rem) !important;
+  }
+
+  #astrek-site .ux-impact {
+    margin-top: 36px !important;
+    padding-top: 36px !important;
+  }
+
+  #astrek-site #modes .rf-mode-card,
+  #astrek-site #modes .rf-mode-card:nth-child(1),
+  #astrek-site #modes .rf-mode-card:nth-child(4) {
+    height: 240px !important;
+    min-height: 220px !important;
+    max-height: 260px !important;
+  }
+
+  #astrek-site #specs .rf-part-grid .rf-part-card:first-child {
+    min-height: 180px !important;
+  }
+
+  #astrek-site .rf-story-media {
+    max-height: 360px !important;
+  }
+
+  #astrek-site .ux-people-block + .ux-people-block {
+    margin-top: 36px !important;
+    padding-top: 36px !important;
+  }
+
+  #astrek-site .rf-cta-band {
+    padding: 56px 0 !important;
+  }
+
+  #astrek-site .rf-cta-inner .rf-h2 {
+    font-size: clamp(1.5rem, 6.2vw, 2rem) !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  #astrek-site #modes .rf-mode-card:nth-child(1) {
+    height: 300px !important;
+    max-height: 320px !important;
+  }
+}
+
+/* =====================================================================
+   REGRESSION FIXES: last in cascade (loads after astrek-system.css)
+   ===================================================================== */
+
+/* 1. Robin: same CSS filter as row, but source photo is ~3× brighter;
+   darken to match Jithin/Alex/Vishnu luminance. Restore absolute fill
+   (system.css set position:relative which broke polish crop). */
+#astrek-site #team .team-grid .person-img img,
+#astrek-site #team .team-grid .rf-person-media img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 18% !important;
+  transform: none !important;
+}
+
+/* Robin uses the same unified headshot grade as the rest of the team (astrek-ultimate.css). */
+
+
+
+/* 3. Clinician Interface: match Hip/Knee: img brightness(0.85) + bottom
+   meta fade only. Drop ::before flat veil (read as washed gray). */
+#astrek-site #specs .rf-part-card:last-child::before,
+#astrek-site #specs .rf-part-card:has(img[src*="unikexo-front"])::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+#astrek-site #specs .rf-part-card:last-child img,
+#astrek-site #specs .rf-part-card img[src*="unikexo-front"] {
+  filter: brightness(0.85) contrast(1.06) saturate(0.82) !important;
+}
+
+#astrek-site #specs .rf-part-card:last-child .rf-part-meta,
+#astrek-site #specs .rf-part-card:has(img[src*="unikexo-front"]) .rf-part-meta {
+  inset: auto 0 0 0 !important;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.85)) !important;
+}
+
+#astrek-site #specs .rf-part-card:last-child:hover img,
+#astrek-site #specs .rf-part-card:has(img[src*="unikexo-front"]):hover img[src*="unikexo-front"] {
+  filter: brightness(0.92) contrast(1.04) saturate(0.88) !important;
+}
+
+/* =====================================================================
+   PARTNERS SHOWCASE: cascade wins over unik-premium all:unset + fix layer
+   ===================================================================== */
+#astrek-site #partners .ux-partners-row .partner-logo,
+#astrek-site #partners .partner-grid .partner-logo {
+  display: grid !important;
+  place-items: center !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  min-height: 0 !important;
+  flex: none !important;
+  justify-self: stretch !important;
+  aspect-ratio: 4 / 3 !important;
+  padding: clamp(16px, 2.2vw, 22px) !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: #0e1211 !important;
+  box-shadow: none !important;
+}
+
+#astrek-site #partners .partner-logo img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+@media (max-width: 767px) {
+  #astrek-site #partners .partner-logo {
+    aspect-ratio: 3 / 2 !important;
+    padding: 16px !important;
+  }
+}
+
+/* =====================================================================
+   PRODUCT SHOWCASE: cascade wins over polish aspect-ratio + height:auto
+   ===================================================================== */
+#astrek-site #product .rf-product-stage {
+  overflow: hidden !important;
+}
+
+#astrek-site #product #product3DStage {
+  aspect-ratio: auto !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+#astrek-site #product #product3DStage .product-face {
+  place-items: stretch !important;
+}
+
+#astrek-site #product #product3DStage img,
+#astrek-site #product #productHeroImg {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+@media (min-width: 1024px) {
+  #astrek-site #product .rf-product-stage {
+    width: 100% !important;
+    aspect-ratio: auto !important;
+    min-height: min(56vh, 560px) !important;
+    height: min(56vh, 560px) !important;
+    max-height: min(56vh, 560px) !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  #astrek-site #product .rf-product-stage {
+    aspect-ratio: 4 / 5 !important;
+    min-height: 280px !important;
+    max-height: none !important;
+  }
+
+  #astrek-site #product .rf-product-stage #product3DStage,
+  #astrek-site #product #product3DStage {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  #astrek-site #product .rf-product-stage img,
+  #astrek-site #product #productHeroImg {
+    max-height: 100% !important;
+  }
+}
+
+/* =====================================================================
+   REGRESSION: post-specs “black void”, header overlap, Exercise Mode
+   ===================================================================== */
+
+/* 1. Reveal opacity 0 on .reveal / .reveal-stagger hid full sections while
+   they still occupied height: read as collapsed black space after the bento
+   grid. Pre-trigger via JS rootMargin; this keeps below-specs content visible. */
+html.js-reveals #specs ~ section .reveal:not(.in),
+html.js-reveals #specs ~ section .reveal-stagger:not(.in) > *,
+html.js-reveals #specs ~ .rf-cta-band .reveal:not(.in),
+html.js-reveals #specs ~ .rf-footer .reveal:not(.in),
+html.js-reveals #specs ~ .rf-footer .premium-reveal:not(.in) {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* 2. Fixed header overlapping section titles (read as duplicate nav mid-page) */
+html {
+  scroll-padding-top: calc(var(--site-header-h, 72px) + 20px);
+}
+
+#astrek-site > section[id] {
+  scroll-margin-top: calc(var(--site-header-h, 72px) + 20px);
+}
+
+/* Scrolled header: hero-type.css forces transparent; without a solid bar,
+   fixed nav links read as a duplicate navbar over section headings. */
+#siteHeader.rf-header.is-scrolled,
+#siteHeader.rf-header.scrolled,
+#siteHeader.is-scrolled,
+#siteHeader.scrolled {
+  background: rgba(10, 14, 13, 0.94) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* 3. Exercise Mode: match Sit / Stand / Walk dark grade (clinical-pilot.webp) */
+#astrek-site #modes .rf-mode-card:nth-child(4),
+#astrek-site #modes .rf-mode-card:has(img[src*="clinical-pilot"]) {
+  isolation: isolate !important;
+}
+
+#astrek-site #modes .rf-mode-card:nth-child(4) img,
+#astrek-site #modes .rf-mode-card img[src*="clinical-pilot"] {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  filter: brightness(0.26) contrast(1.14) saturate(0.5) !important;
+}
+
+#astrek-site #modes .rf-mode-card:nth-child(4) .rf-mode-meta,
+#astrek-site #modes .rf-mode-card:has(img[src*="clinical-pilot"]) .rf-mode-meta {
+  inset: 0 !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 14, 13, 0.72) 0%,
+    rgba(10, 14, 13, 0.58) 36%,
+    rgba(0, 0, 0, 0.92) 100%
+  ) !important;
+}
+
+#astrek-site #modes .rf-mode-card:nth-child(4):hover img,
+#astrek-site #modes .rf-mode-card:has(img[src*="clinical-pilot"]):hover img[src*="clinical-pilot"] {
+  filter: brightness(0.34) contrast(1.12) saturate(0.58) !important;
+}

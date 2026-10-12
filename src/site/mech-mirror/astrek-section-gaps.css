@@ -1,0 +1,67 @@
+/* Tighter vertical rhythm between selected homepage sections (desktop + mobile) */
+
+/* 1. Mentors / team → Partners */
+body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] {
+  padding-bottom: clamp(2rem, 4vw, 3rem) !important;
+}
+
+body.mech-mirror-active #astrek-site section#partners[data-testid="partners-section"],
+body.mech-mirror-active #astrek-site #partners.astrek-partners {
+  padding-top: clamp(2rem, 4vw, 3rem) !important;
+}
+
+/* 2. Partners → Media (press) */
+body.mech-mirror-active #astrek-site section#partners[data-testid="partners-section"],
+body.mech-mirror-active #astrek-site #partners.astrek-partners {
+  padding-bottom: clamp(2rem, 4vw, 3rem) !important;
+}
+
+body.mech-mirror-active #astrek-site section#press[data-testid="press-section"] {
+  padding-top: clamp(2rem, 4vw, 3rem) !important;
+}
+
+/* 3. Media → Insights (blog) */
+body.mech-mirror-active #astrek-site section#press[data-testid="press-section"] {
+  padding-bottom: clamp(2rem, 4vw, 3rem) !important;
+}
+
+body.mech-mirror-active #astrek-site section#blog[data-testid="blog-section"] {
+  padding-top: clamp(2rem, 4vw, 3rem) !important;
+}
+
+/* 4. FAQ → Discover CTA */
+body.mech-mirror-active #astrek-site section#faq[data-testid="faq-section"] {
+  padding-bottom: clamp(2rem, 4vw, 3rem) !important;
+}
+
+body.mech-mirror-active #astrek-site [data-testid="cta-band"] {
+  padding-top: clamp(2rem, 4vw, 3rem) !important;
+}
+
+/* 5. Contact → Footer */
+body.mech-mirror-active #astrek-site section#contact[data-testid="contact-section"] {
+  padding-bottom: clamp(2rem, 4vw, 3rem) !important;
+}
+
+body.mech-mirror-active #astrek-site footer[data-testid="site-footer"] > .mx-auto {
+  padding-top: clamp(2.5rem, 5vw, 4rem) !important;
+}
+
+@media (max-width: 767px) {
+  /* Even phone rhythm — match responsive-polish (avoid 20px / 53px mismatch) */
+  body.mech-mirror-active #astrek-site section#team[data-testid="people-section"],
+  body.mech-mirror-active #astrek-site section#partners[data-testid="partners-section"],
+  body.mech-mirror-active #astrek-site #partners.astrek-partners,
+  body.mech-mirror-active #astrek-site section#press[data-testid="press-section"],
+  body.mech-mirror-active #astrek-site section#blog[data-testid="blog-section"],
+  body.mech-mirror-active #astrek-site section#faq[data-testid="faq-section"],
+  body.mech-mirror-active #astrek-site [data-testid="cta-band"],
+  body.mech-mirror-active #astrek-site section#contact[data-testid="contact-section"] {
+    padding-top: 3.35rem !important;
+    padding-bottom: 3.35rem !important;
+  }
+
+  body.mech-mirror-active #astrek-site footer[data-testid="site-footer"] > .mx-auto {
+    padding-top: 0 !important;
+  }
+}

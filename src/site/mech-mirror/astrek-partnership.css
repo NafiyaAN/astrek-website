@@ -1,0 +1,517 @@
+/* Partner page: main-site nav + form + footer only (no extra black gaps) */
+
+/* Kill full-viewport empty stretch that pushes the footer down */
+html body.ptr-route.mech-mirror-active .grain.min-h-screen,
+html body.ptr-route.mech-mirror-active .mech-page-shell,
+html body.ptr-route .grain.min-h-screen,
+html body.ptr-route .mech-page-shell {
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+html body.ptr-route.mech-mirror-active .mech-inner-content.page-shell,
+html body.ptr-route .mech-inner-content.page-shell {
+  min-height: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+/* Sticky header matching homepage: logo | links | CTA + languages */
+html body.ptr-route.mech-mirror-active [data-testid="site-header"],
+html body.ptr-route.mech-mirror-active [data-testid="site-header"].is-scrolled,
+html body.ptr-route [data-testid="site-header"],
+html body.ptr-route [data-testid="site-header"].is-scrolled {
+  position: sticky !important;
+  top: 0 !important;
+  inset-inline: 0 !important;
+  z-index: 60 !important;
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: rgba(5, 7, 10, 0.96) !important;
+  background-color: rgba(5, 7, 10, 0.96) !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(16px) saturate(1.1) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.1) !important;
+}
+
+html body.ptr-route.mech-mirror-active [data-testid="site-header"] > div,
+html body.ptr-route.mech-mirror-active [data-testid="site-header"] .mech-header-inner,
+html body.ptr-route.mech-mirror-active [data-testid="site-header"].is-scrolled > div,
+html body.ptr-route.mech-mirror-active [data-testid="site-header"].is-scrolled .mech-header-inner {
+  display: grid !important;
+  grid-template-columns: minmax(10.5rem, auto) minmax(0, 1fr) auto !important;
+  grid-template-areas: "logo nav actions" !important;
+  align-items: center !important;
+  column-gap: clamp(1rem, 2vw, 1.75rem) !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 5rem !important;
+  min-height: 5rem !important;
+  margin-inline: 0 !important;
+  padding: 0 clamp(1.5rem, 4.5vw, 3.5rem) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  overflow: visible !important;
+}
+
+html body.ptr-route.mech-mirror-active [data-testid="site-header"] [data-testid="nav-logo"] {
+  grid-area: logo !important;
+  flex-shrink: 0 !important;
+  min-width: 10.5rem !important;
+  max-width: 13.5rem !important;
+  overflow: hidden !important;
+}
+
+html body.ptr-route.mech-mirror-active [data-testid="site-header"] [data-testid="nav-logo"] img {
+  display: block !important;
+  height: 2.85rem !important;
+  max-height: 2.85rem !important;
+  width: auto !important;
+  max-width: 13.5rem !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+}
+
+html body.ptr-route.mech-mirror-active [data-testid="site-header"] nav.ajh-nav,
+html body.ptr-route.mech-mirror-active [data-testid="site-header"] nav[aria-label="Primary"] {
+  grid-area: nav !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  min-width: 0 !important;
+  gap: clamp(0.85rem, 1.5vw, 1.6rem) !important;
+  overflow: hidden !important;
+}
+
+html body.ptr-route.mech-mirror-active [data-testid="site-header"] .mech-header-actions,
+html body.ptr-route.mech-mirror-active [data-testid="site-header"] > div > div.flex {
+  grid-area: actions !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  flex-shrink: 0 !important;
+}
+
+@media (min-width: 1024px) {
+  html body.ptr-route.mech-mirror-active [data-testid="site-header"] nav.ajh-nav,
+  html body.ptr-route.mech-mirror-active [data-testid="site-header"] nav[aria-label="Primary"] {
+    display: flex !important;
+  }
+
+  /* Same desktop nav as homepage — Home sits in the logo */
+  html body.ptr-route.mech-mirror-active [data-testid="nav-link-home"],
+  html body.ptr-route.mech-mirror-active [data-testid="nav-link-contact-nav"],
+  html body.ptr-route.mech-mirror-active [data-testid="site-header"] .mech-drawer-cta,
+  html body.ptr-route.mech-mirror-active [data-testid="site-header"] [data-testid="nav-cta-contact"] {
+    display: none !important;
+  }
+}
+
+html body.ptr-route.mech-mirror-active [data-testid="site-header"] nav a.ajh-nav-link {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.12em !important;
+}
+
+html body.ptr-route.mech-mirror-active [data-testid="site-header"] .ajh-nav-cta,
+html body.ptr-route.mech-mirror-active [data-testid="site-header"] a.ajh-nav-cta--primary {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Form section — tight under sticky header, tight above footer */
+[data-testid="partnership-section"].ptr-page,
+body.mech-mirror-active [data-testid="partnership-section"].ptr-page {
+  position: relative !important;
+  isolation: isolate;
+  z-index: 1;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 1.5rem 0 1.25rem !important;
+  overflow: visible !important;
+  background: var(--n-bg, #05070a);
+}
+
+.ptr-wrap,
+body.mech-mirror-active .ptr-wrap {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--n-container, 72rem);
+  margin: 0 auto;
+  padding-inline: var(--n-pad-x, clamp(1.25rem, 4vw, 3rem));
+}
+
+.ptr-layout,
+body.mech-mirror-active .ptr-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.35rem, 2.5vw, 2rem);
+  align-items: start;
+}
+
+@media (min-width: 960px) {
+  .ptr-layout,
+  body.mech-mirror-active .ptr-layout {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: clamp(1.5rem, 2.8vw, 2.5rem);
+    align-items: stretch;
+  }
+}
+
+.ptr-intro,
+body.mech-mirror-active .ptr-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+.ptr-kicker,
+body.mech-mirror-active .ptr-kicker {
+  margin: 0;
+  font-family: "JetBrains Mono", ui-monospace, monospace !important;
+  font-size: 0.6875rem !important;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--n-accent, #3fe0c5) !important;
+}
+
+.ptr-title,
+body.mech-mirror-active .ptr-title,
+body.mech-mirror-active #partnership-title.ptr-title,
+body.mech-mirror-active [data-testid="partnership-section"] h1.ptr-title {
+  position: relative;
+  margin: 0.65rem 0 0 !important;
+  max-width: 18ch;
+  font-family: inherit !important;
+  font-size: clamp(1.85rem, 3.2vw, 2.65rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.12 !important;
+  color: var(--n-text, #f4f6f8) !important;
+}
+
+.ptr-lead,
+body.mech-mirror-active .ptr-lead {
+  margin: 0.75rem 0 0 !important;
+  max-width: 28rem;
+  font-size: 1.02rem !important;
+  line-height: 1.55 !important;
+  color: rgba(244, 246, 248, 0.72) !important;
+}
+
+.ptr-blurb,
+body.mech-mirror-active .ptr-blurb {
+  margin: 0.95rem 0 0 !important;
+  max-width: 30rem;
+  font-size: 0.9375rem !important;
+  line-height: 1.65 !important;
+  color: rgba(244, 246, 248, 0.52) !important;
+}
+
+.ptr-points,
+body.mech-mirror-active .ptr-points {
+  list-style: none;
+  margin: 1.15rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 28rem;
+}
+
+.ptr-points li,
+body.mech-mirror-active .ptr-points li {
+  position: relative;
+  padding-inline-start: 1.15rem;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: rgba(244, 246, 248, 0.78);
+}
+
+.ptr-points li::before,
+body.mech-mirror-active .ptr-points li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.55em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--n-accent, #3fe0c5);
+}
+
+.ptr-contact,
+body.mech-mirror-active .ptr-contact {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-width: 28rem;
+}
+
+.ptr-contact__label,
+body.mech-mirror-active .ptr-contact__label {
+  margin: 0 0 0.2rem;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(244, 246, 248, 0.42);
+}
+
+.ptr-contact a,
+body.mech-mirror-active .ptr-contact a {
+  color: var(--n-accent, #3fe0c5);
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  width: fit-content;
+}
+
+.ptr-contact a:hover,
+body.mech-mirror-active .ptr-contact a:hover {
+  text-decoration: underline;
+}
+
+.ptr-contact__addr,
+body.mech-mirror-active .ptr-contact__addr {
+  margin: 0.4rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: rgba(244, 246, 248, 0.45);
+}
+
+.ptr-card,
+body.mech-mirror-active .ptr-card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.15rem, 2.2vw, 1.6rem);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: none;
+}
+
+.ptr-card__head,
+body.mech-mirror-active .ptr-card__head {
+  margin-bottom: 1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ptr-card__title,
+body.mech-mirror-active .ptr-card__title {
+  margin: 0 !important;
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: #f4f6f8 !important;
+}
+
+.ptr-card__sub,
+body.mech-mirror-active .ptr-card__sub {
+  margin: 0.35rem 0 0 !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5;
+  color: rgba(244, 246, 248, 0.5) !important;
+}
+
+.ptr-form,
+body.mech-mirror-active .ptr-form {
+  margin: 0;
+}
+
+.ptr-grid,
+body.mech-mirror-active .ptr-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem 0.85rem;
+}
+
+@media (min-width: 640px) {
+  .ptr-grid,
+  body.mech-mirror-active .ptr-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ptr-field,
+body.mech-mirror-active .ptr-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.ptr-field--full,
+body.mech-mirror-active .ptr-field--full {
+  grid-column: 1 / -1;
+}
+
+.ptr-field span,
+body.mech-mirror-active .ptr-field span {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: rgba(244, 246, 248, 0.62);
+}
+
+.ptr-field input,
+.ptr-field select,
+.ptr-field textarea,
+body.mech-mirror-active .ptr-field input,
+body.mech-mirror-active .ptr-field select,
+body.mech-mirror-active .ptr-field textarea {
+  width: 100%;
+  min-height: 2.55rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 0.45rem !important;
+  background: rgba(0, 0, 0, 0.35) !important;
+  color: #f4f6f8 !important;
+  font: inherit;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.ptr-field input:focus,
+.ptr-field select:focus,
+.ptr-field textarea:focus,
+body.mech-mirror-active .ptr-field input:focus,
+body.mech-mirror-active .ptr-field select:focus,
+body.mech-mirror-active .ptr-field textarea:focus {
+  outline: none !important;
+  border-color: rgba(63, 224, 197, 0.55) !important;
+  box-shadow: 0 0 0 3px rgba(63, 224, 197, 0.12) !important;
+}
+
+.ptr-field select,
+body.mech-mirror-active .ptr-field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #3fe0c5 50%),
+    linear-gradient(135deg, #3fe0c5 50%, transparent 50%);
+  background-position: calc(100% - 14px) calc(50% - 2px), calc(100% - 9px) calc(50% - 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-inline-end: 2rem;
+}
+
+.ptr-field textarea,
+body.mech-mirror-active .ptr-field textarea {
+  min-height: 5.75rem;
+  resize: vertical;
+}
+
+.ptr-actions,
+body.mech-mirror-active .ptr-actions {
+  margin-top: 1rem;
+}
+
+.ptr-submit,
+body.mech-mirror-active .ptr-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.65rem;
+  padding: 0.65rem 1.4rem;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: var(--n-accent, #3fe0c5) !important;
+  color: #041012 !important;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.ptr-submit:hover,
+body.mech-mirror-active .ptr-submit:hover {
+  filter: brightness(1.06);
+}
+
+.ptr-submit:disabled,
+body.mech-mirror-active .ptr-submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.ptr-status,
+body.mech-mirror-active .ptr-status {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--n-accent, #3fe0c5);
+}
+
+.ptr-status[data-tone="error"],
+body.mech-mirror-active .ptr-status[data-tone="error"] {
+  color: #f2b8b5;
+}
+
+/* Footer sits immediately under the form — no tall empty band */
+html body.ptr-route.mech-mirror-active footer,
+html body.ptr-route footer {
+  margin-top: 0 !important;
+  padding-top: clamp(1.75rem, 3.5vw, 2.5rem) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+html body.ptr-route.mech-mirror-active footer > .mx-auto,
+html body.ptr-route footer > .mx-auto {
+  padding-top: 0 !important;
+}
+
+@media (max-width: 639px) {
+  .ptr-submit,
+  body.mech-mirror-active .ptr-submit {
+    width: 100%;
+  }
+
+  .ptr-title,
+  body.mech-mirror-active .ptr-title,
+  body.mech-mirror-active #partnership-title.ptr-title {
+    max-width: none;
+  }
+
+  html body.ptr-route.mech-mirror-active [data-testid="site-header"] nav.ajh-nav,
+  html body.ptr-route.mech-mirror-active [data-testid="site-header"] nav[aria-label="Primary"] {
+    display: none !important;
+  }
+}
+
+html[dir="rtl"] .ptr-field select,
+html[dir="rtl"] body.mech-mirror-active .ptr-field select {
+  background-position: 14px calc(50% - 2px), 19px calc(50% - 2px);
+}
+
+html[dir="rtl"] .ptr-points li,
+html[dir="rtl"] body.mech-mirror-active .ptr-points li {
+  padding-inline-start: 0;
+  padding-inline-end: 1.15rem;
+}
+
+html[dir="rtl"] .ptr-points li::before,
+html[dir="rtl"] body.mech-mirror-active .ptr-points li::before {
+  inset-inline-start: auto;
+  inset-inline-end: 0;
+}

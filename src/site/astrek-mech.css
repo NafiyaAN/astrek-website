@@ -1,0 +1,812 @@
+/* =====================================================================
+   ASTREK MECH: Emergent showcase recreation (loads last)
+   Brand teal system · Outfit / Manrope / JetBrains Mono · studio hero
+   ===================================================================== */
+
+:root {
+  --mech-bg: #050505;
+  --mech-surface: #0c0c0e;
+  --mech-card: #141416;
+  --mech-brand: #3fe0c5;
+  --mech-brand-soft: #5aebd4;
+  --mech-brand-dim: rgba(63, 224, 197, 0.14);
+  --mech-brand-glow: rgba(63, 224, 197, 0.35);
+  --mech-text: #fafafa;
+  --mech-muted: #a1a1aa;
+  --mech-faint: #71717a;
+  --mech-border: rgba(255, 255, 255, 0.08);
+  --mech-display: "Outfit", "Space Grotesk", Inter, sans-serif;
+  --mech-body: "Manrope", Inter, sans-serif;
+  --mech-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+}
+
+body.mech-mirror-active {
+  background: var(--mech-bg) !important;
+  color: var(--mech-text) !important;
+  font-family: var(--mech-body) !important;
+}
+
+#astrek-site {
+  --bg-primary: var(--mech-bg);
+  --bg-secondary: var(--mech-surface);
+  --bg-card: var(--mech-card);
+  --bg-card-hover: #1a1a1e;
+  --border-subtle: var(--mech-border);
+  --border-hover: rgba(63, 224, 197, 0.45);
+  --accent: #3fe0c5;
+  --accent-dim: var(--mech-brand-dim);
+  --accent-glow: var(--mech-brand-glow);
+  --text-primary: var(--mech-text);
+  --text-secondary: var(--mech-muted);
+  --text-muted: var(--mech-faint);
+  /* Align legacy accent tokens with mech teal brand */
+  --pro-accent: #2fe0b5;
+  --at-teal: #3fe0c5;
+  --ult-cyan: #2fe0b5;
+  --ult-cyan-soft: #2fe0b5;
+  --flag-mint: #3fe0c5;
+  --flag-mint-ink: #061210;
+  --lux-cyan: #3fe0c5;
+  --hero-accent: #2fe0b5;
+  --sys-accent: #2fe0b5;
+  --teal: #3fe0c5;
+  --robot-teal: #3fe0c5;
+  background: var(--mech-bg) !important;
+  color: var(--mech-text) !important;
+  font-family: var(--mech-body) !important;
+}
+
+/* ── Typography ───────────────────────────────────────────────────── */
+
+#astrek-site h1,
+#astrek-site h2,
+#astrek-site h3,
+#astrek-site h4,
+#astrek-site .rf-h2,
+#astrek-site .ux-h2,
+#astrek-site .ux-h1 {
+  font-family: var(--mech-display) !important;
+}
+
+#astrek-site .ux-eyebrow,
+#astrek-site .rf-kicker,
+#astrek-site .hero-eyebrow,
+#astrek-site p.ux-eyebrow,
+#astrek-site p.hero-eyebrow,
+#astrek-site p.rf-kicker,
+#astrek-site .hero--tronix .hero-eyebrow,
+#astrek-site .hero--tronix .ux-eyebrow,
+#astrek-site .hero--tronix .rf-hero-copy .ux-eyebrow,
+#astrek-site .hero--mech .hero-eyebrow,
+#astrek-site .hero--mech p.hero-eyebrow,
+#astrek-site.lux-site .ux-eyebrow,
+#astrek-site.lux-site .rf-kicker,
+#astrek-site .idx,
+#astrek-site .mono {
+  font-family: var(--mech-mono) !important;
+  color: #3fe0c5 !important;
+  -webkit-text-fill-color: #3fe0c5 !important;
+}
+
+#astrek-site .ux-eyebrow,
+#astrek-site .rf-kicker,
+#astrek-site .hero-eyebrow {
+  letter-spacing: 0.25em !important;
+  font-size: 0.7rem !important;
+  font-weight: 500 !important;
+}
+
+/* ── Header ───────────────────────────────────────────────────────── */
+
+#siteHeader.mech-header,
+#siteHeader.rf-header {
+  background: rgba(5, 5, 5, 0.72) !important;
+  border-bottom: 1px solid var(--mech-border) !important;
+  backdrop-filter: blur(18px) saturate(1.2) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.2) !important;
+}
+
+#siteHeader .links a {
+  font-family: var(--mech-mono) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: #a1a1aa !important;
+}
+
+#siteHeader .links a:hover,
+#siteHeader .links a.is-active {
+  color: #fff !important;
+}
+
+#siteHeader .header-cta,
+#siteHeader .mobile-menu-cta,
+#siteHeader .rf-btn--nav {
+  background: var(--mech-brand) !important;
+  color: #0a0a0a !important;
+  border: none !important;
+  border-radius: 999px !important;
+  font-family: var(--mech-mono) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  padding: 12px 20px !important;
+  box-shadow: none !important;
+}
+
+#siteHeader .header-cta:hover,
+#siteHeader .mobile-menu-cta:hover {
+  background: var(--mech-brand-soft) !important;
+  color: #0a0a0a !important;
+}
+
+/* ── Buttons (beat older teal layers by specificity) ─────────────── */
+
+#astrek-site .rf-btn:not(.rf-btn--ghost):not(.rf-btn--nav),
+#astrek-site a.rf-btn:not(.rf-btn--ghost):not(.rf-btn--nav),
+#astrek-site button.rf-btn:not(.rf-btn--ghost),
+#astrek-site .hero--tronix .rf-hero-actions .rf-btn:not(.rf-btn--ghost),
+#astrek-site .hero--mech .rf-hero-actions .rf-btn:not(.rf-btn--ghost),
+#astrek-site.lux-site .rf-btn:not(.rf-btn--ghost):not(.rf-btn--nav),
+#site-header-host .rf-btn:not(.rf-btn--ghost),
+#siteHeader .header-cta,
+#siteHeader .rf-btn.header-cta,
+#siteHeader .mobile-menu-cta {
+  background: #2fe0b5 !important;
+  background-color: #2fe0b5 !important;
+  color: #041210 !important;
+  border: none !important;
+  border-radius: 999px !important;
+  font-family: var(--mech-mono) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+}
+
+#astrek-site .rf-btn:not(.rf-btn--ghost):hover,
+#astrek-site .hero--mech .rf-hero-actions .rf-btn:not(.rf-btn--ghost):hover,
+#siteHeader .header-cta:hover {
+  background: #5aebd4 !important;
+  background-color: #5aebd4 !important;
+  color: #0a0a0a !important;
+}
+
+#astrek-site .rf-btn--ghost {
+  background: transparent !important;
+  color: #e4e4e7 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 999px !important;
+  font-family: var(--mech-mono) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+#astrek-site .rf-btn--ghost:hover {
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────── */
+
+#astrek-site .hero.hero--mech,
+#astrek-site .hero.rf-hero.hero--tronix.hero--mech {
+  position: relative !important;
+  min-height: 100dvh !important;
+  background: var(--mech-bg) !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+#astrek-site .hero--mech::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(60% 45% at 50% 0%, rgba(63, 224, 197, 0.14), transparent 70%),
+    radial-gradient(40% 35% at 80% 60%, rgba(63, 224, 197, 0.06), transparent 70%) !important;
+}
+
+#astrek-site .hero--mech .mech-grid {
+  background-color: var(--mech-bg) !important;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px) !important;
+  background-size: 72px 72px !important;
+  opacity: 1 !important;
+}
+
+#astrek-site .hero--mech .hero-video-overlay,
+#astrek-site .hero--mech .mech-spotlight {
+  background: transparent !important;
+}
+
+#astrek-site .hero--mech .rf-hero-stage {
+  position: relative !important;
+  z-index: 2 !important;
+  display: grid !important;
+  /* Emergent: ~7/12 copy · ~5/12 product */
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) !important;
+  grid-template-rows: auto !important;
+  align-items: center !important;
+  gap: clamp(40px, 6vw, 80px) !important;
+  width: 100% !important;
+  max-width: 1280px !important;
+  min-height: 100dvh !important;
+  margin-inline: auto !important;
+  padding:
+    calc(var(--site-header-h, 72px) + clamp(48px, 7vh, 80px))
+    clamp(24px, 4vw, 48px)
+    clamp(80px, 12vh, 140px) !important;
+}
+
+#astrek-site .hero--mech .rf-hero-stage > * {
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+  grid-column: auto !important;
+  grid-row: auto !important;
+}
+
+#astrek-site .hero--mech .mech-hero-copy {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  max-width: 40rem !important;
+  text-align: left !important;
+}
+
+#astrek-site .hero--mech .lux-hero-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin: 0 0 32px !important;
+  padding: 8px 16px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  font-family: var(--mech-mono) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: #d4d4d8 !important;
+  backdrop-filter: none !important;
+}
+
+#astrek-site .hero--mech .lux-hero-badge__dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: var(--mech-brand) !important;
+  box-shadow: 0 0 0 4px rgba(63, 224, 197, 0.2) !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix.hero--mech h1.mech-hero-title,
+#astrek-site .hero.rf-hero.hero--tronix.hero--mech h1.ux-h1,
+#astrek-site.lux-site .hero.rf-hero.hero--tronix.hero--mech h1.ux-h1 {
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: none !important;
+  width: auto !important;
+  font-family: var(--mech-display) !important;
+  /* Emergent scale: huge display title */
+  font-size: clamp(5.5rem, 14vw, 9.5rem) !important;
+  font-weight: 700 !important;
+  line-height: 0.82 !important;
+  letter-spacing: -0.05em !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  -webkit-text-fill-color: unset !important;
+  background: none !important;
+  background-image: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix.hero--mech h1.ux-h1 .mech-hero-line,
+#astrek-site .hero--mech .mech-hero-line {
+  display: block !important;
+  overflow: hidden !important;
+  padding-bottom: 0.08em !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+/* Beat design-system `h1.ux-h1 * { fill: white }` */
+#astrek-site .hero.rf-hero.hero--tronix.hero--mech h1.ux-h1 .mech-hero-line--outline,
+#astrek-site .hero.rf-hero.hero--tronix.hero--mech h1.ux-h1 span.mech-hero-line--outline,
+#astrek-site.lux-site .hero.rf-hero.hero--tronix.hero--mech h1.ux-h1 .mech-hero-line--outline {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: 1.5px rgba(63, 224, 197, 0.7) !important;
+  paint-order: stroke fill !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix.hero--mech h1.ux-h1 .mech-hero-dot,
+#astrek-site .hero.rf-hero.hero--tronix.hero--mech h1.ux-h1 span.mech-hero-dot,
+#astrek-site.lux-site .hero.rf-hero.hero--tronix.hero--mech h1.ux-h1 .mech-hero-dot {
+  color: #3fe0c5 !important;
+  -webkit-text-fill-color: #3fe0c5 !important;
+  -webkit-text-stroke: 0 transparent !important;
+}
+
+#astrek-site .hero--mech .hero-eyebrow,
+#astrek-site .hero--mech p.hero-eyebrow,
+#astrek-site .hero--mech .rf-hero-copy .hero-eyebrow {
+  margin: 16px 0 0 !important;
+  font-family: var(--mech-mono) !important;
+  font-size: 12px !important;
+  letter-spacing: 0.3em !important;
+  text-transform: uppercase !important;
+  color: #3fe0c5 !important;
+  -webkit-text-fill-color: #3fe0c5 !important;
+}
+
+#astrek-site .hero--mech .sub {
+  margin: 16px 0 0 !important;
+  max-width: 28rem !important;
+  font-size: clamp(1rem, 1.4vw, 1.125rem) !important;
+  line-height: 1.65 !important;
+  color: #a1a1aa !important;
+  -webkit-text-fill-color: #a1a1aa !important;
+  text-shadow: none !important;
+}
+
+#astrek-site .hero--mech .rf-hero-actions {
+  margin-top: 40px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 14px !important;
+  width: max-content !important;
+  max-width: 100% !important;
+}
+
+#astrek-site .hero--mech .rf-hero-actions .rf-btn {
+  padding: 14px 24px !important;
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 639px) {
+  #astrek-site .hero--mech .rf-hero-actions {
+    flex-wrap: wrap !important;
+    width: 100% !important;
+  }
+}
+
+#astrek-site .hero--mech .mech-hero-meta {
+  display: none !important;
+  margin-top: 56px !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: 24px !important;
+  font-family: var(--mech-mono) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: #52525b !important;
+  white-space: nowrap !important;
+}
+
+#astrek-site .hero--mech .mech-hero-meta > span {
+  white-space: nowrap !important;
+}
+
+#astrek-site .hero--mech .mech-hero-meta-rule {
+  display: block !important;
+  width: 40px !important;
+  height: 1px !important;
+  background: #27272a !important;
+}
+
+@media (min-width: 768px) {
+  #astrek-site .hero--mech .mech-hero-meta {
+    display: flex !important;
+  }
+}
+
+/* Hero visual / studio panel */
+
+#astrek-site .hero--mech .mech-hero-visual,
+#astrek-site .hero--mech .rf-hero-visual,
+#astrek-site .hero--mech #heroProductStage {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 480px !important;
+  min-height: 0 !important;
+  margin: 0 0 0 auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  transform: none !important;
+}
+
+#astrek-site .hero--mech .rf-hero-visual::before,
+#astrek-site .hero--mech .rf-hero-visual::after,
+#astrek-site .hero--mech .hero-hud,
+#astrek-site .hero--mech .hero-product-ambient,
+#astrek-site .hero--mech .hero-product-bloom,
+#astrek-site .hero--mech .hero-product-floor {
+  display: none !important;
+  content: none !important;
+}
+
+#astrek-site .hero--mech .mech-studio-panel {
+  position: relative !important;
+  aspect-ratio: 3 / 4 !important;
+  overflow: hidden !important;
+  border-radius: 2rem !important;
+  background: radial-gradient(90% 60% at 50% 30%, #fdfdfc 0%, #ececea 45%, #cfcfcd 100%) !important;
+  box-shadow: 0 60px 120px -30px rgba(0, 0, 0, 0.75) !important;
+}
+
+#astrek-site .hero--mech .mech-studio-panel::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: 2rem !important;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1) !important;
+  pointer-events: none !important;
+}
+
+#astrek-site .hero--mech .mech-studio-panel img,
+#astrek-site .hero--mech #heroProductImg {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  margin: 0 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+#astrek-site .hero--mech .mech-orbit {
+  position: absolute !important;
+  top: -32px !important;
+  right: -32px !important;
+  width: 160px !important;
+  height: 160px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(63, 224, 197, 0.25) !important;
+  pointer-events: none !important;
+  animation: mech-spin 28s linear infinite !important;
+}
+
+@keyframes mech-spin {
+  to { transform: rotate(360deg); }
+}
+
+#astrek-site .hero.rf-hero.hero--tronix.hero--mech .mech-walk-card,
+#astrek-site .hero.rf-hero.hero--tronix.hero--mech .mech-walk-card * {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix.hero--mech .mech-walk-card {
+  position: absolute !important;
+  left: -20px !important;
+  bottom: 72px !important;
+  z-index: 5 !important;
+  width: min(200px, 48%) !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 12px 16px !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: rgba(0, 0, 0, 0.72) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  pointer-events: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix.hero--mech .mech-walk-card .mech-walk-card__label {
+  margin: 0 !important;
+  font-family: var(--mech-mono) !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #3fe0c5 !important;
+  -webkit-text-fill-color: #3fe0c5 !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix.hero--mech .mech-walk-card p:last-child {
+  margin: 6px 0 0 !important;
+  font-family: var(--mech-body) !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: #a1a1aa !important;
+  -webkit-text-fill-color: #a1a1aa !important;
+}
+
+#astrek-site .hero--mech .mech-unit-badge {
+  position: absolute !important;
+  right: 24px !important;
+  bottom: -20px !important;
+  z-index: 3 !important;
+  padding: 8px 16px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  font-family: var(--mech-mono) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: #a1a1aa !important;
+}
+
+#astrek-site .hero--mech .mech-scroll-hint {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: 32px !important;
+  z-index: 3 !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
+  font-family: var(--mech-mono) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: #52525b !important;
+  display: none !important;
+}
+
+@media (min-width: 1024px) {
+  #astrek-site .hero--mech .mech-scroll-hint {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  #astrek-site .hero--mech .rf-hero-stage {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: auto !important;
+    padding-top: calc(var(--site-header-h, 72px) + 32px) !important;
+    padding-bottom: 48px !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix.hero--mech h1.mech-hero-title {
+    font-size: clamp(4.25rem, 18vw, 6.75rem) !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix.hero--mech .mech-walk-card {
+    display: none !important;
+  }
+
+  #astrek-site .hero--mech .mech-hero-visual,
+  #astrek-site .hero--mech #heroProductStage {
+    max-width: min(420px, 100%) !important;
+    margin-inline: auto !important;
+  }
+}
+
+/* ── Ticker ───────────────────────────────────────────────────────── */
+
+.mech-ticker,
+#astrek-site + .mech-ticker {
+  position: relative !important;
+  z-index: 2 !important;
+  overflow: hidden !important;
+  border-block: 1px solid var(--mech-border) !important;
+  background: #0a0a0a !important;
+  padding: 18px 0 !important;
+}
+
+/* ticker is sibling of #astrek-site inside AstrekHome: place after site */
+#astrek-site .mech-ticker {
+  display: block !important;
+}
+
+body .mech-ticker {
+  display: block !important;
+  width: 100% !important;
+}
+
+.mech-ticker-track {
+  display: flex !important;
+  align-items: center !important;
+  gap: 28px !important;
+  width: max-content !important;
+  animation: mech-ticker 36s linear infinite !important;
+  font-family: var(--mech-mono) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.28em !important;
+  text-transform: uppercase !important;
+  color: #71717a !important;
+  white-space: nowrap !important;
+}
+
+.mech-ticker-star {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  vertical-align: middle !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: var(--mech-brand) !important;
+}
+
+@keyframes mech-ticker {
+  to { transform: translateX(-50%); }
+}
+
+/* Move ticker: it's currently inside #astrek-site after hero via body html */
+#astrek-site > .mech-ticker {
+  margin: 0 !important;
+}
+
+/* ── Sections ─────────────────────────────────────────────────────── */
+
+#astrek-site .rf-section,
+#astrek-site .ux-section {
+  background: var(--mech-bg) !important;
+}
+
+#astrek-site #product,
+#astrek-site #specs,
+#astrek-site #team,
+#astrek-site #press,
+#astrek-site #faq,
+#astrek-site #contact {
+  background: transparent !important;
+  border-top: none !important;
+}
+
+#astrek-site .rf-h2,
+#astrek-site .ux-h2 {
+  font-weight: 500 !important;
+  letter-spacing: -0.03em !important;
+  color: #fff !important;
+}
+
+#astrek-site .rf-section-head > div > p:not(.ux-eyebrow):not(.hero-eyebrow):not(.rf-kicker):not(.font-mono):not(.text-brand),
+#astrek-site .rf-product-intro > p:not(.ux-eyebrow):not(.font-mono):not(.text-brand),
+#astrek-site p:not(.ux-eyebrow):not(.hero-eyebrow):not(.rf-kicker):not(.idx):not(.mono):not(.ajh-title):not(.ajh-sub):not(.ajh-metric-value):not(.ajh-metric-label):not(.ajh-product):not(.font-mono):not(.text-brand) {
+  color: var(--mech-muted) !important;
+  -webkit-text-fill-color: var(--mech-muted) !important;
+}
+
+
+/* Feature / product stage as studio cards */
+#astrek-site .fe-showcase-stage,
+#astrek-site .flag-explode-stage,
+#astrek-site .rf-product-stage,
+#astrek-site #product3DStage {
+  border-radius: 1.5rem !important;
+  overflow: hidden !important;
+  background: radial-gradient(90% 60% at 50% 30%, #fdfdfc 0%, #ececea 45%, #cfcfcd 100%) !important;
+  border: none !important;
+  box-shadow: 0 40px 80px -24px rgba(0, 0, 0, 0.65) !important;
+}
+
+#astrek-site .fe-showcase-caption .idx,
+#astrek-site .flag-explode-panel .idx,
+#astrek-site .flag-explode-item .idx,
+#astrek-site .rf-point .idx {
+  color: var(--mech-brand) !important;
+}
+
+#astrek-site .fe-showcase-caption h3,
+#astrek-site .flag-explode-panel h3 {
+  font-family: var(--mech-display) !important;
+  font-weight: 500 !important;
+}
+
+/* Modes */
+#astrek-site .rf-mode-card {
+  border-radius: 1.25rem !important;
+  border: 1px solid var(--mech-border) !important;
+  background: var(--mech-card) !important;
+  overflow: hidden !important;
+}
+
+#astrek-site .rf-mode-card img {
+  border-radius: 0 !important;
+}
+
+#astrek-site .rf-mode-meta {
+  padding: 16px 18px 20px !important;
+}
+
+#astrek-site .rf-mode-meta h3 {
+  margin: 0 0 6px !important;
+  font-family: var(--mech-display) !important;
+  font-size: 1.15rem !important;
+  font-weight: 500 !important;
+  color: #fff !important;
+}
+
+#astrek-site .rf-mode-meta p {
+  margin: 0 !important;
+  font-size: 0.875rem !important;
+  color: var(--mech-muted) !important;
+}
+
+/* Team cards */
+#astrek-site .person,
+#astrek-site .team-card,
+#astrek-site #team article {
+  border-color: var(--mech-border) !important;
+}
+
+/* FAQ */
+#astrek-site .rf-faq details,
+#astrek-site .rf-faq button,
+#astrek-site #faq details,
+#astrek-site #faq .faq-item {
+  border-color: var(--mech-border) !important;
+}
+
+/* CTA band */
+#astrek-site .rf-cta-band {
+  background:
+    radial-gradient(60% 80% at 50% 50%, rgba(63, 224, 197, 0.16), transparent 70%),
+    var(--mech-bg) !important;
+  border-block: 1px solid var(--mech-border) !important;
+}
+
+/* Footer */
+.rf-footer,
+#astrek-site .rf-footer {
+  background: #050505 !important;
+  border-top: 1px solid var(--mech-border) !important;
+}
+
+/* Forms */
+#astrek-site input,
+#astrek-site textarea,
+#astrek-site select {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: #fff !important;
+  border-radius: 12px !important;
+}
+
+#astrek-site input:focus,
+#astrek-site textarea:focus,
+#astrek-site select:focus {
+  border-color: rgba(63, 224, 197, 0.55) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(63, 224, 197, 0.15) !important;
+}
+
+/* Kill lingering teal glows from older layers */
+#astrek-site .hero--mech * {
+  --accent: var(--mech-brand);
+}
+
+#astrek-site [style*="00c4b4"],
+#astrek-site [style*="3fe0c5"],
+#astrek-site [style*="2fe0b5"] {
+  /* inline leftovers ignored: CSS tokens override cascade */
+}

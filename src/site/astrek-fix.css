@@ -1,0 +1,788 @@
+/* ==========================================================================
+   Astrek Fix Layer: loaded dead-last, targeted overrides only.
+   Addresses: partner logos, hero mobile, team photos, hero dead-space,
+   tech gap, specs grid, scroll animations.
+   ========================================================================== */
+
+/* ─── 1. PARTNER LOGOS: dark background + filter so logos appear visible ─── */
+/* Override astrek-finish.css rule that gives white box backgrounds */
+
+#partners .partner-logo,
+.partner-logo {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+#partners .partner-logo img,
+.partner-logo img {
+  filter: grayscale(1) invert(1) brightness(0.65) !important;
+  opacity: 0.7 !important;
+  max-height: 28px !important;
+  transition: filter 0.4s ease, opacity 0.4s ease !important;
+}
+
+#partners .partner-logo:hover img,
+.partner-logo:hover img {
+  filter: grayscale(0) invert(1) brightness(0.95) !important;
+  opacity: 1 !important;
+}
+
+/* Fix partner-logo hover: no white bg on hover either */
+#partners .partner-logo:hover,
+.partner-logo:hover {
+  background: rgba(30, 187, 156, 0.07) !important;
+  transform: translateY(-3px);
+}
+
+/* ─── 2. HERO: reduce dead top space, show product image on mobile ────────── */
+
+/* Reduce excessive padding above copy on desktop */
+.hero-inner,
+.hero .hero-inner {
+  padding-top: 0 !important;
+}
+
+/* Make hero taller and well-composed on desktop */
+@media (min-width: 861px) {
+  .hero {
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .hero-inner {
+    align-items: center !important;
+  }
+}
+
+/* Mobile hero: ensure product image shows below copy, full-width */
+@media (max-width: 860px) {
+  .hero {
+    min-height: auto !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Hero layout: stack vertically */
+  .hero-inner {
+    flex-direction: column !important;
+    gap: 32px !important;
+    padding-top: 80px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* Hero copy: full width on mobile */
+  .hero-copy,
+  .hero .hero-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+  }
+
+  /* Hero visual / product image: full-width block below copy */
+  .hero-visual,
+  .hero-product-wrap,
+  .hero .hero-visual {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    order: 2 !important;
+    margin: 0 !important;
+  }
+
+  /* Product image on mobile: show fully */
+  .hero-visual img,
+  .hero-product-img,
+  #heroProduct,
+  .hero .hero-visual img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 300px !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  /* Hero stats on mobile: horizontal row */
+  .hero-stats {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 24px 32px !important;
+    margin-top: 24px !important;
+  }
+}
+
+/* ─── 3. TEAM PHOTOS: normalize all to dark background + B&W treatment ───── */
+
+/* Force dark bg on all team/person cards */
+.person-img,
+#team .person-img,
+#mentors .person-img {
+  background: #0e1a17 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Dark blending overlay: sits ON TOP of the image.
+   Uses normal blend mode with semi-transparency to darken bright backgrounds. */
+#team .person-img::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  background: rgba(8, 12, 11, 0.55) !important;
+  mix-blend-mode: normal !important;
+  pointer-events: none !important;
+  border-radius: inherit !important;
+  opacity: 1 !important;
+}
+
+/* Grayscale + darken filter for team photos */
+#team .person-img img {
+  filter: grayscale(1) contrast(1.08) brightness(0.92) !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: filter 0.6s ease, transform 1.1s ease !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+#team .person:hover .person-img img {
+  filter: grayscale(0.3) contrast(1.1) brightness(0.9) !important;
+}
+
+/* Mentors photos: same treatment */
+#mentors .person-img img {
+  filter: grayscale(1) contrast(1.1) brightness(0.9) !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  transition: filter 0.6s ease, transform 1.1s ease !important;
+}
+
+#mentors .person:hover .person-img img {
+  filter: grayscale(0.3) contrast(1.08) brightness(0.97) !important;
+}
+
+/* ─── 4. TECHNOLOGY SECTION: close the gap between heading and cards ─────── */
+
+/* The tech section has too much space between the hero image + heading block
+   and the 4-card feature grid below it */
+#about .tech-feature-grid,
+#about .elvin-tech-features,
+.tech-feature-grid,
+.elvin-tech-features {
+  margin-top: 40px !important;
+}
+
+#about {
+  padding-bottom: 80px !important;
+}
+
+/* Also reduce the gap between the tech stage image and the cards below */
+.tech-stage,
+.elvin-tech-stage {
+  margin-bottom: 40px !important;
+}
+
+/* ─── 5. SPECS: 2-row, 3-column grid instead of cramped 6-columns ─────────── */
+
+/* Override the existing 6-column spec grid */
+.elvin-part-grid,
+#specs .elvin-part-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+}
+
+/* Make spec cards taller/more premium */
+.elvin-part-card,
+#specs .elvin-part-card {
+  min-height: 220px !important;
+}
+
+.elvin-part-media,
+#specs .elvin-part-media {
+  min-height: 150px !important;
+}
+
+/* On mobile, 2-column spec grid */
+@media (max-width: 860px) {
+  .elvin-part-grid,
+  #specs .elvin-part-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .elvin-part-grid,
+  #specs .elvin-part-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ─── 6. SCROLL ANIMATIONS: ensure fade-up fires on .in class ─────────────── */
+
+/* Base hidden state for all reveal elements */
+.reveal,
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  will-change: opacity, transform;
+}
+
+/* Triggered state: JS in astrek-site.ts adds .in */
+.reveal.in,
+.reveal-stagger.in > *,
+.reveal-stagger > *.in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Stagger delays for grid children */
+.reveal-stagger > *:nth-child(1) { transition-delay: 0ms !important; }
+.reveal-stagger > *:nth-child(2) { transition-delay: 70ms !important; }
+.reveal-stagger > *:nth-child(3) { transition-delay: 140ms !important; }
+.reveal-stagger > *:nth-child(4) { transition-delay: 210ms !important; }
+.reveal-stagger > *:nth-child(5) { transition-delay: 280ms !important; }
+.reveal-stagger > *:nth-child(6) { transition-delay: 350ms !important; }
+
+/* Never animate hero elements: they should always be visible */
+.hero .reveal,
+.hero .reveal-stagger > * {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Reduced motion: disable all animations */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ─── 7. GENERAL MOBILE POLISH ─────────────────────────────────────────────── */
+
+/* Prevent horizontal overflow on all screens */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+/* Ensure all sections don't overflow on narrow screens */
+section, footer {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+/* Mobile section padding */
+@media (max-width: 860px) {
+  .wrap,
+  .elvin-wrap {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+/* Footer columns: stack on small screens */
+@media (max-width: 640px) {
+  .elvin-foot,
+  footer .foot-grid,
+  footer .grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .elvin-foot,
+  footer .foot-grid,
+  footer .grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Blog section: remove excess header empty space */
+#blog .section-head,
+#blog .elvin-head-row {
+  margin-bottom: 32px !important;
+}
+
+/* ─── 8. BLOG SECTION: tighten the verbose header area ─────────────────────── */
+/* The blog section has 3 lines of intro text making the header too tall */
+#blog .elvin-head-row .elvin-body-2,
+#blog .section-sub-text:last-of-type {
+  display: none !important;
+}
+
+/* ─── 9. PRE-FOOTER QUOTE BANNER: reduce oversized appearance ───────────────── */
+.foot-quote,
+.elvin-foot-quote,
+.footer-quote-band {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+
+.foot-quote p,
+.elvin-foot-quote p,
+.footer-quote-band p {
+  font-size: clamp(22px, 3.2vw, 40px) !important;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS: comprehensive fix for all sections ≤ 700px
+   ========================================================================== */
+
+@media (max-width: 700px) {
+
+  /* ── Global ── */
+  html, body {
+    overflow-x: hidden !important;
+  }
+
+  .wrap {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    max-width: 100% !important;
+  }
+
+  section:not(.hero) {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    min-height: 100svh !important;
+  }
+
+  .hero-stage {
+    grid-template-columns: 1fr !important;
+    padding: 88px 20px 48px !important;
+    gap: 0 !important;
+    min-height: auto !important;
+  }
+
+  .hero-inner {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 10.5vw, 46px) !important;
+    line-height: 1.0 !important;
+    max-width: 100% !important;
+  }
+
+  .hero p.sub,
+  .hero-sub {
+    font-size: 15px !important;
+    max-width: 100% !important;
+    margin-top: 12px !important;
+  }
+
+  .hero-actions {
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-top: 20px !important;
+    width: 100% !important;
+  }
+
+  .hero-cta,
+  .hero-cta-ghost,
+  .cta-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .hero-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0 !important;
+    margin-top: 28px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid rgba(255,255,255,0.08) !important;
+  }
+
+  .hero-stat-item,
+  .hero-stats > * {
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .hero-visual-col,
+  .hero-visual {
+    order: 2 !important;
+    margin-top: 24px !important;
+    min-height: 260px !important;
+    width: 100% !important;
+  }
+
+  .hero-visual img,
+  #heroProductImg {
+    width: 100% !important;
+    max-height: 50vw !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  /* ── Technology ── */
+  #about .section-head,
+  .tech-stage {
+    grid-template-columns: 1fr !important;
+  }
+
+  .tech-headline {
+    font-size: clamp(28px, 9vw, 38px) !important;
+    max-width: 100% !important;
+  }
+
+  .tech-visual {
+    min-height: 220px !important;
+    margin: 0 0 24px !important;
+  }
+
+  .tech-visual img,
+  #techProductImg {
+    max-height: 44vw !important;
+    width: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .tech-features,
+  .elvin-tech-features {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* ── Product ── */
+  .elvin-product {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .elvin-product-copy h2 {
+    font-size: clamp(26px, 8.5vw, 36px) !important;
+  }
+
+  .elvin-product-stage,
+  .studio-frame {
+    min-height: 260px !important;
+    width: 100% !important;
+  }
+
+  .elvin-product-stage img,
+  .studio-frame img,
+  #productHeroImg {
+    max-height: 55vw !important;
+    width: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .elvin-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+    margin-top: 24px !important;
+  }
+
+  .product-callouts,
+  .elvin-cap-cards {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* ── Modes ── */
+  .elvin-modes {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .elvin-mode {
+    min-height: 200px !important;
+  }
+
+  .elvin-mode img {
+    height: 200px !important;
+    object-fit: cover !important;
+  }
+
+  /* ── Specs ── */
+  .elvin-part-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .elvin-part-card {
+    min-height: 180px !important;
+  }
+
+  .elvin-part-media {
+    min-height: 120px !important;
+  }
+
+  /* ── Testimonials ── */
+  .elvin-story {
+    grid-template-columns: 1fr !important;
+  }
+
+  .elvin-story-visual {
+    min-height: 260px !important;
+    width: 100% !important;
+  }
+
+  .elvin-story-visual img {
+    height: 260px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+
+  .elvin-story-copy {
+    padding: 28px 0 0 !important;
+  }
+
+  .elvin-story-copy h2 {
+    font-size: clamp(24px, 8vw, 32px) !important;
+  }
+
+  .testimonial-text,
+  .elvin-quote {
+    font-size: clamp(17px, 5vw, 22px) !important;
+    line-height: 1.5 !important;
+  }
+
+  /* ── Mentors / Team ── */
+  .people-grid,
+  .team-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+
+  .person-img {
+    min-height: 200px !important;
+    max-height: 240px !important;
+  }
+
+  .person-img img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+  }
+
+  /* ── Partners ── */
+  .partner-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .partner-logo {
+    padding: 14px 12px !important;
+    min-height: 70px !important;
+  }
+
+  /* ── Press ── */
+  .elvin-press {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .elvin-featured {
+    min-height: 260px !important;
+  }
+
+  .elvin-featured-media {
+    height: 240px !important;
+  }
+
+  .elvin-featured-media img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .elvin-side {
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  /* ── Blog ── */
+  .elvin-blog {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .elvin-head-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .blog-cover {
+    height: 220px !important;
+  }
+
+  /* ── Contact ── */
+  .elvin-contact {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .contact-visual {
+    display: none !important; /* hide decorative image on mobile, prioritize form */
+  }
+
+  .elvin-form {
+    width: 100% !important;
+  }
+
+  .elvin-form input,
+  .elvin-form textarea,
+  .elvin-form select {
+    width: 100% !important;
+    font-size: 16px !important; /* prevent iOS auto-zoom */
+  }
+
+  .elvin-locations {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* ── Section headings ── */
+  .section-head h2,
+  .elvin-story-copy h2 {
+    font-size: clamp(26px, 8.5vw, 36px) !important;
+    max-width: 100% !important;
+  }
+
+  .section-head {
+    margin-bottom: 28px !important;
+  }
+
+  .elvin-head-row {
+    margin-bottom: 24px !important;
+  }
+
+  /* ── Footer ── */
+  .elvin-foot {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px 20px !important;
+  }
+
+  .foot-brand {
+    grid-column: 1 / -1 !important;
+  }
+
+  footer .foot-bottom,
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 8px !important;
+    text-align: center !important;
+  }
+}
+
+/* Extra small phones ≤ 420px */
+@media (max-width: 420px) {
+
+  .hero h1 {
+    font-size: clamp(30px, 9.5vw, 38px) !important;
+  }
+
+  .elvin-modes {
+    grid-template-columns: 1fr !important;
+  }
+
+  .people-grid,
+  .team-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .elvin-stats {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+
+  .partner-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .elvin-part-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .elvin-foot {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Tablet 701px – 1024px */
+@media (min-width: 701px) and (max-width: 1024px) {
+
+  .wrap {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
+  .hero-stage {
+    grid-template-columns: 1fr !important;
+    padding: 100px 32px 64px !important;
+    gap: 0 !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 6.5vw, 60px) !important;
+    max-width: 14ch !important;
+  }
+
+  .hero-visual-col {
+    margin-top: 32px !important;
+    min-height: 320px !important;
+  }
+
+  .tech-stage {
+    grid-template-columns: 1fr !important;
+  }
+
+  .elvin-product {
+    grid-template-columns: 1fr !important;
+  }
+
+  .elvin-modes {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .elvin-part-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .people-grid,
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .elvin-press {
+    grid-template-columns: 1fr !important;
+  }
+
+  .elvin-blog {
+    grid-template-columns: 1fr !important;
+  }
+
+  .elvin-contact {
+    grid-template-columns: 1fr !important;
+  }
+
+  .elvin-foot {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 32px !important;
+  }
+}

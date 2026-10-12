@@ -1,0 +1,665 @@
+/* =====================================================================
+   CLEAN STRUCTURE + MOBILE LAYOUT
+   Loaded last. Consistent rhythm, clear grids, reliable responsiveness.
+   ===================================================================== */
+
+:root {
+  --page-gutter: clamp(18px, 4vw, 48px);
+  --section-y: clamp(72px, 9vw, 120px);
+  --section-gap: clamp(28px, 4vw, 48px);
+  --card-radius: 10px;
+  --maxw: 1180px;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+#astrek-site,
+#astrek-site * {
+  box-sizing: border-box;
+}
+
+#astrek-site .wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+}
+
+/* ---------- Clean section rhythm ---------- */
+#astrek-site > section {
+  padding-top: var(--section-y) !important;
+  padding-bottom: var(--section-y) !important;
+  overflow: hidden;
+}
+
+#astrek-site > section.hero {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#astrek-site .section-head {
+  margin-bottom: clamp(28px, 4vw, 48px) !important;
+}
+
+#astrek-site .elvin-head-row {
+  margin-bottom: clamp(28px, 4vw, 48px) !important;
+  gap: 20px 40px !important;
+}
+
+#astrek-site .section-head h2,
+#astrek-site .tech-headline,
+#astrek-site .elvin-product-copy h2,
+#astrek-site .elvin-story-copy h2 {
+  max-width: min(16ch, 100%) !important;
+}
+
+#astrek-site .section-head p,
+#astrek-site .tech-support,
+#astrek-site .section-aside,
+#astrek-site .elvin-product-copy p {
+  max-width: min(46ch, 100%) !important;
+}
+
+/* Soften decorative noise for cleaner reading */
+body::before {
+  opacity: 0.28 !important;
+}
+
+#astrek-site > section::after {
+  opacity: 0.55;
+}
+
+.hero-hud__scan,
+.product-hud__scanbeam {
+  opacity: 0.45 !important;
+}
+
+/* ---------- Desktop structure ---------- */
+@media (min-width: 1101px) {
+  .hero .hero-stage {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr) !important;
+    gap: clamp(32px, 4vw, 64px) !important;
+    align-items: center !important;
+    padding-top: calc(var(--site-header-h, 72px) + 24px) !important;
+    padding-bottom: 40px !important;
+  }
+
+  .tech-stage {
+    align-items: start !important;
+    column-gap: 48px !important;
+    row-gap: 32px !important;
+  }
+
+  .elvin-product {
+    grid-template-columns: minmax(220px, 0.9fr) minmax(300px, 1.15fr) minmax(220px, 0.85fr) !important;
+    gap: 28px 36px !important;
+    align-items: center !important;
+  }
+
+  .elvin-stats {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    margin-top: 40px !important;
+  }
+
+  .elvin-modes {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .elvin-part-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  #mentors .people-grid,
+  #team .team-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .elvin-story {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr) !important;
+    gap: 40px !important;
+    align-items: center !important;
+  }
+
+  .elvin-press {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) !important;
+    gap: 28px !important;
+  }
+
+  .elvin-blog {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) !important;
+    gap: 24px !important;
+  }
+
+  .elvin-contact {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 40px !important;
+    align-items: start !important;
+  }
+
+  .partner-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .tech-features {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1100px) and (min-width: 861px) {
+  :root {
+    --section-y: 88px;
+  }
+
+  .hero .hero-stage {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px !important;
+    padding: calc(var(--site-header-h, 72px) + 20px) var(--page-gutter) 36px !important;
+  }
+
+  .tech-stage,
+  .elvin-product,
+  .elvin-story,
+  .elvin-press,
+  .elvin-blog,
+  .elvin-contact,
+  .elvin-head-row {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .elvin-product-stage {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .elvin-feature-list.product-callouts {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  .elvin-modes,
+  .elvin-part-grid,
+  .tech-features,
+  #mentors .people-grid,
+  #team .team-grid,
+  .partner-grid,
+  .elvin-stats {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .elvin-foot {
+    grid-template-columns: 1.4fr 1fr 1fr 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+/* ---------- Mobile (<=860) ---------- */
+@media (max-width: 860px) {
+  :root {
+    --section-y: 72px;
+    --page-gutter: 18px;
+  }
+
+  #siteHeader {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .scroll-rail,
+  .scroll-cue,
+  .hero-hud,
+  .product-hud__telemetry,
+  .product-hud__scanbeam,
+  .premium-spot {
+    display: none !important;
+  }
+
+  #astrek-site > section {
+    padding-top: 72px !important;
+    padding-bottom: 72px !important;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: auto !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  .hero .hero-stage {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    min-height: auto !important;
+    height: auto !important;
+    padding: calc(var(--site-header-h, 64px) + 28px) var(--page-gutter) 40px !important;
+  }
+
+  .hero-inner {
+    order: 1;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .hero-visual-col,
+  .hero-visual {
+    order: 2 !important;
+    width: 100% !important;
+    min-height: 240px !important;
+    margin: 0 !important;
+  }
+
+  .hero #heroProductImg,
+  .hero-visual img {
+    width: min(100%, 340px) !important;
+    max-height: 46vh !important;
+    margin: 0 auto !important;
+    display: block !important;
+    animation: none !important;
+  }
+
+  .hero-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+  }
+
+  .hero-cta,
+  .hero-cta-ghost,
+  .cta-btn,
+  .play-link {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .hero-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    margin-top: 24px !important;
+    padding-top: 18px !important;
+    border-top: 1px solid rgba(0, 245, 212, 0.12) !important;
+  }
+
+  .hero-stats > div {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .hero-stats strong {
+    font-size: clamp(1.25rem, 5vw, 1.6rem) !important;
+  }
+
+  .hero-stats span {
+    font-size: 0.65rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Technology */
+  .tech-stage {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .tech-visual {
+    min-height: 220px !important;
+    margin: 0 !important;
+  }
+
+  .tech-features {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* Product */
+  .elvin-product {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .elvin-product-stage,
+  #productStage {
+    min-height: 260px !important;
+    width: 100% !important;
+  }
+
+  #product3DStage {
+    --cubeZ: 60px !important;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  .product-hud__label {
+    font-size: 8px !important;
+  }
+
+  .elvin-feature-list.product-callouts {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .product-callout.is-active {
+    transform: none !important;
+  }
+
+  .elvin-stats {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important;
+  }
+
+  .elvin-stat {
+    padding: 16px 12px !important;
+    border-inline-end: 1px solid rgba(0, 245, 212, 0.1) !important;
+  }
+
+  .elvin-stat:nth-child(2n) {
+    border-inline-end: none !important;
+  }
+
+  /* Modes / specs */
+  .elvin-modes {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .elvin-mode {
+    min-height: 200px !important;
+  }
+
+  .elvin-mode img {
+    height: 200px !important;
+    object-fit: cover !important;
+  }
+
+  .elvin-part-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .elvin-modes-foot,
+  .hiring-row,
+  .elvin-banner,
+  .partners-foot {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+
+  /* People */
+  .elvin-head-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  #mentors .people-grid,
+  #team .team-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  #mentors .person,
+  #team .person {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  #mentors .person-img,
+  #team .person-img {
+    min-height: 180px !important;
+    aspect-ratio: 3 / 4;
+  }
+
+  #mentors .person-info,
+  #team .person-info {
+    padding: 14px !important;
+  }
+
+  /* Stories / press / blog / contact */
+  .elvin-story,
+  .elvin-press,
+  .elvin-blog,
+  .elvin-contact,
+  .elvin-locations {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .elvin-story-visual {
+    min-height: 220px !important;
+  }
+
+  .elvin-story-visual img {
+    height: 220px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .partner-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  .partners-stage {
+    padding: 16px !important;
+  }
+
+  #contactForm,
+  .elvin-form {
+    padding: 20px !important;
+  }
+
+  .contact-visual {
+    min-height: 200px;
+  }
+
+  .contact-visual img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .contact-map iframe {
+    width: 100% !important;
+    min-height: 200px !important;
+  }
+
+  .elvin-foot {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px 16px !important;
+  }
+
+  .elvin-foot > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+
+  .elvin-mission {
+    font-size: clamp(1.15rem, 5.5vw, 1.5rem) !important;
+    line-height: 1.3 !important;
+  }
+}
+
+/* ---------- Small phones ---------- */
+@media (max-width: 700px) {
+  :root {
+    --section-y: 64px;
+  }
+
+  #astrek-site > section {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+
+  .hero .hero-stage {
+    padding-top: calc(var(--site-header-h, 60px) + 24px) !important;
+  }
+
+  .hero h1,
+  #astrek-site .hero h1 {
+    font-size: clamp(2rem, 9vw, 2.6rem) !important;
+    max-width: 100% !important;
+  }
+
+  .section-head h2,
+  .tech-headline,
+  .elvin-product-copy h2,
+  .elvin-story-copy h2 {
+    font-size: clamp(1.7rem, 7.5vw, 2.2rem) !important;
+    max-width: 100% !important;
+  }
+
+  .elvin-modes,
+  .elvin-part-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .elvin-mode {
+    min-height: 240px !important;
+  }
+
+  .elvin-mode img {
+    height: 240px !important;
+  }
+
+  #mentors .people-grid,
+  #team .team-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #mentors .person,
+  #team .person {
+    display: grid !important;
+    grid-template-columns: 112px 1fr !important;
+    align-items: stretch;
+  }
+
+  #mentors .person-img,
+  #team .person-img {
+    min-height: 132px !important;
+    aspect-ratio: auto;
+    height: 100% !important;
+  }
+
+  .elvin-stats {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .hero-stats > div {
+    flex-direction: row !important;
+    align-items: baseline !important;
+    gap: 12px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid rgba(0, 245, 212, 0.1) !important;
+  }
+
+  .tech-feature {
+    padding: 16px !important;
+  }
+}
+
+/* ---------- Extra small ---------- */
+@media (max-width: 420px) {
+  :root {
+    --page-gutter: 14px;
+  }
+
+  #mentors .person,
+  #team .person {
+    grid-template-columns: 1fr !important;
+  }
+
+  #mentors .person-img,
+  #team .person-img {
+    min-height: 210px !important;
+  }
+
+  .elvin-stats,
+  .partner-grid,
+  .elvin-foot {
+    grid-template-columns: 1fr !important;
+  }
+
+  .elvin-stat {
+    border-inline-end: none !important;
+    border-bottom: 1px solid rgba(0, 245, 212, 0.1) !important;
+  }
+
+  .hero #heroProductImg {
+    max-height: 42vh !important;
+  }
+}
+
+/* Header stays compact and usable on mobile */
+@media (max-width: 860px) {
+  #siteHeader {
+    min-height: 60px !important;
+    height: 60px !important;
+  }
+
+  #siteHeader .logo img {
+    height: 28px !important;
+  }
+
+  #siteHeader .language-switcher {
+    display: none !important;
+  }
+
+  #siteHeader .burger {
+    display: inline-flex !important;
+  }
+}
+
+/* Prevent horizontal scroll from transforms / absolute HUD */
+@media (max-width: 860px) {
+  .elvin-product-stage,
+  .studio-frame,
+  .hero-visual,
+  .tech-visual {
+    overflow: hidden !important;
+  }
+
+  #product3DStage {
+    transform: none !important;
+  }
+
+  #product3DStage .product-face--back,
+  #product3DStage .product-face--left,
+  #product3DStage .product-face--right {
+    display: none !important;
+  }
+}

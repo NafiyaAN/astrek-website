@@ -1,0 +1,122 @@
+/**
+ * Technology Key / chapters section — spacing, image framing, hover polish.
+ * Scoped to #about [data-testid="chapters-section"] and adjacent product section top.
+ */
+
+/* ── 1. Marquee: slightly taller; Technology section sits closer below ── */
+body.mech-mirror-active [data-testid="editorial-marquee"] {
+  padding-block: clamp(1.35rem, 2.8vw, 1.85rem) !important;
+}
+
+body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="chapters-section"] {
+  padding-block: clamp(1.75rem, 3.5vw, 2.5rem) clamp(0.5rem, 1.25vw, 0.875rem) !important;
+}
+
+body.mech-mirror-active [data-testid="chapters-section"] > .mx-auto > .mb-14 {
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.25rem) !important;
+}
+
+@media (min-width: 768px) {
+  body.mech-mirror-active [data-testid="chapters-section"] > .mx-auto > .mb-14 {
+    margin-bottom: clamp(2rem, 3vw, 2.5rem) !important;
+  }
+}
+
+/* ── 3. Minimal gap between chapter rows ── */
+body.mech-mirror-active [data-testid="chapters-section"] .flex.flex-col.gap-24 {
+  gap: clamp(1.75rem, 3.5vw, 2.5rem) !important;
+}
+
+@media (min-width: 768px) {
+  body.mech-mirror-active [data-testid="chapters-section"] .flex.flex-col.gap-24 {
+    gap: clamp(2rem, 3vw, 2.75rem) !important;
+  }
+}
+
+/* ── 5. Tighter gap between Chapter 3 and Unik Exo ── */
+body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="product-section"] {
+  padding-block: clamp(0.5rem, 1.25vw, 1rem) clamp(5rem, 9vw, 7.5rem) !important;
+}
+
+/* Product header spacing handled in astrek-product.css */
+
+/* ── 2. Chapter 1 image: show full subject (head not cropped) ── */
+body.mech-mirror-active [data-testid="chapter-01"] img {
+  object-fit: cover !important;
+  object-position: center top !important;
+}
+
+body.mech-mirror-active [data-testid="chapter-02"] img,
+body.mech-mirror-active [data-testid="chapter-03"] img {
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* ── 2 & 4. Hover: light shake + shadow while pointer is over ── */
+@keyframes astrek-chapter-shake {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  15% {
+    transform: translate3d(-2px, 0, 0) rotate(-0.35deg);
+  }
+  30% {
+    transform: translate3d(2px, 0, 0) rotate(0.35deg);
+  }
+  45% {
+    transform: translate3d(-1px, 0, 0) rotate(-0.2deg);
+  }
+  60% {
+    transform: translate3d(1px, 0, 0) rotate(0.2deg);
+  }
+  75% {
+    transform: translate3d(-0.5px, 0, 0) rotate(0deg);
+  }
+}
+
+body.mech-mirror-active [data-testid^="chapter-"] .group.relative.overflow-hidden {
+  transition: box-shadow 0.4s ease !important;
+  will-change: box-shadow;
+}
+
+body.mech-mirror-active [data-testid^="chapter-"] .group.relative.overflow-hidden:hover {
+  box-shadow:
+    0 22px 52px rgba(0, 0, 0, 0.55),
+    0 10px 28px rgba(47, 224, 181, 0.1),
+    0 0 0 1px rgba(47, 224, 181, 0.14) !important;
+}
+
+body.mech-mirror-active [data-testid^="chapter-"] .group.relative.overflow-hidden:hover img {
+  animation: none !important;
+  transform: scale(1.03) !important;
+  transition: transform 0.55s ease !important;
+}
+
+/* Mobile: keep effect subtle, spacing tight */
+@media (max-width: 767px) {
+  body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="chapters-section"] {
+    padding-block: clamp(1.5rem, 5vw, 2rem) clamp(0.375rem, 1.5vw, 0.75rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="product-section"] {
+    padding-block: clamp(0.375rem, 1.5vw, 0.75rem) clamp(3.5rem, 12vw, 5rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid="chapters-section"] .flex.flex-col.gap-24 {
+    gap: clamp(1.5rem, 5vw, 2rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid^="chapter-"] .group.relative.overflow-hidden:hover {
+    box-shadow:
+      0 14px 36px rgba(0, 0, 0, 0.5),
+      0 6px 18px rgba(47, 224, 181, 0.08) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.mech-mirror-active [data-testid^="chapter-"] .group.relative.overflow-hidden:hover img {
+    animation: none !important;
+    transform: none !important;
+  }
+}

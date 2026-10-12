@@ -1,0 +1,90 @@
+/* Premium atmosphere — typography + section depth. Content/features unchanged. */
+
+html body.mech-mirror-active {
+  --mech-display: "Outfit", "Manrope", system-ui, sans-serif;
+  --mech-body: "Manrope", system-ui, sans-serif;
+  --mech-mono: "JetBrains Mono", ui-monospace, monospace;
+  font-family: var(--mech-body) !important;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html body.mech-mirror-active #astrek-site,
+html body.mech-mirror-active #mech-mirror-root {
+  font-family: var(--mech-body) !important;
+}
+
+/* Display hierarchy */
+html body.mech-mirror-active #astrek-site h1,
+html body.mech-mirror-active #astrek-site h2,
+html body.mech-mirror-active #astrek-site h3,
+html body.mech-mirror-active #astrek-site .font-display,
+html body.mech-mirror-active #astrek-site .ajh-product,
+html body.mech-mirror-active #astrek-site [data-testid="hero-product"] {
+  font-family: var(--mech-display) !important;
+  letter-spacing: -0.03em !important;
+}
+
+html body.mech-mirror-active #astrek-site h2 {
+  font-weight: 600 !important;
+  letter-spacing: -0.028em !important;
+}
+
+html body.mech-mirror-active #astrek-site p,
+html body.mech-mirror-active #astrek-site li,
+html body.mech-mirror-active #astrek-site label,
+html body.mech-mirror-active #astrek-site input,
+html body.mech-mirror-active #astrek-site textarea,
+html body.mech-mirror-active #astrek-site select {
+  font-family: var(--mech-body) !important;
+}
+
+html body.mech-mirror-active #astrek-site .font-mono,
+html body.mech-mirror-active #astrek-site [class*="font-mono"],
+html body.mech-mirror-active #astrek-site .ajh-metric-label,
+html body.mech-mirror-active #astrek-site .rf-kicker,
+html body.mech-mirror-active #astrek-site .ux-eyebrow {
+  font-family: var(--mech-mono) !important;
+}
+
+/* Section depth: soft layered planes (not flat single black) */
+html body.mech-mirror-active #astrek-site section:not([data-hero="journey"]) {
+  position: relative !important;
+  isolation: isolate !important;
+}
+
+html body.mech-mirror-active #astrek-site section:not([data-hero="journey"])::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(ellipse 85% 55% at 8% 0%, rgba(63, 224, 197, 0.045), transparent 58%),
+    radial-gradient(ellipse 70% 50% at 92% 100%, rgba(255, 255, 255, 0.02), transparent 55%) !important;
+  opacity: 1 !important;
+}
+
+html body.mech-mirror-active #astrek-site section:nth-of-type(even):not([data-hero="journey"])::before {
+  background:
+    radial-gradient(ellipse 80% 50% at 90% 12%, rgba(63, 224, 197, 0.035), transparent 56%),
+    radial-gradient(ellipse 60% 45% at 12% 88%, rgba(255, 255, 255, 0.018), transparent 52%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.012), transparent 28%, transparent 72%, rgba(0, 0, 0, 0.18)) !important;
+}
+
+html body.mech-mirror-active #astrek-site section:not([data-hero="journey"]) > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Hairline section separators — quiet, premium */
+html body.mech-mirror-active #astrek-site section:not([data-hero="journey"]):not(#company-about) {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+/* Heading case consistency (visual only) */
+html body.mech-mirror-active #astrek-site #product h2,
+html body.mech-mirror-active #astrek-site [data-testid="product-section"] h2 {
+  text-transform: none !important;
+  letter-spacing: -0.03em !important;
+}

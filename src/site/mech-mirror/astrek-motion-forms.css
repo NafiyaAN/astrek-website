@@ -1,0 +1,209 @@
+/* Motion discipline + form / CTA polish. Content unchanged. */
+
+html body.mech-mirror-active {
+  --mech-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --mech-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --mech-focus: rgba(63, 224, 197, 0.55);
+}
+
+/* Scroll reveal — quieter lift, longer settle */
+html body.mech-mirror-active .mech-reveal {
+  opacity: 0 !important;
+  transform: translateY(14px) !important;
+  transition-property: opacity, transform !important;
+  transition-duration: 1.05s !important;
+  transition-timing-function: var(--mech-ease-out) !important;
+  transition-delay: var(--mech-reveal-delay, 0ms) !important;
+  will-change: opacity, transform;
+}
+
+html body.mech-mirror-active .mech-reveal--in {
+  opacity: 1 !important;
+  transform: none !important;
+  will-change: auto;
+}
+
+/* Hero CTAs — disciplined hover */
+html body.mech-mirror-active [data-hero="journey"] .ajh-cta,
+html body.mech-mirror-active [data-hero="journey"] a[data-testid="hero-cta-explore"],
+html body.mech-mirror-active [data-hero="journey"] a[data-testid="hero-cta-watch"] {
+  transition-property: transform, background-color, border-color, box-shadow, color !important;
+  transition-duration: 0.28s !important;
+  transition-timing-function: var(--mech-ease) !important;
+}
+
+html body.mech-mirror-active a.bg-brand:focus-visible,
+html body.mech-mirror-active button.bg-brand:focus-visible,
+html body.mech-mirror-active a[data-testid="nav-cta-contact"]:focus-visible,
+html body.mech-mirror-active a[data-testid="hero-cta-explore"]:focus-visible,
+html body.mech-mirror-active a[data-testid="hero-cta-watch"]:focus-visible,
+html body.mech-mirror-active button[data-testid="enquiry-submit-button"]:focus-visible,
+html body.mech-mirror-active button[data-testid="newsletter-submit-button"]:focus-visible,
+html body.mech-mirror-active [data-testid="cta-band"] a:focus-visible {
+  outline: 2px solid var(--mech-focus) !important;
+  outline-offset: 3px !important;
+}
+
+/* Contact form — premium fields */
+html body.mech-mirror-active #astrek-site #contact form,
+html body.mech-mirror-active #astrek-site [data-testid="contact-section"] form,
+html body.mech-mirror-active #astrek-site #contactForm {
+  border-radius: 0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.015)) !important;
+  padding: clamp(1.35rem, 2.5vw, 1.85rem) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+html body.mech-mirror-active #astrek-site #contact label,
+html body.mech-mirror-active #astrek-site [data-testid="contact-section"] label {
+  font-family: var(--mech-body, "Manrope", system-ui, sans-serif) !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  color: rgba(212, 212, 216, 0.9) !important;
+  margin-bottom: 0.4rem !important;
+}
+
+html body.mech-mirror-active #astrek-site #contact input,
+html body.mech-mirror-active #astrek-site #contact textarea,
+html body.mech-mirror-active #astrek-site #contact select,
+html body.mech-mirror-active #astrek-site [data-testid="contact-section"] input,
+html body.mech-mirror-active #astrek-site [data-testid="contact-section"] textarea,
+html body.mech-mirror-active #astrek-site [data-testid="contact-section"] select {
+  font-family: var(--mech-body, "Manrope", system-ui, sans-serif) !important;
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+  color: rgba(250, 250, 250, 0.96) !important;
+  background: rgba(0, 0, 0, 0.35) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 0.35rem !important;
+  padding: 0.85rem 0.95rem !important;
+  min-height: 3.1rem !important;
+  transition-property: border-color, box-shadow, background-color !important;
+  transition-duration: 0.22s !important;
+  transition-timing-function: var(--mech-ease) !important;
+  box-shadow: none !important;
+}
+
+html body.mech-mirror-active #astrek-site #contact textarea,
+html body.mech-mirror-active #astrek-site [data-testid="contact-section"] textarea {
+  min-height: 9.5rem !important;
+  resize: vertical !important;
+}
+
+html body.mech-mirror-active #astrek-site #contact input::placeholder,
+html body.mech-mirror-active #astrek-site #contact textarea::placeholder,
+html body.mech-mirror-active #astrek-site [data-testid="contact-section"] input::placeholder,
+html body.mech-mirror-active #astrek-site [data-testid="contact-section"] textarea::placeholder {
+  color: rgba(161, 161, 170, 0.72) !important;
+}
+
+html body.mech-mirror-active #astrek-site #contact input:hover,
+html body.mech-mirror-active #astrek-site #contact textarea:hover,
+html body.mech-mirror-active #astrek-site #contact select:hover,
+html body.mech-mirror-active #astrek-site [data-testid="contact-section"] input:hover,
+html body.mech-mirror-active #astrek-site [data-testid="contact-section"] textarea:hover,
+html body.mech-mirror-active #astrek-site [data-testid="contact-section"] select:hover {
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+html body.mech-mirror-active #astrek-site #contact input:focus,
+html body.mech-mirror-active #astrek-site #contact textarea:focus,
+html body.mech-mirror-active #astrek-site #contact select:focus,
+html body.mech-mirror-active #astrek-site [data-testid="contact-section"] input:focus,
+html body.mech-mirror-active #astrek-site [data-testid="contact-section"] textarea:focus,
+html body.mech-mirror-active #astrek-site [data-testid="contact-section"] select:focus {
+  outline: none !important;
+  border-color: rgba(63, 224, 197, 0.65) !important;
+  background: rgba(0, 0, 0, 0.45) !important;
+  box-shadow: 0 0 0 3px rgba(63, 224, 197, 0.16) !important;
+}
+
+/* Submit CTA */
+html body.mech-mirror-active #astrek-site button[data-testid="enquiry-submit-button"],
+html body.mech-mirror-active #astrek-site button[data-testid="newsletter-submit-button"] {
+  font-family: var(--mech-display, "Outfit", system-ui, sans-serif) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.015em !important;
+  text-transform: none !important;
+  border-radius: 0.35rem !important;
+  min-height: 3.15rem !important;
+  width: 100% !important;
+  margin-top: 0.35rem !important;
+  transition-property: background-color, transform, box-shadow !important;
+  transition-duration: 0.25s !important;
+  transition-timing-function: var(--mech-ease) !important;
+}
+
+html body.mech-mirror-active #astrek-site button[data-testid="enquiry-submit-button"]:hover,
+html body.mech-mirror-active #astrek-site button[data-testid="newsletter-submit-button"]:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 10px 28px rgba(63, 224, 197, 0.18) !important;
+}
+
+html body.mech-mirror-active #astrek-site button[data-testid="enquiry-submit-button"]:active,
+html body.mech-mirror-active #astrek-site button[data-testid="newsletter-submit-button"]:active {
+  transform: translateY(0) !important;
+  box-shadow: none !important;
+}
+
+/* CTA band — one calm motion */
+html body.mech-mirror-active #astrek-site [data-testid="cta-band"] a,
+html body.mech-mirror-active #astrek-site #cta-band a {
+  font-family: var(--mech-display, "Outfit", system-ui, sans-serif) !important;
+  border-radius: 0.35rem !important;
+  transition-property: transform, background-color, box-shadow !important;
+  transition-duration: 0.28s !important;
+  transition-timing-function: var(--mech-ease) !important;
+}
+
+html body.mech-mirror-active #astrek-site [data-testid="cta-band"] a:hover,
+html body.mech-mirror-active #astrek-site #cta-band a:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 12px 30px rgba(63, 224, 197, 0.16) !important;
+}
+
+@media (max-width: 767px) {
+  html body.mech-mirror-active #astrek-site #contact input,
+  html body.mech-mirror-active #astrek-site #contact textarea,
+  html body.mech-mirror-active #astrek-site #contact select,
+  html body.mech-mirror-active #astrek-site [data-testid="contact-section"] input,
+  html body.mech-mirror-active #astrek-site [data-testid="contact-section"] textarea,
+  html body.mech-mirror-active #astrek-site [data-testid="contact-section"] select {
+    font-size: 16px !important;
+  }
+
+  html body.mech-mirror-active #astrek-site #contact form,
+  html body.mech-mirror-active #astrek-site [data-testid="contact-section"] form {
+    border-radius: 0.65rem !important;
+  }
+
+  html body.mech-mirror-active #astrek-site button[data-testid="enquiry-submit-button"],
+  html body.mech-mirror-active #astrek-site button[data-testid="newsletter-submit-button"],
+  html body.mech-mirror-active #astrek-site [data-testid="cta-band"] a {
+    border-radius: 0.55rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body.mech-mirror-active .mech-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  html body.mech-mirror-active a,
+  html body.mech-mirror-active button,
+  html body.mech-mirror-active input,
+  html body.mech-mirror-active textarea,
+  html body.mech-mirror-active select {
+    transition: none !important;
+  }
+
+  html body.mech-mirror-active a:hover,
+  html body.mech-mirror-active button:hover {
+    transform: none !important;
+  }
+}

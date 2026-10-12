@@ -1,0 +1,164 @@
+/* Single-row navbar. Earlier sheets stacked every link on the hero. */
+
+html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] {
+  overflow: visible !important;
+}
+
+html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] > div.mech-header-inner,
+html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] > div {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  grid-template-columns: none !important;
+  grid-template-areas: none !important;
+  column-gap: 1rem !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 4.5rem !important;
+  margin: 0 !important;
+  padding-inline: clamp(1rem, 2.4vw, 2.25rem) !important;
+  overflow: visible !important;
+}
+
+html body.mech-mirror-active #mech-mirror-root [data-testid="nav-logo"] {
+  flex: 0 0 auto !important;
+  max-width: 11.5rem !important;
+  grid-area: auto !important;
+}
+
+html body.mech-mirror-active #mech-mirror-root [data-testid="nav-logo"] img {
+  height: 2.35rem !important;
+  max-height: 2.35rem !important;
+  width: auto !important;
+  max-width: 11.5rem !important;
+}
+
+html body.mech-mirror-active #mech-mirror-root nav.ajh-nav[aria-label="Primary"] {
+  display: none !important;
+  flex: 1 1 auto !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 0.15rem !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  grid-area: auto !important;
+}
+
+html body.mech-mirror-active #mech-mirror-root nav.ajh-nav[aria-label="Primary"] > a.ajh-nav-link {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.08em !important;
+  padding: 0.4rem 0.42rem !important;
+  line-height: 1 !important;
+}
+
+html body.mech-mirror-active #mech-mirror-root .mech-header-actions,
+html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] > div > div.flex {
+  display: flex !important;
+  flex: 0 0 auto !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  grid-area: auto !important;
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] .ajh-nav-cta {
+  display: none !important;
+}
+
+html body.mech-mirror-active #mech-mirror-root [data-testid="nav-menu-toggle"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  width: 2.4rem !important;
+  height: 2.4rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 999px !important;
+  background: rgba(0, 0, 0, 0.35) !important;
+  color: #fff !important;
+}
+
+html body.mech-mirror-active #mech-mirror-root [data-testid="product-stage"] img {
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #10161c !important;
+}
+
+@media (min-width: 1180px) {
+  html body.mech-mirror-active #mech-mirror-root nav.ajh-nav[aria-label="Primary"] {
+    display: flex !important;
+  }
+
+  html body.mech-mirror-active #mech-mirror-root [data-testid="nav-link-home"] {
+    display: none !important;
+  }
+
+  html body.mech-mirror-active #mech-mirror-root [data-testid="nav-link-unik-exo"],
+  html body.mech-mirror-active #mech-mirror-root [data-testid="nav-link-about"],
+  html body.mech-mirror-active #mech-mirror-root [data-testid="nav-link-solutions"],
+  html body.mech-mirror-active #mech-mirror-root [data-testid="nav-link-research"],
+  html body.mech-mirror-active #mech-mirror-root [data-testid="nav-link-blog"],
+  html body.mech-mirror-active #mech-mirror-root [data-testid="nav-link-media"],
+  html body.mech-mirror-active #mech-mirror-root [data-testid="nav-link-partners"],
+  html body.mech-mirror-active #mech-mirror-root [data-testid="nav-link-contact-nav"] {
+    display: inline-flex !important;
+  }
+
+  html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] .ajh-nav-cta--primary,
+  html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] .ajh-nav-cta--ghost {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 2.2rem !important;
+    padding: 0.4rem 0.85rem !important;
+    border-radius: 999px !important;
+    font-size: 0.68rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.03em !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    clip: auto !important;
+    overflow: visible !important;
+  }
+
+  html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] .ajh-nav-cta--primary {
+    background: #00c4b4 !important;
+    border: 1px solid #00c4b4 !important;
+    color: #041012 !important;
+  }
+
+  html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] .ajh-nav-cta--ghost {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.32) !important;
+    color: #f4f6f8 !important;
+  }
+
+  html body.mech-mirror-active #mech-mirror-root [data-testid="nav-menu-toggle"] {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1180px) and (max-width: 1360px) {
+  html body.mech-mirror-active #mech-mirror-root [data-testid="nav-link-blog"],
+  html body.mech-mirror-active #mech-mirror-root [data-testid="nav-link-media"] {
+    display: none !important;
+  }
+
+  html body.mech-mirror-active #mech-mirror-root nav.ajh-nav[aria-label="Primary"] > a.ajh-nav-link {
+    letter-spacing: 0.05em !important;
+    padding-inline: 0.28rem !important;
+  }
+}

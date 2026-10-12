@@ -1,0 +1,205 @@
+/* FAQ: clean accordion. Scoped to #faq.astrek-faq only. */
+
+body.mech-mirror-active #faq.astrek-faq {
+  background: var(--n-bg, #05070a) !important;
+  border: 0 !important;
+  border-top: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding-block: clamp(4.75rem, 9vw, 7rem) !important;
+  padding-inline: 0 !important;
+  position: relative;
+  overflow: visible !important;
+}
+
+/* Kill leftover decorative boxes / spotlights from older FAQ markup */
+body.mech-mirror-active #faq.astrek-faq::before,
+body.mech-mirror-active #faq.astrek-faq::after,
+body.mech-mirror-active #faq.astrek-faq > .spotlight,
+body.mech-mirror-active #faq.astrek-faq [class*="rounded"][class*="border"],
+body.mech-mirror-active #faq.astrek-faq [data-state="open"]:not(.astrek-faq__item),
+body.mech-mirror-active #faq.astrek-faq .border,
+body.mech-mirror-active #faq.astrek-faq [class*="border-white"] {
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__inner {
+  max-width: var(--n-container, 72rem);
+  margin-inline: auto;
+  padding-inline: var(--n-pad-x, clamp(1.25rem, 4vw, 3rem));
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__intro {
+  /* Align with question column (num width + gap) */
+  max-width: calc(38rem + 2.75rem + 0.85rem);
+  margin: 0 0 clamp(2.25rem, 4.5vw, 3.5rem);
+  padding: 0;
+  padding-inline-start: calc(2.75rem + 0.85rem);
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__eyebrow {
+  margin: 0;
+  font-family: "JetBrains Mono", ui-monospace, monospace !important;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(244, 246, 248, 0.45) !important;
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__title {
+  margin: 0.7rem 0 0;
+  font-size: clamp(2.15rem, 4.2vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--n-text, #f4f6f8) !important;
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__lead {
+  margin: 0.95rem 0 0;
+  max-width: 34rem;
+  font-size: clamp(0.98rem, 1.1vw, 1.0625rem);
+  line-height: 1.65;
+  color: var(--n-muted, rgba(244, 246, 248, 0.58)) !important;
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__item {
+  border: 0 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__trigger,
+body.mech-mirror-active #faq.astrek-faq button.astrek-faq__trigger,
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__item.is-open .astrek-faq__trigger,
+body.mech-mirror-active #faq.astrek-faq button[aria-expanded="true"] {
+  display: grid !important;
+  grid-template-columns: 2.75rem minmax(0, 1fr) 1.5rem;
+  align-items: start;
+  column-gap: 0.85rem;
+  width: 100%;
+  margin: 0 !important;
+  padding: 1.45rem 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__trigger:focus-visible {
+  outline: 1px solid rgba(63, 224, 197, 0.45) !important;
+  outline-offset: 4px;
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__num {
+  padding-top: 0.35rem;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: rgba(244, 246, 248, 0.32);
+  line-height: 1;
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__question {
+  font-size: clamp(1.12rem, 1.75vw, 1.45rem);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: #f4f6f8;
+  padding-top: 0.05rem;
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.15rem;
+  color: var(--n-accent, #3fe0c5);
+  font-size: 1.1rem;
+  line-height: 1;
+  font-weight: 500;
+  transition: color 200ms ease;
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__item.is-open .astrek-faq__question {
+  color: var(--n-accent, #3fe0c5);
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__item.is-open .astrek-faq__num {
+  color: rgba(63, 224, 197, 0.55);
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__answer {
+  display: none;
+  /* Align answer with question column (num + gap) */
+  padding: 0 1.5rem 1.5rem calc(2.75rem + 0.85rem);
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__item.is-open .astrek-faq__answer {
+  display: block;
+}
+
+body.mech-mirror-active #faq.astrek-faq .astrek-faq__answer p {
+  margin: 0;
+  max-width: 40rem;
+  font-size: 1rem;
+  line-height: 1.72;
+  color: rgba(244, 246, 248, 0.62);
+}
+
+@media (max-width: 720px) {
+  body.mech-mirror-active #faq.astrek-faq .astrek-faq__intro {
+    padding-inline-start: calc(2rem + 0.65rem);
+    max-width: none;
+  }
+
+  body.mech-mirror-active #faq.astrek-faq .astrek-faq__trigger,
+  body.mech-mirror-active #faq.astrek-faq button.astrek-faq__trigger {
+    grid-template-columns: 2rem minmax(0, 1fr) 1.35rem;
+    column-gap: 0.65rem;
+    padding: 1.2rem 0 !important;
+  }
+
+  body.mech-mirror-active #faq.astrek-faq .astrek-faq__question {
+    font-size: 1.05rem;
+  }
+
+  body.mech-mirror-active #faq.astrek-faq .astrek-faq__answer {
+    padding: 0 1.35rem 1.2rem calc(2rem + 0.65rem);
+  }
+}
+
+html[dir="rtl"] body.mech-mirror-active #faq.astrek-faq .astrek-faq__trigger {
+  text-align: right;
+}
+
+html[dir="rtl"] body.mech-mirror-active #faq.astrek-faq .astrek-faq__answer {
+  padding: 0 calc(2.75rem + 0.85rem) 1.5rem 1.5rem;
+}
+
+@media (max-width: 720px) {
+  html[dir="rtl"] body.mech-mirror-active #faq.astrek-faq .astrek-faq__answer {
+    padding: 0 calc(2rem + 0.65rem) 1.2rem 1.35rem;
+  }
+}

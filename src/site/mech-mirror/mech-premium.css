@@ -1,0 +1,430 @@
+/* Premium robotic polish: visual layer only; no behaviour changes */
+/* Inspired by editorial restraint: deep blacks, thin type, cinematic spacing */
+
+body.mech-mirror-active {
+  --mech-bg: #000000;
+  --mech-surface: rgba(10, 10, 12, 0.65);
+  --mech-border: rgba(255, 255, 255, 0.06);
+  --mech-border-strong: rgba(63, 224, 197, 0.18);
+  --mech-glow: rgba(63, 224, 197, 0.08);
+  --mech-text-muted: #9ca3af;
+  --mech-text-subtle: #6b7280;
+  --mech-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background: var(--mech-bg) !important;
+}
+
+/* Cinematic atmosphere: soft vignette, no harsh grid */
+body.mech-mirror-active [data-testid="astrek-site"].mech-premium::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 90% 55% at 50% -5%, rgba(63, 224, 197, 0.05), transparent 58%),
+    radial-gradient(ellipse 50% 40% at 100% 20%, rgba(63, 224, 197, 0.03), transparent 55%),
+    radial-gradient(ellipse 40% 50% at 0% 80%, rgba(63, 224, 197, 0.02), transparent 50%),
+    linear-gradient(180deg, #000000 0%, #050506 50%, #000000 100%);
+}
+
+body.mech-mirror-active [data-testid="astrek-site"].mech-premium::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 75%);
+}
+
+body.mech-mirror-active [data-testid="astrek-site"].mech-premium > * {
+  position: relative;
+  z-index: 1;
+}
+
+#mech-mirror-root.mech-mirror-host,
+body.mech-mirror-active .mech-page-shell {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+/* ── Header: glass + teal accent when scrolled ── */
+body.mech-mirror-active [data-testid="site-header"].is-scrolled {
+  background: rgba(0, 0, 0, 0.78) !important;
+  backdrop-filter: blur(24px) saturate(1.15) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.15) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04), 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+
+body.mech-mirror-active [data-testid="site-header"]:not(.is-scrolled) {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.72) 0%, transparent 100%) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* ── Section rhythm: editorial breathing room ── */
+body.mech-mirror-active [data-testid="astrek-site"] section:not([data-testid="hero-section"]) {
+  padding-block: clamp(5rem, 10vw, 8.5rem);
+  position: relative;
+}
+
+body.mech-mirror-active [data-testid="astrek-site"] section:not([data-testid="hero-section"])::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: clamp(1.5rem, 8vw, 6rem);
+  right: clamp(1.5rem, 8vw, 6rem);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07), transparent);
+  pointer-events: none;
+}
+
+/* Hero handles its own spacing: see mech-mirror-overrides.css */
+body.mech-mirror-active [data-testid="hero-section"] {
+  padding-block: 0 !important;
+}
+
+/* ── Typography: editorial hierarchy ── */
+body.mech-mirror-active .font-display {
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+body.mech-mirror-active h1.font-display {
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+body.mech-mirror-active h2.font-display {
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+body.mech-mirror-active h3.font-display {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+body.mech-mirror-active .text-zinc-400,
+body.mech-mirror-active .text-zinc-500 {
+  color: var(--mech-text-muted) !important;
+}
+
+body.mech-mirror-active [data-testid="astrek-site"] section p:not(.font-mono) {
+  line-height: 1.75;
+  color: var(--mech-text-muted);
+}
+
+body.mech-mirror-active .font-mono.text-brand,
+body.mech-mirror-active p.font-mono.text-brand {
+  letter-spacing: 0.32em;
+  font-weight: 500;
+}
+
+/* Hero editorial treatment */
+body.mech-mirror-active [data-testid="hero-section"].spotlight {
+  background:
+    radial-gradient(70% 50% at 30% 20%, rgba(63, 224, 197, 0.06), transparent 65%),
+    radial-gradient(50% 40% at 85% 50%, rgba(63, 224, 197, 0.04), transparent 60%) !important;
+}
+
+body.mech-mirror-active [data-testid="hero-section"] .text-outline-brand {
+  -webkit-text-stroke: 1px rgba(63, 224, 197, 0.45) !important;
+  color: transparent !important;
+}
+
+body.mech-mirror-active [data-testid="hero-section"] .rounded-full.border {
+  backdrop-filter: blur(16px) saturate(1.1);
+  -webkit-backdrop-filter: blur(16px) saturate(1.1);
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.mech-mirror-active [data-testid="hero-section"] .font-mono.text-zinc-300 {
+  color: #d1d5db !important;
+  letter-spacing: 0.24em !important;
+}
+
+/* Nav links: refined, understated */
+body.mech-mirror-active nav[aria-label="Primary"] > a:not(.mech-drawer-cta) {
+  color: var(--mech-text-subtle) !important;
+  letter-spacing: 0.18em !important;
+  transition: color 0.35s var(--mech-ease) !important;
+}
+
+body.mech-mirror-active nav[aria-label="Primary"] > a:not(.mech-drawer-cta):hover {
+  color: #f4f4f5 !important;
+}
+
+/* ── CTAs: restrained premium (less glow, more precision) ── */
+body.mech-mirror-active a.bg-brand,
+body.mech-mirror-active button.bg-brand,
+body.mech-mirror-active a[class*="bg-brand"]:not([class*="ghost"]):not([class*="border"]) {
+  box-shadow:
+    0 0 0 1px rgba(63, 224, 197, 0.25),
+    0 4px 24px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.4s var(--mech-ease),
+    box-shadow 0.4s var(--mech-ease),
+    background-color 0.35s var(--mech-ease);
+}
+
+body.mech-mirror-active a.bg-brand:hover,
+body.mech-mirror-active button.bg-brand:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(63, 224, 197, 0.4),
+    0 8px 32px rgba(63, 224, 197, 0.12);
+}
+
+/* Ghost / outline buttons */
+body.mech-mirror-active a.border-white\/15,
+body.mech-mirror-active a[class*="border-white"] {
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  transition: border-color 0.25s, background 0.25s, color 0.25s;
+}
+
+body.mech-mirror-active a.border-white\/15:hover,
+body.mech-mirror-active a[class*="border-white"]:hover {
+  border-color: rgba(63, 224, 197, 0.35) !important;
+  background: rgba(63, 224, 197, 0.06) !important;
+}
+
+/* ── Product / studio panels: cinematic frames ── */
+body.mech-mirror-active .studio-panel {
+  border: 1px solid var(--mech-border);
+  border-radius: 1.25rem;
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.005));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 32px 80px rgba(0, 0, 0, 0.55);
+}
+
+body.mech-mirror-active .studio-panel img,
+body.mech-mirror-active [data-testid="astrek-site"] section img.rounded-2xl,
+body.mech-mirror-active [data-testid="astrek-site"] section img.rounded-3xl {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+/* ── Impact stats: robotic data panels ── */
+body.mech-mirror-active [data-mech-stats] {
+  position: relative;
+}
+
+body.mech-mirror-active [data-mech-stats]::before {
+  content: "";
+  position: absolute;
+  inset: 10% 5%;
+  border-radius: 1.5rem;
+  background: radial-gradient(ellipse at center, var(--mech-glow), transparent 70%);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+body.mech-mirror-active [data-testid^="stat-"] {
+  padding: 1.5rem 1.25rem !important;
+  border-radius: 1rem;
+  border: 1px solid var(--mech-border);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.45s var(--mech-ease), box-shadow 0.45s var(--mech-ease), transform 0.45s var(--mech-ease);
+}
+
+body.mech-mirror-active [data-testid^="stat-"]:hover {
+  border-color: var(--mech-border-strong);
+  box-shadow: 0 0 32px rgba(63, 224, 197, 0.05);
+  transform: translateY(-2px);
+}
+
+body.mech-mirror-active [data-testid^="stat-"] p.font-display {
+  font-variant-numeric: tabular-nums;
+  text-shadow: none;
+  font-weight: 500;
+}
+
+body.mech-mirror-active [data-testid^="stat-"] p.font-display .text-brand,
+body.mech-mirror-active [data-testid^="stat-"] p.font-display span[class*="text-brand"] {
+  color: #00c4b4 !important;
+}
+
+/* ── Partner grid: premium cells ── */
+body.mech-mirror-active a.mech-partner-cell,
+body.mech-mirror-active a[data-testid^="partner-"] {
+  border: 1px solid var(--mech-border) !important;
+  border-radius: 0.875rem !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)) !important;
+  transition:
+    border-color 0.3s,
+    background 0.3s,
+    box-shadow 0.3s,
+    transform 0.3s !important;
+}
+
+body.mech-mirror-active a.mech-partner-cell:hover,
+body.mech-mirror-active a[data-testid^="partner-"]:hover {
+  border-color: var(--mech-border-strong) !important;
+  background: rgba(63, 224, 197, 0.05) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
+}
+
+body.mech-mirror-active a[data-testid^="partner-"] img {
+  filter: brightness(1.15) contrast(1.08) grayscale(0.15) !important;
+  opacity: 1 !important;
+  transition: filter 0.3s;
+}
+
+body.mech-mirror-active a[data-testid^="partner-"]:hover img {
+  filter: brightness(1.25) contrast(1.1) grayscale(0) !important;
+}
+
+/* ── Team portraits ── */
+body.mech-mirror-active [data-testid="astrek-site"] img[alt*="Robin"],
+body.mech-mirror-active [data-testid="astrek-site"] img[alt*="Jithin"],
+body.mech-mirror-active [data-testid="astrek-site"] img[alt*="Alex"],
+body.mech-mirror-active [data-testid="astrek-site"] img[alt*="Vishnu"],
+body.mech-mirror-active [data-testid="astrek-site"] img[alt*="Ishaan"],
+body.mech-mirror-active [data-testid="astrek-site"] img[alt*="Pradeep"],
+body.mech-mirror-active [data-testid="astrek-site"] img[alt*="Sanil"] {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  filter: grayscale(0.25) contrast(1.05);
+  transition: filter 0.35s ease, border-color 0.35s ease;
+}
+
+body.mech-mirror-active [data-testid="astrek-site"] img[alt*="Robin"]:hover,
+body.mech-mirror-active [data-testid="astrek-site"] img[alt*="Jithin"]:hover,
+body.mech-mirror-active [data-testid="astrek-site"] img[alt*="Alex"]:hover,
+body.mech-mirror-active [data-testid="astrek-site"] img[alt*="Vishnu"]:hover,
+body.mech-mirror-active [data-testid="astrek-site"] img[alt*="Ishaan"]:hover,
+body.mech-mirror-active [data-testid="astrek-site"] img[alt*="Pradeep"]:hover,
+body.mech-mirror-active [data-testid="astrek-site"] img[alt*="Sanil"]:hover {
+  filter: grayscale(0) contrast(1.05);
+  border-color: rgba(63, 224, 197, 0.25);
+}
+
+/* ── FAQ accordion (legacy radix styles disabled; see astrek-faq.css) ── */
+body.mech-mirror-active #faq button,
+body.mech-mirror-active #faq button[data-state="open"],
+body.mech-mirror-active #faq button[aria-expanded="true"] {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.mech-mirror-active #faq button h3 {
+  letter-spacing: 0.01em;
+}
+
+/* ── Forms ── */
+body.mech-mirror-active input,
+body.mech-mirror-active textarea,
+body.mech-mirror-active select {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(0, 0, 0, 0.35) !important;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+body.mech-mirror-active input:focus,
+body.mech-mirror-active textarea:focus,
+body.mech-mirror-active select:focus {
+  border-color: rgba(63, 224, 197, 0.45) !important;
+  box-shadow: 0 0 0 3px rgba(63, 224, 197, 0.12) !important;
+  outline: none !important;
+}
+
+/* ── Footer ── */
+body.mech-mirror-active footer {
+  border-top: 1px solid var(--mech-border);
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.4));
+}
+
+body.mech-mirror-active footer::before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(63, 224, 197, 0.35), transparent);
+}
+
+/* ── Testimonial block ── */
+body.mech-mirror-active blockquote {
+  border-inline-start: 2px solid rgba(63, 224, 197, 0.35);
+  padding-inline-start: 1.25rem;
+}
+
+/* ── Specs accordion items ── */
+body.mech-mirror-active [data-testid^="spec-item-"] {
+  border-radius: 0.75rem;
+  transition: background 0.25s, border-color 0.25s;
+}
+
+/* ── Inner pages ── */
+body.mech-mirror-active .mech-inner-content.page-shell {
+  background: var(--mech-bg);
+}
+
+body.mech-mirror-active .mech-inner-content .rf-btn,
+body.mech-mirror-active .mech-inner-content .elvin-outline {
+  border-radius: 999px;
+}
+
+body.mech-mirror-active .mech-inner-content .rf-section,
+body.mech-mirror-active .mech-inner-content .page-hero {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ── Mobile: full-width layout fix ── */
+@media (max-width: 767px) {
+  body.mech-mirror-active [data-testid="astrek-site"],
+  body.mech-mirror-active [data-testid="astrek-site"] > section:first-of-type {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.mech-mirror-active [data-testid="astrek-site"] section:first-of-type > div,
+  body.mech-mirror-active [data-testid="astrek-site"] section:first-of-type .grid,
+  body.mech-mirror-active [data-testid="astrek-site"] section:first-of-type [class*="max-w-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+  }
+
+  body.mech-mirror-active [data-testid^="stat-"] {
+    padding: 1rem 0.75rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.mech-mirror-active a.bg-brand:hover,
+  body.mech-mirror-active [data-testid^="stat-"]:hover,
+  body.mech-mirror-active a[data-testid^="partner-"]:hover {
+    transform: none;
+  }
+
+  body.mech-mirror-active .mech-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Text selection: subtle brand accent */
+body.mech-mirror-active ::selection {
+  background: rgba(63, 224, 197, 0.22);
+  color: #ffffff;
+}

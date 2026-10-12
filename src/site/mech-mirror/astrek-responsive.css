@@ -1,0 +1,509 @@
+/* =====================================================================
+   Mobile-first responsive layer. Last-loaded. Desktop (≥1024) unchanged.
+   Phones and tablets get their own layout — not a squeezed desktop.
+   ===================================================================== */
+
+html {
+  overflow-x: clip;
+}
+
+body.mech-mirror-active,
+body.mech-mirror-active [data-testid="astrek-site"],
+#mech-mirror-root.mech-mirror-host {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body.mech-mirror-active img,
+body.mech-mirror-active video,
+body.mech-mirror-active svg {
+  max-width: 100%;
+}
+
+body.mech-mirror-active [data-hero="journey"] img,
+body.mech-mirror-active [data-hero="journey"] .ajh-media-img {
+  max-width: none;
+}
+
+/* First-fold story: company-about follows hero immediately */
+body.mech-mirror-active [data-testid="editorial-marquee"] {
+  display: none !important;
+}
+
+/* ── Phone + small tablet ───────────────────────────────── */
+
+@media (max-width: 1023px) {
+  body.mech-mirror-active [data-testid="astrek-site"] section,
+  body.mech-mirror-active [data-testid="astrek-site"] footer {
+    padding-inline: 0 !important;
+  }
+
+  body.mech-mirror-active [data-testid="astrek-site"] section > .mx-auto,
+  body.mech-mirror-active [data-testid="astrek-site"] footer > .mx-auto,
+  body.mech-mirror-active [data-testid="company-about-section"] > .mx-auto,
+  body.mech-mirror-active #faq.astrek-faq .astrek-faq__inner,
+  body.mech-mirror-active #partners.astrek-partners .astrek-partners__inner {
+    padding-inline: max(1rem, env(safe-area-inset-left)) max(1rem, env(safe-area-inset-right)) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Keep Japanese visible — compact labels instead of hiding */
+  body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher button[data-lang="ja"],
+  body.mech-mirror-active [data-testid="site-header"] .ajh-lang button[data-lang="ja"],
+  body.mech-mirror-active #mech-mirror-root .ajh-lang button[data-lang="ja"] {
+    display: inline !important;
+  }
+
+  body.mech-mirror-active [data-testid="nav-menu-toggle"] {
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  body.mech-mirror-active .mech-mobile-drawer__link,
+  body.mech-mirror-active .mech-mobile-drawer__cta {
+    min-height: 48px !important;
+  }
+
+  /* Hero: first-class phone/tablet, not a locked desktop crop */
+  body.mech-mirror-active [data-testid="hero-section"][data-hero="journey"],
+  #mech-mirror-root [data-testid="hero-section"][data-hero="journey"] {
+    height: auto !important;
+    min-height: 100svh !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"] .ajh-media {
+    position: absolute !important;
+    inset: 0 !important;
+    min-height: 100% !important;
+  }
+
+  .ajh-shell,
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-shell {
+    position: relative !important;
+    min-height: 100svh !important;
+    align-items: flex-start !important;
+    padding: clamp(5.5rem, 14vh, 6.5rem) max(1.1rem, env(safe-area-inset-left)) max(1.25rem, env(safe-area-inset-bottom)) !important;
+  }
+
+  .ajh-copy,
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-copy {
+    min-height: 0 !important;
+    height: auto !important;
+    max-width: 100% !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"] .ajh-product,
+  body.mech-mirror-active [data-testid="hero-product"].ajh-product {
+    font-size: clamp(2.65rem, 12vw, 3.5rem) !important;
+    line-height: 0.94 !important;
+    letter-spacing: -0.03em !important;
+    color: #ffffff !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"] .ajh-title {
+    font-size: clamp(1.2rem, 4.8vw, 1.55rem) !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.028em !important;
+    text-transform: none !important;
+    white-space: nowrap !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"] .ajh-sub {
+    max-width: 22rem !important;
+    font-size: clamp(0.95rem, 3.6vw, 1.05rem) !important;
+  }
+
+  .ajh-metrics,
+  body.mech-mirror-active [data-hero="journey"] .ajh-metrics {
+    max-width: 100% !important;
+    gap: 1.15rem !important;
+  }
+
+  .ajh-metric-value,
+  body.mech-mirror-active [data-hero="journey"] .ajh-metric-value {
+    font-size: clamp(3.05rem, 12vw, 3.85rem) !important;
+  }
+
+  .ajh-actions,
+  body.mech-mirror-active [data-hero="journey"] .ajh-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 22rem !important;
+    gap: 0.7rem !important;
+  }
+
+  .ajh-btn,
+  body.mech-mirror-active [data-hero="journey"] a.ajh-btn,
+  body.mech-mirror-active [data-hero="journey"] a[data-testid="hero-cta-explore"],
+  body.mech-mirror-active [data-hero="journey"] a[data-testid="hero-cta-watch"] {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 48px !important;
+    justify-content: center !important;
+    align-self: stretch !important;
+    padding: 0.85rem 1.15rem !important;
+    font-size: 0.72rem !important;
+  }
+
+  /* Partner logos: swipe strip, not a cramped 3×2 desktop tile */
+  .ajh-explore,
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-explore {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    margin-top: 1.5rem !important;
+    padding: 0.5rem 0 0 !important;
+  }
+
+  .ajh-scroll,
+  body.mech-mirror-active [data-hero="journey"] button.ajh-scroll {
+    align-self: flex-start !important;
+    margin-bottom: 0 !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partners {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 4.5rem !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0.6rem 0.5rem !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    border: 0 !important;
+    border-top: 0 !important;
+    border-radius: 0.85rem !important;
+    background: rgba(10, 14, 18, 0.78) !important;
+    background-image: none !important;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partners::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner {
+    flex: 0 0 auto !important;
+    width: 5.15rem !important;
+    min-width: 5.15rem !important;
+    min-height: 3.1rem !important;
+    padding: 0.35rem 0.3rem !important;
+    scroll-snap-align: start !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner img {
+    height: 1.45rem !important;
+    max-width: 4.4rem !important;
+  }
+
+  body.mech-mirror-active [data-testid="impact-stats"] {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0.75rem !important;
+    margin-top: 1.5rem !important;
+  }
+
+  body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-patients-tra"] p.font-display,
+  body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-rehabilitati"] p.font-display {
+    font-size: clamp(3.1rem, 16vw, 4rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-patients-tra"] p.mt-3,
+  body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-rehabilitati"] p.mt-3 {
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+    word-spacing: 0.1em !important;
+  }
+
+  /* Modes + product callouts: 2-up cards */
+  body.mech-mirror-active [data-testid="modes-section"] .grid,
+  body.mech-mirror-active [data-testid="product-section"] [data-testid^="product-callout-"]:first-child {
+    min-width: 0 !important;
+  }
+
+  body.mech-mirror-active [data-testid="modes-section"] > .mx-auto > .grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  body.mech-mirror-active [data-testid="product-section"] > .mx-auto > .grid:has([data-testid^="product-callout-"]) {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Team + mentors: 2-up portraits */
+  body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] > .mx-auto > .grid.gap-8,
+  body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] .mt-28.md\:mt-36 .grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.85rem !important;
+  }
+
+  body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] > .mx-auto > .grid.gap-8 > div,
+  body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] .mt-28.md\:mt-36 .grid > div {
+    flex: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+
+  body.mech-mirror-active [data-testid^="team-card-"] h4,
+  body.mech-mirror-active [data-testid^="mentor-card-"] h4 {
+    font-size: clamp(0.95rem, 3.6vw, 1.1rem) !important;
+    line-height: 1.25 !important;
+  }
+
+  body.mech-mirror-active [data-testid="company-about-section"] .aco-topic {
+    padding: 1.25rem 1.1rem 1.35rem !important;
+  }
+
+  /* FAQ: readable tap rows */
+  body.mech-mirror-active #faq.astrek-faq .astrek-faq__trigger {
+    min-height: 52px !important;
+    align-items: center !important;
+  }
+
+  body.mech-mirror-active #faq.astrek-faq .astrek-faq__question {
+    font-size: 1.02rem !important;
+  }
+
+  body.mech-mirror-active #faq.astrek-faq .astrek-faq__answer {
+    padding: 0 1.35rem 1.1rem calc(2rem + 0.65rem) !important;
+  }
+
+  html[dir="rtl"] body.mech-mirror-active #faq.astrek-faq .astrek-faq__answer {
+    padding: 0 calc(2rem + 0.65rem) 1.1rem 1.35rem !important;
+  }
+
+  /* Forms: iOS-safe type, full-width actions */
+  body.mech-mirror-active #contactForm,
+  body.mech-mirror-active form[data-testid*="enquiry"],
+  body.mech-mirror-active [data-testid="contact-section"] form {
+    padding: 1.15rem 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  body.mech-mirror-active input,
+  body.mech-mirror-active select,
+  body.mech-mirror-active textarea {
+    font-size: 16px !important;
+    max-width: 100% !important;
+    min-height: 48px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.mech-mirror-active textarea {
+    min-height: 7.5rem !important;
+  }
+
+  body.mech-mirror-active button[data-testid="enquiry-submit-button"],
+  body.mech-mirror-active button[data-testid="newsletter-submit-button"] {
+    width: 100% !important;
+    min-height: 48px !important;
+  }
+
+  /* Footer: one column, breathing room */
+  body.mech-mirror-active footer[data-testid="site-footer"] .grid,
+  body.mech-mirror-active footer .grid.lg\:grid-cols-12 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.75rem !important;
+  }
+
+  body.mech-mirror-active footer img[alt="Astrek Innovations"] {
+    height: 2rem !important;
+    max-width: 10rem !important;
+  }
+
+  /* Press / blog cards */
+  body.mech-mirror-active [data-testid="press-section"] img,
+  body.mech-mirror-active [data-testid="blog-section"] img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  /* Inner pages */
+  body.mech-mirror-active .mech-inner-content.page-shell {
+    padding-top: 4.25rem;
+    overflow-x: clip;
+  }
+
+  body.mech-mirror-active .mech-inner-content .page-hero {
+    padding-inline: max(1rem, env(safe-area-inset-left)) max(1rem, env(safe-area-inset-right));
+  }
+
+  body.mech-mirror-active .elvin-filters {
+    gap: 0.5rem !important;
+  }
+
+  body.mech-mirror-active .elvin-filters button {
+    min-height: 40px !important;
+    padding: 0.45rem 0.85rem !important;
+  }
+
+  body.mech-mirror-active .smp-col {
+    padding: 1.15rem 1rem 1.25rem !important;
+  }
+}
+
+/* ── Narrow phones ──────────────────────────────────────── */
+
+@media (max-width: 399px) {
+  body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher,
+  body.mech-mirror-active [data-testid="site-header"] .ajh-lang {
+    gap: 0.28rem !important;
+  }
+
+  body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher button,
+  body.mech-mirror-active [data-testid="site-header"] .ajh-lang button {
+    font-size: 0.64rem !important;
+  }
+
+  body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher button + button::before,
+  body.mech-mirror-active [data-testid="site-header"] .ajh-lang button + button::before {
+    margin-right: 0.28rem !important;
+  }
+
+  body.mech-mirror-active [data-testid="modes-section"] > .mx-auto > .grid {
+    gap: 0.6rem !important;
+  }
+}
+
+/* ── Tablet 768–1023: two-up without going full desktop ─── */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ajh-actions,
+  body.mech-mirror-active [data-hero="journey"] .ajh-actions {
+    flex-direction: row !important;
+    max-width: 28rem !important;
+  }
+
+  .ajh-btn,
+  body.mech-mirror-active [data-hero="journey"] a.ajh-btn {
+    width: auto !important;
+    flex: 1 1 auto !important;
+  }
+
+  body.mech-mirror-active [data-testid="impact-stats"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.85rem !important;
+  }
+
+  body.mech-mirror-active [data-testid="company-about-section"] .aco-topics {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body.mech-mirror-active .smp-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* ── Desktop: contain overflow + stop header items stacking ─ */
+
+@media (min-width: 1024px) {
+  body.mech-mirror-active [data-testid="astrek-site"] {
+    overflow-x: clip;
+  }
+
+  body.mech-mirror-active [data-testid="site-header"] > div.mech-header-inner,
+  body.mech-mirror-active [data-testid="site-header"] > div,
+  body.mech-mirror-active .mech-header-inner,
+  body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] > div {
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr) auto !important;
+    grid-template-areas: "logo nav actions" !important;
+    align-items: center !important;
+    column-gap: 1rem !important;
+    overflow: visible !important;
+  }
+
+  body.mech-mirror-active [data-testid="nav-logo"] {
+    grid-area: logo !important;
+    position: relative !important;
+    z-index: 2 !important;
+    max-width: 13.5rem !important;
+    overflow: hidden !important;
+  }
+
+  body.mech-mirror-active nav.ajh-nav[aria-label="Primary"],
+  body.mech-mirror-active nav[aria-label="Primary"].ajh-nav,
+  body.mech-mirror-active #mech-mirror-root nav.ajh-nav[aria-label="Primary"] {
+    grid-area: nav !important;
+    position: relative !important;
+    z-index: 1 !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    flex-wrap: nowrap !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    gap: clamp(1.15rem, 1.8vw, 1.85rem) !important;
+  }
+
+  body.mech-mirror-active nav.ajh-nav[aria-label="Primary"] > a.ajh-nav-link,
+  body.mech-mirror-active #mech-mirror-root nav.ajh-nav > a.ajh-nav-link {
+    flex: 0 0 auto !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.12em !important;
+    white-space: nowrap !important;
+    padding-inline: 0.15rem !important;
+  }
+
+  /* Logo already goes Home; Contact sits in footer */
+  body.mech-mirror-active [data-testid="nav-link-home"],
+  body.mech-mirror-active [data-testid="nav-link-contact-nav"],
+  body.mech-mirror-active [data-testid="nav-link-unik-exo"],
+  body.mech-mirror-active [data-testid="nav-cta-partner"] {
+    display: none !important;
+  }
+
+  body.mech-mirror-active .mech-header-actions,
+  body.mech-mirror-active [data-testid="site-header"] > div > div.flex,
+  body.mech-mirror-active #mech-mirror-root .mech-header-actions {
+    grid-area: actions !important;
+    position: relative !important;
+    z-index: 2 !important;
+    flex-shrink: 0 !important;
+    gap: 0.55rem !important;
+  }
+
+  body.mech-mirror-active [data-testid="site-header"] .ajh-nav-cta,
+  body.mech-mirror-active #mech-mirror-root .ajh-nav-cta {
+    position: relative !important;
+    flex-shrink: 0 !important;
+    padding: 0.4rem 0.75rem !important;
+    font-size: 0.62rem !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body.mech-mirror-active [data-testid="nav-link-media"],
+  body.mech-mirror-active [data-testid="nav-cta-explore"] {
+    display: none !important;
+  }
+}

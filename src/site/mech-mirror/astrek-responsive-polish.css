@@ -1,0 +1,945 @@
+/* Last-loaded responsive polish. Beats older #astrek-site ID rules. */
+
+@keyframes ajh-hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body.mech-mirror-active #astrek-site [data-hero="journey"].ajh-live .ajh-copy,
+  html body.mech-mirror-active #astrek-site [data-hero="journey"].ajh-live .ajh-partners {
+    animation: none !important;
+  }
+}
+
+html body.mech-mirror-active #mech-mirror-root,
+html body.mech-mirror-active #astrek-site {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: clip !important;
+}
+
+/* Partner marquees / logo rows may be wider than the viewport on purpose */
+html body.mech-mirror-active #astrek-site [data-testid="partners-section"],
+html body.mech-mirror-active #astrek-site .astrek-partners,
+html body.mech-mirror-active #astrek-site [data-testid="hero-section"] .ajh-explore {
+  overflow-x: clip !important;
+  max-width: 100% !important;
+}
+
+html body.mech-mirror-active #astrek-site .astrek-partners__row {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: none !important;
+}
+
+html body.mech-mirror-active #astrek-site .astrek-partners__row::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* ── Phones + tablets ───────────────────────────────────── */
+
+@media (max-width: 1023px) {
+  html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] > div,
+  html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] > div.mech-header-inner {
+    display: flex !important;
+    grid-template-columns: none !important;
+    grid-template-areas: none !important;
+    height: 4rem !important;
+    min-height: 4rem !important;
+  }
+
+  /*
+   * Mobile hero — match attached reference layout:
+   * title → sub → metrics → CTAs → scroll → partners pinned to bottom.
+   */
+  html body.mech-mirror-active #astrek-site [data-testid="hero-section"][data-hero="journey"],
+  html body.mech-mirror-active #mech-mirror-root [data-testid="hero-section"][data-hero="journey"],
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-testid="hero-section"][data-hero="journey"] {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
+    overflow: hidden !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] .ajh-media,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"] .ajh-media {
+    position: absolute !important;
+    inset: 0 !important;
+    min-height: 100% !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] .ajh-media-img,
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] img[data-testid="hero-journey-image"],
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"] .ajh-media-img,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"] img[data-testid="hero-journey-image"] {
+    object-fit: cover !important;
+    object-position: 50% 26% !important;
+    min-height: 100% !important;
+  }
+
+  /* Soft veil: type reads clean, photo stays present */
+  html body.mech-mirror-active #astrek-site [data-hero="journey"].ajh-live .ajh-media-shade,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-media-shade {
+    background:
+      linear-gradient(180deg, rgba(6, 10, 14, 0.55) 0%, rgba(6, 10, 14, 0.12) 18%, transparent 38%),
+      linear-gradient(90deg, rgba(6, 10, 14, 0.78) 0%, rgba(6, 10, 14, 0.38) 42%, rgba(6, 10, 14, 0.08) 68%, transparent 88%),
+      linear-gradient(0deg, rgba(6, 10, 14, 0.62) 0%, rgba(6, 10, 14, 0.22) 30%, transparent 55%) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"].ajh-live .ajh-shell,
+  html body.mech-mirror-active #mech-mirror-root [data-hero="journey"].ajh-live .ajh-shell,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-shell {
+    position: relative !important;
+    inset: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    height: 100% !important;
+    min-height: 100svh !important;
+    padding: 6.5rem 1.1rem 1.25rem !important;
+    padding-left: max(1.1rem, env(safe-area-inset-left)) !important;
+    padding-right: max(1.1rem, env(safe-area-inset-right)) !important;
+    padding-bottom: max(1.25rem, env(safe-area-inset-bottom)) !important;
+    box-sizing: border-box !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"].ajh-live .ajh-copy,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-copy {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    animation: ajh-hero-rise 720ms cubic-bezier(0.22, 1, 0.36, 1) both !important;
+  }
+
+  html body.mech-mirror-active #astrek-site .ajh-product,
+  html body.mech-mirror-active #astrek-site [data-testid="hero-product"],
+  html body.mech-mirror-active [data-testid="astrek-site"] .ajh-product {
+    font-size: 2.9rem !important;
+    line-height: 1.02 !important;
+    letter-spacing: -0.035em !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    text-shadow: 0 2px 28px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] .ajh-product-accent,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"] .ajh-product-accent {
+    color: #00c4b4 !important;
+    -webkit-text-fill-color: #00c4b4 !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -webkit-text-stroke: 0 !important;
+  }
+
+  html body.mech-mirror-active #astrek-site p.ajh-title,
+  html body.mech-mirror-active #astrek-site [data-testid="hero-heading"].ajh-title,
+  html body.mech-mirror-active [data-testid="astrek-site"] p.ajh-title {
+    margin-top: 0.65rem !important;
+    font-size: 1.15rem !important;
+    font-weight: 600 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.02em !important;
+    white-space: nowrap !important;
+    max-width: none !important;
+    color: rgba(255, 255, 255, 0.96) !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.96) !important;
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.28) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] .ajh-title-accent,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"] .ajh-title-accent {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  html body.mech-mirror-active #astrek-site p.ajh-sub,
+  html body.mech-mirror-active #astrek-site [data-testid="hero-subcopy"].ajh-sub,
+  html body.mech-mirror-active [data-testid="astrek-site"] p.ajh-sub {
+    margin-top: 0.85rem !important;
+    font-size: 0.94rem !important;
+    line-height: 1.55 !important;
+    max-width: 22rem !important;
+    color: rgba(232, 238, 242, 0.88) !important;
+    -webkit-text-fill-color: rgba(232, 238, 242, 0.88) !important;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] .ajh-metrics,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"] .ajh-metrics {
+    display: flex !important;
+    flex-direction: row !important;
+    max-width: 100% !important;
+    gap: 1.75rem !important;
+    margin-top: 1.35rem !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] .ajh-metric,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"] .ajh-metric {
+    padding-left: 0.85rem !important;
+    border-left: 2px solid rgba(0, 196, 180, 0.85) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site .ajh-metric-value,
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] .ajh-metric-value,
+  html body.mech-mirror-active [data-testid="astrek-site"] .ajh-metric-value,
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] .ajh-metric-value span,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"] .ajh-metric-value span {
+    font-size: 2.35rem !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.04em !important;
+    font-weight: 700 !important;
+    color: #00c4b4 !important;
+    -webkit-text-fill-color: #00c4b4 !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -webkit-text-stroke: 0 !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] .ajh-metric-label,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"] .ajh-metric-label {
+    margin-top: 0.35rem !important;
+    font-size: 0.62rem !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    color: rgba(236, 240, 243, 0.78) !important;
+    -webkit-text-fill-color: rgba(236, 240, 243, 0.78) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] .ajh-actions,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"] .ajh-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: none !important;
+    gap: 0.65rem !important;
+    margin-top: 1.35rem !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] a.ajh-btn,
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] a[data-testid="hero-cta-explore"],
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] a[data-testid="hero-cta-watch"],
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"] a.ajh-btn {
+    width: 100% !important;
+    max-width: none !important;
+    align-self: stretch !important;
+    justify-content: center !important;
+    min-height: 48px !important;
+    padding: 0.85rem 1.1rem !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.14em !important;
+    border-radius: 0.45rem !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] a.ajh-btn--primary,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"] a.ajh-btn--primary {
+    background: #00c4b4 !important;
+    color: #061014 !important;
+    -webkit-text-fill-color: #061014 !important;
+    box-shadow: 0 10px 28px rgba(0, 196, 180, 0.22) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] a.ajh-btn--ghost,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"] a.ajh-btn--ghost {
+    background: rgba(8, 12, 16, 0.28) !important;
+    border: 1px solid rgba(255, 255, 255, 0.55) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+  }
+
+  /* Pin scroll + partners to the bottom of the first viewport */
+  html body.mech-mirror-active #astrek-site [data-hero="journey"].ajh-live .ajh-explore,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-explore {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-end !important;
+    gap: 0.85rem !important;
+    width: 100% !important;
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+    padding: 0.75rem 0 0 !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] button.ajh-scroll,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"] button.ajh-scroll {
+    align-self: flex-start !important;
+    margin: 0 !important;
+    gap: 0.45rem !important;
+    font-size: 0.62rem !important;
+    letter-spacing: 0.18em !important;
+    color: rgba(230, 234, 237, 0.72) !important;
+    -webkit-text-fill-color: rgba(230, 234, 237, 0.72) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] .ajh-scroll-track,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"] .ajh-scroll-track {
+    width: 1.2rem !important;
+    height: 1.95rem !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+  }
+
+  /* Partner glass tray — bottom bar like reference */
+  html body.mech-mirror-active #astrek-site [data-hero="journey"].ajh-live .ajh-partners,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-partners,
+  html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-partners {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    inset: auto !important;
+    z-index: 25 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.55rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 5.5rem !important;
+    margin: 0 !important;
+    padding: 0.55rem 0.45rem !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    border: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-radius: 0.7rem !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+    background: rgba(8, 12, 16, 0.62) !important;
+    background-image: none !important;
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 12px 32px rgba(0, 0, 0, 0.28) !important;
+    backdrop-filter: blur(12px) saturate(1.05) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(1.05) !important;
+    animation: ajh-hero-rise 820ms 80ms cubic-bezier(0.22, 1, 0.36, 1) both !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"].ajh-live .ajh-partners::-webkit-scrollbar,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-partners::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"].ajh-live .ajh-partner,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-partner,
+  html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-partner {
+    flex: 0 0 auto !important;
+    width: 5.25rem !important;
+    min-width: 5.25rem !important;
+    min-height: 3.1rem !important;
+    padding: 0.35rem 0.3rem !important;
+    border-radius: 0 !important;
+    transform: none !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"].ajh-live .ajh-partner::before,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-partner::before {
+    inset: 10% 6% !important;
+    border-radius: 0.35rem !important;
+    background: #ffffff !important;
+    opacity: 1 !important;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"].ajh-live .ajh-partner:not(:last-child)::after,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-partner:not(:last-child)::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"].ajh-live .ajh-partner img,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-partner img {
+    height: 1.7rem !important;
+    max-width: 4.5rem !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  /* Section density + overflow safety below the hero */
+  html body.mech-mirror-active #astrek-site section:not([data-hero="journey"]),
+  html body.mech-mirror-active [data-testid="astrek-site"] section:not([data-hero="journey"]) {
+    padding-block: clamp(3rem, 8vw, 4.5rem) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site section > .mx-auto,
+  html body.mech-mirror-active [data-testid="astrek-site"] section > .mx-auto {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  html body.mech-mirror-active #astrek-site img,
+  html body.mech-mirror-active [data-testid="astrek-site"] img {
+    max-width: 100% !important;
+  }
+
+  html body.mech-mirror-active #astrek-site h2,
+  html body.mech-mirror-active [data-testid="astrek-site"] h2 {
+    font-size: clamp(1.65rem, 7vw, 2.15rem) !important;
+    line-height: 1.15 !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-testid="company-about-section"] .aco-inner,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-testid="company-about-section"] .aco-inner {
+    padding-inline: max(1rem, env(safe-area-inset-left)) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-testid="product-section"] > .mx-auto > .grid:has([data-testid^="product-callout-"]),
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-testid="product-section"] > .mx-auto > .grid:has([data-testid^="product-callout-"]) {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.7rem !important;
+  }
+
+  html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] .ajh-lang,
+  html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] .mech-lang-switcher {
+    font-size: 0.68rem !important;
+    gap: 0.2rem !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* Specs: stage under the list on narrow screens */
+  html body.mech-mirror-active #astrek-site [data-testid="specs-section"] > .mx-auto > .grid {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    gap: 1.5rem !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-testid="specs-stage"] {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-testid="specs-stage"] img {
+    aspect-ratio: 4 / 3 !important;
+    max-height: 16rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* Blog + press: one card per row */
+  html body.mech-mirror-active #astrek-site [data-testid="blog-section"] > .mx-auto > .grid,
+  html body.mech-mirror-active #astrek-site [data-testid="press-section"] > .mx-auto > .grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  /* Product stage stays readable */
+  html body.mech-mirror-active #astrek-site [data-testid="product-stage"] img {
+    width: 100% !important;
+    max-height: 28rem !important;
+    object-fit: contain !important;
+  }
+
+  /* Chapters: no giant 01/02/03 spilling sideways */
+  html body.mech-mirror-active #astrek-site [data-testid="chapters-section"] .pointer-events-none.absolute {
+    font-size: clamp(4.5rem, 28vw, 7rem) !important;
+    right: 0.25rem !important;
+    opacity: 0.08 !important;
+  }
+
+  /* Footer wordmark — faint laptop-style watermark (phones refine further ≤767) */
+  html body.mech-mirror-active #astrek-site footer .text-outline {
+    font-size: clamp(3.5rem, 22vw, 7rem) !important;
+    line-height: 0.85 !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.22) !important;
+  }
+
+  html body.mech-mirror-active footer[data-testid="site-footer"],
+  html body.mech-mirror-active #astrek-site footer {
+    overflow-x: clip !important;
+  }
+
+  /* Drawer: edge-to-edge sheet, no side gutters that look like a strip */
+  html body.mech-mirror-active .mech-mobile-drawer {
+    padding: 4.1rem 0 0 !important;
+    align-items: stretch !important;
+  }
+
+  html body.mech-mirror-active .mech-mobile-drawer__panel {
+    width: 100% !important;
+    max-width: none !important;
+    max-height: calc(100svh - 4.1rem) !important;
+    border-radius: 1.1rem 1.1rem 0 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-bottom: 0 !important;
+    padding: 0.5rem 1.25rem calc(1.35rem + env(safe-area-inset-bottom)) !important;
+    background: #101418 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html body.mech-mirror-active .mech-mobile-drawer__link {
+    min-height: 52px !important;
+    font-size: 1.08rem !important;
+  }
+}
+
+@media (max-width: 599px) {
+  html body.mech-mirror-active #astrek-site [data-hero="journey"].ajh-live .ajh-shell,
+  html body.mech-mirror-active [data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-shell {
+    padding-top: 6.35rem !important;
+    padding-bottom: max(1.15rem, env(safe-area-inset-bottom)) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site .ajh-product,
+  html body.mech-mirror-active #astrek-site [data-testid="hero-product"] {
+    font-size: 2.95rem !important;
+  }
+
+  html body.mech-mirror-active #astrek-site p.ajh-title,
+  html body.mech-mirror-active #astrek-site [data-testid="hero-heading"].ajh-title {
+    font-size: 1.14rem !important;
+    color: rgba(255, 255, 255, 0.96) !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.96) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site .ajh-metric-value,
+  html body.mech-mirror-active #astrek-site [data-hero="journey"] .ajh-metric-value {
+    font-size: 2.35rem !important;
+    color: #00c4b4 !important;
+    -webkit-text-fill-color: #00c4b4 !important;
+    text-shadow: none !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-hero="journey"].ajh-live .ajh-partners {
+    min-height: 5.5rem !important;
+    max-width: 100% !important;
+    border-top: 0 !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-testid="modes-section"] > .mx-auto > .grid,
+  html body.mech-mirror-active #astrek-site [data-testid="product-section"] > .mx-auto > .grid:has([data-testid^="product-callout-"]) {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-testid="impact-stats"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] > .mx-auto > .grid.gap-8,
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] .mt-28.md\:mt-36 .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.75rem !important;
+  }
+
+  html body.mech-mirror-active #astrek-site #contact input,
+  html body.mech-mirror-active #astrek-site #contact textarea,
+  html body.mech-mirror-active #astrek-site #contact select {
+    font-size: 16px !important; /* prevent iOS zoom */
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  html body.mech-mirror-active #astrek-site [data-testid="modes-section"] > .mx-auto > .grid,
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] > .mx-auto > .grid.gap-8,
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] .mt-28.md\:mt-36 .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-testid="blog-section"] > .mx-auto > .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-testid="impact-stats"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* ── Desktop: keep one-row header; stop older sheets forcing a grid fight ─ */
+
+@media (min-width: 1024px) {
+  html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] > div,
+  html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] > div.mech-header-inner {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    grid-template-columns: none !important;
+    grid-template-areas: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 4.5rem !important;
+  }
+
+  html body.mech-mirror-active #astrek-site p.ajh-title,
+  html body.mech-mirror-active #astrek-site [data-testid="hero-heading"].ajh-title {
+    font-size: clamp(1.55rem, 2.2vw, 2.15rem) !important;
+    white-space: nowrap !important;
+    max-width: none !important;
+    color: rgba(250, 252, 253, 0.96) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site p.ajh-sub,
+  html body.mech-mirror-active #astrek-site [data-testid="hero-subcopy"].ajh-sub {
+    font-size: clamp(1rem, 1.2vw, 1.15rem) !important;
+    color: rgba(230, 236, 240, 0.82) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-testid="blog-section"] > .mx-auto > .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Compact desktop: hamburger until there is room for the full link row */
+@media (min-width: 1024px) and (max-width: 1179px) {
+  html body.mech-mirror-active #mech-mirror-root nav.ajh-nav[aria-label="Primary"],
+  html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] .ajh-nav-cta {
+    display: none !important;
+  }
+
+  html body.mech-mirror-active #mech-mirror-root [data-testid="nav-menu-toggle"] {
+    display: inline-flex !important;
+  }
+}
+
+/* Hero text — beat #astrek-site p:not(...) muted fill from astrek-mech.css */
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-product,
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-hero="journey"].ajh-live p.ajh-title,
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-testid="hero-section"][data-hero="journey"] .ajh-product,
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-testid="hero-section"][data-hero="journey"] p.ajh-title {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-hero="journey"].ajh-live p.ajh-sub,
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-testid="hero-section"][data-hero="journey"] p.ajh-sub {
+  color: rgba(238, 242, 245, 0.9) !important;
+  -webkit-text-fill-color: rgba(238, 242, 245, 0.9) !important;
+}
+
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-hero="journey"].ajh-live p.ajh-metric-label,
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-testid="hero-section"][data-hero="journey"] p.ajh-metric-label {
+  color: rgba(245, 247, 248, 0.92) !important;
+  -webkit-text-fill-color: rgba(245, 247, 248, 0.92) !important;
+}
+
+/* Target hero: teal Exo + teal stats; subtitle stays white */
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-product-accent,
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-testid="hero-section"][data-hero="journey"] .ajh-product-accent {
+  color: #00c4b4 !important;
+  -webkit-text-fill-color: #00c4b4 !important;
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-hero="journey"].ajh-live p.ajh-metric-value,
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-hero="journey"].ajh-live p.ajh-metric-value span,
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-testid="hero-section"][data-hero="journey"] p.ajh-metric-value,
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-testid="hero-section"][data-hero="journey"] p.ajh-metric-value span {
+  color: #00c4b4 !important;
+  -webkit-text-fill-color: #00c4b4 !important;
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-hero="journey"].ajh-live .ajh-title-accent,
+html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] [data-testid="hero-section"][data-hero="journey"] .ajh-title-accent {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/*
+ * Mobile site polish — phones only.
+ * Desktop stays untouched. Goal: readable type, even rhythm, compact footer.
+ */
+@media (max-width: 767px) {
+  /* Lift washed-out muted tokens used across body copy */
+  html body.mech-mirror-active {
+    --n-muted: rgba(236, 240, 244, 0.78) !important;
+    --mech-muted: #c4c8ce !important;
+    --rf-muted: rgba(236, 240, 244, 0.78) !important;
+    --pro-muted: rgba(236, 240, 244, 0.78) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] section p:not(.ajh-title):not(.ajh-sub):not(.ajh-metric-value):not(.ajh-metric-label):not(.font-mono):not(.ux-eyebrow):not(.hero-eyebrow):not(.rf-kicker):not(.aco-stat-value):not(.idx):not(.mono),
+  html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] section .text-zinc-400,
+  html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] section .text-zinc-500 {
+    color: rgba(236, 240, 244, 0.8) !important;
+    -webkit-text-fill-color: rgba(236, 240, 244, 0.8) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] section p.font-mono,
+  html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] section .font-mono.text-brand,
+  html body.mech-mirror-active #astrek-site[data-testid="astrek-site"] section .text-brand {
+    color: #00c4b4 !important;
+    -webkit-text-fill-color: #00c4b4 !important;
+  }
+
+  /* Even section rhythm — beat section-gaps / team / py-* utilities */
+  html body.mech-mirror-active #astrek-site section:not([data-hero="journey"]),
+  html body.mech-mirror-active #astrek-site #partners.astrek-partners,
+  html body.mech-mirror-active #astrek-site #faq.astrek-faq,
+  html body.mech-mirror-active #astrek-site #cta-band,
+  html body.mech-mirror-active #astrek-site #press,
+  html body.mech-mirror-active #astrek-site #blog,
+  html body.mech-mirror-active #astrek-site #contact,
+  html body.mech-mirror-active #astrek-site #team,
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"],
+  html body.mech-mirror-active #astrek-site section#partners[data-testid="partners-section"],
+  html body.mech-mirror-active #astrek-site section#press[data-testid="press-section"],
+  html body.mech-mirror-active #astrek-site section#blog[data-testid="blog-section"],
+  html body.mech-mirror-active #astrek-site section#faq[data-testid="faq-section"],
+  html body.mech-mirror-active #astrek-site section#contact[data-testid="contact-section"],
+  html body.mech-mirror-active #astrek-site [data-testid="cta-band"],
+  html body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="people-section"] {
+    padding-top: 3.35rem !important;
+    padding-bottom: 3.35rem !important;
+  }
+
+  html body.mech-mirror-active #astrek-site section > .mx-auto,
+  html body.mech-mirror-active #astrek-site .aco-inner,
+  html body.mech-mirror-active #astrek-site .astrek-faq__inner,
+  html body.mech-mirror-active #astrek-site .astrek-partners__inner {
+    padding-inline: max(1.15rem, env(safe-area-inset-left)) max(1.15rem, env(safe-area-inset-right)) !important;
+    box-sizing: border-box !important;
+  }
+
+  html body.mech-mirror-active #astrek-site h2 {
+    font-size: clamp(1.75rem, 7.4vw, 2.15rem) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -0.032em !important;
+  }
+
+  html body.mech-mirror-active #astrek-site h3 {
+    font-size: clamp(1.12rem, 4.4vw, 1.32rem) !important;
+    line-height: 1.25 !important;
+  }
+
+  /* Product / modes: one clear column, not cramped tiles */
+  html body.mech-mirror-active #astrek-site [data-testid="modes-section"] > .mx-auto > .grid,
+  html body.mech-mirror-active #astrek-site [data-testid="product-section"] > .mx-auto > .grid:has([data-testid^="product-callout-"]) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 0.85rem !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-testid="product-stage"] img,
+  html body.mech-mirror-active #astrek-site [data-testid="product-section"] img {
+    border-radius: 0.75rem !important;
+  }
+
+  /* Chapters watermark quieter */
+  html body.mech-mirror-active #astrek-site [data-testid="chapters-section"] .pointer-events-none.absolute {
+    font-size: clamp(3.75rem, 24vw, 6rem) !important;
+    opacity: 0.06 !important;
+  }
+
+  /* Team portraits: keep 2-up but give images a clean frame */
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] > .mx-auto > .grid.gap-8,
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] .mt-28.md\:mt-36 .grid {
+    gap: 0.9rem 0.75rem !important;
+  }
+
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] img,
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"] img {
+    border-radius: 0.65rem !important;
+  }
+
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] h4,
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"] h4 {
+    font-size: 0.98rem !important;
+    margin-top: 0.65rem !important;
+  }
+
+  /* Press / blog cards */
+  html body.mech-mirror-active #astrek-site [data-testid="blog-section"] > .mx-auto > .grid,
+  html body.mech-mirror-active #astrek-site [data-testid="press-section"] > .mx-auto > .grid {
+    gap: 1.15rem !important;
+  }
+
+  html body.mech-mirror-active #astrek-site [data-testid="blog-section"] img,
+  html body.mech-mirror-active #astrek-site [data-testid="press-section"] img {
+    border-radius: 0.65rem !important;
+  }
+
+  /* FAQ intro align with list */
+  html body.mech-mirror-active #faq.astrek-faq .astrek-faq__intro {
+    padding-inline-start: 0 !important;
+    margin-bottom: 1.75rem !important;
+  }
+
+  html body.mech-mirror-active #faq.astrek-faq .astrek-faq__question {
+    font-size: 1.05rem !important;
+  }
+
+  /* Contact form */
+  html body.mech-mirror-active #astrek-site #contact form,
+  html body.mech-mirror-active #astrek-site [data-testid="contact-section"] form {
+    border-radius: 0.85rem !important;
+    padding: 1.25rem 1.1rem !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  /* CTA band */
+  html body.mech-mirror-active #astrek-site #cta-band h2 {
+    font-size: clamp(1.55rem, 6.5vw, 1.9rem) !important;
+  }
+
+  /* Footer: compact professional close */
+  html body.mech-mirror-active footer[data-testid="site-footer"],
+  html body.mech-mirror-active #astrek-site footer {
+    padding-top: 1.75rem !important;
+    padding-bottom: 0.85rem !important;
+  }
+
+  html body.mech-mirror-active footer[data-testid="site-footer"] > .mx-auto,
+  html body.mech-mirror-active #astrek-site footer[data-testid="site-footer"] > .mx-auto,
+  html body.mech-mirror-active #astrek-site footer > .mx-auto {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-inline: max(1.15rem, env(safe-area-inset-left)) max(1.15rem, env(safe-area-inset-right)) !important;
+  }
+
+  html body.mech-mirror-active footer[data-testid="site-footer"] .grid.gap-14,
+  html body.mech-mirror-active footer .grid.lg\:grid-cols-12 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.15rem !important;
+  }
+
+  html body.mech-mirror-active footer[data-testid="site-footer"] .grid.grid-cols-2,
+  html body.mech-mirror-active footer .grid.grid-cols-2.sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.75rem 0.65rem !important;
+  }
+
+  /*
+   * Footer wordmark — match laptop: one solid logo + faint outline “ASTREK”.
+   * (Was hidden before; with sticky header logo that felt like two big brands.)
+   */
+  html body.mech-mirror-active footer .text-outline,
+  html body.mech-mirror-active #astrek-site footer .text-outline {
+    display: block !important;
+    font-size: clamp(4.5rem, 28vw, 7.5rem) !important;
+    line-height: 0.78 !important;
+    letter-spacing: -0.04em !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2) !important;
+    opacity: 0.85 !important;
+  }
+
+  html body.mech-mirror-active footer .pointer-events-none.mt-20.select-none,
+  html body.mech-mirror-active #astrek-site footer .pointer-events-none.mt-20 {
+    margin-top: 1.75rem !important;
+    margin-bottom: 0.25rem !important;
+    overflow: hidden !important;
+    max-height: 4.75rem !important;
+  }
+
+  /* While reading the footer, tuck the sticky header so logos don’t double up */
+  html body.mech-mirror-active.mech-footer-focus [data-testid="site-header"] {
+    transform: translateY(-110%) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: transform 280ms ease, opacity 220ms ease !important;
+  }
+
+  html body.mech-mirror-active [data-testid="site-header"] {
+    transition: transform 280ms ease, opacity 220ms ease !important;
+  }
+
+  html body.mech-mirror-active footer h5,
+  html body.mech-mirror-active #astrek-site footer h5 {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  html body.mech-mirror-active footer a,
+  html body.mech-mirror-active #astrek-site footer a {
+    font-size: 0.82rem !important;
+    line-height: 1.35 !important;
+  }
+
+  html body.mech-mirror-active footer ul.mt-5,
+  html body.mech-mirror-active #astrek-site footer ul.mt-5,
+  html body.mech-mirror-active footer .mt-5.space-y-3 {
+    margin-top: 0.45rem !important;
+  }
+
+  html body.mech-mirror-active footer .space-y-3 > :not([hidden]) ~ :not([hidden]),
+  html body.mech-mirror-active #astrek-site footer .space-y-3 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.35rem !important;
+  }
+
+  html body.mech-mirror-active footer img[alt="Astrek Innovations"],
+  html body.mech-mirror-active #astrek-site footer img[alt="Astrek Innovations"] {
+    height: 2rem !important;
+    width: auto !important;
+  }
+
+  html body.mech-mirror-active footer .mt-6.max-w-sm,
+  html body.mech-mirror-active #astrek-site footer p.mt-6 {
+    margin-top: 0.65rem !important;
+  }
+
+  html body.mech-mirror-active footer .mt-8.flex.gap-3,
+  html body.mech-mirror-active #astrek-site footer .mt-8.flex {
+    margin-top: 0.75rem !important;
+    gap: 0.5rem !important;
+  }
+
+  html body.mech-mirror-active footer a.h-11,
+  html body.mech-mirror-active #astrek-site footer a.h-11 {
+    height: 2.25rem !important;
+    width: 2.25rem !important;
+  }
+
+  html body.mech-mirror-active footer form,
+  html body.mech-mirror-active #astrek-site footer form,
+  html body.mech-mirror-active footer form.mt-10 {
+    margin-top: 0.85rem !important;
+  }
+
+  html body.mech-mirror-active footer p,
+  html body.mech-mirror-active #astrek-site footer p {
+    font-size: 0.84rem !important;
+    line-height: 1.45 !important;
+  }
+
+  html body.mech-mirror-active footer[data-testid="site-footer"] .border-t,
+  html body.mech-mirror-active #astrek-site footer .border-t {
+    margin-top: 1rem !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.35rem !important;
+  }
+
+  /* Header: full-width bar, balanced logo / lang / menu */
+  html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] > div,
+  html body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] > div.mech-header-inner {
+    width: 100% !important;
+    max-width: none !important;
+    justify-content: space-between !important;
+    padding-inline: max(0.85rem, env(safe-area-inset-left)) max(0.85rem, env(safe-area-inset-right)) !important;
+  }
+}

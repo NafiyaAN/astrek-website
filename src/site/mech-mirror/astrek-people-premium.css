@@ -1,0 +1,156 @@
+/* People — editorial team + mentor presentation (content unchanged). */
+
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"],
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"] {
+  display: flex !important;
+  flex-direction: column !important;
+  height: fit-content !important;
+  min-height: 0 !important;
+}
+
+/* Portrait frame: 3:4 editorial crop */
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] > div.relative,
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"] > div.relative {
+  aspect-ratio: 3 / 4 !important;
+  width: 100% !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0 !important;
+  background: #0a0c10 !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
+  line-height: 0 !important;
+}
+
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] > div.relative img,
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"] > div.relative img {
+  aspect-ratio: 3 / 4 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 18% !important;
+  border: none !important;
+  border-radius: 0 !important;
+  filter: grayscale(0.35) contrast(1.04) !important;
+  transform: scale(1.01) !important;
+  transition: filter 0.45s ease, transform 0.55s ease !important;
+  background: #0a0c10 !important;
+}
+
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"]:hover > div.relative img,
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"]:hover > div.relative img,
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"]:focus-within > div.relative img,
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"]:focus-within > div.relative img {
+  filter: grayscale(0) contrast(1.02) !important;
+  transform: scale(1.035) !important;
+}
+
+/* Mentors: cooler, slightly quieter portraits */
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"] > div.relative {
+  border-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"] > div.relative img {
+  filter: grayscale(0.55) contrast(1.02) brightness(0.96) !important;
+  object-position: center 22% !important;
+}
+
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"]:hover > div.relative img,
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"]:focus-within > div.relative img {
+  filter: grayscale(0.12) contrast(1.02) brightness(1) !important;
+}
+
+/* Text block under portrait — never inherit square aspect */
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] > div.mt-5,
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"] > div.mt-5 {
+  aspect-ratio: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  background: transparent !important;
+  overflow: visible !important;
+  border: none !important;
+  margin-top: 0.85rem !important;
+  padding-bottom: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] h4,
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"] h4 {
+  font-family: var(--mech-display, "Outfit", system-ui, sans-serif) !important;
+  font-size: clamp(1.05rem, 1.35vw, 1.2rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.2 !important;
+  color: rgba(248, 250, 252, 0.96) !important;
+  margin: 0 !important;
+}
+
+/* Role line */
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] h4 + p,
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"] h4 + p {
+  font-family: var(--mech-mono, "JetBrains Mono", ui-monospace, monospace) !important;
+  font-size: 0.62rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: #00c4b4 !important;
+  margin: 0.4rem 0 0 !important;
+}
+
+/* Bio */
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] h4 + p + p,
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"] h4 + p + p {
+  font-family: var(--mech-body, "Manrope", system-ui, sans-serif) !important;
+  font-size: 0.88rem !important;
+  line-height: 1.45 !important;
+  color: rgba(161, 161, 170, 0.92) !important;
+  margin: 0.65rem 0 0 !important;
+  max-width: 18rem !important;
+}
+
+/* No LinkedIn chips on founder/mentor portraits */
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] a[data-testid$="-linkedin"],
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] a[aria-label*="LinkedIn"] {
+  display: none !important;
+}
+
+/* Mentors intro spacing */
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] > .mx-auto > .mt-28.md\:mt-36 {
+  margin-top: clamp(3rem, 6vw, 4.5rem) !important;
+  padding-top: clamp(1.5rem, 3vw, 2rem) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Portrait crop tweaks */
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid="team-card-jithin"] img {
+  object-position: center 20% !important;
+}
+
+html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid="team-card-vishnu"] img {
+  object-position: center 16% !important;
+}
+
+@media (max-width: 767px) {
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] > div.relative,
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"] > div.relative {
+    border-radius: 0.5rem !important;
+  }
+
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] > div.relative img,
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"] > div.relative img {
+    border-radius: 0.5rem !important;
+    filter: grayscale(0.2) contrast(1.03) !important;
+  }
+
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] h4,
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"] h4 {
+    font-size: 0.98rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] > div.relative img,
+  html body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="mentor-card-"] > div.relative img {
+    transition: none !important;
+    transform: none !important;
+  }
+}

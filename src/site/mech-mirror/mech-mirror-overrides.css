@@ -1,0 +1,479 @@
+/* Isolation + polish when Emergent mirror is active (teal brand) */
+
+body.mech-mirror-active {
+  background: #000000 !important;
+  color: #fafafa !important;
+  font-family: var(--mech-body, Manrope, sans-serif) !important;
+  margin: 0 !important;
+}
+
+/* ── Scroll reveal: cinematic ease ── */
+body.mech-mirror-active .mech-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.9s var(--mech-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    transform 0.9s var(--mech-ease, cubic-bezier(0.22, 1, 0.36, 1));
+  transition-delay: var(--mech-reveal-delay, 0ms);
+}
+
+body.mech-mirror-active .mech-reveal--in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Language switcher */
+body.mech-mirror-active .mech-lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+body.mech-mirror-active .mech-lang-switcher button {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: #a1a1aa;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  padding: 0.35rem 0.55rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+body.mech-mirror-active .mech-lang-switcher button.is-active,
+body.mech-mirror-active .mech-lang-switcher button:hover {
+  color: #00c4b4;
+  border-color: rgba(0, 196, 180, 0.45);
+  background: rgba(0, 196, 180, 0.08);
+}
+
+/* ── Navbar ─────────────────────────────────────────────── */
+
+body.mech-mirror-active [data-testid="site-header"] {
+  position: fixed !important;
+  inset-inline: 0 !important;
+  top: 0 !important;
+  z-index: 50 !important;
+  display: block !important;
+  grid-template-columns: unset !important;
+  padding: 0 !important;
+  border-bottom: 1px solid transparent;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+body.mech-mirror-active [data-testid="site-header"].is-scrolled {
+  border-bottom-color: rgba(0, 196, 180, 0.12);
+}
+
+body.mech-mirror-active .mech-header-inner {
+  display: grid !important;
+  width: 100% !important;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: "logo nav actions";
+  align-items: center !important;
+  height: 72px !important;
+  max-width: 80rem !important;
+  margin-inline: auto !important;
+  gap: 1rem 1.5rem !important;
+  padding-inline: clamp(1rem, 3vw, 3rem) !important;
+}
+
+body.mech-mirror-active [data-testid="nav-logo"] {
+  grid-area: logo;
+  flex-shrink: 0;
+}
+
+body.mech-mirror-active .mech-header-actions {
+  grid-area: actions;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end;
+  gap: 0.625rem !important;
+  flex-shrink: 0;
+}
+
+/* Primary nav: desktop */
+body.mech-mirror-active nav[aria-label="Primary"] {
+  grid-area: nav;
+  display: none !important;
+}
+
+@media (min-width: 1024px) {
+  body.mech-mirror-active nav[aria-label="Primary"] {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(1rem, 1.6vw, 2rem) !important;
+    min-width: 0 !important;
+    flex-wrap: nowrap !important;
+  }
+
+  body.mech-mirror-active nav[aria-label="Primary"] > a:not(.mech-drawer-cta) {
+    display: inline-block !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    font-size: 10px !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    color: #a1a1aa !important;
+    transition: color 0.2s ease;
+  }
+
+  body.mech-mirror-active nav[aria-label="Primary"] > a:not(.mech-drawer-cta):hover {
+    color: #fafafa !important;
+  }
+
+  body.mech-mirror-active a.mech-drawer-cta {
+    display: none !important;
+  }
+
+  body.mech-mirror-active [data-testid="nav-menu-toggle"] {
+    display: none !important;
+  }
+
+  body.mech-mirror-active .mech-lang-switcher {
+    display: flex !important;
+  }
+
+  body.mech-mirror-active [data-testid="nav-cta-contact"]:not(.mech-drawer-cta) {
+    display: inline-flex !important;
+  }
+}
+
+/* CTA: visual styles only; display controlled per breakpoint */
+body.mech-mirror-active [data-testid="nav-cta-contact"]:not(.mech-drawer-cta),
+body.mech-mirror-active [data-testid="site-header"] a.bg-brand:not(.mech-drawer-cta),
+body.mech-mirror-active [data-testid="site-header"] a[class*="bg-brand"]:not(.mech-drawer-cta),
+body.mech-mirror-active a.mech-drawer-cta {
+  align-items: center !important;
+  gap: 0.55rem !important;
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+  border-radius: 999px !important;
+  background: #00c4b4 !important;
+  color: #04110f !important;
+  padding: 0.7rem 1.25rem !important;
+  font-family: var(--mech-body, "Manrope", system-ui, sans-serif) !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  text-transform: none !important;
+  box-shadow: none;
+}
+
+body.mech-mirror-active .mech-burger {
+  display: none !important;
+}
+
+body.mech-mirror-active a.mech-drawer-cta {
+  display: none !important;
+}
+
+/* Mobile drawer */
+@media (max-width: 1023px) {
+  body.mech-mirror-active [data-testid="nav-menu-toggle"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: 999px !important;
+    background: rgba(0, 0, 0, 0.35) !important;
+    color: #fafafa !important;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  body.mech-mirror-active [data-testid="nav-menu-toggle"]:hover {
+    border-color: rgba(0, 196, 180, 0.35) !important;
+    background: rgba(0, 196, 180, 0.08) !important;
+  }
+
+  body.mech-mirror-active .mech-header-inner {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "logo actions";
+  }
+
+  body.mech-mirror-active [data-testid="nav-cta-contact"]:not(.mech-drawer-cta) {
+    display: none !important;
+  }
+
+  body.mech-mirror-active .mech-lang-switcher {
+    display: none !important;
+  }
+
+  body.mech-mirror-active [data-testid="site-header"].mech-nav-open nav[aria-label="Primary"] {
+    display: flex !important;
+    position: fixed;
+    inset: 72px 0 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 1.25rem 1.5rem 2rem;
+    background: rgba(3, 4, 5, 0.97);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    overflow-y: auto;
+    z-index: 49;
+  }
+
+  body.mech-mirror-active [data-testid="site-header"].mech-nav-open nav[aria-label="Primary"] > a:not(.mech-drawer-cta) {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 12px !important;
+    letter-spacing: 0.18em !important;
+    color: #d4d4d8 !important;
+  }
+
+  body.mech-mirror-active [data-testid="site-header"].mech-nav-open a.mech-drawer-cta {
+    display: inline-flex !important;
+    justify-content: center;
+    margin-top: 1.25rem;
+    padding: 0.875rem 1.25rem !important;
+    width: 100%;
+  }
+}
+
+body.mech-mirror-active.mech-nav-locked {
+  overflow: hidden;
+}
+
+body.mech-mirror-active [data-testid="site-header"] img,
+body.mech-mirror-active [data-testid="nav-logo"] img {
+  height: 2.25rem !important;
+  width: auto !important;
+  max-width: 11rem !important;
+  object-fit: contain !important;
+}
+
+/* Legacy mobile block removed: see Navbar section above */
+
+/* ── Hero: fix double padding + responsive layout ── */
+body.mech-mirror-active [data-testid="hero-section"] {
+  padding: 0 !important;
+}
+
+body.mech-mirror-active [data-testid="hero-section"]:not([data-hero="journey"]) > div {
+  min-height: auto !important;
+  padding-top: calc(72px + clamp(0.75rem, 2vh, 1.25rem)) !important;
+  padding-bottom: clamp(2rem, 5vh, 4rem) !important;
+  padding-inline: clamp(1rem, 3vw, 3rem) !important;
+  gap: clamp(1.5rem, 4vw, 3.5rem) !important;
+  align-items: start !important;
+  align-content: start !important;
+  box-sizing: border-box !important;
+}
+
+body.mech-mirror-active [data-testid="hero-section"]:not([data-hero="journey"]) h1 {
+  font-size: clamp(3rem, 11vw, 7.5rem) !important;
+  line-height: 0.88 !important;
+}
+
+body.mech-mirror-active [data-testid="hero-section"]:not([data-hero="journey"]) [data-testid="hero-heading"] {
+  margin-bottom: 0 !important;
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body.mech-mirror-active [data-testid="hero-section"]:not([data-hero="journey"]) > div {
+    min-height: auto !important;
+    padding-top: calc(72px + 0.5rem) !important;
+    padding-bottom: 3rem !important;
+    gap: 2rem !important;
+  }
+
+  body.mech-mirror-active [data-testid="hero-section"]:not([data-hero="journey"]) h1 {
+    font-size: clamp(3.5rem, 9vw, 5.5rem) !important;
+  }
+}
+
+/* Laptop / desktop */
+@media (min-width: 1024px) {
+  body.mech-mirror-active [data-testid="hero-section"]:not([data-hero="journey"]) > div {
+    min-height: min(100svh, 920px) !important;
+    padding-top: calc(72px + clamp(1rem, 2.5vh, 2rem)) !important;
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  }
+
+  body.mech-mirror-active [data-testid="hero-section"]:not([data-hero="journey"]) > div > :last-child {
+    align-self: center;
+  }
+
+  body.mech-mirror-active [data-testid="hero-section"]:not([data-hero="journey"]) h1 {
+    font-size: clamp(4.5rem, 7vw, 8.5rem) !important;
+  }
+}
+
+/* Footer + press logos from original Astrek assets */
+body.mech-mirror-active footer img[alt="Astrek Innovations"],
+body.mech-mirror-active [data-testid="nav-logo"] img {
+  filter: none !important;
+}
+
+body.mech-mirror-active .partner-logo img,
+body.mech-mirror-active img[alt*="Maker Village"],
+body.mech-mirror-active img[alt*="Startup Mission"],
+body.mech-mirror-active img[alt*="Startup Chile"],
+body.mech-mirror-active img[alt*="Huddle"],
+body.mech-mirror-active img[alt*="HealthStart"],
+body.mech-mirror-active img[alt*="IIIT"],
+body.mech-mirror-active img[alt*="NIDHI"],
+body.mech-mirror-active img[alt*="Angel Network"],
+body.mech-mirror-active img[alt*="MeitY"],
+body.mech-mirror-active img[alt*="OIST"] {
+  height: 2.5rem !important;
+  width: auto !important;
+  max-width: 9rem !important;
+  object-fit: contain !important;
+  opacity: 1 !important;
+  filter: brightness(1.2) contrast(1.05) !important;
+}
+
+body.mech-mirror-active img[alt*="Robin"],
+body.mech-mirror-active img[alt*="Jithin"],
+body.mech-mirror-active img[alt*="Alex"],
+body.mech-mirror-active img[alt*="Vishnu"],
+body.mech-mirror-active img[alt*="Ishaan"],
+body.mech-mirror-active img[alt*="Pradeep"],
+body.mech-mirror-active img[alt*="Sanil"] {
+  object-fit: cover !important;
+  object-position: center top !important;
+}
+
+body.mech-mirror-active #site-header-host,
+body.mech-mirror-active .cookie-notice,
+body.mech-mirror-active .scroll-rail {
+  display: none !important;
+}
+
+/* Nested host: full width for mobile layout */
+#mech-mirror-root.mech-mirror-host {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Ensure brand hover soft stays readable on teal */
+body.mech-mirror-active .bg-brand,
+body.mech-mirror-active .hover\:bg-brand:hover {
+  color: #04110f !important;
+}
+
+body.mech-mirror-active .hover\:bg-brand-soft:hover {
+  background-color: #5aebd4 !important;
+  color: #04110f !important;
+}
+
+/* Reveal content that may have been left opacity-0 by extracted animation state */
+body.mech-mirror-active [style*="opacity: 0"] {
+  opacity: 1 !important;
+}
+
+/* Keep FAQ panels readable when toggled */
+body.mech-mirror-active #faq [data-state="closed"] + *,
+body.mech-mirror-active #faq [hidden] {
+  display: none !important;
+}
+
+/* ── Mobile polish ───────────────────────────────────────── */
+
+@media (max-width: 1023px) {
+  body.mech-mirror-active .mech-header-inner {
+    padding-inline: 1rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body.mech-mirror-active [data-testid="astrek-site"] {
+    overflow-x: clip;
+  }
+
+  body.mech-mirror-active [data-testid="hero-section"]:not([data-hero="journey"]) > div {
+    min-height: auto !important;
+    padding-top: calc(72px + 0.375rem) !important;
+    padding-bottom: 2rem !important;
+    gap: 1.25rem !important;
+  }
+
+  body.mech-mirror-active [data-testid="astrek-site"] h1:not(.ajh-title):not(.ajh-product) {
+    font-size: clamp(2.75rem, 14vw, 3.5rem) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  body.mech-mirror-active [data-testid="hero-section"]:not([data-hero="journey"]) .flex.flex-wrap,
+  body.mech-mirror-active [data-testid="hero-section"]:not([data-hero="journey"]) [class*="flex-wrap"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
+  }
+
+  body.mech-mirror-active [data-testid="hero-section"]:not([data-hero="journey"]) a.bg-brand,
+  body.mech-mirror-active [data-testid="hero-section"]:not([data-hero="journey"]) a[class*="bg-brand"],
+  body.mech-mirror-active [data-testid="hero-section"]:not([data-hero="journey"]) a.border-white {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  body.mech-mirror-active [data-mech-stats] {
+    padding-inline: 1rem !important;
+  }
+
+  body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-patients-tra"] p.font-display,
+  body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-rehabilitati"] p.font-display {
+    font-size: clamp(3.1rem, 14vw, 4.25rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid^="stat-"] {
+    padding: 1rem 0.5rem !important;
+  }
+
+  body.mech-mirror-active .partner-logo img,
+  body.mech-mirror-active img[alt*="Maker Village"],
+  body.mech-mirror-active img[alt*="Startup Mission"],
+  body.mech-mirror-active img[alt*="Startup Chile"],
+  body.mech-mirror-active img[alt*="Huddle"],
+  body.mech-mirror-active img[alt*="HealthStart"],
+  body.mech-mirror-active img[alt*="IIIT"],
+  body.mech-mirror-active img[alt*="NIDHI"],
+  body.mech-mirror-active img[alt*="Angel Network"],
+  body.mech-mirror-active img[alt*="MeitY"],
+  body.mech-mirror-active img[alt*="OIST"] {
+    opacity: 1 !important;
+    filter: brightness(1.15) !important;
+    max-width: 7.5rem !important;
+  }
+}
+
+/* Stats: always visible, no fade-in delay */
+body.mech-mirror-active [data-mech-stats] [data-testid^="stat-"] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Inner pages: shared mech chrome + legacy page-shell content */
+body.mech-mirror-active .mech-inner-content.page-shell {
+  padding-top: 72px;
+  background: #050505;
+  color: #fafafa;
+  min-height: calc(100vh - 72px);
+}
+
+body.mech-mirror-active .mech-inner-content .page-hero {
+  padding-top: 2.5rem;
+}
+
+body.mech-mirror-active .mech-inner-content .rf-section,
+body.mech-mirror-active .mech-inner-content .page-hero,
+body.mech-mirror-active .mech-inner-content .article-wrap {
+  color: #fafafa;
+}

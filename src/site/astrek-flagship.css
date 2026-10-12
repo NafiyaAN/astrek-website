@@ -1,0 +1,1282 @@
+/* =====================================================================
+   FLAGSHIP: medical-robotics product house
+   Boston Dynamics / Optimus / Vision Pro register.
+   Photographs and logos are the originals: graded, cropped, scaled.
+   Loads last.
+   ===================================================================== */
+
+:root {
+  --flag-void: #0a0a0b;
+  --flag-paper: #f5f5f3;
+  --flag-mint: #3ef0c2;
+  --flag-mint-ink: #04140f;
+  --flag-muted: rgba(245, 245, 243, 0.58);
+  --flag-line: rgba(245, 245, 243, 0.1);
+  --flag-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --pro-bg: var(--flag-void);
+  --pro-ink: var(--flag-paper);
+  --pro-accent: var(--flag-mint);
+  --pro-muted: var(--flag-muted);
+}
+
+html,
+body {
+  background: var(--flag-void) !important;
+}
+
+body,
+#astrek-site {
+  color: var(--flag-paper) !important;
+}
+
+#astrek-site {
+  background: var(--flag-void) !important;
+}
+
+#astrek-site::before {
+  opacity: 0.028 !important;
+  background-size: 96px 96px !important;
+}
+
+/* ---------- Type: oversized display, quiet body ---------- */
+#astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+#astrek-site .hero--tronix h1.ux-h1,
+#astrek-site .hero.rf-hero.hero--tronix h1 {
+  font-size: clamp(4.5rem, 11.5vw, 7.5rem) !important; /* 72–120 */
+  font-weight: 600 !important;
+  letter-spacing: -0.055em !important;
+  line-height: 0.86 !important;
+  color: var(--flag-paper) !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 24px 80px rgba(0, 0, 0, 0.55) !important;
+  white-space: nowrap !important;
+}
+
+#astrek-site > section:not(.hero) .rf-h2.ux-h2,
+#astrek-site > section:not(.hero) h2.rf-h2,
+#astrek-site > section:not(.hero) .ux-h2,
+#astrek-site .page-hero h1,
+#astrek-site .rf-cta-band h2 {
+  font-size: clamp(2.75rem, 6.2vw, 5.25rem) !important;
+  font-weight: 550 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 0.96 !important;
+  max-width: 14ch !important;
+  color: var(--flag-paper) !important;
+  text-transform: none !important;
+}
+
+#astrek-site h3,
+#astrek-site .ux-feature-copy h3,
+#astrek-site .rf-point h3,
+#astrek-site .rf-mode-meta h3,
+#astrek-site .rf-part-meta h3 {
+  font-size: clamp(1.35rem, 2vw, 1.85rem) !important;
+  font-weight: 550 !important;
+  letter-spacing: -0.03em !important;
+  text-transform: none !important;
+}
+
+#astrek-site p:not(.ajh-title):not(.ajh-sub):not(.ajh-metric-value):not(.ajh-metric-label):not(.ajh-product),
+#astrek-site .rf-section-head p,
+#astrek-site .rf-product-intro > p,
+#astrek-site .ux-impact > p {
+  font-size: clamp(1.05rem, 1.15vw, 1.2rem) !important;
+  line-height: 1.62 !important;
+  color: var(--flag-muted) !important;
+  -webkit-text-fill-color: var(--flag-muted) !important;
+  max-width: 38rem;
+}
+
+#astrek-site .ux-eyebrow,
+#astrek-site .rf-kicker,
+#astrek-site .rf-kicker.mono {
+  color: var(--flag-mint) !important;
+  font-size: 0.6875rem !important;
+  letter-spacing: 0.2em !important;
+}
+
+/* ---------- Space ---------- */
+#astrek-site > section.rf-section,
+#astrek-site > section.ux-section,
+#astrek-site > .rf-section {
+  padding-top: clamp(128px, 16vw, 208px) !important;
+  padding-bottom: clamp(128px, 16vw, 208px) !important;
+  background: var(--flag-void) !important;
+}
+
+#astrek-site .rf-section-head,
+#astrek-site .rf-product-intro {
+  margin-bottom: clamp(56px, 7vw, 96px) !important;
+}
+
+#astrek-site .wrap {
+  max-width: 1240px !important;
+  padding-left: clamp(20px, 4vw, 48px);
+  padding-right: clamp(20px, 4vw, 48px);
+}
+
+/* ---------- Buttons ---------- */
+#astrek-site .rf-btn:not(.rf-btn--ghost):not(.rf-btn--nav),
+.rf-btn:not(.rf-btn--ghost):not(.rf-btn--nav),
+#siteHeader .header-cta,
+#siteHeader .rf-btn.header-cta {
+  background: var(--flag-mint) !important;
+  color: var(--flag-mint-ink) !important;
+  box-shadow: 0 0 0 0 rgba(62, 240, 194, 0) !important;
+  transition:
+    transform 280ms var(--flag-ease),
+    box-shadow 280ms var(--flag-ease),
+    background 200ms ease !important;
+}
+
+#astrek-site .rf-btn:hover,
+#siteHeader .header-cta:hover,
+.rf-btn:hover {
+  transform: scale(1.03) !important;
+  box-shadow: 0 10px 40px rgba(62, 240, 194, 0.28) !important;
+}
+
+#astrek-site .rf-btn--ghost:hover {
+  border-color: var(--flag-mint) !important;
+  color: var(--flag-mint) !important;
+}
+
+/* ---------- Sticky minimizing nav ---------- */
+#siteHeader {
+  transition:
+    background 320ms ease,
+    min-height 320ms ease,
+    backdrop-filter 320ms ease !important;
+}
+
+#siteHeader .rf-header-inner {
+  transition: min-height 320ms var(--flag-ease), padding 320ms ease !important;
+}
+
+#siteHeader.scrolled .rf-header-inner,
+#siteHeader.is-scrolled .rf-header-inner {
+  min-height: 58px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+#siteHeader.scrolled,
+#siteHeader.is-scrolled {
+  background: rgba(10, 10, 11, 0.78) !important;
+  backdrop-filter: blur(22px) saturate(1.3) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(1.3) !important;
+  border-bottom: 1px solid var(--flag-line) !important;
+}
+
+.premium-progress {
+  height: 1.5px !important;
+  background: var(--flag-mint) !important;
+  box-shadow: 0 0 12px rgba(62, 240, 194, 0.55) !important;
+}
+
+/* =====================================================================
+   HERO: product is the page
+   ===================================================================== */
+#astrek-site .hero.rf-hero,
+#astrek-site .rf-hero,
+#astrek-site .hero.rf-hero.hero--tronix {
+  min-height: 100dvh !important;
+  background: var(--flag-void) !important;
+}
+
+#astrek-site .hero--tronix .hero-video {
+  opacity: 0.07 !important;
+  filter: grayscale(1) contrast(1.15) brightness(0.28) !important;
+}
+
+#astrek-site .hero--tronix .hero-video-overlay {
+  background:
+    radial-gradient(ellipse 42% 48% at 50% 46%, rgba(62, 240, 194, 0.08), transparent 62%),
+    radial-gradient(ellipse 70% 60% at 50% 50%, transparent 30%, #0a0a0b 100%) !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-visual {
+  padding: calc(var(--site-header-h, 72px) + 4vh) 0 8vh !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix .rf-hero-visual img,
+#astrek-site .hero.rf-hero.hero--tronix #heroProductImg {
+  max-width: min(78vw, 920px) !important;
+  max-height: min(84vh, 1040px) !important;
+  width: auto !important;
+  height: auto !important;
+  filter:
+    drop-shadow(0 40px 80px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 48px rgba(62, 240, 194, 0.12)) !important;
+  transform-origin: 50% 62%;
+  animation: flagHeroFloat 9s ease-in-out infinite;
+  will-change: transform;
+}
+
+#astrek-site .hero--tronix .rf-hero-visual {
+  transform: perspective(1400px) rotateX(var(--flag-tilt-x, 0deg)) rotateY(var(--flag-tilt-y, 0deg));
+  transition: transform 80ms linear;
+}
+
+@keyframes flagHeroFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-0.8deg);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) rotate(0.8deg);
+  }
+}
+
+#astrek-site .hero--tronix .rf-hero-copy {
+  inset: auto auto 7vh clamp(24px, 5vw, 64px) !important;
+  width: min(28rem, 38vw) !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-copy .sub,
+#astrek-site .rf-hero-copy .sub {
+  font-size: 1.0625rem !important;
+  line-height: 1.5 !important;
+  color: rgba(245, 245, 243, 0.72) !important;
+  max-width: 34ch;
+}
+
+#astrek-site .hero--tronix .hero-module {
+  display: none !important;
+}
+
+#astrek-site .hero-product-floor {
+  opacity: 0.45 !important;
+  filter: blur(22px) !important;
+}
+
+/* =====================================================================
+   KEY FEATURES: cinematic editorial, not a cramped grid
+   ===================================================================== */
+#astrek-site .ux-feature-stack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(80px, 10vw, 140px) !important;
+}
+
+@media (min-width: 1024px) {
+  #astrek-site .ux-feature-row,
+  #astrek-site .ux-feature-row--reverse {
+    display: grid !important;
+    grid-template-columns: 1.15fr 0.85fr !important;
+    gap: clamp(48px, 6vw, 88px) !important;
+    align-items: center !important;
+  }
+
+  #astrek-site .ux-feature-row--reverse {
+    grid-template-columns: 0.85fr 1.15fr !important;
+  }
+
+  #astrek-site .ux-feature-media,
+  #astrek-site .ux-feature-media {
+    aspect-ratio: 4 / 5 !important;
+    max-height: none !important;
+    min-height: 520px !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    border: 1px solid var(--flag-line) !important;
+    background: #111 !important;
+  }
+}
+
+#astrek-site .ux-feature-media img,
+#astrek-site .ux-feature-media img,
+#astrek-site .rf-mode-card img,
+#astrek-site .rf-part-card img,
+#astrek-site .rf-story-media img,
+#astrek-site .rf-press-media img,
+#astrek-site .rf-blog-cover,
+#astrek-site .rf-contact-visual img,
+#astrek-site .blog-cover {
+  filter: saturate(0.62) contrast(1.08) brightness(0.88) !important;
+  transition: filter 500ms ease, transform 900ms var(--flag-ease) !important;
+}
+
+#astrek-site .ux-feature-media:hover img,
+#astrek-site .rf-mode-card:hover img,
+#astrek-site .rf-part-card:hover img,
+#astrek-site .rf-story-media:hover img {
+  filter: saturate(0.78) contrast(1.1) brightness(0.94) !important;
+  transform: scale(1.035);
+}
+
+#astrek-site .ux-feature-copy .ux-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#astrek-site .flag-line-icon {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  color: var(--flag-mint);
+}
+
+/* =====================================================================
+   PRODUCT: exploded hotspot diagram
+   ===================================================================== */
+#astrek-site .rf-product-showcase {
+  display: grid !important;
+  grid-template-columns: 1.25fr 0.75fr !important;
+  gap: clamp(32px, 5vw, 72px) !important;
+  align-items: center;
+}
+
+#astrek-site .rf-product-stage,
+#astrek-site #productStage {
+  position: relative !important;
+  min-height: min(72vh, 720px) !important;
+  height: min(72vh, 720px) !important;
+  max-height: none !important;
+  background:
+    radial-gradient(ellipse 50% 40% at 50% 62%, rgba(62, 240, 194, 0.1), transparent 70%),
+    #0a0a0b !important;
+  border: 1px solid var(--flag-line) !important;
+  border-radius: 24px !important;
+  overflow: visible !important;
+}
+
+#astrek-site #product .rf-product-stage img,
+#astrek-site #productHeroImg,
+#astrek-site .product-3d-stage img {
+  filter:
+    drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 0 40px rgba(62, 240, 194, 0.1)) !important;
+  max-height: 92% !important;
+}
+
+.flag-hotspots {
+  position: absolute;
+  inset: 8% 12% 10%;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.flag-hot {
+  pointer-events: auto;
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 28px;
+  height: 28px;
+  margin: -14px 0 0 -14px;
+  border: 1px solid var(--flag-mint);
+  border-radius: 50%;
+  background: rgba(10, 10, 11, 0.7);
+  color: var(--flag-mint);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition:
+    transform 280ms var(--flag-ease),
+    background 280ms ease,
+    box-shadow 280ms ease;
+}
+
+.flag-hot::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(62, 240, 194, 0.35);
+  animation: flagPulse 2.4s ease-out infinite;
+}
+
+.flag-hot.is-on,
+.flag-hot:hover {
+  background: var(--flag-mint);
+  color: var(--flag-mint-ink);
+  transform: scale(1.12);
+  box-shadow: 0 0 24px rgba(62, 240, 194, 0.45);
+}
+
+@keyframes flagPulse {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+#astrek-site .rf-point {
+  padding: 18px 8px 18px 0 !important;
+  border-top: 1px solid var(--flag-line) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  transition: opacity 240ms ease !important;
+}
+
+#astrek-site .rf-point:not(.is-active) {
+  opacity: 0.38;
+}
+
+#astrek-site .rf-point.is-active {
+  opacity: 1;
+  border-top-color: var(--flag-mint) !important;
+}
+
+#astrek-site .rf-point:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* =====================================================================
+   STATS: credibility band
+   ===================================================================== */
+#astrek-site #product .rf-product-showcase {
+  margin-bottom: clamp(56px, 7vw, 96px) !important;
+  overflow: hidden !important;
+}
+
+#astrek-site .ux-impact {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  clear: both;
+  overflow: hidden;
+  margin-top: clamp(80px, 10vw, 128px) !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: clamp(64px, 8vw, 96px) 0 !important;
+  border-top: 1px solid var(--flag-line) !important;
+  border-bottom: 1px solid var(--flag-line) !important;
+  background:
+    linear-gradient(180deg, rgba(62, 240, 194, 0.04), transparent 40%),
+    var(--flag-void) !important;
+  text-align: center;
+  scroll-margin-top: calc(var(--site-header-h, 72px) + 24px);
+}
+
+/* Orbit rings from astrek-system.css overlap section headings: disable on stats */
+#astrek-site .ux-impact::before,
+#astrek-site .ux-impact::after {
+  display: none !important;
+  content: none !important;
+}
+
+#astrek-site .ux-impact-inner {
+  position: relative;
+  z-index: 2;
+}
+
+#astrek-site .ux-impact > .ux-eyebrow,
+#astrek-site .ux-impact > .rf-kicker,
+#astrek-site .ux-impact-inner > .ux-eyebrow,
+#astrek-site .ux-impact-inner > .rf-kicker {
+  display: block;
+  position: static !important;
+  margin: 0 auto 20px !important;
+  transform: none !important;
+}
+
+#astrek-site .ux-impact > h2,
+#astrek-site .ux-impact-inner > h2 {
+  position: relative;
+  z-index: 2;
+  margin-top: 0 !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0 !important;
+  max-width: 16ch !important;
+  font-size: clamp(2.75rem, 5.5vw, 4.5rem) !important;
+}
+
+#astrek-site .ux-impact > p,
+#astrek-site .ux-impact-inner > p {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 48px !important;
+}
+
+#astrek-site .ux-impact .ux-stats,
+#astrek-site .ux-impact .rf-impact-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  grid-template-rows: auto !important;
+  gap: clamp(24px, 4vw, 48px) !important;
+  margin-top: clamp(40px, 5vw, 56px) !important;
+  align-items: start !important;
+}
+
+#astrek-site .ux-impact .ux-stat,
+#astrek-site .ux-impact .rf-impact-grid > div {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  min-height: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 12px 8px !important;
+  justify-content: flex-start !important;
+}
+
+#astrek-site .ux-impact .ux-stat:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+#astrek-site .ux-impact .ux-stat strong,
+#astrek-site .ux-impact .rf-stats-grid strong {
+  display: block;
+  font-size: clamp(3.25rem, 6.5vw, 5.75rem) !important;
+  font-weight: 550 !important;
+  letter-spacing: -0.06em !important;
+  line-height: 0.9 !important;
+  color: var(--flag-mint) !important;
+}
+
+#astrek-site .ux-stat span {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.8125rem !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--flag-muted) !important;
+}
+
+/* =====================================================================
+   MODES: product stages + progress
+   ===================================================================== */
+#astrek-site .rf-mode-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+}
+
+#astrek-site .rf-mode-card {
+  min-height: min(58vh, 640px) !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  background: #0e0e10 !important;
+}
+
+#astrek-site .rf-mode-card img {
+  object-fit: cover !important;
+  height: 100% !important;
+}
+
+.flag-mode-rail {
+  position: sticky;
+  bottom: 28px;
+  z-index: 40;
+  display: none;
+  justify-content: center;
+  pointer-events: none;
+  margin-top: -40px;
+}
+
+.flag-mode-rail.is-on {
+  display: flex;
+}
+
+.flag-mode-pills {
+  pointer-events: auto;
+  display: flex;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(10, 10, 11, 0.72);
+  border: 1px solid var(--flag-line);
+  backdrop-filter: blur(16px);
+}
+
+.flag-mode-pill {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: rgba(245, 245, 243, 0.5);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.flag-mode-pill.is-on {
+  background: var(--flag-mint);
+  color: var(--flag-mint-ink);
+}
+
+/* =====================================================================
+   PARTS / TEAM / PARTNERS
+   ===================================================================== */
+#astrek-site .rf-part-grid {
+  gap: 18px !important;
+}
+
+#astrek-site .rf-part-card {
+  overflow: hidden !important;
+  background: #0e0e10 !important;
+}
+
+#astrek-site .rf-people-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 28px !important;
+}
+
+#astrek-site .rf-person-media,
+#astrek-site .person-img {
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  background: #161618 !important;
+  border: 1px solid var(--flag-line) !important;
+}
+
+#astrek-site .rf-person-media img,
+#astrek-site .person-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 18% !important;
+  filter: saturate(0.55) contrast(1.08) brightness(0.92) !important;
+  transition: filter 400ms ease, transform 600ms var(--flag-ease) !important;
+}
+
+#astrek-site .rf-person:hover .rf-person-media img {
+  filter: saturate(0.72) contrast(1.1) brightness(0.98) !important;
+  transform: scale(1.04);
+}
+
+#astrek-site .ux-partners-row,
+#astrek-site .partner-grid {
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+  gap: 1px !important;
+  background: var(--flag-line);
+  border: 1px solid var(--flag-line);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+#astrek-site .partner-logo {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 104px !important;
+  padding: 20px 16px !important;
+  background: #0e0e10 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+#astrek-site .partner-logo img {
+  max-height: 36px !important;
+  max-width: 128px !important;
+  width: auto !important;
+  filter: grayscale(1) brightness(0) invert(1) opacity(0.62) !important;
+  transition: opacity 240ms ease, filter 240ms ease !important;
+}
+
+#astrek-site .partner-logo:hover img {
+  filter: grayscale(1) brightness(0) invert(1) opacity(1) !important;
+}
+
+#astrek-site .partner-logo:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Quiet remaining chrome */
+#astrek-site .rf-faq-item,
+#astrek-site .rf-press-featured,
+#astrek-site .rf-blog-featured,
+#astrek-site .rf-form {
+  background: #0e0e10 !important;
+  border-color: var(--flag-line) !important;
+  box-shadow: none !important;
+}
+
+#astrek-site .rf-cta-band {
+  background:
+    radial-gradient(ellipse 70% 90% at 50% 120%, rgba(62, 240, 194, 0.14), transparent 58%),
+    var(--flag-void) !important;
+  padding: clamp(120px, 14vw, 180px) 0 !important;
+}
+
+#astrek-site .rf-footer {
+  background: #050506 !important;
+}
+
+/* =====================================================================
+   EXPLODED / HOTSPOT DIAGRAMS
+   ===================================================================== */
+.flag-explode {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+}
+
+.flag-explode-stage {
+  position: relative;
+  min-height: min(68vh, 680px);
+  border-radius: 24px;
+  border: 1px solid var(--flag-line);
+  background:
+    radial-gradient(ellipse 48% 42% at 50% 58%, rgba(62, 240, 194, 0.1), transparent 68%),
+    #0c0c0e;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.flag-explode-stage > img {
+  max-width: min(78%, 520px);
+  max-height: 86%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter:
+    saturate(0.7) contrast(1.06) brightness(0.94)
+    drop-shadow(0 28px 60px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 0 36px rgba(62, 240, 194, 0.1));
+  transition: opacity 320ms ease, transform 500ms var(--flag-ease);
+}
+
+.flag-explode-panel {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 8;
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--flag-line);
+  background: rgba(10, 10, 11, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  max-width: 360px;
+  pointer-events: none;
+}
+
+.flag-explode-panel .idx {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--flag-mint);
+}
+
+.flag-explode-panel h3 {
+  margin: 0 0 6px;
+  color: var(--flag-paper);
+  font-size: 1.25rem !important;
+}
+
+.flag-explode-panel p {
+  margin: 0;
+  font-size: 0.9375rem !important;
+  color: var(--flag-muted) !important;
+}
+
+.flag-explode-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.flag-explode-list--scroll {
+  max-height: min(68vh, 680px);
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-width: thin;
+}
+
+.flag-explode-item {
+  appearance: none;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 14px;
+  align-items: start;
+  text-align: left;
+  width: 100%;
+  padding: 18px 16px;
+  border: 0;
+  border-top: 1px solid var(--flag-line);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  opacity: 0.42;
+  transition: opacity 240ms ease, border-color 240ms ease, background 240ms ease;
+  min-height: 72px;
+}
+
+.flag-explode-item:first-child {
+  border-top: 0;
+}
+
+.flag-explode-item.is-active,
+.flag-explode-item:hover {
+  opacity: 1;
+}
+
+.flag-explode-item.is-active {
+  border-top-color: var(--flag-mint);
+  background: rgba(62, 240, 194, 0.04);
+}
+
+.flag-explode-item h3 {
+  margin: 0 0 4px;
+  font-size: 1.05rem !important;
+}
+
+.flag-explode-item p {
+  margin: 0;
+  font-size: 0.875rem !important;
+  color: var(--flag-muted) !important;
+}
+
+.flag-explode-icon {
+  width: 36px;
+  height: 36px;
+  margin-top: 2px;
+  border: 1px solid rgba(62, 240, 194, 0.35);
+  border-radius: 50%;
+  position: relative;
+}
+
+.flag-explode-icon::before,
+.flag-explode-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: var(--flag-mint);
+}
+
+.flag-explode-icon::before {
+  width: 12px;
+  height: 1.5px;
+  transform: translate(-50%, -50%);
+}
+
+.flag-explode-icon::after {
+  width: 1.5px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+}
+
+.flag-explode-item:nth-child(2) .flag-explode-icon::after {
+  height: 0;
+}
+
+.flag-explode-item:nth-child(3) .flag-explode-icon::before {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid var(--flag-mint);
+}
+
+.flag-explode-item:nth-child(3) .flag-explode-icon::after {
+  display: none;
+}
+
+/* Product stage mobile panel reuse */
+.flag-explode-panel.is-open {
+  pointer-events: auto;
+}
+
+#productMobilePanel {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  #productMobilePanel {
+    display: block;
+  }
+
+  #astrek-site .rf-product-points {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #astrek-site .rf-point,
+  #astrek-site .product-callout {
+    flex: 0 0 min(72vw, 240px);
+    scroll-snap-align: start;
+    border: 1px solid var(--flag-line) !important;
+    border-radius: 14px !important;
+    padding: 16px !important;
+    opacity: 1 !important;
+    background: #0e0e10 !important;
+  }
+
+  #astrek-site .rf-point.is-active,
+  #astrek-site .product-callout.is-active {
+    border-color: var(--flag-mint) !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .flag-explode {
+    grid-template-columns: 1fr;
+  }
+
+  .flag-explode-stage {
+    min-height: min(58vh, 520px);
+  }
+
+  .flag-explode-list--scroll {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+/* =====================================================================
+   MOBILE: scale, spacing, touch, swipe
+   ===================================================================== */
+@media (max-width: 1024px) {
+  #astrek-site > section.rf-section,
+  #astrek-site > section.ux-section,
+  #astrek-site > .rf-section {
+    padding-top: clamp(96px, 18vw, 140px) !important;
+    padding-bottom: clamp(96px, 18vw, 140px) !important;
+  }
+
+  #astrek-site > section:not(.hero) .rf-h2.ux-h2,
+  #astrek-site > section:not(.hero) h2.rf-h2,
+  #astrek-site .page-hero h1 {
+    font-size: clamp(2.35rem, 9vw, 3.4rem) !important;
+    max-width: 12ch !important;
+  }
+
+  #astrek-site p,
+  #astrek-site .rf-section-head p {
+    font-size: 1.0625rem !important;
+  }
+
+  #astrek-site .rf-product-showcase {
+    grid-template-columns: 1fr !important;
+  }
+
+  #astrek-site .rf-mode-grid {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px !important;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #astrek-site .rf-mode-card {
+    flex: 0 0 min(78vw, 320px);
+    scroll-snap-align: start;
+    min-height: 420px !important;
+  }
+
+  #astrek-site .ux-stats,
+  #astrek-site .rf-impact-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px 16px !important;
+  }
+
+  #astrek-site .ux-stat strong {
+    font-size: clamp(2.75rem, 12vw, 3.75rem) !important;
+  }
+
+  #astrek-site .rf-people-grid,
+  #astrek-site .partner-grid,
+  #astrek-site .ux-partners-row {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  #siteHeader .header-cta,
+  #astrek-site .rf-btn {
+    min-height: 48px !important;
+    padding: 12px 22px !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix h1.ux-h1 {
+    font-size: clamp(3rem, 14vw, 4.5rem) !important;
+    letter-spacing: -0.045em !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy {
+    width: min(92vw, 28rem) !important;
+    inset: auto 20px 28px 20px !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy .sub {
+    font-size: 1.0625rem !important;
+    max-width: 28ch;
+  }
+}
+
+@media (max-width: 720px) {
+  #astrek-site .hero.rf-hero,
+  #astrek-site .hero.rf-hero.hero--tronix {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual {
+    padding: 12px 0 0 !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix .rf-hero-visual img,
+  #astrek-site .hero.rf-hero.hero--tronix #heroProductImg {
+    max-width: min(96vw, 640px) !important;
+    max-height: 70vh !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy {
+    inset: auto 18px max(96px, 14vh) 18px !important;
+    width: auto !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy .sub {
+    font-size: 1.125rem !important;
+    line-height: 1.45 !important;
+    max-width: 22ch;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix h1.ux-h1 {
+    top: calc(var(--site-header-h, 64px) + 0.25vh) !important;
+    font-size: clamp(2.35rem, 12.5vw, 3.25rem) !important;
+    letter-spacing: -0.04em !important;
+    white-space: normal !important;
+    max-width: 92vw !important;
+    text-align: center !important;
+    line-height: 0.92 !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy {
+    inset: auto 18px max(110px, 16vh) 18px !important;
+    width: auto !important;
+    z-index: 5 !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-actions .rf-btn {
+    min-height: 48px !important;
+    padding: 14px 24px !important;
+  }
+
+  .cookie-notice,
+  #cookieNotice {
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    width: auto !important;
+    max-width: none !important;
+    padding: 10px 12px !important;
+    font-size: 0.72rem !important;
+    border-radius: 12px !important;
+  }
+
+  #astrek-site > section:not(.hero) .rf-h2.ux-h2 {
+    font-size: clamp(2.15rem, 10vw, 2.85rem) !important;
+  }
+
+  #astrek-site .ux-impact .ux-stats,
+  #astrek-site .ux-impact .rf-impact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+    text-align: left;
+  }
+
+  #astrek-site .ux-impact {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #astrek-site .ux-impact .ux-stat {
+    padding: 8px 4px 20px !important;
+    border-bottom: 1px solid var(--flag-line) !important;
+  }
+
+  #astrek-site .ux-impact .ux-stat:last-child {
+    border-bottom: 0 !important;
+  }
+
+  #astrek-site .rf-people-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+  }
+
+  #astrek-site .partner-grid,
+  #astrek-site .ux-partners-row {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  #astrek-site .partner-logo {
+    min-height: 88px !important;
+  }
+
+  .flag-explode-stage {
+    min-height: 62vh;
+  }
+
+  .flag-explode-panel {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    max-width: none;
+  }
+
+  .flag-explode-list {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding: 4px 2px 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .flag-explode-item {
+    flex: 0 0 min(78vw, 280px);
+    scroll-snap-align: start;
+    grid-template-columns: auto 1fr;
+    border: 1px solid var(--flag-line) !important;
+    border-radius: 14px;
+    background: #0e0e10;
+    opacity: 1;
+    min-height: 96px;
+  }
+
+  .flag-explode-item .flag-explode-icon {
+    display: none;
+  }
+
+  .flag-explode-item.is-active {
+    border-color: var(--flag-mint) !important;
+  }
+
+  .flag-hot {
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    font-size: 11px;
+  }
+
+  #astrek-site .rf-product-stage,
+  #astrek-site #productStage {
+    min-height: min(62vh, 520px) !important;
+    height: min(62vh, 520px) !important;
+  }
+
+  .flag-mode-rail {
+    bottom: 16px;
+  }
+
+  .flag-mode-pill {
+    padding: 12px 14px;
+    min-height: 44px;
+  }
+
+  #astrek-site .rf-press-grid,
+  #astrek-site .rf-blog-grid,
+  #astrek-site .rf-contact-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  #burgerBtn,
+  #siteHeader .burger {
+    width: 48px !important;
+    height: 48px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #astrek-site .hero.rf-hero.hero--tronix #heroProductImg,
+  #astrek-site .flag-hot::after {
+    animation: none !important;
+  }
+}
+
+/* =====================================================================
+   REGRESSION: stats heading overlap (eyebrow / orbit / bleed)
+   ===================================================================== */
+#astrek-site #contact .rf-kicker,
+#astrek-site #contact .ux-eyebrow {
+  position: static !important;
+  margin: 0 0 16px !important;
+  transform: none !important;
+}
+
+#astrek-site #contact h2.rf-h2 {
+  position: static !important;
+  margin-top: 0 !important;
+}
+
+#astrek-site #modes .rf-section-head .ux-eyebrow {
+  position: static !important;
+  margin-bottom: 16px !important;
+  transform: none !important;
+}
+
+/* =====================================================================
+   VISIBILITY: never black-void sections (reveal + pro-anim sync)
+   ===================================================================== */
+html.js-pro #astrek-site section.pro-in .reveal,
+html.js-pro #astrek-site section.pro-in .premium-reveal,
+html.js-pro #astrek-site section.pro-in .reveal-stagger,
+html.js-pro #astrek-site section.pro-in .reveal-stagger > * {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+html.js-pro #astrek-site section.pro-in .pro-anim.is-in,
+html.js-pro #astrek-site section.pro-in .pro-anim {
+  filter: none !important;
+  clip-path: none !important;
+}
+
+/* Density caps: flagship wins on hero scale */
+#astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+#astrek-site .hero--tronix h1.ux-h1 {
+  font-size: clamp(4.5rem, 11.5vw, 7.5rem) !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix .rf-hero-visual img,
+#astrek-site .hero.rf-hero.hero--tronix #heroProductImg {
+  max-width: min(78vw, 920px) !important;
+  max-height: min(84vh, 1040px) !important;
+}
+
+#astrek-site .hero.rf-hero,
+#astrek-site .rf-hero,
+#astrek-site .hero.rf-hero.hero--tronix {
+  min-height: 100dvh !important;
+}
+
+#siteHeader .header-cta,
+#siteHeader .rf-btn.header-cta {
+  background: var(--flag-mint) !important;
+  color: var(--flag-mint-ink) !important;
+  border: 0 !important;
+}
+
+/* Nested section headings (e.g. stats inside #product) */
+#astrek-site .ux-impact-inner > h2.rf-h2,
+#astrek-site .ux-impact > h2.rf-h2 {
+  font-size: clamp(2.75rem, 6.2vw, 5.25rem) !important;
+}

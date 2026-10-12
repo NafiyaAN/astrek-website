@@ -1,0 +1,711 @@
+/* =====================================================================
+   HERO SHOWROOM: TRONIX composition
+   Centered product, overlapping display title, HUD rings,
+   bottom-left copy, glass module card. Loads last.
+   ===================================================================== */
+
+#astrek-site .hero.rf-hero.hero--tronix {
+  --hero-accent: #2fe0b5;
+  --hero-ink: #000;
+  position: relative !important;
+  display: block !important;
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+  padding: 0 !important;
+  background: #000 !important;
+  overflow: hidden !important;
+}
+
+/* ---------- Header: transparent overlay, not a floating pill ---------- */
+#siteHeader.rf-header,
+#siteHeader {
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+#siteHeader .rf-header-inner,
+.rf-header-inner {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  min-height: 72px !important;
+  padding: 18px clamp(20px, 4vw, 56px) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+#siteHeader nav.links a,
+#navLinks a {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 0.6875rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  padding: 8px 10px !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+#siteHeader nav.links a:hover,
+#siteHeader nav.links a.is-active,
+#navLinks a.is-active {
+  color: #fff !important;
+  background: transparent !important;
+}
+
+#siteHeader .header-cta,
+#siteHeader .rf-btn--nav.header-cta {
+  background: transparent !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.72) !important;
+  border-radius: 999px !important;
+  min-height: 40px !important;
+  padding: 8px 22px !important;
+  font-size: 0.8125rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
+}
+
+#siteHeader .header-cta:hover,
+#siteHeader .rf-btn--nav.header-cta:hover {
+  background: #fff !important;
+  color: #000 !important;
+  border-color: #fff !important;
+  transform: none !important;
+}
+
+/* ---------- Stage ---------- */
+#astrek-site .hero--tronix .rf-hero-stage {
+  position: relative !important;
+  z-index: 2 !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 100dvh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  grid-template-columns: none !important;
+}
+
+#astrek-site .hero--tronix .hero-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  overflow: hidden !important;
+  opacity: 1 !important;
+}
+
+#astrek-site .hero--tronix .hero-video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  opacity: 0.05 !important;
+  filter: grayscale(1) contrast(1.1) brightness(0.35) !important;
+  transform: none !important;
+}
+
+#astrek-site .hero--tronix .hero-video-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  background:
+    radial-gradient(ellipse 48% 42% at 50% 48%, rgba(255, 255, 255, 0.12) 0%, transparent 62%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.08) 42%, #000 100%) !important;
+  pointer-events: none !important;
+}
+
+#astrek-site .hero--tronix .hero-bg::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  opacity: 0.14 !important;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.45) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.45) 1px, transparent 1px) !important;
+  background-size: 72px 72px !important;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 48%, #000 20%, transparent 100%) !important;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 48%, #000 20%, transparent 100%) !important;
+  animation: none !important;
+}
+
+/* ---------- Display title: above the product, fully readable ---------- */
+#astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+#astrek-site .hero.rf-hero.hero--tronix .rf-hero-stage > h1 {
+  position: absolute !important;
+  top: calc(var(--site-header-h, 72px) + 1.25vh) !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 6 !important;
+  width: max-content !important;
+  max-width: min(92vw, 1100px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #fff !important;
+  font-family: "Orbitron", "Space Grotesk", var(--font-display, sans-serif) !important;
+  font-size: clamp(2.35rem, 5.4vw, 4.65rem) !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  line-height: 1 !important;
+  letter-spacing: 0.22em !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45) !important;
+  opacity: 1 !important;
+}
+
+html[dir="rtl"] #astrek-site .hero.rf-hero.hero--tronix h1.ux-h1 {
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+#astrek-site .hero--tronix h1 .hero-line {
+  display: inline !important;
+  width: auto !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+}
+
+#astrek-site .hero--tronix h1 em {
+  font-style: normal !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  text-shadow: none !important;
+}
+
+/* ---------- Product + HUD ---------- */
+#astrek-site .hero--tronix .rf-hero-visual {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 3 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: calc(var(--site-header-h, 72px) + 11vh) 0 10vh !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  isolation: auto !important;
+  pointer-events: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+#astrek-site .hero--tronix .hero-hud,
+#astrek-site .hero--tronix .hero-visual-ring,
+#astrek-site .hero--tronix .product-hud {
+  display: block !important;
+  content: none !important;
+  opacity: 1 !important;
+  background: none !important;
+}
+
+#astrek-site .hero--tronix .hero-hud {
+  position: absolute !important;
+  inset: 8% 18% 12% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+#astrek-site .hero--tronix .hero-hud-ring {
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: 50% !important;
+  pointer-events: none !important;
+}
+
+#astrek-site .hero--tronix .hero-hud-ring--outer {
+  inset: -4% -8% 6% !important;
+  border: 1.5px dashed rgba(255, 255, 255, 0.22) !important;
+}
+
+#astrek-site .hero--tronix .hero-hud-ring--inner {
+  inset: 10% 14% 16% !important;
+  border: 1px dashed rgba(255, 255, 255, 0.12) !important;
+}
+
+#astrek-site .hero--tronix .hero-product-ambient {
+  position: absolute !important;
+  inset: 18% 22% 16% !important;
+  z-index: 0 !important;
+  display: block !important;
+  background: radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.18), transparent 58%) !important;
+  filter: blur(70px) !important;
+  opacity: 1 !important;
+}
+
+#astrek-site .hero--tronix .hero-product-bloom {
+  display: none !important;
+}
+
+#astrek-site .hero--tronix .hero-product-floor {
+  position: absolute !important;
+  left: 32% !important;
+  right: 32% !important;
+  bottom: 11% !important;
+  height: 40px !important;
+  z-index: 0 !important;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.16), transparent 70%) !important;
+  filter: blur(14px) !important;
+  opacity: 0.9 !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix .rf-hero-visual img,
+#astrek-site .hero.rf-hero.hero--tronix #heroProductImg {
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+  width: auto !important;
+  max-width: min(56vw, 720px) !important;
+  height: auto !important;
+  max-height: min(82vh, 880px) !important;
+  object-fit: contain !important;
+  object-position: center 52% !important;
+  background: none !important;
+  mix-blend-mode: lighten !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  filter:
+    contrast(1.12)
+    brightness(1.08)
+    drop-shadow(0 24px 48px rgba(0, 0, 0, 0.4)) !important;
+  transform:
+    perspective(1400px)
+    rotateX(var(--hero-tilt-x, 0deg))
+    rotateY(var(--hero-tilt-y, 0deg))
+    translate3d(0, var(--hero-par-y, 0px), 0);
+  transform-origin: 50% 55% !important;
+}
+
+/* ---------- Bottom-left copy ---------- */
+#astrek-site .hero--tronix .rf-hero-copy {
+  position: absolute !important;
+  z-index: 5 !important;
+  inset: auto auto 7vh var(--ux-gutter, 48px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+  width: min(34rem, 38vw) !important;
+  max-width: 34rem !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  text-align: start !important;
+}
+
+html[dir="rtl"] #astrek-site .hero--tronix .rf-hero-copy {
+  inset: auto var(--ux-gutter, 48px) 7vh auto !important;
+  align-items: flex-end !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-copy::before,
+#astrek-site .hero--tronix .hero-eyebrow::before {
+  content: none !important;
+  display: none !important;
+}
+
+#astrek-site .hero--tronix .hero-eyebrow,
+#astrek-site .hero--tronix .rf-hero-copy .ux-eyebrow {
+  position: static !important;
+  margin: 0 0 14px !important;
+  font-family: var(--font-mono, "IBM Plex Mono", monospace) !important;
+  font-size: 0.6875rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: var(--hero-accent) !important;
+  text-align: start !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-copy .sub,
+#astrek-site .hero--tronix .sub {
+  position: static !important;
+  max-width: 42ch !important;
+  margin: 0 0 22px !important;
+  font-family: Inter, Manrope, sans-serif !important;
+  font-size: 0.9375rem !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  letter-spacing: 0.01em !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  text-align: start !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  width: auto !important;
+  margin: 0 !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-actions .rf-btn,
+#astrek-site .hero--tronix .rf-hero-actions .rf-btn:not(.rf-btn--ghost) {
+  display: inline-flex !important;
+  min-height: 46px !important;
+  height: 46px !important;
+  padding: 0 28px !important;
+  border-radius: 999px !important;
+  /* Teal CTA contrast: do not use white fill here (overridden in ultimate for lock) */
+  background: #2fe0b5 !important;
+  color: #041210 !important;
+  border: 1px solid #2fe0b5 !important;
+  font-size: 0.9375rem !important;
+  font-weight: 700 !important;
+  width: auto !important;
+  flex: 0 0 auto !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-actions .rf-btn:hover {
+  transform: scale(1.03) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4) !important;
+}
+
+#astrek-site .hero--tronix .ux-scroll-hint {
+  display: none !important;
+}
+
+/* ---------- Glass module card ---------- */
+#astrek-site .hero--tronix .hero-module {
+  position: absolute !important;
+  z-index: 5 !important;
+  top: 46% !important;
+  inset-inline-end: clamp(20px, 4vw, 56px) !important;
+  display: grid !important;
+  grid-template-columns: 108px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 16px !important;
+  width: min(360px, 32vw) !important;
+  padding: 16px 18px 16px 16px !important;
+  border-radius: 22px !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  background: rgba(18, 18, 18, 0.52) !important;
+  backdrop-filter: blur(22px) saturate(1.15) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(1.15) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35) !important;
+}
+
+html[dir="rtl"] #astrek-site .hero--tronix .hero-module {
+  inset-inline-end: auto !important;
+  inset-inline-start: clamp(20px, 4vw, 56px) !important;
+}
+
+#astrek-site .hero--tronix .hero-module-media {
+  width: 108px !important;
+  height: 108px !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+#astrek-site .hero--tronix .hero-module-media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 20% !important;
+  filter: none !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+  max-height: none !important;
+}
+
+#astrek-site .hero--tronix .hero-module-copy {
+  min-width: 0 !important;
+}
+
+#astrek-site .hero--tronix .hero-module-copy h2 {
+  margin: 0 0 6px !important;
+  color: #fff !important;
+  font-family: "Orbitron", "Space Grotesk", sans-serif !important;
+  font-size: 0.9375rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  line-height: 1.2 !important;
+  max-width: none !important;
+}
+
+#astrek-site .hero--tronix .hero-module-copy p {
+  margin: 0 0 12px !important;
+  font-size: 0.6875rem !important;
+  line-height: 1.45 !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  max-width: none !important;
+}
+
+#astrek-site .hero--tronix .hero-module-copy .rf-btn,
+#astrek-site .hero--tronix .hero-module-copy .rf-btn--sm {
+  min-height: 28px !important;
+  height: 28px !important;
+  padding: 0 16px !important;
+  border-radius: 999px !important;
+  font-size: 0.6875rem !important;
+  font-weight: 600 !important;
+  background: #fff !important;
+  color: #0a0a0a !important;
+  border: none !important;
+}
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  #astrek-site .hero--tronix .hero-bg::after {
+    animation: astrekHeroGridDrift 40s linear infinite !important;
+  }
+
+  #astrek-site .hero--tronix .hero-hud-ring--outer {
+    animation: astrekHeroRing 64s linear infinite !important;
+  }
+
+  #astrek-site .hero--tronix .hero-hud-ring--inner {
+    animation: astrekHeroRing 88s linear infinite reverse !important;
+  }
+
+  #astrek-site .hero--tronix .hero-eyebrow.hero-anim,
+  #astrek-site .hero--tronix .sub.hero-anim,
+  #astrek-site .hero--tronix .rf-hero-actions.hero-anim,
+  #astrek-site .hero--tronix .hero-module.hero-anim {
+    animation: astrekHeroRise 800ms cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix h1.hero-anim {
+    animation: astrekHeroTitleIn 800ms cubic-bezier(0.16, 1, 0.3, 1) 40ms forwards !important;
+  }
+
+  #astrek-site .hero--tronix .hero-eyebrow.hero-anim { animation-delay: 180ms !important; }
+  #astrek-site .hero--tronix .sub.hero-anim { animation-delay: 260ms !important; }
+  #astrek-site .hero--tronix .rf-hero-actions.hero-anim { animation-delay: 340ms !important; }
+  #astrek-site .hero--tronix .hero-module.hero-anim { animation-delay: 280ms !important; }
+
+  #astrek-site .hero--tronix .hero-anim-visual {
+    animation: astrekHeroFade 1100ms cubic-bezier(0.16, 1, 0.3, 1) 80ms forwards !important;
+  }
+}
+
+@keyframes astrekHeroGridDrift {
+  from { background-position: 0 0; }
+  to { background-position: 72px 72px; }
+}
+
+@keyframes astrekHeroRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes astrekHeroRise {
+  from {
+    opacity: 0.85;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes astrekHeroTitleIn {
+  from {
+    opacity: 0.85;
+    transform: translateX(-50%) translate3d(0, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes astrekHeroFade {
+  from { opacity: 0.85; }
+  to { opacity: 1; }
+}
+
+/* ---------- Mid desktop: keep overlapping composition ---------- */
+@media (min-width: 1024px) {
+  #astrek-site .hero--tronix .rf-hero-stage {
+    display: block !important;
+    grid-template-columns: none !important;
+    min-height: 100dvh !important;
+    padding: 0 !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix h1.ux-h1 {
+    position: absolute !important;
+    top: calc(var(--site-header-h, 72px) + 1.25vh) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 6 !important;
+    font-size: clamp(2.35rem, 5.4vw, 4.65rem) !important;
+    letter-spacing: 0.22em !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy,
+  #astrek-site .hero--tronix .rf-hero-visual {
+    order: unset !important;
+  }
+}
+
+/* ---------- Tablet / mobile ---------- */
+@media (max-width: 1023px) {
+  #siteHeader .rf-header-inner,
+  .rf-header-inner {
+    padding: 10px max(16px, env(safe-area-inset-left, 0px)) 10px max(16px, env(safe-area-inset-right, 0px)) !important;
+    min-height: 64px !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix {
+    min-height: auto !important;
+    height: auto !important;
+    overflow: hidden !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-stage {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: auto !important;
+    padding: calc(var(--site-header-h, 64px) + 12px) var(--ux-gutter, 20px) 40px !important;
+    gap: 8px !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+  #astrek-site .hero.rf-hero.hero--tronix .rf-hero-stage > h1 {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    z-index: 6 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: clamp(1.65rem, 7.5vw, 2.35rem) !important;
+    letter-spacing: 0.16em !important;
+    pointer-events: auto !important;
+    white-space: nowrap !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual {
+    position: relative !important;
+    inset: auto !important;
+    width: min(420px, 92vw) !important;
+    min-height: 280px !important;
+    margin: 0 auto !important;
+    padding: 8px 0 12px !important;
+    order: 0 !important;
+  }
+
+  #astrek-site .hero--tronix .hero-hud {
+    inset: 2% 8% 8% !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual img,
+  #astrek-site .hero--tronix #heroProductImg {
+    max-width: 100% !important;
+    max-height: min(52vh, 440px) !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 36rem !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 8px 0 0 !important;
+  }
+
+  html[dir="rtl"] #astrek-site .hero--tronix .rf-hero-copy {
+    inset: auto !important;
+    align-items: center !important;
+  }
+
+  #astrek-site .hero--tronix .hero-eyebrow,
+  #astrek-site .hero--tronix .rf-hero-copy .sub {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-actions {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-actions .rf-btn {
+    width: 100% !important;
+  }
+
+  #astrek-site .hero--tronix .hero-module {
+    position: relative !important;
+    top: auto !important;
+    inset: auto !important;
+    width: 100% !important;
+    max-width: 36rem !important;
+    margin: 16px auto 0 !important;
+    grid-template-columns: 96px minmax(0, 1fr) !important;
+  }
+
+  html[dir="rtl"] #astrek-site .hero--tronix .hero-module {
+    inset: auto !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  #astrek-site .hero--tronix .rf-hero-actions .rf-btn {
+    width: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #astrek-site .hero--tronix .hero-bg::after,
+  #astrek-site .hero--tronix .hero-hud-ring {
+    animation: none !important;
+  }
+
+  #astrek-site .hero--tronix h1.hero-anim,
+  #astrek-site .hero--tronix .hero-eyebrow.hero-anim,
+  #astrek-site .hero--tronix .sub.hero-anim,
+  #astrek-site .hero--tronix .rf-hero-actions.hero-anim,
+  #astrek-site .hero--tronix .hero-module.hero-anim,
+  #astrek-site .hero--tronix .hero-anim-visual {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
+  #astrek-site .hero--tronix h1.hero-anim {
+    transform: translateX(-50%) !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-actions .rf-btn:hover {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  @media (prefers-reduced-motion: reduce) {
+    #astrek-site .hero--tronix h1.hero-anim {
+      transform: none !important;
+    }
+  }
+}

@@ -1,0 +1,743 @@
+/* =====================================================================
+   JOURNEY HERO: live HTML + HD photo (Neura-grade clarity)
+   Real typography, buttons, scroll + crisp partner logos: not raster UI
+   ===================================================================== */
+
+body.mech-mirror-active [data-testid="hero-section"][data-hero="journey"],
+#mech-mirror-root [data-testid="hero-section"][data-hero="journey"] {
+  --ajh-teal: #00c4b4;
+  --ajh-ink: #070b0f;
+
+  position: relative !important;
+  isolation: isolate;
+  display: block !important;
+  width: 100% !important;
+  height: 100vh !important;
+  height: 100svh !important;
+  min-height: 100vh !important;
+  min-height: 100svh !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: var(--ajh-ink) !important;
+  border: 0 !important;
+  overflow: hidden !important;
+}
+
+@media (min-width: 1024px) {
+  body.mech-mirror-active [data-testid="hero-section"][data-hero="journey"],
+  #mech-mirror-root [data-testid="hero-section"][data-hero="journey"] {
+    max-height: 100vh !important;
+    max-height: 100svh !important;
+  }
+}
+
+body.mech-mirror-active [data-hero="journey"].spotlight,
+body.mech-mirror-active [data-hero="journey"].grid-lines,
+body.mech-mirror-active [data-hero="journey"]::before,
+body.mech-mirror-active [data-hero="journey"]::after {
+  background-image: none !important;
+  display: none !important;
+  content: none !important;
+}
+
+/* ── HD photo background ── */
+.ajh-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ajh-media-img,
+body.mech-mirror-active [data-hero="journey"] .ajh-media-img,
+body.mech-mirror-active [data-hero="journey"] img[data-testid="hero-journey-image"] {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 62% 22% !important;
+  filter: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  aspect-ratio: auto !important;
+  max-width: none !important;
+  opacity: 1 !important;
+  image-rendering: auto !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Cinematic shade: readable nav + left copy column */
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-media-shade {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(180deg, rgba(7, 11, 15, 0.5) 0%, rgba(7, 11, 15, 0.08) 18%, transparent 38%),
+    linear-gradient(90deg, rgba(7, 11, 15, 0.82) 0%, rgba(7, 11, 15, 0.42) 32%, rgba(7, 11, 15, 0.08) 52%, transparent 64%) !important;
+}
+
+/* ── Live copy column ── */
+.ajh-shell,
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-shell {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 20 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  pointer-events: none !important;
+  padding: clamp(6.85rem, 11vh, 8rem) clamp(1.25rem, 4.5vw, 4rem) clamp(6.5rem, 14vh, 8rem) !important;
+}
+
+.ajh-copy,
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-copy {
+  pointer-events: auto !important;
+  max-width: min(36rem, 46vw) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  border: 0 !important;
+}
+
+.ajh-eyebrow,
+body.mech-mirror-active [data-hero="journey"] .ajh-eyebrow,
+.ajh-path,
+body.mech-mirror-active [data-hero="journey"] .ajh-path {
+  display: none !important;
+}
+
+.ajh-product,
+body.mech-mirror-active [data-hero="journey"] .ajh-product,
+body.mech-mirror-active [data-testid="hero-product"].ajh-product {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: var(--mech-display, "Outfit", system-ui, sans-serif) !important;
+  font-size: clamp(3.15rem, 6.4vw, 5.35rem) !important;
+  font-weight: 700 !important;
+  line-height: 0.94 !important;
+  letter-spacing: -0.03em !important;
+  text-transform: none !important;
+  color: #ffffff !important;
+  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.28) !important;
+}
+
+.ajh-product-accent,
+body.mech-mirror-active [data-hero="journey"] .ajh-product-accent,
+body.mech-mirror-active [data-testid="hero-product"] .ajh-product-accent {
+  color: var(--ajh-teal, #00c4b4) !important;
+  -webkit-text-fill-color: var(--ajh-teal, #00c4b4) !important;
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+.ajh-title,
+body.mech-mirror-active [data-hero="journey"] .ajh-title,
+body.mech-mirror-active [data-testid="hero-heading"].ajh-title {
+  margin: 0.95rem 0 0 !important;
+  padding: 0 !important;
+  font-family: var(--mech-display, "Outfit", system-ui, sans-serif) !important;
+  font-size: clamp(1.45rem, 2.4vw, 2.1rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.028em !important;
+  text-transform: none !important;
+  white-space: nowrap !important;
+  color: rgba(250, 252, 253, 0.96) !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.22) !important;
+}
+
+.ajh-title-line,
+body.mech-mirror-active [data-hero="journey"] .ajh-title-line {
+  display: inline !important;
+}
+
+.ajh-title-accent,
+body.mech-mirror-active [data-hero="journey"] .ajh-title-accent,
+body.mech-mirror-active [data-hero="journey"] .ajh-title-line--accent {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+  text-shadow: inherit !important;
+}
+
+.ajh-sub,
+body.mech-mirror-active [data-hero="journey"] .ajh-sub,
+body.mech-mirror-active [data-testid="hero-subcopy"].ajh-sub {
+  margin: 1.35rem 0 0 !important;
+  max-width: 26rem !important;
+  font-family: var(--mech-body, "Manrope", system-ui, sans-serif) !important;
+  font-size: clamp(0.95rem, 1.35vw, 1.12rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: rgba(238, 242, 245, 0.88) !important;
+}
+
+/* ── First-glance credibility metrics ── */
+.ajh-metrics,
+body.mech-mirror-active [data-hero="journey"] .ajh-metrics {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  gap: clamp(1.25rem, 3vw, 2.25rem) !important;
+  width: 100% !important;
+  max-width: 26rem !important;
+  margin: 1.45rem 0 0 !important;
+}
+
+.ajh-metric,
+body.mech-mirror-active [data-hero="journey"] .ajh-metric {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  padding: 0 0 0 0.95rem !important;
+  border: 0 !important;
+  border-left: 2px solid var(--ajh-teal) !important;
+  background: none !important;
+}
+
+.ajh-metric-value,
+body.mech-mirror-active [data-hero="journey"] .ajh-metric-value {
+  margin: 0 !important;
+  font-family: var(--mech-display, "Outfit", system-ui, sans-serif) !important;
+  font-size: clamp(3.55rem, 6.2vw, 5.25rem) !important;
+  font-weight: 800 !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.04em !important;
+  color: var(--ajh-teal, #00c4b4) !important;
+  -webkit-text-fill-color: var(--ajh-teal, #00c4b4) !important;
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+.ajh-metric-value span,
+body.mech-mirror-active [data-hero="journey"] .ajh-metric-value span {
+  color: var(--ajh-teal, #00c4b4) !important;
+  -webkit-text-fill-color: var(--ajh-teal, #00c4b4) !important;
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+.ajh-metric-label,
+body.mech-mirror-active [data-hero="journey"] .ajh-metric-label {
+  margin: 0.45rem 0 0 !important;
+  font-family: var(--mech-mono, "JetBrains Mono", ui-monospace, monospace) !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: rgba(245, 247, 248, 0.92) !important;
+}
+
+html[dir="rtl"] .ajh-metric,
+html[dir="rtl"] body.mech-mirror-active [data-hero="journey"] .ajh-metric {
+  padding: 0 0.95rem 0 0 !important;
+  border-left: 0 !important;
+  border-right: 2px solid var(--ajh-teal) !important;
+}
+
+/* ── CTAs: crisp vector UI, not baked pixels ── */
+.ajh-actions,
+body.mech-mirror-active [data-hero="journey"] .ajh-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 0.85rem !important;
+  margin-top: 1.85rem !important;
+}
+
+.ajh-btn,
+body.mech-mirror-active [data-hero="journey"] a.ajh-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.55rem !important;
+  min-height: 2.75rem !important;
+  padding: 0.72rem 1.35rem !important;
+  border-radius: 0.55rem !important;
+  font-family: var(--mech-display, "Outfit", system-ui, sans-serif) !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease, border-color 220ms ease !important;
+  box-shadow: none !important;
+  width: auto !important;
+  max-width: none !important;
+  line-height: 1 !important;
+}
+
+.ajh-btn--primary,
+body.mech-mirror-active [data-hero="journey"] a.ajh-btn--primary {
+  background: var(--ajh-teal) !important;
+  color: #041012 !important;
+  border: 1px solid var(--ajh-teal) !important;
+}
+
+.ajh-btn--primary:hover,
+body.mech-mirror-active [data-hero="journey"] a.ajh-btn--primary:hover {
+  background: #33d1c0 !important;
+  border-color: #33d1c0 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 20px rgba(0, 196, 180, 0.22) !important;
+}
+
+.ajh-btn--ghost,
+body.mech-mirror-active [data-hero="journey"] a.ajh-btn--ghost {
+  background: rgba(7, 11, 15, 0.35) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.72) !important;
+}
+
+.ajh-btn--ghost:hover,
+body.mech-mirror-active [data-hero="journey"] a.ajh-btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+
+.ajh-btn-icon {
+  font-size: 0.95em !important;
+  line-height: 1 !important;
+}
+
+/* ── Scroll indicator: CSS animation, HD crisp ── */
+.ajh-scroll,
+body.mech-mirror-active [data-hero="journey"] button.ajh-scroll {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.65rem !important;
+  margin-top: 2.25rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  color: rgba(230, 234, 237, 0.72) !important;
+  font-family: var(--mech-display, "Outfit", system-ui, sans-serif) !important;
+  font-size: 0.62rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  transition: color 220ms ease, transform 220ms ease !important;
+}
+
+.ajh-scroll:hover,
+body.mech-mirror-active [data-hero="journey"] button.ajh-scroll:hover {
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
+.ajh-scroll-track {
+  display: block !important;
+  width: 1.35rem !important;
+  height: 2.15rem !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.55) !important;
+  border-radius: 999px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.ajh-scroll-dot {
+  position: absolute !important;
+  left: 50% !important;
+  top: 0.35rem !important;
+  width: 0.28rem !important;
+  height: 0.28rem !important;
+  margin-left: -0.14rem !important;
+  border-radius: 50% !important;
+  background: var(--ajh-teal) !important;
+  box-shadow: 0 0 8px rgba(0, 196, 180, 0.65) !important;
+  animation: ajh-scroll-bob 1.8s ease-in-out infinite !important;
+}
+
+@keyframes ajh-scroll-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0.65rem);
+    opacity: 0.45;
+  }
+}
+
+/* ── Partner strip: reference proportions (taller bar, larger logos) ── */
+.ajh-partners,
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partners {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 45 !important;
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  align-items: center !important;
+  gap: 0 !important;
+  width: 100% !important;
+  height: clamp(5.5rem, 11.5vh, 7.25rem) !important;
+  min-height: 5.5rem !important;
+  margin: 0 !important;
+  padding: 0.85rem clamp(1.75rem, 5.5vw, 4.75rem) 1rem !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 14, 18, 0.12) 0%,
+    rgba(16, 20, 24, 0.88) 42%,
+    rgba(12, 16, 20, 0.97) 100%
+  ) !important;
+  pointer-events: auto !important;
+}
+
+.ajh-partners.is-away {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100% !important;
+  padding: 0.45rem clamp(0.5rem, 1.2vw, 1.1rem) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  transform: translateY(0) scale(1) !important;
+  transition: transform 280ms ease !important;
+}
+
+/* Faint vertical dividers like reference */
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner:not(:last-child)::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 16% !important;
+  right: 0 !important;
+  bottom: 16% !important;
+  width: 1px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  pointer-events: none !important;
+}
+
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner img {
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+  width: auto !important;
+  height: clamp(1.65rem, 3vw, 2.25rem) !important;
+  max-width: min(11.25rem, 86%) !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  opacity: 1 !important;
+  filter: none !important;
+  image-rendering: auto !important;
+  transition: opacity 280ms ease, transform 280ms ease !important;
+}
+
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 18% 7% !important;
+  border-radius: 0.4rem !important;
+  background: #ffffff !important;
+  opacity: 1 !important;
+  transition: box-shadow 280ms ease, inset 280ms ease !important;
+  pointer-events: none !important;
+}
+
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner:hover,
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner:focus-visible,
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner.is-lit {
+  transform: translateY(-3px) scale(1.02) !important;
+  z-index: 2 !important;
+}
+
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner:hover img,
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner:focus-visible img,
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner.is-lit img {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner:hover::before,
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner:focus-visible::before,
+body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner.is-lit::before {
+  opacity: 1 !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 1px rgba(0, 196, 180, 0.35), 0 8px 18px rgba(0, 0, 0, 0.22) !important;
+}
+
+/* Explore row: scroll + partners (desktop keeps partners fixed at bottom) */
+.ajh-explore {
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+}
+
+@media (max-width: 1023px) {
+  /* Show wheelchair (left) + standing subjects: wider scene, heads in frame */
+  body.mech-mirror-active [data-hero="journey"] .ajh-media-img,
+  body.mech-mirror-active [data-hero="journey"] img[data-testid="hero-journey-image"] {
+    object-fit: cover !important;
+    object-position: 50% 26% !important;
+    min-height: 100% !important;
+  }
+
+  /* Lighter top wash so faces stay visible; keep left shade for text */
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-media-shade {
+    background:
+      linear-gradient(180deg, rgba(7, 11, 15, 0.42) 0%, rgba(7, 11, 15, 0.12) 16%, transparent 38%),
+      linear-gradient(90deg, rgba(7, 11, 15, 0.78) 0%, rgba(7, 11, 15, 0.42) 38%, rgba(7, 11, 15, 0.1) 68%, transparent 100%),
+      linear-gradient(0deg, rgba(7, 11, 15, 0.5) 0%, transparent 30%) !important;
+  }
+
+  /* Push copy down below header: room above “Astrek Innovations” */
+  .ajh-shell,
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-shell {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    padding: clamp(5.85rem, 15vh, 7.25rem) clamp(1.05rem, 4vw, 1.65rem) clamp(2rem, 6vh, 2.75rem) !important;
+    padding-bottom: max(2rem, calc(env(safe-area-inset-bottom, 0px) + 1.15rem)) !important;
+  }
+
+  .ajh-copy,
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-copy {
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    min-height: calc(100svh - 7.75rem) !important;
+    height: auto !important;
+    margin-top: 0.35rem !important;
+    padding-bottom: clamp(0.65rem, 2.5vh, 1rem) !important;
+    box-sizing: border-box !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"] .ajh-eyebrow,
+  body.mech-mirror-active [data-hero="journey"] .ajh-path {
+    display: none !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"] .ajh-product,
+  body.mech-mirror-active [data-testid="hero-product"].ajh-product {
+    font-size: clamp(2.55rem, 11vw, 3.35rem) !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"] .ajh-title,
+  body.mech-mirror-active [data-testid="hero-heading"].ajh-title {
+    margin-top: 0.65rem !important;
+    font-size: clamp(1.2rem, 4.8vw, 1.55rem) !important;
+    font-weight: 600 !important;
+    line-height: 1.22 !important;
+    letter-spacing: -0.028em !important;
+    text-transform: none !important;
+    white-space: nowrap !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"] .ajh-sub,
+  body.mech-mirror-active [data-testid="hero-subcopy"].ajh-sub {
+    margin-top: 0.95rem !important;
+    max-width: 19.5rem !important;
+    font-size: clamp(0.88rem, 3.5vw, 1rem) !important;
+    line-height: 1.5 !important;
+  }
+
+  .ajh-metrics,
+  body.mech-mirror-active [data-hero="journey"] .ajh-metrics {
+    max-width: 21.5rem !important;
+    gap: 1rem !important;
+    margin-top: 1.05rem !important;
+  }
+
+  .ajh-metric,
+  body.mech-mirror-active [data-hero="journey"] .ajh-metric {
+    padding-left: 0.75rem !important;
+  }
+
+  .ajh-metric-value,
+  body.mech-mirror-active [data-hero="journey"] .ajh-metric-value {
+    font-size: clamp(3.05rem, 12vw, 3.85rem) !important;
+  }
+
+  .ajh-metric-label,
+  body.mech-mirror-active [data-hero="journey"] .ajh-metric-label {
+    margin-top: 0.32rem !important;
+    font-size: 0.62rem !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  /* Shorter, left-aligned CTAs */
+  .ajh-actions,
+  body.mech-mirror-active [data-hero="journey"] .ajh-actions {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.6rem !important;
+    margin-top: 1.25rem !important;
+    max-width: none !important;
+    width: auto !important;
+  }
+
+  .ajh-btn,
+  body.mech-mirror-active [data-hero="journey"] a.ajh-btn,
+  body.mech-mirror-active [data-hero="journey"] a[data-testid="hero-cta-explore"],
+  body.mech-mirror-active [data-hero="journey"] a[data-testid="hero-cta-watch"] {
+    width: auto !important;
+    max-width: none !important;
+    align-self: flex-start !important;
+    min-height: 2.55rem !important;
+    padding: 0.65rem 1.05rem !important;
+    font-size: 0.68rem !important;
+  }
+
+  /* Bottom zone: scroll above, partner panel below (production mobile) */
+  .ajh-explore,
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-explore {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 0.85rem !important;
+    width: 100% !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 0 !important;
+    padding: 0.35rem 0 0 !important;
+  }
+
+  .ajh-scroll,
+  body.mech-mirror-active [data-hero="journey"] button.ajh-scroll {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    flex: 0 0 auto !important;
+    align-self: flex-start !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    max-width: none !important;
+    z-index: 26 !important;
+  }
+
+  /* Inset rounded partner panel (production mobile) — not a full-bleed bar */
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partners {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    inset: auto !important;
+    z-index: 25 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    flex: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 4.5rem !important;
+    margin: 0 !important;
+    padding: 0.6rem 0.5rem !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    border: 0 !important;
+    border-top: 0 !important;
+    border-radius: 0.85rem !important;
+    background: rgba(10, 14, 18, 0.78) !important;
+    background-image: none !important;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    scroll-snap-type: none !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partners::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner {
+    flex: 0 0 auto !important;
+    width: 5.1rem !important;
+    min-width: 5.1rem !important;
+    max-width: none !important;
+    min-height: 3.2rem !important;
+    padding: 0.4rem 0.35rem !important;
+    scroll-snap-align: none !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner:not(:last-child)::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner img {
+    height: 1.45rem !important;
+    max-width: 4.35rem !important;
+    opacity: 1 !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner:hover,
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner.is-lit {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 639px) {
+  body.mech-mirror-active [data-hero="journey"] .ajh-media-img,
+  body.mech-mirror-active [data-hero="journey"] img[data-testid="hero-journey-image"] {
+    object-position: 50% 26% !important;
+  }
+
+  .ajh-shell,
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-shell {
+    /* Match www.astrekinnovations.com mobile: ~104px top */
+    padding-top: 6.5rem !important;
+    padding-bottom: max(1.25rem, calc(env(safe-area-inset-bottom, 0px) + 0.85rem)) !important;
+  }
+
+  .ajh-copy,
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-copy {
+    min-height: 0 !important;
+    height: auto !important;
+    padding-bottom: 0 !important;
+  }
+
+  .ajh-explore,
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-explore {
+    flex-direction: column !important;
+    padding-top: 0.35rem !important;
+    padding-bottom: 0 !important;
+    margin-top: 1.15rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partners {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-height: 4.35rem !important;
+    padding: 0.55rem 0.45rem !important;
+    border-top: 0 !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner {
+    width: 5rem !important;
+    min-width: 5rem !important;
+    min-height: 3.05rem !important;
+  }
+
+  body.mech-mirror-active [data-hero="journey"].ajh-live .ajh-partner img {
+    height: 1.35rem !important;
+    max-width: 4.2rem !important;
+  }
+}

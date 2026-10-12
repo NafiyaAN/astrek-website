@@ -1,0 +1,359 @@
+/* =====================================================================
+   PROFESSIONAL TYPOGRAPHY: Space Grotesk + Inter + IBM Plex Mono
+   Loaded last. Clean hierarchy, restrained robotic accents.
+   ===================================================================== */
+
+:root {
+  --font-display: "Space Grotesk", "Inter", "Noto Sans Arabic", "Noto Sans JP", sans-serif;
+  --font-body: "Inter", "Noto Sans Arabic", "Noto Sans JP", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-tech: "Space Grotesk", "Inter", sans-serif;
+  --font-hud: "IBM Plex Mono", ui-monospace, monospace;
+
+  --fs-hero: clamp(2.5rem, 5.2vw, 4.25rem);      /* 40–68px */
+  --fs-h2: clamp(2rem, 3.6vw, 3.25rem);           /* 32–52px */
+  --fs-h3: clamp(1.125rem, 1.4vw, 1.375rem);      /* 18–22px */
+  --fs-h4: clamp(1rem, 1.1vw, 1.125rem);          /* 16–18px */
+  --fs-body: clamp(0.9375rem, 1.05vw, 1.0625rem); /* 15–17px */
+  --fs-body-lg: clamp(1rem, 1.15vw, 1.125rem);    /* 16–18px */
+  --fs-caption: 0.8125rem;                       /* 13px */
+  --fs-label: 0.6875rem;                         /* 11px */
+  --fs-stat: clamp(1.75rem, 2.8vw, 2.5rem);       /* 28–40px */
+}
+
+html {
+  font-size: 16px;
+}
+
+body,
+#astrek-site,
+#astrek-site p,
+#astrek-site li,
+#astrek-site input,
+#astrek-site textarea,
+#astrek-site select,
+#astrek-site button {
+  font-family: var(--font-body) !important;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+#astrek-site {
+  font-size: var(--fs-body) !important;
+  line-height: 1.65 !important;
+  letter-spacing: -0.011em !important;
+  font-weight: 400 !important;
+  color: rgba(244, 246, 247, 0.88);
+}
+
+/* ---------- Display / headlines ---------- */
+#astrek-site h1,
+#astrek-site h2,
+#astrek-site .display,
+#astrek-site .hero h1,
+#astrek-site .tech-headline,
+#astrek-site .section-head h2,
+#astrek-site .elvin-product-copy h1,
+#astrek-site .elvin-product-copy h2,
+#astrek-site .elvin-story-copy h1,
+#astrek-site .elvin-story-copy h2,
+#astrek-site .page-hero h1,
+#astrek-site .article-wrap h1,
+#astrek-site .elvin-mission {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.05 !important;
+  color: #f4f6f7 !important;
+  -webkit-text-fill-color: unset !important;
+  background: none !important;
+  text-transform: none !important;
+}
+
+#astrek-site .hero h1,
+#astrek-site section.hero h1 {
+  font-size: var(--fs-hero) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.02 !important;
+  max-width: 11ch !important;
+}
+
+#astrek-site .page-hero h1 {
+  font-size: clamp(2.25rem, 5vw, 4rem) !important;
+}
+
+#astrek-site .tech-headline,
+#astrek-site .section-head h2,
+#astrek-site .elvin-product-copy h1,
+#astrek-site .elvin-product-copy h2,
+#astrek-site .elvin-story-copy h2,
+#astrek-site .article-wrap h1 {
+  font-size: var(--fs-h2) !important;
+  max-width: 18ch !important;
+}
+
+#astrek-site h3,
+#astrek-site .pillar h3,
+#astrek-site .tech-feature h3,
+#astrek-site .elvin-cap-card h3,
+#astrek-site .elvin-part-card h3,
+#astrek-site .product-callout h3,
+#astrek-site .elvin-mode h3,
+#astrek-site .blog-modal-panel h3,
+#astrek-site .elvin-featured h3 {
+  font-family: var(--font-display) !important;
+  font-size: var(--fs-h3) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.3 !important;
+  text-transform: none !important;
+}
+
+#astrek-site h4,
+#astrek-site .person-info h4,
+#astrek-site .press-card h4,
+#astrek-site .elvin-side h4,
+#astrek-site .blog-body h4,
+#astrek-site .hiring-row h4,
+#astrek-site .elvin-locations h4 {
+  font-family: var(--font-display) !important;
+  font-size: var(--fs-h4) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.015em !important;
+  line-height: 1.35 !important;
+  text-transform: none !important;
+}
+
+/* Soften teal emphasis: professional, not neon-gamey */
+#astrek-site h1 em,
+#astrek-site h2 em,
+#astrek-site .hero h1 em,
+#astrek-site .tech-headline em,
+#astrek-site .section-head h2 em,
+#astrek-site .elvin-product-copy h2 em,
+#astrek-site .elvin-story-copy h2 em,
+#astrek-site .elvin-mission em {
+  font-style: normal !important;
+  font-weight: 600 !important;
+  color: #1ebb9c !important;
+  text-shadow: none !important;
+}
+
+/* ---------- Body copy ---------- */
+#astrek-site .hero p.sub,
+#astrek-site .hero-sub,
+#astrek-site .tech-support,
+#astrek-site .section-head p,
+#astrek-site .section-aside,
+#astrek-site .elvin-product-copy p,
+#astrek-site .elvin-story-copy p,
+#astrek-site .about-copy p,
+#astrek-site .partners-intro p,
+#astrek-site .press-intro p,
+#astrek-site .specs-intro p {
+  font-family: var(--font-body) !important;
+  font-size: var(--fs-body-lg) !important;
+  line-height: 1.7 !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.01em !important;
+  color: rgba(196, 204, 210, 0.92) !important;
+  max-width: 42ch;
+}
+
+#astrek-site .tech-feature p,
+#astrek-site .product-callout p,
+#astrek-site .elvin-mode p,
+#astrek-site .elvin-part-card p,
+#astrek-site .person-info .org,
+#astrek-site .blog-body p,
+#astrek-site .elvin-featured p,
+#astrek-site .testimonial-author span {
+  font-size: var(--fs-caption) !important;
+  line-height: 1.55 !important;
+  color: rgba(154, 166, 174, 0.95) !important;
+}
+
+#astrek-site blockquote,
+#astrek-site .testimonial-text,
+#astrek-site .elvin-quote {
+  font-family: var(--font-display) !important;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  letter-spacing: -0.02em !important;
+  color: #f4f6f7 !important;
+}
+
+/* ---------- Labels / mono (robotic but restrained) ---------- */
+#astrek-site .mono,
+#astrek-site .section-tag,
+#astrek-site .eyebrow,
+#astrek-site .hero-eyebrow,
+#astrek-site .tech-eyebrow,
+#astrek-site .scroll-cue,
+#astrek-site .idx,
+#astrek-site .product-hud__label,
+#astrek-site .hero-hud__readout,
+#astrek-site .kicker,
+#astrek-site .blog-body .date,
+#astrek-site .elvin-blog-row .date,
+#astrek-site .footer-bottom,
+#astrek-site .person-info .role {
+  font-family: var(--font-mono) !important;
+  font-size: var(--fs-label) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  line-height: 1.4 !important;
+}
+
+#astrek-site .section-tag,
+#astrek-site .hero-eyebrow,
+#astrek-site .tech-eyebrow {
+  font-size: 0.6875rem !important;
+}
+
+/* ---------- Stats ---------- */
+#astrek-site .hero-stats strong,
+#astrek-site .elvin-stat strong {
+  font-family: var(--font-display) !important;
+  font-size: var(--fs-stat) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1 !important;
+  text-shadow: 0 0 18px rgba(30, 187, 156, 0.25) !important;
+}
+
+#astrek-site .hero-stats span,
+#astrek-site .elvin-stat span {
+  font-family: var(--font-body) !important;
+  font-size: 0.75rem !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.01em !important;
+  text-transform: none !important;
+  line-height: 1.4 !important;
+  color: rgba(154, 166, 174, 0.95) !important;
+}
+
+/* ---------- Buttons / CTAs ---------- */
+#astrek-site .hero-cta,
+#astrek-site .hero-cta-ghost,
+#astrek-site .cta-btn,
+#astrek-site .submit-btn,
+#astrek-site .elvin-outline,
+#astrek-site .play-link {
+  font-family: var(--font-display) !important;
+  font-size: 0.8125rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: none !important;
+  line-height: 1.2 !important;
+}
+
+#astrek-site .elvin-link,
+#astrek-site .read-more {
+  font-family: var(--font-mono) !important;
+  font-size: 0.6875rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+/* ---------- Nav ---------- */
+#siteHeader nav.links a,
+#navLinks a {
+  font-family: var(--font-body) !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  text-transform: none !important;
+}
+
+#siteHeader .language-switcher,
+#siteHeader .language-switcher button {
+  font-family: var(--font-mono) !important;
+  font-size: 0.6875rem !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* ---------- Forms ---------- */
+#contactForm h3,
+.elvin-form h3 {
+  font-family: var(--font-display) !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: none !important;
+}
+
+#contactForm input,
+#contactForm textarea,
+#contactForm select,
+.footer-newsletter input {
+  font-family: var(--font-body) !important;
+  font-size: 0.9375rem !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* ---------- Footer ---------- */
+.elvin-foot h5 {
+  font-family: var(--font-mono) !important;
+  font-size: 0.6875rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+}
+
+.elvin-foot a,
+.elvin-foot p {
+  font-family: var(--font-body) !important;
+  font-size: 0.875rem !important;
+  letter-spacing: -0.01em !important;
+  text-transform: none !important;
+}
+
+.elvin-mission {
+  font-family: var(--font-display) !important;
+  font-size: clamp(1.25rem, 2.4vw, 2rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.25 !important;
+  text-transform: none !important;
+}
+
+/* ---------- Tech feature titles: no forced uppercase ---------- */
+#astrek-site .tech-feature h3 {
+  text-transform: none !important;
+  font-size: 1rem !important;
+  letter-spacing: -0.015em !important;
+}
+
+/* ---------- Mobile type scale ---------- */
+@media (max-width: 700px) {
+  :root {
+    --fs-hero: clamp(2.125rem, 9vw, 2.75rem);
+    --fs-h2: clamp(1.75rem, 7vw, 2.25rem);
+    --fs-body: 0.9375rem;
+    --fs-body-lg: 1rem;
+  }
+
+  #astrek-site .hero h1 {
+    max-width: 100% !important;
+  }
+
+  #astrek-site .tech-headline,
+  #astrek-site .section-head h2,
+  #astrek-site .elvin-product-copy h2,
+  #astrek-site .elvin-story-copy h2 {
+    max-width: 100% !important;
+  }
+
+  #astrek-site .hero-cta,
+  #astrek-site .hero-cta-ghost,
+  #astrek-site .cta-btn {
+    font-size: 0.875rem !important;
+  }
+}

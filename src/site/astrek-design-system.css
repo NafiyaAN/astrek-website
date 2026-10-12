@@ -1,0 +1,3531 @@
+/* =====================================================================
+   UNIK EXO: Premium Robotics Design System (definitive tokens)
+   Visual-only layer. Loads last. Do not add colors/spacing outside tokens.
+   ===================================================================== */
+
+#astrek-site {
+  /* Colors */
+  --bg-primary: #0a0e0d;
+  --bg-secondary: #0f1412;
+  --bg-card: #141918;
+  --bg-card-hover: #1a211f;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(63, 224, 197, 0.4);
+  --accent: #3fe0c5;
+  --accent-dim: rgba(63, 224, 197, 0.15);
+  --accent-glow: rgba(63, 224, 197, 0.35);
+  --text-primary: #f5f7f6;
+  --text-secondary: #9ca8a5;
+  --text-muted: #6b7573;
+
+  /* Typography */
+  --h1-size: clamp(2.25rem, 5.5vw, 4rem);
+  --h1-lh: 1.1;
+  --h2-size: clamp(2rem, 4vw, 3rem);
+  --h2-lh: 1.15;
+  --h3-size: clamp(1.375rem, 2.2vw, 1.75rem);
+  --h3-lh: 1.2;
+  --eyebrow-size: 0.75rem;
+  --body-size: 1rem;
+  --body-lh: 1.6;
+  --stat-number-size: clamp(2.5rem, 5vw, 3.75rem);
+
+  /* Spacing */
+  --section-padding-y: clamp(4.5rem, 10vw, 8.75rem);
+  --card-padding: clamp(1.5rem, 2.5vw, 2rem);
+  --card-radius: 16px;
+  --container-max: 1280px;
+
+  /* Motion */
+  --ds-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ds-duration: 500ms;
+  --ds-stagger: 80ms;
+
+  color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+  #astrek-site {
+    --h1-lh: 1.05;
+    --h2-lh: 1.1;
+  }
+}
+
+/* ── Global typography ─────────────────────────────────────────────── */
+
+#astrek-site h1.ux-h1,
+#astrek-site .hero--tronix h1.ux-h1 {
+  font-size: var(--h1-size) !important;
+  line-height: var(--h1-lh) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--text-primary) !important;
+}
+
+#astrek-site h2.rf-h2,
+#astrek-site h2.ux-h2 {
+  font-family: "Space Grotesk", Inter, sans-serif !important;
+  font-size: var(--h2-size) !important;
+  line-height: var(--h2-lh) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--text-primary) !important;
+}
+
+#astrek-site h3,
+#astrek-site .rf-mode-meta h3,
+#astrek-site .rf-blog-card-body h4,
+#astrek-site .flag-explode-item h3 {
+  font-size: var(--h3-size) !important;
+  line-height: var(--h3-lh) !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+}
+
+#astrek-site .ux-eyebrow,
+#astrek-site .rf-kicker,
+#astrek-site .hero-eyebrow {
+  font-size: var(--eyebrow-size) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--accent) !important;
+  line-height: 1.35 !important;
+}
+
+#astrek-site p:not(.ajh-title):not(.ajh-product):not(.ajh-sub):not(.ajh-metric-value):not(.ajh-metric-label):not(.aco-title):not(.aco-lead):not(.aco-body):not(.aco-topic-text):not(.aco-stat-value):not(.aco-stat-label):not(.font-mono):not(.text-brand),
+#astrek-site .rf-section-head > div > p:not(.font-mono):not(.text-brand),
+#astrek-site .sub {
+  font-size: var(--body-size) !important;
+  line-height: var(--body-lh) !important;
+  color: var(--text-secondary) !important;
+}
+
+#astrek-site .wrap {
+  max-width: var(--container-max) !important;
+}
+
+/* ── Section rhythm & backgrounds ──────────────────────────────────── */
+
+#astrek-site > section.hero,
+#astrek-site > section#product,
+#astrek-site > section#specs,
+#astrek-site > section#team,
+#astrek-site > section#press,
+#astrek-site > section#faq,
+#astrek-site > section#contact {
+  background-color: var(--bg-primary) !important;
+  background-image: none !important;
+}
+
+#astrek-site > section#about,
+#astrek-site > section#modes,
+#astrek-site > section#testimonials,
+#astrek-site > section#partners,
+#astrek-site > section#blog,
+#astrek-site > .rf-cta-band,
+#astrek-site > footer.rf-footer {
+  background-color: var(--bg-secondary) !important;
+  background-image: none !important;
+}
+
+#astrek-site .ux-section,
+#astrek-site .rf-section:not(.hero):not(.page-hero),
+#astrek-site > section#contact {
+  padding-top: var(--section-padding-y) !important;
+  padding-bottom: var(--section-padding-y) !important;
+}
+
+html,
+body,
+#astrek-site {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+html {
+  overflow-x: clip;
+}
+
+#astrek-site {
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Shared card system (interactive cards only) ───────────────────── */
+
+#astrek-site .flag-explode-item,
+#astrek-site .rf-mode-card,
+#astrek-site .rf-blog-card,
+#astrek-site .rf-press-featured,
+#astrek-site .rf-press-side > a,
+#astrek-site .rf-person {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--card-radius) !important;
+  transition:
+    transform 250ms var(--ds-ease),
+    border-color 250ms var(--ds-ease),
+    box-shadow 250ms var(--ds-ease),
+    background 250ms var(--ds-ease) !important;
+}
+
+#astrek-site .flag-explode-item:hover,
+#astrek-site .rf-mode-card:hover,
+#astrek-site .rf-blog-card:hover,
+#astrek-site .rf-press-featured:hover,
+#astrek-site .rf-press-side > a:hover,
+#astrek-site .rf-person:hover {
+  transform: translateY(-6px) !important;
+  border-color: var(--border-hover) !important;
+  background: var(--bg-card-hover) !important;
+  box-shadow: 0 20px 40px -10px var(--accent-glow) !important;
+}
+
+#astrek-site #about .flag-explode-icon {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  border-radius: 50% !important;
+  background: var(--accent-dim) !important;
+  border: 1px solid var(--border-hover) !important;
+}
+
+#astrek-site #about .flag-explode-icon::before {
+  background: var(--accent) !important;
+}
+
+/* ── Hero / product glow frames ──────────────────────────────────── */
+
+#astrek-site .hero--tronix .rf-hero-visual {
+  position: relative !important;
+  isolation: isolate !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+#astrek-site .rf-hero-visual,
+#astrek-site #product .rf-product-stage,
+#astrek-site #specs .flag-explode-stage,
+#astrek-site .rf-story-media {
+  position: relative !important;
+  isolation: isolate !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--card-radius) !important;
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6) !important;
+  overflow: visible !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-visual::before,
+#astrek-site .rf-hero-visual::before,
+#astrek-site #product .rf-product-stage::before,
+#astrek-site #specs .flag-explode-stage::before,
+#astrek-site .rf-story-media::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: -18% -12% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background: radial-gradient(circle, rgba(63, 224, 197, 0.18) 0%, transparent 70%) !important;
+  filter: blur(80px) !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-visual > img,
+#astrek-site .hero--tronix .rf-hero-visual > #heroProductImg,
+#astrek-site .rf-hero-visual > img,
+#astrek-site #product .rf-product-stage > *,
+#astrek-site #specs .flag-explode-stage > *,
+#astrek-site .rf-story-media > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* ── Stats band ────────────────────────────────────────────────────── */
+
+#astrek-site #product .ux-impact .ux-stats .ux-stat strong,
+#astrek-site #product .ux-impact .rf-impact-grid .ux-stat strong,
+#astrek-site #product .ux-impact .ux-stat .ds-stat-number,
+#astrek-site.lux-site #product .ux-impact .ux-stats .ux-stat strong,
+#astrek-site.lux-site #product .ux-impact .rf-impact-grid .ux-stat strong,
+#astrek-site.lux-site #product .ux-impact .ux-stat .ds-stat-number {
+  font-size: 72px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  color: #ffffff !important;
+  text-shadow: 0 0 40px rgba(63, 224, 197, 0.5) !important;
+  font-family: "Space Grotesk", Inter, system-ui, sans-serif !important;
+  letter-spacing: -0.03em !important;
+  display: block !important;
+  margin: 0 0 12px !important;
+  filter: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+@media (max-width: 767px) {
+  #astrek-site #product .ux-impact .ux-stats .ux-stat strong,
+  #astrek-site #product .ux-impact .rf-impact-grid .ux-stat strong,
+  #astrek-site #product .ux-impact .ux-stat .ds-stat-number,
+  #astrek-site.lux-site #product .ux-impact .ux-stat strong,
+  #astrek-site.lux-site #product .ux-impact .ux-stat .ds-stat-number {
+    font-size: 44px !important;
+  }
+}
+
+#astrek-site #product .ux-impact .ux-stat {
+  padding: clamp(28px, 3vw, 36px) var(--card-padding) !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--card-radius) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+#astrek-site #product .ux-impact .ux-stat span {
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: var(--text-muted) !important;
+  margin-top: 12px !important;
+}
+
+#astrek-site #product .ux-impact .ux-stats.rf-impact-grid {
+  border: 0 !important;
+  background: transparent !important;
+  gap: 0 !important;
+  padding: 48px 0 !important;
+  margin-top: 0 !important;
+}
+
+@media (min-width: 768px) {
+  #astrek-site #product .ux-impact .ux-stat:not(:last-child) {
+    border-right: 1px solid var(--border-subtle) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  #astrek-site #product .ux-impact .ux-stat {
+    border-right: 0 !important;
+  }
+}
+
+/* ── Product intro showcase ──────────────────────────────────────── */
+
+#astrek-site #product .rf-product-showcase {
+  align-items: center !important;
+}
+
+#astrek-site #product .rf-product-stage {
+  min-height: 480px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: var(--card-padding) !important;
+  background: var(--bg-card) !important;
+}
+
+#astrek-site #product .rf-product-stage #product3DStage,
+#astrek-site #product #product3DStage {
+  width: min(100%, 560px) !important;
+  max-width: 560px !important;
+  min-height: 420px !important;
+}
+
+#astrek-site #product .rf-point {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 12px !important;
+  padding: 16px 18px !important;
+  margin-bottom: 8px !important;
+  transition:
+    transform 250ms var(--ds-ease),
+    border-color 250ms var(--ds-ease),
+    box-shadow 250ms var(--ds-ease) !important;
+}
+
+#astrek-site #product .rf-point:hover,
+#astrek-site #product .rf-point.is-active {
+  border-color: var(--border-hover) !important;
+  background: var(--bg-card-hover) !important;
+  box-shadow: 0 12px 32px -8px var(--accent-glow) !important;
+  transform: translateY(-2px) !important;
+}
+
+#astrek-site .flag-hot {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 4px var(--accent-dim), 0 0 16px var(--accent-glow) !important;
+  animation: ds-hot-pulse 2.4s ease-in-out infinite !important;
+}
+
+@keyframes ds-hot-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px var(--accent-dim), 0 0 12px var(--accent-glow);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 8px var(--accent-dim), 0 0 24px var(--accent-glow);
+    transform: scale(1.08);
+  }
+}
+
+#astrek-site .atelier-anno-line {
+  stroke: var(--accent) !important;
+  stroke-opacity: 0.55 !important;
+}
+
+#astrek-site .atelier-anno-line.is-on {
+  stroke-opacity: 1 !important;
+}
+
+/* ── Mode cards ──────────────────────────────────────────────────── */
+
+#astrek-site #modes .rf-mode-card {
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: var(--bg-card) !important;
+  border-radius: var(--card-radius) !important;
+}
+
+#astrek-site #modes .rf-mode-card::after {
+  background: linear-gradient(
+    to top,
+    rgba(10, 14, 13, 0.9) 0%,
+    rgba(10, 14, 13, 0.35) 42%,
+    transparent 50%
+  ) !important;
+}
+
+#astrek-site #modes .rf-mode-meta {
+  padding: 20px !important;
+  background: transparent !important;
+}
+
+#astrek-site #modes .rf-mode-meta h3 {
+  font-size: 0.9375rem !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  margin: 0 !important;
+}
+
+/* ── Feature / spec panels ───────────────────────────────────────── */
+
+#astrek-site #about .flag-explode-item,
+#astrek-site #specs .flag-explode-item {
+  padding: var(--card-padding) !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--card-radius) !important;
+}
+
+#astrek-site #about .flag-explode-stage,
+#astrek-site #specs .flag-explode-stage {
+  min-height: 480px !important;
+  background: var(--bg-card) !important;
+}
+
+#astrek-site #specs .flag-explode-panel {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ── Blog cards ──────────────────────────────────────────────────── */
+
+#astrek-site #blog .rf-blog-card {
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: var(--bg-card) !important;
+}
+
+#astrek-site #blog .rf-blog-card-media {
+  aspect-ratio: 16 / 10 !important;
+  border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
+  object-fit: cover !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+#astrek-site #blog .rf-blog-card-body {
+  padding: var(--card-padding) !important;
+}
+
+#astrek-site #blog .atelier-pill,
+#astrek-site #blog .rf-blog-card-body .atelier-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 4px 12px !important;
+  border-radius: 999px !important;
+  background: var(--accent-dim) !important;
+  color: var(--accent) !important;
+  font-size: 0.6875rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 12px !important;
+}
+
+#astrek-site #blog .rf-blog-card-body .date.mono {
+  color: var(--text-muted) !important;
+  font-size: 0.8125rem !important;
+  margin-top: auto !important;
+}
+
+/* ── Testimonial ─────────────────────────────────────────────────── */
+
+#astrek-site #testimonials .rf-quote,
+#astrek-site #testimonials blockquote.testimonial-text,
+#astrek-site #testimonials blockquote.rf-quote {
+  font-family: inherit !important;
+  font-size: 1.5rem !important;
+  line-height: 1.5 !important;
+  font-weight: 500 !important;
+  font-style: italic !important;
+  color: var(--text-primary) !important;
+}
+
+#astrek-site #testimonials .rf-story-media {
+  padding: 0 !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+#astrek-site #testimonials .rf-story-media img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 4 / 5 !important;
+  object-fit: cover !important;
+  object-position: center 30% !important;
+  border-radius: 16px !important;
+  border: 1px solid var(--border-subtle) !important;
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6) !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+/* ── Team grids ──────────────────────────────────────────────────── */
+
+#astrek-site #team .rf-person-media,
+#astrek-site #team .person-img,
+#astrek-site #mentors .rf-person-media,
+#astrek-site #mentors .person-img {
+  width: 96px !important;
+  height: 96px !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  border: 2px solid transparent !important;
+  transition: border-color 200ms var(--ds-ease), box-shadow 200ms var(--ds-ease) !important;
+  overflow: hidden !important;
+}
+
+#astrek-site #team .rf-person:hover .rf-person-media,
+#astrek-site #team .rf-person:hover .person-img,
+#astrek-site #mentors .rf-person:hover .rf-person-media,
+#astrek-site #mentors .rf-person:hover .person-img {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 24px var(--accent-dim) !important;
+}
+
+#astrek-site #team .rf-person-meta h4,
+#astrek-site #mentors .rf-person-meta h4 {
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+}
+
+#astrek-site #team .rf-person-meta .role,
+#astrek-site #mentors .rf-person-meta .role {
+  color: var(--text-muted) !important;
+}
+
+/* ── Partners: uniform logo grid ────────────────────────────────── */
+
+#astrek-site #partners .ux-partners-row.partner-grid,
+#astrek-site #partners .ux-partners-row.partner-grid--uniform,
+#astrek-site #partners .partner-grid.partner-grid--uniform,
+#astrek-site.lux-site #partners .ux-partners-row.partner-grid,
+#astrek-site.lux-site #partners .partner-grid.partner-grid--uniform {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  padding: 32px 0 !important;
+  margin: 0 !important;
+  border-top: 1px solid var(--border-subtle) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  justify-items: center !important;
+  align-items: center !important;
+}
+
+@media (min-width: 1024px) {
+  #astrek-site #partners .ux-partners-row.partner-grid,
+  #astrek-site #partners .ux-partners-row.partner-grid--uniform,
+  #astrek-site #partners .partner-grid.partner-grid--uniform,
+  #astrek-site.lux-site #partners .ux-partners-row.partner-grid,
+  #astrek-site.lux-site #partners .partner-grid.partner-grid--uniform {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  }
+}
+
+#astrek-site #partners .partner-logo,
+#astrek-site #partners .ux-partners-row .partner-logo,
+#astrek-site #partners .partner-grid .partner-logo,
+#astrek-site.lux-site #partners .partner-logo,
+#astrek-site.lux-site #partners .ux-partners-row .partner-logo,
+#astrek-site.lux-site #partners .partner-grid .partner-logo {
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 160px !important;
+  height: 72px !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  min-height: 72px !important;
+  max-height: 72px !important;
+  aspect-ratio: auto !important;
+  padding: 16px 20px !important;
+  margin: 0 auto !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  transform: none !important;
+  box-shadow: none !important;
+  transition:
+    border-color 250ms var(--ds-ease),
+    box-shadow 250ms var(--ds-ease) !important;
+}
+
+#astrek-site #partners .partner-logo:hover,
+#astrek-site #partners .ux-partners-row .partner-logo:hover,
+#astrek-site #partners .partner-grid .partner-logo:hover,
+#astrek-site.lux-site #partners .partner-logo:hover,
+#astrek-site.lux-site #partners .ux-partners-row .partner-logo:hover,
+#astrek-site.lux-site #partners .partner-grid .partner-logo:hover {
+  transform: none !important;
+  border-color: var(--border-hover) !important;
+  box-shadow: 0 12px 28px -8px var(--accent-glow) !important;
+  background: var(--bg-card) !important;
+}
+
+#astrek-site #partners .partner-logo img,
+#astrek-site #partners .ux-partners-row .partner-logo img,
+#astrek-site #partners .partner-grid .partner-logo img,
+#astrek-site.lux-site #partners .partner-logo img,
+#astrek-site.lux-site #partners .ux-partners-row .partner-logo img,
+#astrek-site.lux-site #partners .partner-grid .partner-logo img {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 120px !important;
+  max-height: 40px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  opacity: 0.5 !important;
+  filter: grayscale(100%) !important;
+  transition:
+    opacity 250ms var(--ds-ease),
+    filter 250ms var(--ds-ease) !important;
+  background: transparent !important;
+  transform: none !important;
+}
+
+#astrek-site #partners .partner-logo:hover img,
+#astrek-site #partners .ux-partners-row .partner-logo:hover img,
+#astrek-site #partners .partner-grid .partner-logo:hover img,
+#astrek-site.lux-site #partners .partner-logo:hover img,
+#astrek-site.lux-site #partners .ux-partners-row .partner-logo:hover img,
+#astrek-site.lux-site #partners .partner-grid .partner-logo:hover img {
+  opacity: 1 !important;
+  filter: grayscale(0%) !important;
+}
+
+#astrek-site #partners .lux-partners-marquee {
+  display: none !important;
+}
+
+/* ── FAQ ─────────────────────────────────────────────────────────── */
+
+#astrek-site .rf-faq-item {
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  border-radius: 0 !important;
+}
+
+#astrek-site .rf-faq-item summary {
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+  padding: 20px 0 !important;
+}
+
+#astrek-site .rf-faq-item summary::after {
+  color: var(--accent) !important;
+  transition: transform 200ms var(--ds-ease) !important;
+}
+
+#astrek-site .rf-faq-item[open] summary::after,
+#astrek-site .rf-faq-item.is-open summary::after {
+  transform: rotate(45deg) !important;
+}
+
+#astrek-site .rf-faq-body {
+  opacity: 0;
+  transition:
+    grid-template-rows 200ms var(--ds-ease),
+    opacity 200ms var(--ds-ease) !important;
+}
+
+#astrek-site .rf-faq-item.is-open .rf-faq-body,
+#astrek-site .rf-faq-item[open] .rf-faq-body {
+  opacity: 1 !important;
+}
+
+#astrek-site .rf-faq-body > p {
+  color: var(--text-secondary) !important;
+  padding-bottom: 20px !important;
+}
+
+/* ── CTA + Footer ────────────────────────────────────────────────── */
+
+#astrek-site .rf-cta-band {
+  position: relative !important;
+  overflow: hidden !important;
+  padding: calc(var(--section-padding-y) / 2) 0 !important;
+}
+
+#astrek-site .rf-cta-band::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(63, 224, 197, 0.18) 0%,
+    transparent 70%
+  ) !important;
+  filter: blur(80px) !important;
+}
+
+#astrek-site .rf-cta-inner {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+#astrek-site .rf-cta-inner h2 {
+  color: var(--text-primary) !important;
+}
+
+#astrek-site .rf-cta-inner p {
+  color: var(--text-secondary) !important;
+}
+
+#astrek-site .rf-footer,
+#astrek-site footer.rf-footer {
+  color: var(--text-secondary) !important;
+}
+
+#astrek-site .rf-footer h4,
+#astrek-site .rf-foot h4 {
+  color: var(--text-primary) !important;
+}
+
+#astrek-site .rf-footer a,
+#astrek-site .rf-foot a,
+#astrek-site .rf-footer p,
+#astrek-site .rf-foot p {
+  color: var(--text-secondary) !important;
+}
+
+#astrek-site .rf-foot {
+  gap: calc(var(--section-padding-y) / 2) !important;
+}
+
+/* ── Stray content guards ─────────────────────────────────────────── */
+
+#astrek-site .about-copy,
+#astrek-site .about-copy[hidden],
+#astrek-site .ux-feature-stack .about-copy {
+  display: none !important;
+  visibility: hidden !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#astrek-site .hero--tronix .hero-module,
+#astrek-site .hero--tronix .hero-module * {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+#astrek-site .blog-modal:not(.open) {
+  display: none !important;
+  position: fixed !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+/* ── Press cards ─────────────────────────────────────────────────── */
+
+#astrek-site #press .rf-press-featured,
+#astrek-site #press .rf-press-side > a {
+  padding: var(--card-padding) !important;
+}
+
+#astrek-site #press .atelier-pill {
+  background: var(--accent-dim) !important;
+  color: var(--accent) !important;
+  font-size: 0.6875rem !important;
+  padding: 4px 12px !important;
+  border-radius: 999px !important;
+}
+
+/* ── Motion (scroll reveal) ──────────────────────────────────────── */
+
+#astrek-site .atelier-wait {
+  opacity: 0 !important;
+  transform: translateY(24px) !important;
+}
+
+#astrek-site .atelier-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition:
+    opacity var(--ds-duration) var(--ds-ease),
+    transform var(--ds-duration) var(--ds-ease) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #astrek-site .atelier-wait,
+  #astrek-site .atelier-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* =====================================================================
+   PREMIUM STRUCTURE: editorial rhythm, robotics studio feel
+   Visual-only. Keeps section order/content; unifies layout language.
+   ===================================================================== */
+
+#astrek-site {
+  font-family: "Manrope", "Inter", system-ui, sans-serif !important;
+  background-color: var(--bg-primary) !important;
+  position: relative !important;
+  isolation: isolate !important;
+}
+
+#astrek-site::before {
+  content: "" !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(ellipse 80% 45% at 50% -8%, rgba(63, 224, 197, 0.07) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(63, 224, 197, 0.02) 0%, transparent 18%) !important;
+}
+
+#astrek-site > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Remove decorative clutter from legacy layers */
+#astrek-site .ult-section-num,
+#astrek-site .lux-scroll-hint,
+#astrek-site .hero-hud,
+#astrek-site .hero-product-ambient,
+#astrek-site .hero-product-bloom,
+#astrek-site .hero-product-floor,
+#astrek-site .lux-ambient {
+  display: none !important;
+}
+
+#astrek-site .lux-section-glow {
+  opacity: 0.35 !important;
+}
+
+/* ── Section rhythm ──────────────────────────────────────────────── */
+
+#astrek-site > section.rf-section,
+#astrek-site > section.hero,
+#astrek-site > .rf-cta-band,
+#astrek-site > footer.rf-footer {
+  border-top: 1px solid var(--border-subtle) !important;
+}
+
+#astrek-site > section.hero {
+  border-top: 0 !important;
+}
+
+#astrek-site .wrap {
+  padding-inline: clamp(20px, 4vw, 40px) !important;
+}
+
+#astrek-site .rf-section-head {
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: space-between !important;
+  gap: clamp(24px, 4vw, 48px) !important;
+  margin-bottom: clamp(40px, 6vw, 64px) !important;
+  max-width: none !important;
+}
+
+#astrek-site .rf-section-head > div {
+  max-width: min(720px, 100%) !important;
+}
+
+#astrek-site .rf-section-head > div > p,
+#astrek-site .rf-product-intro > p {
+  max-width: 52ch !important;
+  margin-top: 16px !important;
+}
+
+#astrek-site .rf-section-head .rf-text-link,
+#astrek-site .rf-section-head .rf-btn {
+  flex-shrink: 0 !important;
+  align-self: flex-end !important;
+  margin-bottom: 4px !important;
+}
+
+/* ── Hero: premium split editorial (copy left · product right) ─── */
+
+#astrek-site .hero.rf-hero.hero--tronix {
+  position: relative !important;
+  display: block !important;
+  min-height: 100dvh !important;
+  min-height: 100svh !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: #000 !important;
+}
+
+#astrek-site .hero--tronix::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(ellipse 52% 58% at 72% 46%, rgba(63, 224, 197, 0.14) 0%, transparent 62%),
+    radial-gradient(ellipse 38% 42% at 18% 72%, rgba(63, 224, 197, 0.04) 0%, transparent 70%) !important;
+}
+
+#astrek-site .hero--tronix .hero-video-overlay {
+  background:
+    linear-gradient(105deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.78) 42%, rgba(0, 0, 0, 0.55) 100%),
+    radial-gradient(ellipse 60% 50% at 75% 45%, rgba(63, 224, 197, 0.08) 0%, transparent 65%) !important;
+}
+
+#astrek-site .hero--tronix .hero-bg::after {
+  opacity: 0.08 !important;
+  background-size: 64px 64px !important;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 72% 48%, #000 15%, transparent 100%) !important;
+  mask-image: radial-gradient(ellipse 70% 60% at 72% 48%, #000 15%, transparent 100%) !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-stage {
+  position: relative !important;
+  z-index: 2 !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr) !important;
+  grid-template-rows: auto auto 1fr !important;
+  align-items: center !important;
+  gap: 0 clamp(32px, 5vw, 72px) !important;
+  width: 100% !important;
+  max-width: var(--container-max) !important;
+  min-height: 100dvh !important;
+  margin-inline: auto !important;
+  padding:
+    calc(var(--site-header-h, 76px) + clamp(28px, 5vh, 56px))
+    clamp(20px, 4vw, 56px)
+    clamp(40px, 6vh, 72px) !important;
+  text-align: left !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-stage > * {
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+  translate: none !important;
+  pointer-events: auto !important;
+  margin-inline: 0 !important;
+}
+
+#astrek-site .hero--tronix .lux-hero-badge {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  align-self: end !important;
+  margin: 0 0 clamp(18px, 2.5vh, 28px) !important;
+  padding: 8px 16px 8px 12px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(63, 224, 197, 0.28) !important;
+  background: rgba(63, 224, 197, 0.06) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  font-size: 0.6875rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+#astrek-site .hero--tronix .lux-hero-badge__dot {
+  background: var(--accent) !important;
+  box-shadow: 0 0 12px var(--accent-glow) !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+#astrek-site .hero--tronix h1.ux-h1,
+#astrek-site .hero--tronix h1.hero-anim,
+#astrek-site.lux-site .hero--tronix h1.ux-h1 {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+  width: auto !important;
+  max-width: 11ch !important;
+  margin: 0 0 clamp(20px, 3vh, 32px) !important;
+  padding: 0 !important;
+  text-align: left !important;
+  white-space: normal !important;
+  pointer-events: auto !important;
+  font-family: "Space Grotesk", var(--font-display, sans-serif) !important;
+  font-size: clamp(3.25rem, 6.8vw, 5.75rem) !important;
+  font-weight: 700 !important;
+  line-height: 0.92 !important;
+  letter-spacing: -0.035em !important;
+  text-transform: none !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55) !important;
+  filter: none !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-copy {
+  grid-column: 1 !important;
+  grid-row: 3 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  align-self: start !important;
+  max-width: 36rem !important;
+  margin: 0 !important;
+  text-align: left !important;
+  gap: 0 !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-copy .hero-eyebrow,
+#astrek-site .hero--tronix .rf-hero-copy .ux-eyebrow {
+  margin: 0 0 14px !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.16em !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-copy .sub {
+  margin: 0 0 clamp(24px, 3vh, 36px) !important;
+  max-width: 38ch !important;
+  font-size: clamp(1rem, 1.35vw, 1.125rem) !important;
+  line-height: 1.65 !important;
+  color: #e8e8e8 !important;
+  -webkit-text-fill-color: #e8e8e8 !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.45) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 14px !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-visual {
+  grid-column: 2 !important;
+  grid-row: 1 / span 3 !important;
+  position: relative !important;
+  inset: auto !important;
+  align-self: center !important;
+  justify-self: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: min(640px, 100%) !important;
+  min-height: clamp(420px, 72vh, 820px) !important;
+  margin: 0 !important;
+  padding: clamp(16px, 3vw, 32px) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  isolation: isolate !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-visual::before {
+  inset: -8% -14% -4% -14% !important;
+  background: radial-gradient(circle at 50% 42%, rgba(63, 224, 197, 0.22) 0%, transparent 68%) !important;
+  filter: blur(72px) !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-visual::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 12% !important;
+  right: 12% !important;
+  bottom: 8% !important;
+  height: 48px !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background: radial-gradient(ellipse at center, rgba(63, 224, 197, 0.18) 0%, transparent 72%) !important;
+  filter: blur(16px) !important;
+}
+
+#astrek-site .hero--tronix .hero-hud,
+#astrek-site .hero--tronix .hero-hud-ring {
+  display: none !important;
+}
+
+#astrek-site .hero--tronix .hero-product-ambient {
+  inset: 10% 8% 14% !important;
+  background: radial-gradient(circle at 50% 40%, rgba(63, 224, 197, 0.16) 0%, transparent 58%) !important;
+  filter: blur(64px) !important;
+}
+
+#astrek-site .hero--tronix .hero-product-floor {
+  display: none !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-visual img,
+#astrek-site .hero--tronix #heroProductImg {
+  position: relative !important;
+  z-index: 2 !important;
+  width: min(100%, 420px) !important;
+  max-width: min(100%, 420px) !important;
+  max-height: min(72vh, 680px) !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  display: block !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  mix-blend-mode: normal !important;
+  filter: drop-shadow(0 32px 64px rgba(0, 0, 0, 0.55)) !important;
+}
+
+/* ── Buttons: robotics accent system ────────────────────────────── */
+
+#astrek-site .rf-btn:not(.rf-btn--ghost):not(.rf-btn--nav),
+#astrek-site button.rf-btn:not(.rf-btn--ghost) {
+  background: var(--accent) !important;
+  color: #061210 !important;
+  border: 1px solid rgba(63, 224, 197, 0.5) !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  font-size: 0.8125rem !important;
+  padding: 14px 28px !important;
+  box-shadow: 0 8px 32px -8px var(--accent-glow) !important;
+  transition:
+    transform 200ms var(--ds-ease),
+    box-shadow 200ms var(--ds-ease),
+    background 200ms var(--ds-ease) !important;
+}
+
+#astrek-site .rf-btn:not(.rf-btn--ghost):hover,
+#astrek-site button.rf-btn:not(.rf-btn--ghost):hover {
+  background: #5ae8d0 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 16px 40px -10px var(--accent-glow) !important;
+}
+
+#astrek-site .rf-btn--ghost {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 999px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  font-size: 0.8125rem !important;
+  padding: 14px 28px !important;
+}
+
+#astrek-site .rf-btn--ghost:hover {
+  border-color: var(--border-hover) !important;
+  background: var(--accent-dim) !important;
+  color: var(--accent) !important;
+}
+
+/* ── Product intro: centered editorial block ────────────────────── */
+
+#astrek-site #product .rf-product-intro {
+  text-align: center !important;
+  max-width: 760px !important;
+  margin: 0 auto clamp(48px, 7vw, 72px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+#astrek-site #product .rf-product-intro > p {
+  margin-inline: auto !important;
+}
+
+#astrek-site #product .ux-pillars {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  margin-top: 28px !important;
+}
+
+#astrek-site #product .ux-pillar {
+  padding: 8px 16px !important;
+  border-radius: 999px !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-secondary) !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+}
+
+#astrek-site #product .rf-product-intro .rf-hero-actions {
+  justify-content: center !important;
+  margin-top: 32px !important;
+}
+
+/* ── Stats: unified impact strip ────────────────────────────────── */
+
+#astrek-site #product .ux-impact {
+  margin-top: clamp(48px, 8vw, 80px) !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+#astrek-site #product .ux-impact-inner {
+  text-align: center !important;
+}
+
+#astrek-site #product .ux-impact-inner > h2 {
+  margin-bottom: 12px !important;
+}
+
+#astrek-site #product .ux-impact-inner > p {
+  max-width: 52ch !important;
+  margin: 0 auto 40px !important;
+}
+
+#astrek-site #product .ux-impact .ux-stats.rf-impact-grid {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--card-radius) !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+#astrek-site #product .ux-impact .ux-stat {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+@media (min-width: 768px) {
+  #astrek-site #product .ux-impact .ux-stat:not(:last-child) {
+    border-right: 1px solid var(--border-subtle) !important;
+  }
+}
+
+/* ── Feature / spec explode panels ───────────────────────────────── */
+
+#astrek-site .flag-explode {
+  gap: clamp(24px, 4vw, 40px) !important;
+  align-items: center !important;
+}
+
+#astrek-site .flag-explode-list,
+#astrek-site .flag-explode-list--scroll {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+#astrek-site .flag-explode-item .idx {
+  color: var(--accent) !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+}
+
+/* ── Testimonial: editorial quote card ──────────────────────────── */
+
+#astrek-site #testimonials .rf-story-grid {
+  align-items: center !important;
+  gap: clamp(32px, 5vw, 64px) !important;
+}
+
+#astrek-site #testimonials .rf-story-copy {
+  padding: clamp(24px, 4vw, 40px) !important;
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--card-radius) !important;
+}
+
+#astrek-site #testimonials .rf-story-copy::before {
+  display: none !important;
+}
+
+/* ── Team: card grid ────────────────────────────────────────────── */
+
+#astrek-site #team .rf-person,
+#astrek-site #mentors .rf-person {
+  padding: var(--card-padding) !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+#astrek-site #team .rf-person-meta,
+#astrek-site #mentors .rf-person-meta {
+  text-align: center !important;
+}
+
+/* ── Partners: centered logo matrix ─────────────────────────────── */
+
+@media (min-width: 1024px) {
+  #astrek-site #partners .ux-partners-row.partner-grid,
+  #astrek-site #partners .ux-partners-row.partner-grid--uniform,
+  #astrek-site #partners .partner-grid.partner-grid--uniform {
+    grid-template-columns: repeat(6, 160px) !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  #astrek-site #partners .ux-partners-row.partner-grid,
+  #astrek-site #partners .ux-partners-row.partner-grid--uniform,
+  #astrek-site #partners .partner-grid.partner-grid--uniform {
+    grid-template-columns: repeat(3, 140px) !important;
+    justify-content: center !important;
+  }
+}
+
+/* ── Press + blog editorial grids ────────────────────────────────── */
+
+#astrek-site #press .rf-press-layout {
+  gap: clamp(24px, 4vw, 32px) !important;
+}
+
+#astrek-site #blog .rf-blog-grid--uniform {
+  gap: clamp(24px, 3vw, 32px) !important;
+}
+
+/* ── Contact: premium form card ─────────────────────────────────── */
+
+#astrek-site #contact .rf-contact-grid {
+  gap: clamp(32px, 5vw, 64px) !important;
+  align-items: start !important;
+}
+
+#astrek-site #contact .rf-form,
+#astrek-site #contact .elvin-form {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--card-radius) !important;
+  padding: clamp(24px, 4vw, 40px) !important;
+}
+
+#astrek-site #contact .rf-form input,
+#astrek-site #contact .rf-form select,
+#astrek-site #contact .rf-form textarea,
+#astrek-site #contact .elvin-form input,
+#astrek-site #contact .elvin-form select,
+#astrek-site #contact .elvin-form textarea {
+  background: var(--bg-primary) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 12px !important;
+  color: var(--text-primary) !important;
+  padding: 14px 16px !important;
+  font-size: 0.9375rem !important;
+  transition: border-color 200ms var(--ds-ease), box-shadow 200ms var(--ds-ease) !important;
+}
+
+#astrek-site #contact .rf-form input:focus,
+#astrek-site #contact .rf-form select:focus,
+#astrek-site #contact .rf-form textarea:focus,
+#astrek-site #contact .elvin-form input:focus,
+#astrek-site #contact .elvin-form select:focus,
+#astrek-site #contact .elvin-form textarea:focus {
+  outline: none !important;
+  border-color: var(--border-hover) !important;
+  box-shadow: 0 0 0 3px var(--accent-dim) !important;
+}
+
+#astrek-site #contact .rf-contact-visual img {
+  border-radius: var(--card-radius) !important;
+  border: 1px solid var(--border-subtle) !important;
+}
+
+/* ── CTA band: hero-level glow ──────────────────────────────────── */
+
+#astrek-site .rf-cta-band {
+  text-align: center !important;
+  border-top: 1px solid var(--border-subtle) !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+}
+
+#astrek-site .rf-cta-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 20px !important;
+}
+
+#astrek-site .rf-cta-inner h2 {
+  max-width: 18ch !important;
+}
+
+#astrek-site .rf-cta-inner p {
+  max-width: 48ch !important;
+}
+
+/* ── Footer: structured columns ─────────────────────────────────── */
+
+#astrek-site .rf-foot {
+  display: grid !important;
+  grid-template-columns: 1.4fr repeat(4, minmax(0, 1fr)) !important;
+  gap: clamp(24px, 4vw, 48px) !important;
+  padding-block: clamp(48px, 6vw, 72px) !important;
+}
+
+#astrek-site .rf-foot h5 {
+  color: var(--accent) !important;
+  font-size: 0.6875rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 16px !important;
+}
+
+#astrek-site .rf-foot-bottom {
+  border-top: 1px solid var(--border-subtle) !important;
+  padding-top: 24px !important;
+  margin-top: 8px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  font-size: 0.8125rem !important;
+  color: var(--text-muted) !important;
+}
+
+@media (max-width: 1024px) {
+  #astrek-site .rf-section-head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  #astrek-site .rf-foot {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #astrek-site .rf-foot {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Hero: responsive stack (mobile / tablet) ───────────────────── */
+
+@media (max-width: 1023px) {
+  #astrek-site .hero--tronix::before {
+    background:
+      radial-gradient(ellipse 80% 45% at 50% 72%, rgba(63, 224, 197, 0.12) 0%, transparent 62%),
+      radial-gradient(ellipse 50% 40% at 20% 20%, rgba(63, 224, 197, 0.04) 0%, transparent 70%) !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-stage {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    min-height: auto !important;
+    padding:
+      calc(var(--site-header-h, 76px) + 20px)
+      clamp(20px, 5vw, 32px)
+      48px !important;
+  }
+
+  #astrek-site .hero--tronix .lux-hero-badge {
+    order: 1 !important;
+    margin: 0 0 16px !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+  #astrek-site .hero--tronix h1.ux-h1 {
+    order: 2 !important;
+    max-width: 100% !important;
+    font-size: clamp(2.75rem, 12vw, 3.75rem) !important;
+    margin: 0 0 20px !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy {
+    order: 3 !important;
+    max-width: 100% !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual {
+    order: 4 !important;
+    width: min(100%, 380px) !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    margin: 32px auto 0 !important;
+    align-self: center !important;
+    padding: 0 !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual img,
+  #astrek-site .hero--tronix #heroProductImg {
+    max-width: min(100%, 340px) !important;
+    max-height: min(52vh, 480px) !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+}
+
+/* ── Hero: layer stack & image overrides (wins over legacy sheets) ─ */
+
+#astrek-site.lux-site .hero.rf-hero.hero--tronix.lux-hero-in .rf-hero-visual,
+#astrek-site.lux-site .hero.rf-hero.hero--tronix .rf-hero-visual,
+#astrek-site .hero.rf-hero.hero--tronix .rf-hero-visual,
+#astrek-site .hero--tronix .rf-hero-visual {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: clamp(16px, 3vw, 32px) !important;
+  transform: none !important;
+  animation: none !important;
+  position: relative !important;
+  inset: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#astrek-site.lux-site .hero.rf-hero.hero--tronix .rf-hero-visual .lux-hero-breath,
+#astrek-site.lux-site .hero.rf-hero.hero--tronix .rf-hero-visual .lux-hero-spot,
+#astrek-site.lux-site .hero.rf-hero.hero--tronix .rf-hero-visual .lux-hero-core,
+#astrek-site.lux-site .hero.rf-hero.hero--tronix .rf-hero-visual .lux-hero-reflection,
+#astrek-site.lux-site .hero.rf-hero.hero--tronix .rf-hero-visual .hero-product-ambient,
+#astrek-site.lux-site .hero.rf-hero.hero--tronix .rf-hero-visual .hero-product-bloom,
+#astrek-site.lux-site .hero.rf-hero.hero--tronix .rf-hero-visual .hero-product-floor,
+#astrek-site.lux-site .hero.rf-hero.hero--tronix .rf-hero-visual .hero-hud,
+#astrek-site .hero--tronix .rf-hero-visual .lux-hero-breath,
+#astrek-site .hero--tronix .rf-hero-visual .lux-hero-spot,
+#astrek-site .hero--tronix .rf-hero-visual .lux-hero-core,
+#astrek-site .hero--tronix .rf-hero-visual .lux-hero-reflection,
+#astrek-site .hero--tronix .rf-hero-visual .hero-product-ambient,
+#astrek-site .hero--tronix .rf-hero-visual .hero-product-bloom,
+#astrek-site .hero--tronix .rf-hero-visual .hero-product-floor,
+#astrek-site .hero--tronix .rf-hero-visual .hero-hud {
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+
+#astrek-site.lux-site .hero.rf-hero.hero--tronix .rf-hero-visual > img,
+#astrek-site.lux-site .hero.rf-hero.hero--tronix .rf-hero-visual #heroProductImg,
+#astrek-site .hero.rf-hero.hero--tronix .rf-hero-visual > img,
+#astrek-site .hero.rf-hero.hero--tronix .rf-hero-visual #heroProductImg,
+#astrek-site .hero--tronix .rf-hero-visual > img,
+#astrek-site .hero--tronix .rf-hero-visual #heroProductImg {
+  position: relative !important;
+  inset: auto !important;
+  left: auto !important;
+  right: auto !important;
+  z-index: 2 !important;
+  flex: 0 0 auto !important;
+  order: 10 !important;
+  align-self: center !important;
+  margin: 0 auto !important;
+  width: min(100%, 420px) !important;
+  max-width: min(100%, 420px) !important;
+  max-height: min(72vh, 680px) !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  mix-blend-mode: normal !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  animation: none !important;
+  transform: none !important;
+  filter: drop-shadow(0 32px 64px rgba(0, 0, 0, 0.55)) !important;
+}
+
+#astrek-site.lux-site .hero.rf-hero.hero--tronix h1.ux-h1,
+#astrek-site.lux-site .hero--tronix h1.ux-h1,
+#astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+#astrek-site .hero--tronix h1.ux-h1 {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  pointer-events: auto !important;
+  white-space: normal !important;
+  letter-spacing: -0.035em !important;
+  text-transform: none !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55) !important;
+  filter: none !important;
+}
+
+/* ── Hero text visibility lock (must stay last) ──────────────────── */
+
+#astrek-site .hero--tronix .rf-hero-stage {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-stage > .lux-hero-badge,
+#astrek-site .hero--tronix .rf-hero-stage > h1,
+#astrek-site .hero--tronix .rf-hero-stage > .rf-hero-copy {
+  position: relative !important;
+  z-index: 6 !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+#astrek-site .hero--tronix h1.ux-h1,
+#astrek-site .hero--tronix h1.hero-anim,
+#astrek-site.lux-site .hero.rf-hero.hero--tronix h1.ux-h1,
+#astrek-site.lux-site .hero--tronix h1.ux-h1,
+#astrek-site.lux-site .hero--tronix h1.hero-anim {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: none !important;
+  filter: none !important;
+  text-shadow:
+    0 0 1px rgba(0, 0, 0, 0.85),
+    0 2px 12px rgba(0, 0, 0, 0.45) !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-copy,
+#astrek-site .hero--tronix .rf-hero-copy .hero-eyebrow,
+#astrek-site .hero--tronix .rf-hero-copy .ux-eyebrow,
+#astrek-site .hero--tronix .rf-hero-copy .sub,
+#astrek-site .hero--tronix .rf-hero-copy .sub.hero-anim,
+#astrek-site .hero--tronix .rf-hero-actions,
+#astrek-site .hero--tronix .rf-hero-actions .rf-btn {
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+#astrek-site .hero--tronix .rf-hero-copy .sub,
+#astrek-site .hero--tronix .sub.hero-anim,
+#astrek-site.lux-site .hero--tronix .rf-hero-copy .sub {
+  color: #f2f2f2 !important;
+  -webkit-text-fill-color: #f2f2f2 !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55) !important;
+}
+
+#astrek-site .hero--tronix .lux-hero-badge,
+#astrek-site.lux-site .hero--tronix .lux-hero-badge {
+  color: rgba(255, 255, 255, 0.96) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.96) !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 1023px) {
+  #astrek-site .hero--tronix .rf-hero-stage {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy,
+  #astrek-site .hero--tronix .rf-hero-copy .sub {
+    width: 100% !important;
+    max-width: 100% !important;
+    color: #f5f5f5 !important;
+    -webkit-text-fill-color: #f5f5f5 !important;
+  }
+}
+
+/* ── Responsive polish: hero + site (final overrides) ───────────── */
+
+/* Desktop: lock split grid, override legacy absolute/stack rules */
+@media (min-width: 1024px) {
+  #astrek-site .hero.rf-hero.hero--tronix {
+    min-height: 100svh !important;
+    max-height: none !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-stage,
+  #astrek-site.lux-site .hero--tronix .rf-hero-stage {
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr) !important;
+    grid-template-rows: auto auto 1fr !important;
+    align-items: center !important;
+    gap: 0 clamp(40px, 5vw, 80px) !important;
+    width: 100% !important;
+    max-width: var(--container-max) !important;
+    min-height: calc(100svh - var(--site-header-h, 76px)) !important;
+    padding:
+      calc(var(--site-header-h, 76px) + clamp(32px, 5vh, 64px))
+      clamp(24px, 4vw, 56px)
+      clamp(48px, 6vh, 80px) !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-stage > *,
+  #astrek-site.lux-site .hero--tronix .rf-hero-stage > * {
+    position: static !important;
+    inset: auto !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    translate: none !important;
+    float: none !important;
+    width: auto !important;
+    order: unset !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+  #astrek-site .hero--tronix h1.ux-h1,
+  #astrek-site.lux-site .hero.rf-hero.hero--tronix h1.ux-h1,
+  #astrek-site.lux-site .hero--tronix h1.ux-h1 {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    max-width: 12ch !important;
+    font-size: clamp(3.5rem, 5.8vw, 5.5rem) !important;
+    line-height: 0.94 !important;
+    letter-spacing: -0.04em !important;
+    white-space: normal !important;
+    text-align: left !important;
+  }
+
+  #astrek-site .hero--tronix .lux-hero-badge {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-self: end !important;
+    position: static !important;
+    transform: none !important;
+    margin: 0 0 clamp(16px, 2vh, 24px) !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+    max-width: 34rem !important;
+    padding: 0 !important;
+    background: none !important;
+    backdrop-filter: none !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual {
+    grid-column: 2 !important;
+    grid-row: 1 / span 3 !important;
+    align-self: center !important;
+    justify-self: center !important;
+    width: 100% !important;
+    max-width: min(560px, 46vw) !important;
+    min-height: clamp(460px, 68vh, 760px) !important;
+    margin: 0 !important;
+    padding: clamp(12px, 2vw, 28px) !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual img,
+  #astrek-site .hero--tronix #heroProductImg,
+  #astrek-site.lux-site .hero--tronix .rf-hero-visual #heroProductImg {
+    width: min(100%, 440px) !important;
+    max-width: min(100%, 440px) !important;
+    max-height: min(74vh, 700px) !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    filter: drop-shadow(0 28px 56px rgba(0, 0, 0, 0.5)) !important;
+  }
+
+  #astrek-site .hero--tronix .hero-video-overlay {
+    background:
+      linear-gradient(102deg, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.82) 38%, rgba(0, 0, 0, 0.45) 68%, rgba(0, 0, 0, 0.35) 100%),
+      radial-gradient(ellipse 55% 48% at 78% 44%, rgba(63, 224, 197, 0.1) 0%, transparent 68%) !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  #astrek-site .hero--tronix .rf-hero-stage {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 0 clamp(48px, 6vw, 96px) !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+  #astrek-site .hero--tronix h1.ux-h1 {
+    font-size: clamp(4rem, 5.2vw, 5.75rem) !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual img,
+  #astrek-site .hero--tronix #heroProductImg {
+    width: min(100%, 480px) !important;
+    max-width: min(100%, 480px) !important;
+  }
+}
+
+/* Tablet + mobile: clean vertical stack */
+@media (max-width: 1023px) {
+  #astrek-site {
+    --section-padding-y: clamp(3.25rem, 8vw, 5rem);
+  }
+
+  #astrek-site .wrap {
+    padding-inline: clamp(16px, 4vw, 28px) !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-stage,
+  #astrek-site.lux-site .hero--tronix .rf-hero-stage {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    gap: 0 !important;
+    padding:
+      calc(var(--site-header-h, 72px) + 16px)
+      max(clamp(16px, 4vw, 28px), env(safe-area-inset-right, 0px))
+      clamp(36px, 8vw, 56px)
+      max(clamp(16px, 4vw, 28px), env(safe-area-inset-left, 0px)) !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-stage > *,
+  #astrek-site.lux-site .hero--tronix .rf-hero-stage > * {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    translate: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    float: none !important;
+    pointer-events: auto !important;
+  }
+
+  #astrek-site .hero--tronix .lux-hero-badge {
+    order: 1 !important;
+    align-self: flex-start !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 0 14px !important;
+    font-size: 0.625rem !important;
+    letter-spacing: 0.1em !important;
+    line-height: 1.4 !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+  #astrek-site .hero--tronix h1.ux-h1,
+  #astrek-site.lux-site .hero.rf-hero.hero--tronix h1.ux-h1,
+  #astrek-site.lux-site .hero--tronix h1.ux-h1 {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 16px !important;
+    font-size: clamp(2.5rem, 11vw, 3.5rem) !important;
+    line-height: 0.96 !important;
+    letter-spacing: -0.03em !important;
+    white-space: normal !important;
+    text-align: left !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy {
+    order: 3 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    border-radius: 0 !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy .sub {
+    max-width: 34ch !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 24px !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-actions {
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual {
+    order: 4 !important;
+    width: 100% !important;
+    max-width: min(100%, 360px) !important;
+    min-height: auto !important;
+    margin: 28px auto 0 !important;
+    padding: 0 !important;
+    align-self: center !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual img,
+  #astrek-site .hero--tronix #heroProductImg,
+  #astrek-site.lux-site .hero--tronix .rf-hero-visual #heroProductImg {
+    width: 100% !important;
+    max-width: min(100%, 320px) !important;
+    max-height: min(48vh, 420px) !important;
+    margin-inline: auto !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  #astrek-site .hero--tronix .hero-video-overlay {
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.72) 45%, rgba(0, 0, 0, 0.55) 100%),
+      radial-gradient(ellipse 90% 50% at 50% 78%, rgba(63, 224, 197, 0.12) 0%, transparent 65%) !important;
+  }
+
+  #astrek-site .hero--tronix .lux-scroll-hint,
+  #astrek-site .hero--tronix .lux-hero-divider {
+    display: none !important;
+  }
+
+  #astrek-site .rf-section-head {
+    margin-bottom: clamp(28px, 6vw, 40px) !important;
+    gap: 16px !important;
+  }
+
+  #astrek-site .rf-section-head .rf-text-link,
+  #astrek-site .rf-section-head .rf-btn {
+    align-self: flex-start !important;
+    margin-bottom: 0 !important;
+  }
+
+  #astrek-site #partners .ux-partners-row.partner-grid,
+  #astrek-site #partners .partner-grid.partner-grid--uniform {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    padding: 24px 0 !important;
+  }
+
+  #astrek-site #partners .partner-logo {
+    width: 100% !important;
+    max-width: 160px !important;
+  }
+
+  #astrek-site #product .rf-product-stage {
+    min-height: 320px !important;
+  }
+
+  #astrek-site #contact .rf-contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  #astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+  #astrek-site .hero--tronix h1.ux-h1 {
+    font-size: clamp(3rem, 8vw, 4rem) !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual {
+    max-width: min(100%, 400px) !important;
+    margin-top: 36px !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual img,
+  #astrek-site .hero--tronix #heroProductImg {
+    max-width: min(100%, 380px) !important;
+    max-height: min(52vh, 520px) !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-actions {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-actions .rf-btn {
+    width: auto !important;
+    flex: 1 1 auto !important;
+    min-width: min(100%, 220px) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  #astrek-site .hero--tronix .rf-hero-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-actions .rf-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 15px 24px !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual {
+    max-width: min(100%, 300px) !important;
+    margin-top: 24px !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual img,
+  #astrek-site .hero--tronix #heroProductImg {
+    max-width: min(100%, 280px) !important;
+    max-height: min(44vh, 380px) !important;
+  }
+
+  #astrek-site #partners .ux-partners-row.partner-grid,
+  #astrek-site #partners .partner-grid.partner-grid--uniform {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  #astrek-site .rf-foot {
+    gap: 28px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+  #astrek-site .hero--tronix h1.ux-h1 {
+    font-size: clamp(2.125rem, 12vw, 2.75rem) !important;
+  }
+
+  #astrek-site .hero--tronix .lux-hero-badge {
+    font-size: 0.5625rem !important;
+    padding: 7px 12px 7px 10px !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy .sub {
+    font-size: 0.9375rem !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Laptop height: avoid excessive vertical stretch */
+@media (min-width: 1024px) and (max-height: 820px) {
+  #astrek-site .hero--tronix .rf-hero-stage {
+    min-height: auto !important;
+    padding-top: calc(var(--site-header-h, 76px) + 20px) !important;
+    padding-bottom: 40px !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual {
+    min-height: clamp(360px, 58vh, 560px) !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+  #astrek-site .hero--tronix h1.ux-h1 {
+    font-size: clamp(2.75rem, 5vw, 4.25rem) !important;
+    margin-bottom: 16px !important;
+  }
+}
+
+/* =====================================================================
+   MOBILE-FIRST RESPONSIVE PASS (max-width: 768px / 480px only)
+   Desktop styles untouched: these rules apply on mobile/tablet-portrait.
+   ===================================================================== */
+
+@media (max-width: 768px) {
+  /* ── Global ─────────────────────────────────────────────────────── */
+  #astrek-site {
+    --section-padding-y: 64px;
+    overflow-x: clip !important;
+  }
+
+  #astrek-site .wrap {
+    padding-inline: 20px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #astrek-site .ux-section,
+  #astrek-site .rf-section:not(.hero):not(.page-hero),
+  #astrek-site > section#contact,
+  #astrek-site > section#product,
+  #astrek-site > section#about,
+  #astrek-site > section#specs,
+  #astrek-site > section#modes,
+  #astrek-site > section#testimonials,
+  #astrek-site > section#team,
+  #astrek-site > section#partners,
+  #astrek-site > section#press,
+  #astrek-site > section#blog,
+  #astrek-site > section#faq,
+  #astrek-site #about.rf-section,
+  #astrek-site #about.ux-section,
+  #astrek-site #product.rf-section,
+  #astrek-site #specs.rf-section,
+  #astrek-site #modes.rf-section,
+  #astrek-site #team.rf-section,
+  #astrek-site #partners.rf-section,
+  #astrek-site #press.rf-section,
+  #astrek-site #blog.rf-section,
+  #astrek-site #faq.rf-section,
+  #astrek-site #testimonials.rf-section {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+
+  #astrek-site .rf-cta-band {
+    padding: 64px 0 !important;
+  }
+
+  #astrek-site h1.ux-h1,
+  #astrek-site .hero--tronix h1.ux-h1 {
+    font-size: 32px !important;
+    line-height: 1.15 !important;
+    font-weight: 700 !important;
+  }
+
+  #astrek-site h2.rf-h2,
+  #astrek-site h2.ux-h2 {
+    font-size: 28px !important;
+    line-height: 1.15 !important;
+    font-weight: 700 !important;
+  }
+
+  #astrek-site p:not(.ajh-title):not(.ajh-product):not(.ajh-sub):not(.ajh-metric-value):not(.ajh-metric-label):not(.aco-title):not(.aco-lead):not(.aco-body):not(.aco-topic-text):not(.aco-stat-value):not(.aco-stat-label):not(.font-mono):not(.text-brand),
+  #astrek-site .rf-section-head > div > p:not(.font-mono):not(.text-brand),
+  #astrek-site .sub,
+  #astrek-site .rf-faq-body > p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    color: var(--text-secondary) !important;
+  }
+
+  #astrek-site .ux-eyebrow,
+  #astrek-site .rf-kicker,
+  #astrek-site .hero-eyebrow {
+    font-size: 12px !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  /* Dual CTAs: full-width stack */
+  #astrek-site .rf-hero-actions,
+  #astrek-site #product .rf-product-intro .rf-hero-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  #astrek-site .rf-hero-actions .rf-btn,
+  #astrek-site #product .rf-product-intro .rf-hero-actions .rf-btn {
+    width: 100% !important;
+    min-height: 44px !important;
+    padding: 16px 24px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  #astrek-site .rf-section-head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    margin-bottom: 32px !important;
+  }
+
+  #astrek-site .rf-section-head .rf-btn,
+  #astrek-site .rf-section-head .rf-text-link {
+    align-self: stretch !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  #astrek-site img,
+  #astrek-site video,
+  #astrek-site svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  #astrek-site header img,
+  #astrek-site [data-testid="nav-logo"] img {
+    height: 1.75rem !important;
+    width: auto !important;
+    max-width: 9rem !important;
+    max-height: 1.75rem !important;
+  }
+
+  /* ── 1. Hero ────────────────────────────────────────────────────── */
+  #astrek-site .hero.rf-hero.hero--tronix {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-stage,
+  #astrek-site.lux-site .hero--tronix .rf-hero-stage {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    grid-template-columns: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    gap: 0 !important;
+    padding:
+      calc(var(--site-header-h, 72px) + 20px)
+      20px
+      48px !important;
+    text-align: center !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-stage > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+  }
+
+  #astrek-site .hero--tronix .lux-hero-badge {
+    order: 1 !important;
+    align-self: center !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto 14px !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+  #astrek-site .hero--tronix h1.ux-h1,
+  #astrek-site .hero--tronix h1.hero-anim,
+  #astrek-site.lux-site .hero.rf-hero.hero--tronix h1.ux-h1,
+  #astrek-site.lux-site .hero--tronix h1.ux-h1,
+  #astrek-site.lux-site .hero--tronix h1.hero-anim {
+    order: 2 !important;
+    max-width: 100% !important;
+    margin: 0 0 12px !important;
+    text-align: center !important;
+    font-size: 32px !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy {
+    order: 3 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy .sub {
+    max-width: 34ch !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 20px !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-actions {
+    align-items: stretch !important;
+    justify-content: center !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual {
+    order: 4 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    margin: 24px auto 0 !important;
+    padding: 0 !important;
+    align-self: center !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-visual img,
+  #astrek-site .hero--tronix #heroProductImg,
+  #astrek-site.lux-site .hero--tronix .rf-hero-visual #heroProductImg,
+  #astrek-site.lux-site .hero.rf-hero.hero--tronix .rf-hero-visual > img,
+  #astrek-site.lux-site .hero.rf-hero.hero--tronix .rf-hero-visual #heroProductImg,
+  #astrek-site .hero.rf-hero.hero--tronix .rf-hero-visual > img,
+  #astrek-site .hero.rf-hero.hero--tronix .rf-hero-visual #heroProductImg {
+    width: auto !important;
+    max-width: min(100%, 280px) !important;
+    max-height: 320px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    object-fit: contain !important;
+  }
+
+  #astrek-site .hero--tronix .hero-module,
+  #astrek-site .hero--tronix .lux-scroll-hint,
+  #astrek-site .hero--tronix .lux-hero-divider {
+    display: none !important;
+  }
+
+  /* ── 2. Stats band ──────────────────────────────────────────────── */
+  #astrek-site #product .ux-impact .ux-stats.rf-impact-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0 !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: var(--card-radius) !important;
+    overflow: hidden !important;
+    background: var(--bg-card) !important;
+  }
+
+  #astrek-site #product .ux-impact .ux-stat {
+    padding: 24px !important;
+    border: 0 !important;
+    border-right: 1px solid var(--border-subtle) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-sizing: border-box !important;
+  }
+
+  #astrek-site #product .ux-impact .ux-stat:nth-child(2n) {
+    border-right: 0 !important;
+  }
+
+  #astrek-site #product .ux-impact .ux-stat strong,
+  #astrek-site #product .ux-impact .ux-stats .ux-stat strong,
+  #astrek-site #product .ux-impact .rf-impact-grid .ux-stat strong,
+  #astrek-site #product .ux-impact .ux-stat .ds-stat-number,
+  #astrek-site.lux-site #product .ux-impact .ux-stat strong,
+  #astrek-site.lux-site #product .ux-impact .ux-stats .ux-stat strong,
+  #astrek-site.lux-site #product .ux-impact .ux-stat .ds-stat-number {
+    font-size: 44px !important;
+    text-shadow: 0 0 40px rgba(63, 224, 197, 0.5) !important;
+    margin-bottom: 8px !important;
+  }
+
+  #astrek-site #product .ux-impact .ux-stats.rf-impact-grid {
+    padding: 48px 0 !important;
+  }
+
+  #astrek-site #product .ux-impact .ux-stat span {
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* ── 3. Product annotation (Introducing Unik Exo) ───────────────── */
+  #astrek-site #product .rf-product-intro {
+    margin-bottom: 32px !important;
+  }
+
+  #astrek-site #product .rf-product-showcase {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+
+  #astrek-site #product .rf-product-stage {
+    order: 1 !important;
+    width: 100% !important;
+    min-height: 320px !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  #astrek-site #product .rf-product-stage #product3DStage,
+  #astrek-site #product #product3DStage {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 280px !important;
+    aspect-ratio: auto !important;
+  }
+
+  #astrek-site #product .rf-product-points,
+  #astrek-site #product .product-callouts {
+    order: 2 !important;
+    width: 100% !important;
+    padding: 24px !important;
+    box-sizing: border-box !important;
+  }
+
+  #astrek-site #product .rf-point,
+  #astrek-site #product .product-callout {
+    padding: 16px 0 !important;
+    margin-bottom: 0 !important;
+    border-radius: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 1px solid var(--border-subtle) !important;
+    background: transparent !important;
+  }
+
+  #astrek-site #product .rf-point:last-child,
+  #astrek-site #product .product-callout:last-child {
+    border-bottom: 0 !important;
+  }
+
+  /* ── 4. Mode cards ──────────────────────────────────────────────── */
+  #astrek-site #modes .rf-mode-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  #astrek-site #modes .rf-mode-card,
+  #astrek-site #modes .rf-mode-card:nth-child(n) {
+    width: 100% !important;
+    aspect-ratio: 16 / 10 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
+  /* ── 5. Feature / spec explode sections ─────────────────────────── */
+  #astrek-site #about .flag-explode,
+  #astrek-site #specs .flag-explode,
+  #astrek-site .flag-explode {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+
+  #astrek-site #about .flag-explode-stage,
+  #astrek-site #specs .flag-explode-stage,
+  #astrek-site .flag-explode-stage {
+    order: 1 !important;
+    width: 100% !important;
+    min-height: 280px !important;
+  }
+
+  #astrek-site #about .flag-explode-list,
+  #astrek-site #specs .flag-explode-list,
+  #astrek-site .flag-explode-list {
+    order: 2 !important;
+    width: 100% !important;
+  }
+
+  #astrek-site #about .flag-explode-item,
+  #astrek-site #specs .flag-explode-item {
+    padding: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #astrek-site #testimonials .rf-story-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  #astrek-site #testimonials .rf-story-media {
+    order: 1 !important;
+    width: 100% !important;
+  }
+
+  #astrek-site #testimonials .rf-story-copy {
+    order: 2 !important;
+    width: 100% !important;
+  }
+
+  /* ── 6. Team grids ──────────────────────────────────────────────── */
+  #astrek-site #team .rf-people-grid,
+  #astrek-site #mentors .rf-people-grid,
+  #astrek-site .team-grid,
+  #astrek-site .people-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  #astrek-site #team .rf-person,
+  #astrek-site #mentors .rf-person {
+    padding: 16px !important;
+    gap: 12px !important;
+  }
+
+  #astrek-site #team .rf-person-media,
+  #astrek-site #team .person-img,
+  #astrek-site #mentors .rf-person-media,
+  #astrek-site #mentors .person-img {
+    width: 72px !important;
+    height: 72px !important;
+    min-width: 72px !important;
+    min-height: 72px !important;
+    max-width: 72px !important;
+    max-height: 72px !important;
+    aspect-ratio: 1 / 1 !important;
+    margin: 0 auto !important;
+  }
+
+  #astrek-site #team .rf-person-meta,
+  #astrek-site #mentors .rf-person-meta {
+    text-align: center !important;
+  }
+
+  #astrek-site #team .rf-person-meta h4,
+  #astrek-site #mentors .rf-person-meta h4 {
+    font-size: 0.9375rem !important;
+  }
+
+  /* ── 7. Partners ────────────────────────────────────────────────── */
+  #astrek-site #partners .ux-partners-row.partner-grid,
+  #astrek-site #partners .partner-grid.partner-grid--uniform,
+  #astrek-site.lux-site #partners .partner-grid.partner-grid--uniform {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    padding: 24px 0 !important;
+  }
+
+  #astrek-site #partners .partner-logo {
+    width: 100% !important;
+    max-width: 160px !important;
+    min-height: 72px !important;
+    height: 72px !important;
+    padding: 16px 20px !important;
+  }
+
+  /* ── 8. Press / Insights ────────────────────────────────────────── */
+  #astrek-site #press .rf-press-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    grid-template-columns: none !important;
+  }
+
+  #astrek-site #press .rf-press-featured {
+    width: 100% !important;
+  }
+
+  #astrek-site #press .rf-press-media img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 10 !important;
+    object-fit: cover !important;
+  }
+
+  #astrek-site #press .rf-press-side {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  #astrek-site #press .rf-press-side > a {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #astrek-site #blog .rf-blog-grid,
+  #astrek-site #blog .rf-blog-grid--uniform {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  #astrek-site #blog .rf-blog-card {
+    width: 100% !important;
+  }
+
+  #astrek-site #blog .rf-blog-card-media {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 10 !important;
+    object-fit: cover !important;
+  }
+
+  /* ── 9. FAQ ─────────────────────────────────────────────────────── */
+  #astrek-site .rf-faq-item summary {
+    min-height: 52px !important;
+    display: flex !important;
+    align-items: center !important;
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    padding: 14px 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #astrek-site .rf-faq-body > p {
+    font-size: 15px !important;
+    padding-bottom: 16px !important;
+  }
+
+  /* ── 10. Footer + Contact ───────────────────────────────────────── */
+  #astrek-site #contact .rf-contact-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+    grid-template-columns: none !important;
+  }
+
+  #astrek-site #contact .rf-form input,
+  #astrek-site #contact .rf-form select,
+  #astrek-site #contact .rf-form textarea,
+  #astrek-site #contact .elvin-form input,
+  #astrek-site #contact .elvin-form select,
+  #astrek-site #contact .elvin-form textarea {
+    width: 100% !important;
+    min-height: 48px !important;
+    box-sizing: border-box !important;
+    font-size: 15px !important;
+  }
+
+  #astrek-site #contact .rf-form textarea,
+  #astrek-site #contact .elvin-form textarea {
+    min-height: 120px !important;
+  }
+
+  #astrek-site #contact .rf-form .submit-row .rf-btn,
+  #astrek-site #contact .elvin-form .submit-row .rf-btn {
+    width: 100% !important;
+    min-height: 48px !important;
+  }
+
+  #astrek-site .rf-foot {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 32px !important;
+  }
+
+  #astrek-site .rf-foot > div {
+    width: 100% !important;
+  }
+
+  #astrek-site .rf-foot-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+
+  #astrek-site .footer-newsletter form,
+  #astrek-site .rf-newsletter form {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  #astrek-site .footer-newsletter input,
+  #astrek-site .rf-newsletter input {
+    width: 100% !important;
+    min-height: 48px !important;
+    box-sizing: border-box !important;
+  }
+
+  #astrek-site .footer-newsletter .rf-btn,
+  #astrek-site .rf-newsletter .rf-btn {
+    width: 100% !important;
+    min-height: 44px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #astrek-site .wrap {
+    padding-inline: 20px !important;
+  }
+
+  #astrek-site h1.ux-h1,
+  #astrek-site .hero--tronix h1.ux-h1 {
+    font-size: 32px !important;
+  }
+
+  #astrek-site h2.rf-h2,
+  #astrek-site h2.ux-h2 {
+    font-size: 28px !important;
+  }
+
+  #astrek-site .hero--tronix .lux-hero-badge {
+    font-size: 0.625rem !important;
+    padding: 7px 12px !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy .sub {
+    max-width: 100% !important;
+  }
+
+  #astrek-site #partners .ux-partners-row.partner-grid,
+  #astrek-site #partners .partner-grid.partner-grid--uniform {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  #astrek-site #partners .partner-logo {
+    min-height: 52px !important;
+    padding: 10px 8px !important;
+  }
+
+  #astrek-site #team .rf-people-grid,
+  #astrek-site #mentors .rf-people-grid {
+    gap: 16px !important;
+  }
+}
+
+/* =====================================================================
+   Cookie consent + impact heading fixes (definitive: loads last)
+   ===================================================================== */
+
+.cookie-notice,
+#cookieNotice,
+#astrek-site .cookie-notice,
+#astrek-site #cookieNotice {
+  position: fixed !important;
+  bottom: max(20px, env(safe-area-inset-bottom, 0px)) !important;
+  left: max(20px, env(safe-area-inset-left, 0px)) !important;
+  right: auto !important;
+  inset-inline-start: max(20px, env(safe-area-inset-left, 0px)) !important;
+  inset-inline-end: auto !important;
+  z-index: 10050 !important;
+  display: none !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  width: auto !important;
+  max-width: 380px !important;
+  padding: 20px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+  background: #141918 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  color: #f5f7f6 !important;
+  transform: none !important;
+  clip: auto !important;
+  clip-path: none !important;
+}
+
+.cookie-notice.is-open,
+#cookieNotice.is-open,
+#astrek-site .cookie-notice.is-open,
+#astrek-site #cookieNotice.is-open {
+  display: flex !important;
+}
+
+.cookie-notice p,
+#cookieNotice p,
+#astrek-site .cookie-notice p,
+#astrek-site #cookieNotice p {
+  margin: 0 !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  font-family: inherit !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #9ca8a5 !important;
+}
+
+.cookie-notice button,
+#cookieAccept,
+.cookie-notice #cookieAccept,
+#astrek-site .cookie-notice button,
+#astrek-site #cookieAccept,
+#astrek-site .cookie-notice #cookieAccept {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  flex-shrink: 0 !important;
+  min-height: 44px !important;
+  height: auto !important;
+  padding: 12px 24px !important;
+  margin: 0 !important;
+  border: 1px solid rgba(63, 224, 197, 0.5) !important;
+  border-radius: 999px !important;
+  background: #3fe0c5 !important;
+  background-color: #3fe0c5 !important;
+  background-image: none !important;
+  color: #061210 !important;
+  font-family: inherit !important;
+  font-size: 0.8125rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  box-shadow: 0 8px 32px -8px rgba(63, 224, 197, 0.35) !important;
+  transition:
+    transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    background 200ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.cookie-notice button:hover,
+#cookieAccept:hover,
+#astrek-site #cookieAccept:hover {
+  background: #5ae8d0 !important;
+  background-color: #5ae8d0 !important;
+  color: #061210 !important;
+  transform: translateY(-1px) !important;
+}
+
+@media (max-width: 768px) {
+  .cookie-notice,
+  #cookieNotice,
+  #astrek-site .cookie-notice,
+  #astrek-site #cookieNotice {
+    left: 16px !important;
+    right: 16px !important;
+    inset-inline: 16px !important;
+    width: calc(100vw - 32px) !important;
+    max-width: calc(100vw - 32px) !important;
+    bottom: max(20px, env(safe-area-inset-bottom, 0px)) !important;
+    padding: 20px !important;
+    gap: 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .cookie-notice,
+  #cookieNotice,
+  #astrek-site .cookie-notice,
+  #astrek-site #cookieNotice {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+  }
+
+  .cookie-notice button,
+  #cookieAccept,
+  #astrek-site #cookieAccept {
+    width: 100% !important;
+  }
+}
+
+/* Impact band: align heading with site H2 system, tighten stats spacing */
+#astrek-site #product .ux-impact-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0 !important;
+}
+
+#astrek-site #product .ux-impact-inner > h2.rf-h2,
+#astrek-site #product .ux-impact-inner > h2.ux-h2,
+#astrek-site .ux-impact-inner > h2.rf-h2,
+#astrek-site .ux-impact-inner > h2.ux-h2,
+#astrek-site.lux-site .ux-impact-inner > h2,
+#astrek-site .ux-impact > h2.rf-h2,
+#astrek-site .ux-impact > h2.ux-h2 {
+  font-family: "Space Grotesk", Inter, sans-serif !important;
+  font-size: clamp(2.5rem, 4.4vw, 3.5rem) !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.08 !important;
+  text-transform: none !important;
+  max-width: 22ch !important;
+  margin: 0 auto 12px !important;
+  padding: 0 !important;
+  color: var(--text-primary) !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+#astrek-site #product .ux-impact-inner > p {
+  max-width: 52ch !important;
+  margin: 0 auto 56px !important;
+  padding: 0 !important;
+}
+
+#astrek-site #product .ux-impact .ux-stats.rf-impact-grid,
+#astrek-site #product .ux-impact .ux-stats {
+  margin-top: 0 !important;
+}
+
+#astrek-site #product .ux-impact {
+  margin-top: clamp(48px, 8vw, 72px) !important;
+}
+
+/* =====================================================================
+   Targeted refinement pass: stats, testimonial, partners, visual rhythm
+   ===================================================================== */
+
+/* 1. Stats: dominant numerals with breathing room */
+#astrek-site #product .ux-impact .ux-stats.rf-impact-grid,
+#astrek-site #product .ux-impact .ux-stats {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+
+@media (max-width: 768px) {
+  #astrek-site #product .ux-impact .ux-stats .ux-stat strong,
+  #astrek-site #product .ux-impact .rf-impact-grid .ux-stat strong,
+  #astrek-site #product .ux-impact .ux-stat .ds-stat-number,
+  #astrek-site.lux-site #product .ux-impact .ux-stats .ux-stat strong,
+  #astrek-site.lux-site #product .ux-impact .ux-stat .ds-stat-number {
+    font-size: 44px !important;
+  }
+}
+
+/* 2. Testimonial: portrait crop + hero-grade glow (overrides legacy 3:4) */
+#astrek-site #testimonials .rf-story-media img,
+#astrek-site.lux-site #testimonials .rf-story-media img,
+#astrek-site .rf-story-media img {
+  aspect-ratio: 4 / 5 !important;
+  object-fit: cover !important;
+  object-position: center 30% !important;
+  border-radius: 16px !important;
+  filter: none !important;
+}
+
+#astrek-site #testimonials .rf-story-media:hover img {
+  filter: none !important;
+  transform: none !important;
+}
+
+/* 3. Partners: uniform tile sizing */
+#astrek-site #partners .ux-partners-row.partner-grid,
+#astrek-site #partners .ux-partners-row.partner-grid--uniform,
+#astrek-site #partners .partner-grid.partner-grid--uniform,
+#astrek-site.lux-site #partners .ux-partners-row.partner-grid,
+#astrek-site.lux-site #partners .partner-grid.partner-grid--uniform {
+  gap: 24px !important;
+}
+
+/* 4. Visual rhythm: "Every detail serves a purpose" breaks the 50/50 grid */
+@media (min-width: 769px) {
+  #astrek-site #specs .flag-explode.flag-explode--specs,
+  #astrek-site #specs .flag-explode {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr) !important;
+    gap: clamp(32px, 4vw, 56px) !important;
+    align-items: center !important;
+  }
+
+  #astrek-site #specs .flag-explode-stage {
+    min-height: min(74vh, 720px) !important;
+    width: 100% !important;
+  }
+
+  #astrek-site #specs .flag-explode-stage > img,
+  #astrek-site #specs .flag-explode-stage img {
+    max-width: min(94%, 640px) !important;
+    max-height: 88% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  #astrek-site #specs .flag-explode-list,
+  #astrek-site #specs .flag-explode-list--scroll {
+    max-width: 420px !important;
+    justify-self: end !important;
+    width: 100% !important;
+  }
+}
+
+/* =====================================================================
+   Interactive side-panel: numbered descriptions beside image stage
+   ===================================================================== */
+
+@keyframes fe-copy-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fe-copy-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fe-img-in {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =====================================================================
+   Image showcase: single image + caption below (carousel)
+   ===================================================================== */
+
+#astrek-site .fe-showcase {
+  display: block !important;
+  width: 100% !important;
+}
+
+#astrek-site .fe-showcase-view {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: clamp(20px, 3vw, 28px) !important;
+  width: 100% !important;
+}
+
+#astrek-site .fe-showcase-data {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+#astrek-site .fe-showcase-stage {
+  position: relative !important;
+  width: 100% !important;
+  min-height: clamp(280px, 42vw, 480px) !important;
+  padding: clamp(20px, 4vw, 36px) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 20px !important;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 42%, rgba(63, 224, 197, 0.08) 0%, transparent 68%),
+    var(--bg-card) !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  outline: none !important;
+}
+
+#astrek-site .fe-showcase-stage:focus-visible {
+  box-shadow: 0 0 0 2px rgba(63, 224, 197, 0.45) !important;
+}
+
+#astrek-site .fe-showcase-stage > img,
+#astrek-site .fe-showcase-stage #specsStageImg,
+#astrek-site .fe-showcase-stage #productHeroImg {
+  display: block !important;
+  width: 100% !important;
+  max-width: min(520px, 88%) !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+}
+
+#astrek-site #product .fe-showcase-stage .product-3d-stage {
+  width: 100% !important;
+  max-width: min(520px, 88%) !important;
+  margin: 0 auto !important;
+}
+
+#astrek-site .fe-showcase-nav {
+  position: absolute !important;
+  top: 50% !important;
+  z-index: 4 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid rgba(63, 224, 197, 0.28) !important;
+  border-radius: 999px !important;
+  background: rgba(10, 14, 13, 0.72) !important;
+  color: var(--accent) !important;
+  cursor: pointer !important;
+  transform: translateY(-50%) !important;
+  backdrop-filter: blur(8px) !important;
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    transform 220ms ease !important;
+}
+
+#astrek-site .fe-showcase-nav svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+#astrek-site .fe-showcase-nav--prev {
+  left: clamp(10px, 2vw, 16px) !important;
+}
+
+#astrek-site .fe-showcase-nav--next {
+  right: clamp(10px, 2vw, 16px) !important;
+}
+
+#astrek-site .fe-showcase-nav:hover,
+#astrek-site .fe-showcase-nav:focus-visible {
+  background: rgba(63, 224, 197, 0.14) !important;
+  border-color: rgba(63, 224, 197, 0.55) !important;
+}
+
+#astrek-site .fe-showcase-caption,
+#astrek-site .fe-showcase-caption.flag-explode-panel,
+#astrek-site #featurePanel,
+#astrek-site #specsPanel,
+#astrek-site #productCaption {
+  display: block !important;
+  visibility: visible !important;
+  pointer-events: none !important;
+  position: static !important;
+  width: 100% !important;
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  padding: 0 clamp(8px, 2vw, 16px) !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-align: center !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+#astrek-site .fe-showcase-caption .idx,
+#astrek-site #featurePanel .idx,
+#astrek-site #specsPanel .idx,
+#astrek-site #productCaption .idx {
+  display: inline-block !important;
+  margin-bottom: 8px !important;
+  color: var(--accent) !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+}
+
+#astrek-site .fe-showcase-caption h3,
+#astrek-site #featurePanel h3,
+#astrek-site #specsPanel h3,
+#astrek-site #productCaption h3 {
+  margin: 0 0 10px !important;
+  font-family: "Space Grotesk", Inter, sans-serif !important;
+  font-size: clamp(1.25rem, 2.4vw, 1.5rem) !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+}
+
+#astrek-site .fe-showcase-caption p,
+#astrek-site #featurePanel p,
+#astrek-site #specsPanel p,
+#astrek-site #productCaption p {
+  margin: 0 auto !important;
+  max-width: 56ch !important;
+  font-size: clamp(0.9375rem, 1.6vw, 1rem) !important;
+  line-height: 1.6 !important;
+  color: var(--text-secondary) !important;
+}
+
+#astrek-site .fe-showcase-caption.fe-caption-in-forward,
+#astrek-site .fe-showcase-caption.fe-caption-in-backward {
+  animation: fe-caption-in 420ms cubic-bezier(0.16, 1, 0.3, 1) both !important;
+}
+
+@keyframes fe-caption-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#astrek-site .fe-showcase-dots {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  margin-top: 4px !important;
+}
+
+#astrek-site .fe-showcase-dot {
+  width: 8px !important;
+  height: 8px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  transition:
+    width 220ms ease,
+    transform 220ms ease !important;
+}
+
+#astrek-site .fe-showcase-dot.is-active {
+  width: 22px !important;
+  background: transparent !important;
+}
+
+#astrek-site #about .flag-explode,
+#astrek-site #specs .flag-explode,
+#astrek-site .flag-explode--features,
+#astrek-site .flag-explode--specs,
+#astrek-site #product .rf-product-showcase {
+  display: block !important;
+  grid-template-columns: unset !important;
+}
+
+/* Image crossfade */
+#astrek-site .flag-explode-stage > img,
+#astrek-site #specsStageImg,
+#astrek-site #productHeroImg {
+  transition:
+    opacity 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 480ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#astrek-site .flag-explode-stage > img.fe-img-out,
+#astrek-site #specsStageImg.fe-img-out,
+#astrek-site #productHeroImg.fe-img-out {
+  opacity: 0 !important;
+  transform: scale(0.985) !important;
+}
+
+#astrek-site .flag-explode-stage > img.fe-img-in,
+#astrek-site #specsStageImg.fe-img-in,
+#astrek-site #productHeroImg.fe-img-in {
+  animation: fe-img-in 420ms cubic-bezier(0.16, 1, 0.3, 1) both !important;
+}
+
+@media (max-width: 768px) {
+  #astrek-site .fe-showcase-stage {
+    min-height: clamp(240px, 58vw, 360px) !important;
+    padding: 16px 12px !important;
+    border-radius: 16px !important;
+  }
+
+  #astrek-site .fe-showcase-nav {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  #astrek-site .fe-showcase-caption h3,
+  #astrek-site #featurePanel h3,
+  #astrek-site #specsPanel h3,
+  #astrek-site #productCaption h3 {
+    font-size: 1.125rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #astrek-site .fe-showcase-caption.fe-caption-in-forward,
+  #astrek-site .fe-showcase-caption.fe-caption-in-backward,
+  #astrek-site .flag-explode-stage > img.fe-img-in,
+  #astrek-site #specsStageImg.fe-img-in,
+  #astrek-site #productHeroImg.fe-img-in {
+    animation: none !important;
+  }
+
+  #astrek-site .flag-explode-stage > img,
+  #astrek-site #specsStageImg,
+  #astrek-site #productHeroImg {
+    transition: opacity 120ms ease !important;
+  }
+}
+
+/* =====================================================================
+   Hero: static professional background (no video, no poster photo)
+   ===================================================================== */
+
+#astrek-site .hero.rf-hero.hero--tronix video,
+#astrek-site .hero.rf-hero.hero--tronix .hero-video,
+#astrek-site #heroVideo,
+#astrek-site video.hero-video {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix .hero-bg,
+#astrek-site .hero.rf-hero.hero--tronix .hero-bg--static,
+#astrek-site .hero.rf-hero.hero--tronix.hero-video-fallback .hero-bg,
+#astrek-site .rf-hero.hero-video-fallback .hero-bg {
+  background: #0a0e0d !important;
+  background-image: none !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix .hero-video-overlay {
+  background:
+    radial-gradient(ellipse 52% 48% at 68% 40%, rgba(63, 224, 197, 0.11) 0%, transparent 62%),
+    radial-gradient(ellipse 40% 36% at 22% 78%, rgba(63, 224, 197, 0.05) 0%, transparent 68%),
+    linear-gradient(
+      105deg,
+      rgba(10, 14, 13, 0.98) 0%,
+      rgba(10, 14, 13, 0.92) 38%,
+      rgba(10, 14, 13, 0.82) 62%,
+      rgba(10, 14, 13, 0.9) 100%
+    ) !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix .hero-bg::after {
+  opacity: 0.06 !important;
+  background-size: 72px 72px !important;
+}
+
+#astrek-site .hero.rf-hero.hero--tronix .lux-hero-streak {
+  display: none !important;
+}
+
+/* =====================================================================
+   LUXE PARITY: sleek-robot-luxe.lovable.app theme (final layer)
+   ===================================================================== */
+
+:root {
+  --bg-primary: #0a0e0d;
+  --bg-secondary: #0f1412;
+  --bg-card: #141918;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --accent: #3fe0c5;
+  --accent-dim: rgba(63, 224, 197, 0.15);
+  --accent-glow: rgba(63, 224, 197, 0.35);
+  --text-primary: #f5f7f6;
+  --text-secondary: #9ca8a5;
+  --text-muted: #6b7573;
+  --font-display: "Space Grotesk", "Inter", "Noto Sans Arabic", "Noto Sans JP", sans-serif;
+  --font-body: "Inter", "Noto Sans Arabic", "Noto Sans JP", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html,
+body,
+#root {
+  background: #0a0e0d !important;
+  color: #f5f7f6 !important;
+  font-family: var(--font-body) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#astrek-site {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  font-family: var(--font-body) !important;
+}
+
+#astrek-site h1.ux-h1,
+#astrek-site .hero--tronix h1.ux-h1,
+#astrek-site .hero--tronix h1.hero-anim {
+  font-family: var(--font-display) !important;
+}
+
+#astrek-site h2.rf-h2,
+#astrek-site h2.ux-h2,
+#astrek-site h3,
+#astrek-site .rf-mode-meta h3 {
+  font-family: var(--font-display) !important;
+}
+
+#astrek-site .mono,
+#astrek-site .date.mono,
+#astrek-site .fe-showcase-caption .fe-showcase-index {
+  font-family: var(--font-mono) !important;
+}
+
+/* Fixed glass header (React shell: outside #astrek-site) */
+html,
+body,
+#root,
+#site-header-host {
+  transform: none !important;
+  filter: none !important;
+  perspective: none !important;
+  contain: none !important;
+}
+
+#site-header-host {
+  display: contents !important;
+}
+
+#siteHeader,
+#siteHeader.rf-header,
+#siteHeader.ux-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: auto !important;
+  width: 100% !important;
+  margin: 0 !important;
+  z-index: 10000 !important;
+  transform: none !important;
+  background: rgba(5, 7, 8, 0.82) !important;
+  backdrop-filter: blur(18px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(140%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
+}
+
+#siteHeader.is-scrolled,
+#siteHeader.scrolled,
+#siteHeader.rf-header.is-scrolled,
+#siteHeader.rf-header.scrolled {
+  background: rgba(5, 7, 8, 0.94) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+#siteHeader .rf-header-inner {
+  background: transparent !important;
+  transform: none !important;
+}
+
+#siteHeader nav.links a {
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-size: 0.6875rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  transition: color 200ms var(--ds-ease, ease) !important;
+}
+
+#siteHeader nav.links a:hover,
+#siteHeader nav.links a.is-active {
+  color: #3fe0c5 !important;
+}
+
+#siteHeader .header-cta,
+#siteHeader .rf-btn.header-cta,
+#siteHeader .rf-btn--nav.header-cta {
+  background: #3fe0c5 !important;
+  color: #04110f !important;
+  border: none !important;
+  border-radius: 999px !important;
+  font-size: 0.6875rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  padding: 10px 18px !important;
+  box-shadow: 0 0 24px rgba(63, 224, 197, 0.25) !important;
+}
+
+#siteHeader .header-cta:hover,
+#siteHeader .rf-btn.header-cta:hover {
+  background: #5ae8cf !important;
+  box-shadow: 0 0 32px rgba(63, 224, 197, 0.38) !important;
+}
+
+header.rf-header ~ header.rf-header,
+#astrek-site header.rf-header,
+#astrek-site #siteHeader,
+#astrek-site .rf-header {
+  display: none !important;
+}
+
+/* Teal pill CTAs site-wide */
+#astrek-site .rf-btn:not(.rf-btn--ghost):not(.rf-btn--nav),
+#astrek-site button.rf-btn:not(.rf-btn--ghost):not(.rf-btn--nav) {
+  background: #3fe0c5 !important;
+  color: #04110f !important;
+  border: none !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 0 28px rgba(63, 224, 197, 0.22) !important;
+}
+
+#astrek-site .rf-btn--ghost {
+  background: transparent !important;
+  color: #f5f7f6 !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+}
+
+#astrek-site .rf-btn--ghost:hover {
+  border-color: rgba(63, 224, 197, 0.45) !important;
+  color: #3fe0c5 !important;
+  background: rgba(63, 224, 197, 0.06) !important;
+}
+
+@media (max-width: 768px) {
+  #astrek-site .hero--tronix .lux-hero-badge {
+    align-self: center !important;
+    margin-inline: auto !important;
+  }
+
+  #astrek-site .hero.rf-hero.hero--tronix h1.ux-h1,
+  #astrek-site .hero--tronix h1.ux-h1,
+  #astrek-site.lux-site .hero.rf-hero.hero--tronix h1.ux-h1,
+  #astrek-site.lux-site .hero--tronix h1.ux-h1 {
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-copy .sub {
+    margin-inline: auto !important;
+    text-align: center !important;
+  }
+
+  #astrek-site .hero--tronix .rf-hero-actions {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+}

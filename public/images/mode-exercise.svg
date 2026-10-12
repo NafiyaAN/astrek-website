@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bg" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#101614"/>
+      <stop offset="100%" stop-color="#0a0e0d"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="55%" cy="45%" r="52%">
+      <stop offset="0%" stop-color="#3fe0c5" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#3fe0c5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#glow)"/>
+  <text x="600" y="470" text-anchor="middle" fill="#3fe0c5" font-family="system-ui,sans-serif" font-size="38" font-weight="600" letter-spacing="0.1em">EXERCISE MODE</text>
+</svg>

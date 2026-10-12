@@ -1,0 +1,660 @@
+/* ==========================================================================
+   Astrek: Finishing Polish Layer
+   Loaded last. Additive only: refines typography, spacing rhythm, buttons,
+   cards, header/footer chrome and micro-detail for a premium studio feel.
+   Does not alter markup, structure or any JS-driven functionality.
+   ========================================================================== */
+
+:root {
+  --f-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --f-shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.28);
+  --f-shadow-md: 0 12px 32px -8px rgba(0, 0, 0, 0.45);
+  --f-shadow-lg: 0 28px 70px -20px rgba(0, 0, 0, 0.6);
+  --f-teal-shadow: 0 10px 30px -8px rgba(30, 187, 156, 0.35);
+  --f-border: rgba(255, 255, 255, 0.09);
+  --f-border-soft: rgba(255, 255, 255, 0.06);
+}
+
+/* ---------- global finishing ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--teal);
+  color: var(--ink);
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--teal-dim), var(--teal));
+  border-radius: 999px;
+  border: 3px solid var(--ink);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--teal);
+}
+* {
+  scrollbar-color: var(--teal-dim) var(--ink);
+  scrollbar-width: thin;
+}
+
+a,
+button,
+.cta-btn,
+.hero-cta,
+.hero-cta-ghost {
+  transition:
+    transform 0.45s var(--f-ease),
+    box-shadow 0.45s var(--f-ease),
+    background 0.35s var(--f-ease),
+    border-color 0.35s var(--f-ease),
+    color 0.35s var(--f-ease),
+    opacity 0.35s var(--f-ease);
+}
+
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+/* ---------- headline rhythm ---------- */
+.hero h1,
+.tech-headline,
+.section-head h2,
+.elvin-product-copy h2,
+.elvin-story-copy h2 {
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.hero h1 em,
+.tech-headline em,
+.section-head h2 em,
+.elvin-product-copy h2 em,
+.elvin-story-copy h2 em,
+h1 em,
+h2 em {
+  font-style: normal;
+  background: linear-gradient(100deg, var(--teal) 10%, #6be6c9 55%, var(--teal) 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: f-sheen 7s ease-in-out infinite;
+}
+
+@keyframes f-sheen {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.section-tag.mono,
+.hero-eyebrow.mono,
+.tech-eyebrow.mono {
+  position: relative;
+  padding-left: 22px;
+  letter-spacing: 0.16em;
+  color: var(--teal);
+}
+.section-tag.mono::before,
+.hero-eyebrow.mono::before,
+.tech-eyebrow.mono::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 14px;
+  height: 1px;
+  background: var(--teal);
+  transform: translateY(-50%);
+}
+
+/* ---------- header ---------- */
+#siteHeader {
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  background: rgba(10, 14, 13, 0.62);
+  border-bottom: 1px solid var(--f-border-soft);
+  transition: background 0.4s var(--f-ease), box-shadow 0.4s var(--f-ease), border-color 0.4s var(--f-ease);
+}
+#siteHeader.is-scrolled,
+#siteHeader.scrolled {
+  background: rgba(10, 14, 13, 0.86);
+  box-shadow: var(--f-shadow-sm);
+  border-bottom-color: var(--f-border);
+}
+
+#siteHeader .logo img {
+  filter: drop-shadow(0 0 14px rgba(30, 187, 156, 0.18));
+  transition: filter 0.35s var(--f-ease), transform 0.35s var(--f-ease);
+}
+#siteHeader .logo:hover img {
+  filter: drop-shadow(0 0 20px rgba(30, 187, 156, 0.32));
+  transform: translateY(-1px);
+}
+
+#navLinks a {
+  position: relative;
+  font-weight: 500;
+}
+#navLinks a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1.5px;
+  background: var(--teal);
+  transition: width 0.35s var(--f-ease);
+}
+#navLinks a:hover::after,
+#navLinks a.is-active::after {
+  width: 100%;
+}
+#navLinks a.is-active {
+  color: var(--hi);
+}
+
+.cta-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: var(--f-teal-shadow);
+}
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.75s var(--f-ease);
+}
+.cta-btn:hover::before {
+  transform: translateX(120%);
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px -8px rgba(30, 187, 156, 0.5);
+}
+.cta-btn:active {
+  transform: translateY(0);
+}
+
+/* ---------- hero ---------- */
+.hero-cta {
+  box-shadow: var(--f-teal-shadow);
+}
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 44px -8px rgba(30, 187, 156, 0.5);
+}
+.hero-cta-ghost {
+  backdrop-filter: blur(6px);
+}
+.hero-cta-ghost:hover {
+  transform: translateY(-2px);
+  border-color: var(--teal);
+  box-shadow: var(--f-shadow-sm);
+}
+
+.hero-stats strong {
+  background: linear-gradient(180deg, var(--hi), var(--lo));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-visual-glow {
+  filter: blur(2px) saturate(115%);
+}
+
+.scroll-cue {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.scroll-cue:hover {
+  opacity: 1;
+}
+
+/* ---------- cards: tech features, stats, parts, modes ---------- */
+.tech-feature,
+.elvin-stat,
+.elvin-part-card,
+.product-callout,
+.elvin-mode,
+.testimonial-card,
+.person,
+.elvin-blog-card,
+article.elvin-blog > * {
+  transition:
+    transform 0.5s var(--f-ease),
+    box-shadow 0.5s var(--f-ease),
+    border-color 0.4s var(--f-ease),
+    background 0.4s var(--f-ease);
+}
+
+.tech-feature {
+  border: 1px solid var(--f-border-soft);
+  border-radius: 14px;
+  padding: 22px 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent);
+}
+.tech-feature:hover {
+  transform: translateY(-4px);
+  border-color: rgba(30, 187, 156, 0.35);
+  box-shadow: var(--f-shadow-md);
+  background: linear-gradient(180deg, rgba(30, 187, 156, 0.06), transparent);
+}
+
+.elvin-icon {
+  transition: transform 0.5s var(--f-ease), color 0.35s var(--f-ease);
+}
+.tech-feature:hover .elvin-icon,
+.elvin-stat:hover .elvin-icon {
+  transform: scale(1.12) rotate(-4deg);
+  color: var(--teal);
+}
+
+.elvin-stat {
+  border-radius: 14px;
+  padding: 18px 16px;
+}
+.elvin-stat:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--f-shadow-sm);
+}
+
+.elvin-part-card,
+.product-callout {
+  border-radius: 16px;
+  overflow: hidden;
+}
+.elvin-part-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--f-shadow-lg);
+}
+.elvin-part-media img,
+.elvin-mode img,
+.studio-frame img,
+.person-img img {
+  transition: transform 1.1s var(--f-ease), filter 0.6s var(--f-ease);
+}
+.elvin-part-card:hover .elvin-part-media img,
+.elvin-mode:hover img {
+  transform: scale(1.055);
+}
+
+.product-callout {
+  border: 1px solid transparent;
+}
+.product-callout.is-active,
+.product-callout:hover {
+  border-color: rgba(30, 187, 156, 0.4);
+  background: rgba(30, 187, 156, 0.06);
+}
+.hero-rail-btn {
+  transition: transform 0.4s var(--f-ease), background 0.35s var(--f-ease);
+}
+.product-callout:hover .hero-rail-btn,
+.product-callout.is-active .hero-rail-btn {
+  background: var(--teal);
+  color: var(--ink);
+  transform: translateX(3px);
+}
+
+.elvin-mode {
+  border-radius: 18px;
+  overflow: hidden;
+}
+.elvin-mode:hover {
+  box-shadow: var(--f-shadow-lg);
+}
+
+/* studio product stage */
+.studio-frame {
+  border-radius: 20px;
+  border: 1px solid var(--f-border-soft);
+}
+.hero-product-stage,
+.elvin-product-stage {
+  border-radius: 20px;
+}
+
+/* ---------- testimonials ---------- */
+.quote-mark {
+  color: var(--teal);
+  opacity: 0.45;
+  text-shadow: 0 0 24px rgba(30, 187, 156, 0.35);
+}
+.testimonial-text {
+  text-wrap: balance;
+}
+#testimonialPrev,
+#testimonialNext {
+  border-radius: 999px;
+  transition: transform 0.35s var(--f-ease), background 0.35s var(--f-ease), border-color 0.35s var(--f-ease);
+}
+#testimonialPrev:hover,
+#testimonialNext:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+.elvin-pager span,
+.elvin-pager button,
+.elvin-pager > * {
+  transition: width 0.4s var(--f-ease), background 0.4s var(--f-ease), opacity 0.4s var(--f-ease);
+}
+
+/* ---------- people (mentors/team) ---------- */
+.person-img {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--f-border-soft);
+  position: relative;
+}
+.person-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(10, 14, 13, 0.55));
+  opacity: 0;
+  transition: opacity 0.4s var(--f-ease);
+}
+.person:hover .person-img::after {
+  opacity: 1;
+}
+.person:hover .person-img img {
+  transform: scale(1.06);
+}
+.person-rule {
+  background: linear-gradient(90deg, var(--teal), transparent);
+}
+.elvin-in {
+  transition: color 0.3s var(--f-ease), gap 0.3s var(--f-ease);
+}
+.elvin-in:hover {
+  color: var(--teal);
+}
+
+/* ---------- forms ---------- */
+.elvin-form input,
+.elvin-form textarea,
+.elvin-form select,
+#nlEmail {
+  transition: border-color 0.35s var(--f-ease), box-shadow 0.35s var(--f-ease), background 0.35s var(--f-ease);
+  border-radius: 10px;
+}
+.elvin-form input:hover,
+.elvin-form textarea:hover,
+.elvin-form select:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+.elvin-form input:focus,
+.elvin-form textarea:focus,
+.elvin-form select:focus,
+#nlEmail:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px var(--teal-glow);
+  outline: none;
+}
+.elvin-form button[type="submit"],
+#newsletterForm button {
+  box-shadow: var(--f-teal-shadow);
+}
+.elvin-form button[type="submit"]:hover,
+#newsletterForm button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px -8px rgba(30, 187, 156, 0.5);
+}
+
+/* ---------- blog ---------- */
+.elvin-blog article,
+.elvin-blog .blog-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--f-border-soft);
+}
+.elvin-blog article:hover,
+.elvin-blog .blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--f-shadow-md);
+  border-color: rgba(30, 187, 156, 0.3);
+}
+
+/* ---------- footer ---------- */
+footer {
+  position: relative;
+  border-top: 1px solid var(--f-border-soft);
+}
+footer h5 {
+  letter-spacing: 0.08em;
+  color: var(--lo);
+}
+footer a {
+  position: relative;
+}
+footer .elvin-foot a:hover {
+  color: var(--teal);
+  padding-left: 4px;
+}
+.footer-bottom {
+  border-top: 1px solid var(--f-border-soft);
+  color: var(--lo);
+}
+
+/* ---------- reveal refinement (keeps existing reveal engine, only eases) --- */
+.reveal,
+.reveal-stagger > * {
+  transition-timing-function: var(--f-ease) !important;
+}
+
+/* ---------- scroll rail ---------- */
+.scroll-rail a {
+  transition: transform 0.35s var(--f-ease), background 0.35s var(--f-ease);
+}
+.scroll-rail a:hover {
+  transform: scale(1.35);
+}
+
+/* ---------- premium spotlight tone-down for professionalism ---------- */
+.premium-spot {
+  mix-blend-mode: screen;
+  opacity: 0.5;
+}
+.premium-progress {
+  background: linear-gradient(90deg, var(--teal-dim), var(--teal), #6be6c9);
+}
+
+/* ---------- cookie / modal polish ---------- */
+.cookie-notice {
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--f-border);
+  box-shadow: var(--f-shadow-lg);
+}
+.blog-modal {
+  backdrop-filter: blur(6px);
+}
+
+/* ---------- responsive safety ---------- */
+@media (max-width: 860px) {
+  .tech-feature:hover,
+  .elvin-part-card:hover,
+  .person:hover .person-img img,
+  .elvin-mode:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero h1 em,
+  .tech-headline em,
+  .section-head h2 em {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   V2: structural fixes for premium feel
+   Tightens the oversized section rhythm, fixes the broken mentors grid,
+   makes partner logos legible, unifies inconsistent portrait photography,
+   and dark-mode's the Google Map so it stops breaking the theme.
+   ========================================================================== */
+
+/* ---------- 1. section rhythm: the biggest culprit ----------
+   --section-y / --section-gap were tuned up to 160–180px, and every section
+   also carries a 72–96px heading margin on top of that, so consecutive
+   sections were leaving 250–350px of dead black space between them. */
+:root {
+  --section-y: 104px !important;
+  --section-gap: 104px !important;
+  --block-gap: 56px !important;
+}
+@media (max-width: 860px) {
+  :root {
+    --section-y: 72px !important;
+    --section-gap: 72px !important;
+    --block-gap: 40px !important;
+  }
+}
+.section-head,
+.elvin-head-row {
+  margin-bottom: var(--block-gap) !important;
+}
+
+/* give the now-tighter section seams a faint gradient instead of pure void,
+   so the rhythm reads as "designed spacing" rather than "empty gap" */
+section:not(.hero) {
+  background-image: radial-gradient(
+    ellipse 60% 100% at 50% 0%,
+    rgba(30, 187, 156, 0.035),
+    transparent 70%
+  );
+  background-repeat: no-repeat;
+}
+
+/* ---------- 2. mentors grid: fix the empty 4th cell ----------
+   .people-grid is forced to 4 columns site-wide, but #mentors only has
+   3 people: leaving one dark, empty box in the row. Give mentors its own
+   3-column track; #team genuinely has 4 people so it keeps 4. */
+#mentors .people-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+@media (max-width: 720px) {
+  #mentors .people-grid,
+  #team .team-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ---------- 3. partner logos: make them actually legible ----------
+   Previous treatment: opacity .62 + grayscale + brightness(1.85) on a
+   near-transparent dark chip: logos were nearly invisible. Give every
+   mark a soft light chip so both dark and white source logos read clearly,
+   and go full-strength on hover instead of a barely-there brighten. */
+#partners .partner-logo {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 10px 26px -12px rgba(0, 0, 0, 0.55);
+}
+#partners .partner-logo img {
+  opacity: 0.82 !important;
+  filter: grayscale(1) contrast(1.05) !important;
+  max-height: 30px !important;
+}
+#partners .partner-logo:hover {
+  background: #ffffff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px -10px rgba(30, 187, 156, 0.35);
+}
+#partners .partner-logo:hover img {
+  opacity: 1 !important;
+  filter: grayscale(0) contrast(1) !important;
+}
+
+/* ---------- 4. unify mentor / team / testimonial portrait photography ----------
+   Source photos vary wildly in exposure, white balance and background
+   (studio headshots next to phone snapshots). A single consistent
+   grayscale + duotone pass makes the whole set read as one shoot, and
+   colour reveals subtly on hover for warmth without breaking the set. */
+.person-img img,
+.elvin-story-visual img {
+  filter: grayscale(1) contrast(1.08) brightness(0.98);
+  transition: filter 0.6s var(--f-ease), transform 1.1s var(--f-ease);
+}
+.person:hover .person-img img {
+  filter: grayscale(0.35) contrast(1.1) brightness(1.02);
+}
+.person-img {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, #10201b, #0a0e0d);
+}
+.person-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(160deg, rgba(30, 187, 156, 0.16), transparent 55%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* ---------- 5. dark-mode the Google Map embed ----------
+   A bright white map sitting in an all-black layout was the single most
+   jarring element on the page. Standard CSS dark-map trick, plus a frame
+   that matches the rest of the site's card language. */
+.contact-map {
+  border-radius: 16px !important;
+  border-color: var(--f-border) !important;
+  box-shadow: var(--f-shadow-sm);
+}
+.contact-map iframe {
+  filter: invert(92%) hue-rotate(180deg) grayscale(0.15) contrast(0.92) brightness(0.95) !important;
+}
+
+/* ---------- 6. press side list: give rows a touch more definition ---------- */
+#press .elvin-side {
+  border-color: var(--f-border) !important;
+  background: rgba(255, 255, 255, 0.015) !important;
+}
+#press .elvin-side a {
+  border-bottom-color: var(--f-border) !important;
+}
+#press .elvin-side a:hover {
+  background: rgba(30, 187, 156, 0.05) !important;
+}
+#press .elvin-featured {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* ---------- 7. hero visual: fill the dead space around the product shot --- */
+.hero-visual-glow {
+  transform: scale(1.35);
+}
+.hero-product-stage {
+  background: radial-gradient(ellipse 70% 60% at 50% 55%, rgba(30, 187, 156, 0.1), transparent 70%);
+}

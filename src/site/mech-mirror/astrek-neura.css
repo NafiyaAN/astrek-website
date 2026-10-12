@@ -1,0 +1,953 @@
+/**
+ * Astrek × Neura visual system
+ * Visual/structural redesign only: content, photos, logo colors unchanged.
+ *
+ * Tokens
+ *  bg:        #05070a  (one dominant dark canvas)
+ *  accent:    #00c4b4  (flat brand teal: buttons/links/highlights only)
+ *  font:      Outfit / Manrope / JetBrains Mono
+ *  type:      H1 / H2 / Body
+ *  container: 72rem + clamp(1.25rem, 4vw, 3rem) side pad
+ *  section:   clamp(5rem, 9vw, 7.5rem) vertical pad
+ */
+
+/* ═══════════════════════════════════════════════════════════
+   1. TOKENS + BASE
+   ═══════════════════════════════════════════════════════════ */
+
+body.mech-mirror-active {
+  --n-bg: #05070a;
+  --n-bg-elevated: #05070a;
+  --n-accent: #00c4b4;
+  --n-accent-soft: #33d1c0;
+  --n-on-accent: #04110f;
+  --n-text: #f4f6f8;
+  --n-muted: rgba(244, 246, 248, 0.58);
+  --n-subtle: rgba(244, 246, 248, 0.38);
+  --n-line: rgba(255, 255, 255, 0.08);
+  --n-container: 72rem;
+  --n-pad-x: clamp(1.25rem, 4vw, 3rem);
+  --n-pad-y: clamp(5rem, 9vw, 7.5rem);
+  --n-font: var(--mech-body, "Manrope", system-ui, -apple-system, sans-serif);
+  --n-h1: clamp(3.25rem, 7.5vw, 5.75rem);
+  --n-h2: clamp(1.875rem, 3.6vw, 3.125rem);
+  --n-body: clamp(1rem, 1.15vw, 1.125rem);
+  --n-lh-display: 1.05;
+  --n-lh-body: 1.65;
+  --n-track-display: -0.03em;
+  --n-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --n-radius-img: 0;
+  --n-btn-radius: 999px;
+
+  margin: 0 !important;
+  background: var(--n-bg) !important;
+  color: var(--n-text) !important;
+  font-family: var(--n-font) !important;
+  font-size: var(--n-body) !important;
+  line-height: var(--n-lh-body) !important;
+  font-weight: 400 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body.mech-mirror-active *,
+body.mech-mirror-active *::before,
+body.mech-mirror-active *::after {
+  font-family: inherit !important;
+}
+
+/* Kill competing atmospheres from older layers */
+body.mech-mirror-active [data-testid="astrek-site"].grain,
+body.mech-mirror-active [data-testid="astrek-site"].bg-ink,
+body.mech-mirror-active .mech-page-shell {
+  background: var(--n-bg) !important;
+  background-image: none !important;
+}
+
+body.mech-mirror-active [data-testid="astrek-site"].mech-premium::before,
+body.mech-mirror-active [data-testid="astrek-site"].mech-premium::after,
+body.mech-mirror-active .grain::before,
+body.mech-mirror-active .grain::after,
+body.mech-mirror-active .grid-lines::before,
+body.mech-mirror-active .grid-lines::after,
+body.mech-mirror-active .spotlight::before,
+body.mech-mirror-active .spotlight::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
+
+/* One canvas: no alternating section fills (beat #id rules in legacy CSS) */
+body.mech-mirror-active .bg-surface,
+body.mech-mirror-active .bg-panel,
+body.mech-mirror-active .bg-ink,
+body.mech-mirror-active section.bg-surface,
+body.mech-mirror-active [class*="bg-surface"] {
+  background-color: var(--n-bg) !important;
+  background-image: none !important;
+}
+
+body.mech-mirror-active #astrek-site section,
+body.mech-mirror-active #astrek-site #top,
+body.mech-mirror-active #astrek-site #about,
+body.mech-mirror-active #astrek-site #product,
+body.mech-mirror-active #astrek-site #modes,
+body.mech-mirror-active #astrek-site #specs,
+body.mech-mirror-active #astrek-site #testimonials,
+body.mech-mirror-active #astrek-site #team,
+body.mech-mirror-active #astrek-site #partners,
+body.mech-mirror-active #astrek-site #press,
+body.mech-mirror-active #astrek-site #blog,
+body.mech-mirror-active #astrek-site #faq,
+body.mech-mirror-active #astrek-site #contact,
+body.mech-mirror-active [data-testid="astrek-site"] section,
+body.mech-mirror-active [data-testid="cta-band"],
+body.mech-mirror-active #astrek-site > section:nth-child(even),
+body.mech-mirror-active #astrek-site > section:nth-child(odd) {
+  background: var(--n-bg) !important;
+  background-color: var(--n-bg) !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  border-width: 0 !important;
+}
+
+body.mech-mirror-active [data-testid="astrek-site"] section:not([data-testid="hero-section"])::before,
+body.mech-mirror-active #astrek-site > section::after,
+body.mech-mirror-active #astrek-site section::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   2. GRID / CONTAINER
+   ═══════════════════════════════════════════════════════════ */
+
+body.mech-mirror-active [data-testid="astrek-site"] .max-w-7xl,
+body.mech-mirror-active [data-testid="astrek-site"] .max-w-6xl,
+body.mech-mirror-active [data-testid="astrek-site"] .max-w-5xl,
+body.mech-mirror-active .mech-header-inner,
+body.mech-mirror-active .mech-inner-content .wrap,
+body.mech-mirror-active .mech-inner-content .page-shell > .wrap,
+body.mech-mirror-active .rf-section > .wrap,
+body.mech-mirror-active .page-hero > .wrap,
+body.mech-mirror-active .article-wrap {
+  max-width: var(--n-container) !important;
+  margin-inline: auto !important;
+  padding-inline: var(--n-pad-x) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Uniform section vertical rhythm */
+body.mech-mirror-active [data-testid="astrek-site"] section:not([data-testid="hero-section"]),
+body.mech-mirror-active [data-testid="cta-band"],
+body.mech-mirror-active .rf-section,
+body.mech-mirror-active .page-hero {
+  padding-block: var(--n-pad-y) !important;
+  padding-inline: 0 !important;
+}
+
+body.mech-mirror-active [data-testid="editorial-marquee"] {
+  padding-block: 1.25rem !important;
+  background: var(--n-bg) !important;
+  border-color: var(--n-line) !important;
+}
+
+/* Left-align text blocks to the same grid */
+body.mech-mirror-active [data-testid="astrek-site"] section :is(h1, h2, h3, p, blockquote),
+body.mech-mirror-active .mech-inner-content :is(h1, h2, h3, p, blockquote) {
+  text-align: left !important;
+}
+
+body.mech-mirror-active [data-testid="cta-band"] :is(h2, p),
+body.mech-mirror-active [data-testid="cta-band"] .flex {
+  text-align: left !important;
+  justify-content: flex-start !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   3. TYPOGRAPHY: exactly 3 sizes
+   ═══════════════════════════════════════════════════════════ */
+
+body.mech-mirror-active .font-display,
+body.mech-mirror-active .font-mono,
+body.mech-mirror-active .mono {
+  font-family: var(--n-font) !important;
+}
+
+/* H1: once per page, large display (exclude journey hero title) */
+body.mech-mirror-active h1:not(.ajh-title):not(.ajh-product),
+body.mech-mirror-active h1.font-display:not(.ajh-title):not(.ajh-product),
+body.mech-mirror-active [data-testid="hero-heading"]:not(.ajh-title),
+body.mech-mirror-active .page-hero h1:not(.ajh-title):not(.ajh-product),
+body.mech-mirror-active .rf-product-hero h1:not(.ajh-title):not(.ajh-product) {
+  font-family: var(--n-font) !important;
+  font-size: var(--n-h1) !important;
+  font-weight: 600 !important;
+  line-height: var(--n-lh-display) !important;
+  letter-spacing: var(--n-track-display) !important;
+  text-transform: none !important;
+  color: var(--n-text) !important;
+}
+
+body.mech-mirror-active [data-testid="hero-heading"] .text-outline-brand,
+body.mech-mirror-active [data-testid="hero-heading"] [style*="text-stroke"],
+body.mech-mirror-active .text-outline-brand {
+  -webkit-text-stroke: 0 !important;
+  color: var(--n-text) !important;
+  paint-order: normal !important;
+}
+
+body.mech-mirror-active [data-testid="hero-heading"] .text-brand {
+  color: var(--n-accent) !important;
+}
+
+/* H2: section headers (+ demote h3 visual noise into H2 scale for cards) */
+body.mech-mirror-active h2,
+body.mech-mirror-active h2.font-display,
+body.mech-mirror-active h3,
+body.mech-mirror-active h3.font-display,
+body.mech-mirror-active .section-head h2,
+body.mech-mirror-active .rf-section h2 {
+  font-family: var(--n-font) !important;
+  font-size: var(--n-h2) !important;
+  font-weight: 600 !important;
+  line-height: var(--n-lh-display) !important;
+  letter-spacing: -0.025em !important;
+  text-transform: none !important;
+  color: var(--n-text) !important;
+}
+
+/* Body */
+body.mech-mirror-active p,
+body.mech-mirror-active li,
+body.mech-mirror-active td,
+body.mech-mirror-active label,
+body.mech-mirror-active input,
+body.mech-mirror-active textarea,
+body.mech-mirror-active select,
+body.mech-mirror-active blockquote,
+body.mech-mirror-active [data-testid="hero-subcopy"],
+body.mech-mirror-active .text-zinc-400,
+body.mech-mirror-active .text-zinc-500,
+body.mech-mirror-active .text-zinc-300 {
+  font-family: var(--n-font) !important;
+  font-size: var(--n-body) !important;
+  font-weight: 400 !important;
+  line-height: var(--n-lh-body) !important;
+  letter-spacing: 0 !important;
+}
+
+body.mech-mirror-active :is(p, li, .text-zinc-400, .text-zinc-500):not(.ajh-title):not(.ajh-sub):not(.ajh-metric-value):not(.ajh-metric-label):not(.ajh-product):not(.font-mono):not(.text-brand) {
+  color: var(--n-muted) !important;
+}
+
+/* Eyebrows / mono labels: never apply to buttons/links */
+body.mech-mirror-active p.font-mono,
+body.mech-mirror-active span.font-mono,
+body.mech-mirror-active .section-tag,
+body.mech-mirror-active :is(p, span, div, label).font-mono.text-xs,
+body.mech-mirror-active :is(p, span, div, label).font-mono.text-\[11px\],
+body.mech-mirror-active :is(p, span, div, label).font-mono.text-\[10px\] {
+  font-family: var(--n-font) !important;
+  font-size: 0.8125rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  line-height: 1.4 !important;
+}
+
+body.mech-mirror-active .text-brand,
+body.mech-mirror-active .font-mono.text-brand,
+body.mech-mirror-active p.font-mono.text-brand {
+  color: var(--n-accent) !important;
+}
+
+/* Giant watermark numbers: removed */
+body.mech-mirror-active [data-testid^="chapter-"] > span[aria-hidden="true"] {
+  display: none !important;
+}
+
+/* Stats numbers use H2 scale */
+body.mech-mirror-active [data-testid^="stat-"] p.font-display,
+body.mech-mirror-active [data-testid^="stat-"] .font-display {
+  font-size: var(--n-h2) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.025em !important;
+  color: var(--n-text) !important;
+}
+
+body.mech-mirror-active [data-testid="editorial-marquee"] .font-display {
+  font-size: var(--n-body) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--n-subtle) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   4. NAVIGATION: single row, sticky blur, restrained
+   ═══════════════════════════════════════════════════════════ */
+
+body.mech-mirror-active [data-testid="site-header"] {
+  position: fixed !important;
+  inset-inline: 0 !important;
+  top: 0 !important;
+  z-index: 50 !important;
+  padding: 0.875rem var(--n-pad-x) !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+body.mech-mirror-active [data-testid="site-header"] > div,
+body.mech-mirror-active .mech-header-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1.5rem !important;
+  height: 3.5rem !important;
+  max-width: var(--n-container) !important;
+  margin-inline: auto !important;
+  padding-inline: 1.25rem 1rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(5, 7, 10, 0.55) !important;
+  backdrop-filter: blur(18px) saturate(1.2) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
+  grid-template-columns: unset !important;
+  grid-template-areas: unset !important;
+}
+
+body.mech-mirror-active [data-testid="site-header"].is-scrolled {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+body.mech-mirror-active [data-testid="site-header"].is-scrolled > div,
+body.mech-mirror-active [data-testid="site-header"].is-scrolled .mech-header-inner {
+  background: rgba(5, 7, 10, 0.78) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(22px) saturate(1.25) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(1.25) !important;
+}
+
+body.mech-mirror-active [data-testid="nav-logo"] {
+  flex-shrink: 0 !important;
+  max-width: 9rem !important;
+  overflow: hidden !important;
+}
+
+/* Beat legacy `#astrek-site img { height:auto }` on mobile */
+body.mech-mirror-active #astrek-site [data-testid="nav-logo"] img,
+body.mech-mirror-active #astrek-site [data-testid="site-header"] img,
+body.mech-mirror-active [data-testid="nav-logo"] img {
+  height: 1.75rem !important;
+  width: auto !important;
+  max-width: 9rem !important;
+  max-height: 1.75rem !important;
+  object-fit: contain !important;
+}
+
+body.mech-mirror-active nav[aria-label="Primary"] {
+  display: none !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 1.75rem !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+@media (min-width: 1024px) {
+  body.mech-mirror-active nav[aria-label="Primary"] {
+    display: flex !important;
+  }
+
+  /* Cap at 5 links + CTA: hide Modes */
+  body.mech-mirror-active [data-testid="nav-link-modes"] {
+    display: none !important;
+  }
+
+  body.mech-mirror-active [data-testid="nav-menu-toggle"] {
+    display: none !important;
+  }
+}
+
+body.mech-mirror-active nav[aria-label="Primary"] > a:not(.mech-drawer-cta):not([data-testid="nav-cta-contact"]) {
+  font-family: var(--n-font) !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  text-transform: none !important;
+  color: var(--n-muted) !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+body.mech-mirror-active nav[aria-label="Primary"] > a:not(.mech-drawer-cta):not([data-testid="nav-cta-contact"]) span {
+  display: none !important;
+}
+
+body.mech-mirror-active nav[aria-label="Primary"] > a:not(.mech-drawer-cta):not([data-testid="nav-cta-contact"]):hover {
+  color: var(--n-text) !important;
+}
+
+body.mech-mirror-active .mech-header-actions,
+body.mech-mirror-active [data-testid="site-header"] > div > div.flex {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  flex-shrink: 0 !important;
+}
+
+body.mech-mirror-active .mech-lang-switcher button {
+  font-family: var(--n-font) !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+  border-radius: 999px !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: var(--n-muted) !important;
+  background: transparent !important;
+}
+
+body.mech-mirror-active .mech-lang-switcher button.is-active,
+body.mech-mirror-active .mech-lang-switcher button:hover {
+  color: var(--n-accent) !important;
+  border-color: rgba(63, 224, 197, 0.4) !important;
+  background: rgba(63, 224, 197, 0.08) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   5. BUTTONS: one component everywhere
+   ═══════════════════════════════════════════════════════════ */
+
+body.mech-mirror-active a.bg-brand,
+body.mech-mirror-active button.bg-brand,
+body.mech-mirror-active a[data-testid="nav-cta-contact"],
+body.mech-mirror-active a[data-testid="hero-cta-explore"],
+body.mech-mirror-active a[data-testid="hero-cta-watch"],
+body.mech-mirror-active a[data-testid="product-cta-specs"],
+body.mech-mirror-active a[data-testid="product-cta-watch"],
+body.mech-mirror-active a[data-testid^="chapter-"][data-testid$="-link"],
+body.mech-mirror-active a[data-testid="modes-learn-more"],
+body.mech-mirror-active a[data-testid="team-careers-link"],
+body.mech-mirror-active button[data-testid="enquiry-submit-button"],
+body.mech-mirror-active button[data-testid="newsletter-submit-button"],
+body.mech-mirror-active a.rf-btn,
+body.mech-mirror-active button.rf-btn,
+body.mech-mirror-active a.rf-btn--ghost,
+body.mech-mirror-active a.elvin-outline,
+body.mech-mirror-active a.elvin-link,
+body.mech-mirror-active [data-testid="cta-band"] a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.55rem !important;
+  min-height: 2.875rem !important;
+  padding: 0.8rem 1.5rem !important;
+  border-radius: var(--n-btn-radius) !important;
+  border: 1px solid transparent !important;
+  background: var(--n-accent) !important;
+  color: var(--n-on-accent) !important;
+  font-family: var(--n-font) !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  text-transform: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  transition:
+    background-color 0.25s var(--n-ease),
+    transform 0.25s var(--n-ease),
+    opacity 0.25s var(--n-ease) !important;
+}
+
+body.mech-mirror-active a.bg-brand:hover,
+body.mech-mirror-active button.bg-brand:hover,
+body.mech-mirror-active a[data-testid="nav-cta-contact"]:hover,
+body.mech-mirror-active a[data-testid="hero-cta-explore"]:hover,
+body.mech-mirror-active a[data-testid="hero-cta-watch"]:hover,
+body.mech-mirror-active a[data-testid="product-cta-specs"]:hover,
+body.mech-mirror-active a[data-testid="product-cta-watch"]:hover,
+body.mech-mirror-active a[data-testid^="chapter-"][data-testid$="-link"]:hover,
+body.mech-mirror-active a[data-testid="modes-learn-more"]:hover,
+body.mech-mirror-active a[data-testid="team-careers-link"]:hover,
+body.mech-mirror-active button[data-testid="enquiry-submit-button"]:hover,
+body.mech-mirror-active button[data-testid="newsletter-submit-button"]:hover,
+body.mech-mirror-active a.rf-btn:hover,
+body.mech-mirror-active a.rf-btn--ghost:hover,
+body.mech-mirror-active a.elvin-outline:hover,
+body.mech-mirror-active a.elvin-link:hover,
+body.mech-mirror-active [data-testid="cta-band"] a:hover {
+  background: var(--n-accent-soft) !important;
+  color: var(--n-on-accent) !important;
+  border-color: transparent !important;
+  transform: translateY(-1px) !important;
+  box-shadow: none !important;
+}
+
+/* Kill old ghost CTA look (not icon controls / chips) */
+body.mech-mirror-active a.border-white\/15.px-7,
+body.mech-mirror-active a.border-white\/15.px-6,
+body.mech-mirror-active a[class*="border-white"][class*="px-7"],
+body.mech-mirror-active a[class*="border-white"][class*="px-6"] {
+  border-color: transparent !important;
+  background: var(--n-accent) !important;
+  color: var(--n-on-accent) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   6. HERO
+   ═══════════════════════════════════════════════════════════ */
+
+body.mech-mirror-active [data-testid="hero-section"] {
+  padding-block: 0 !important;
+  min-height: 100vh !important;
+  background: var(--n-bg) !important;
+}
+
+body.mech-mirror-active [data-testid="hero-section"] > div.mx-auto {
+  max-width: var(--n-container) !important;
+  padding-inline: var(--n-pad-x) !important;
+  padding-top: clamp(7rem, 14vw, 9rem) !important;
+  padding-bottom: clamp(4rem, 8vw, 6rem) !important;
+  gap: clamp(2.5rem, 5vw, 4rem) !important;
+}
+
+body.mech-mirror-active [data-testid="hero-section"] .rounded-full.border {
+  background: transparent !important;
+  border-color: var(--n-line) !important;
+  backdrop-filter: none !important;
+}
+
+body.mech-mirror-active [data-testid="hero-product-stage"] .studio-panel,
+body.mech-mirror-active [data-testid="hero-product-stage"] .studio-panel img,
+body.mech-mirror-active [data-testid="specs-stage"],
+body.mech-mirror-active [data-testid="product-stage"] {
+  border: none !important;
+  border-radius: var(--n-radius-img) !important;
+  box-shadow: none !important;
+  background: #0a0c10 !important;
+}
+
+body.mech-mirror-active [data-testid="hero-product-stage"] .studio-panel {
+  aspect-ratio: 4 / 5 !important;
+  overflow: hidden !important;
+}
+
+body.mech-mirror-active [data-testid="hero-product-stage"] .studio-panel img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+body.mech-mirror-active [data-testid="hero-product-stage"] .animate-spin-slow {
+  display: none !important;
+}
+
+body.mech-mirror-active [data-testid="hero-product-stage"] .studio-panel > div.pointer-events-none {
+  display: none !important;
+}
+
+body.mech-mirror-active [data-testid="hero-section"] .shadow-\[0_60px_120px_-30px_rgba\(247\,102\,45\,0\.25\)\] {
+  box-shadow: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   7. IMAGES: consistent framing
+   ═══════════════════════════════════════════════════════════ */
+
+body.mech-mirror-active [data-testid="astrek-site"] section img,
+body.mech-mirror-active [data-testid="astrek-site"] .studio-panel img,
+body.mech-mirror-active .mech-inner-content img:not([data-testid="nav-logo"] img) {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+body.mech-mirror-active [data-testid^="chapter-"] .group.relative.overflow-hidden,
+body.mech-mirror-active [data-testid^="mode-card-"],
+body.mech-mirror-active [data-testid="product-stage"],
+body.mech-mirror-active [data-testid="specs-stage"],
+body.mech-mirror-active [data-testid^="blog-card-"],
+body.mech-mirror-active [data-testid^="press-item-"] {
+  border: none !important;
+  border-radius: var(--n-radius-img) !important;
+  background: #0a0c10 !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+body.mech-mirror-active [data-testid^="chapter-"] img,
+body.mech-mirror-active [data-testid^="mode-card-"] img,
+body.mech-mirror-active [data-testid="product-stage"] img,
+body.mech-mirror-active [data-testid="specs-stage"] img {
+  aspect-ratio: 4 / 3 !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+body.mech-mirror-active [data-testid^="mode-card-"] {
+  border-radius: 0 !important;
+}
+
+body.mech-mirror-active [data-testid^="mode-card-"] img {
+  aspect-ratio: 16 / 10 !important;
+}
+
+/* Team / mentor portraits: square crop, same treatment */
+body.mech-mirror-active [data-testid^="team-card-"] > div,
+body.mech-mirror-active [data-testid^="mentor-card-"] > div {
+  aspect-ratio: 1 / 1 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: #0a0c10 !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
+}
+
+body.mech-mirror-active [data-testid^="team-card-"] img,
+body.mech-mirror-active [data-testid^="mentor-card-"] img {
+  aspect-ratio: 1 / 1 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  border: none !important;
+  border-radius: 0 !important;
+  filter: none !important;
+  box-shadow: none !important;
+  background: #0a0c10 !important;
+  transform: none !important;
+}
+
+body.mech-mirror-active [data-testid^="team-card-"] img:hover,
+body.mech-mirror-active [data-testid^="mentor-card-"] img:hover {
+  filter: none !important;
+  border: none !important;
+  transform: none !important;
+}
+
+/* Soften image hover scale: keep subtle */
+body.mech-mirror-active [data-testid="astrek-site"] img.group-hover\:scale-105,
+body.mech-mirror-active [data-testid="astrek-site"] .group:hover img {
+  transform: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   8. CARDS / PANELS: no boxed color blocks
+   ═══════════════════════════════════════════════════════════ */
+
+body.mech-mirror-active [data-testid^="product-callout-"],
+body.mech-mirror-active [data-testid^="stat-"],
+body.mech-mirror-active form[data-testid="enquiry-form"],
+body.mech-mirror-active a[data-testid^="partner-"],
+body.mech-mirror-active a.mech-partner-cell {
+  background: transparent !important;
+  border-color: var(--n-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  transform: none !important;
+}
+
+body.mech-mirror-active [data-testid^="stat-"] {
+  border-left: 1px solid var(--n-line) !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  padding: 0 0 0 1.25rem !important;
+}
+
+body.mech-mirror-active [data-testid^="stat-"]:hover,
+body.mech-mirror-active a[data-testid^="partner-"]:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-color: var(--n-line) !important;
+}
+
+body.mech-mirror-active a[data-testid^="partner-"] {
+  border: 1px solid var(--n-line) !important;
+  background: transparent !important;
+}
+
+body.mech-mirror-active a[data-testid^="partner-"] img {
+  filter: brightness(1.1) grayscale(0.2) !important;
+  opacity: 0.9 !important;
+}
+
+body.mech-mirror-active form[data-testid="enquiry-form"] {
+  border: 1px solid var(--n-line) !important;
+  padding: clamp(1.5rem, 3vw, 2.5rem) !important;
+}
+
+body.mech-mirror-active blockquote {
+  border-inline-start: 2px solid var(--n-accent) !important;
+  padding-inline-start: 1.25rem !important;
+  font-size: var(--n-h2) !important;
+  font-weight: 500 !important;
+  color: var(--n-text) !important;
+  line-height: var(--n-lh-display) !important;
+}
+
+body.mech-mirror-active #faq button[data-state="open"],
+body.mech-mirror-active #faq button[aria-expanded="true"] {
+  border: 0 !important;
+  border-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.mech-mirror-active footer {
+  background: var(--n-bg) !important;
+  border-top: 1px solid var(--n-line) !important;
+}
+
+body.mech-mirror-active footer::before {
+  display: none !important;
+}
+
+/* Forms */
+body.mech-mirror-active input,
+body.mech-mirror-active textarea,
+body.mech-mirror-active select {
+  border-color: var(--n-line) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-radius: 0.5rem !important;
+  color: var(--n-text) !important;
+  font-family: var(--n-font) !important;
+}
+
+body.mech-mirror-active input:focus,
+body.mech-mirror-active textarea:focus,
+body.mech-mirror-active select:focus {
+  border-color: rgba(63, 224, 197, 0.45) !important;
+  box-shadow: 0 0 0 3px rgba(63, 224, 197, 0.12) !important;
+  outline: none !important;
+}
+
+/* Accent ONLY on interactive / brand highlights */
+body.mech-mirror-active a:not(.bg-brand):not([class*="bg-brand"]):not([data-testid="nav-cta-contact"]):not([data-testid*="cta"]):not(.rf-btn):not(.elvin-link):hover {
+  color: var(--n-accent) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   9. INNER PAGES (product / blog / testimonials)
+   ═══════════════════════════════════════════════════════════ */
+
+body.mech-mirror-active .mech-inner-content {
+  background: var(--n-bg) !important;
+  color: var(--n-text) !important;
+  font-family: var(--n-font) !important;
+}
+
+body.mech-mirror-active .mech-inner-content .rf-btn--ghost {
+  background: var(--n-accent) !important;
+  color: var(--n-on-accent) !important;
+  border: none !important;
+}
+
+body.mech-mirror-active .mech-inner-content .blog-cover,
+body.mech-mirror-active .mech-inner-content .article-cover,
+body.mech-mirror-active .mech-inner-content .elvin-story-visual,
+body.mech-mirror-active .mech-inner-content .thumb {
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background-color: #0a0c10 !important;
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  background-position: center;
+}
+
+body.mech-mirror-active .elvin-story {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr) auto !important;
+  gap: clamp(2rem, 4vw, 3.5rem) !important;
+  align-items: center !important;
+  min-height: 0 !important;
+}
+
+body.mech-mirror-active .elvin-story-visual {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: #0a0c10 !important;
+  overflow: hidden !important;
+}
+
+body.mech-mirror-active .elvin-story-visual::before {
+  display: none !important;
+}
+
+body.mech-mirror-active .elvin-story-visual img {
+  border-radius: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+body.mech-mirror-active .elvin-story-copy .quote-mark {
+  color: var(--n-accent) !important;
+  text-shadow: none !important;
+  opacity: 0.85 !important;
+}
+
+@media (max-width: 1023px) {
+  body.mech-mirror-active .elvin-story {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+body.mech-mirror-active .mech-inner-content .elvin-banner,
+body.mech-mirror-active .mech-inner-content .blog-card,
+body.mech-mirror-active .mech-inner-content .elvin-blog-row {
+  background: transparent !important;
+  border-color: var(--n-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   10. RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 1023px) {
+  body.mech-mirror-active [data-testid="site-header"] > div,
+  body.mech-mirror-active .mech-header-inner {
+    height: 3.25rem !important;
+    padding-inline: 1rem 0.75rem !important;
+  }
+
+  body.mech-mirror-active [data-testid="nav-cta-contact"]:not(.mech-drawer-cta) {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body.mech-mirror-active {
+    --n-h1: clamp(2.75rem, 12vw, 3.5rem);
+    --n-h2: clamp(1.625rem, 6vw, 2rem);
+    --n-pad-y: clamp(3.5rem, 12vw, 5rem);
+  }
+
+  /* Stack only wide split layouts — keep 2-up cards/stats/team intact */
+  body.mech-mirror-active [data-testid^="chapter-"],
+  body.mech-mirror-active [data-testid="product-section"] > .mx-auto > .grid.lg\:grid-cols-12,
+  body.mech-mirror-active [data-testid="specs-section"] > .mx-auto > .grid,
+  body.mech-mirror-active [data-testid="testimonials-section"] .grid.lg\:grid-cols-12,
+  body.mech-mirror-active [data-testid="contact-section"] > .mx-auto > .grid,
+  body.mech-mirror-active [data-testid="press-section"] > .mx-auto > .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.mech-mirror-active [data-testid^="chapter-"].lg\:\[\&\>\*\:first-child\]\:order-2 > *:first-child {
+    order: 0 !important;
+  }
+
+  body.mech-mirror-active a.bg-brand,
+  body.mech-mirror-active a[data-testid="hero-cta-explore"],
+  body.mech-mirror-active a[data-testid="hero-cta-watch"],
+  body.mech-mirror-active button[data-testid="enquiry-submit-button"] {
+    width: 100% !important;
+  }
+
+  body.mech-mirror-active [data-testid="hero-section"] .flex.flex-wrap {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.mech-mirror-active a.bg-brand:hover,
+  body.mech-mirror-active a[data-testid*="cta"]:hover {
+    transform: none !important;
+  }
+}
+
+body.mech-mirror-active ::selection {
+  background: rgba(63, 224, 197, 0.28);
+  color: #ffffff;
+}
+
+/* ── Final overrides (win over legacy mech layers) ── */
+body.mech-mirror-active a.mech-drawer-cta {
+  display: none !important;
+}
+
+body.mech-mirror-active [data-testid="site-header"].mech-nav-open a.mech-drawer-cta {
+  display: inline-flex !important;
+}
+
+body.mech-mirror-active a.bg-brand,
+body.mech-mirror-active button.bg-brand,
+body.mech-mirror-active a[data-testid="nav-cta-contact"],
+body.mech-mirror-active a[data-testid="hero-cta-explore"],
+body.mech-mirror-active a[data-testid="hero-cta-watch"],
+body.mech-mirror-active a[data-testid="product-cta-specs"],
+body.mech-mirror-active a[data-testid="product-cta-watch"],
+body.mech-mirror-active a[data-testid="modes-learn-more"],
+body.mech-mirror-active a[data-testid="team-careers-link"],
+body.mech-mirror-active a[data-testid^="chapter-"][href],
+body.mech-mirror-active button[data-testid="enquiry-submit-button"],
+body.mech-mirror-active button[data-testid="newsletter-submit-button"],
+body.mech-mirror-active a.rf-btn,
+body.mech-mirror-active [data-testid="cta-band"] a {
+  text-transform: none !important;
+  letter-spacing: -0.01em !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+}
+
+/* Hide decorative “scroll to begin” mid-hero clutter */
+body.mech-mirror-active [data-testid="hero-section"] > .absolute.bottom-8 {
+  display: none !important;
+}
+
+/* Product media on inner pages: same clean frame */
+body.mech-mirror-active .rf-product-media,
+body.mech-mirror-active .product-3d-stage,
+body.mech-mirror-active .product-face,
+body.mech-mirror-active .product-face img {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: #0a0c10 !important;
+  filter: none !important;
+}
+
+body.mech-mirror-active .rf-product-media,
+body.mech-mirror-active .product-3d-stage {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+body.mech-mirror-active .rf-product-media::before,
+body.mech-mirror-active .rf-product-media::after,
+body.mech-mirror-active .product-3d-stage::before,
+body.mech-mirror-active .product-3d-stage::after {
+  display: none !important;
+  content: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+body.mech-mirror-active .product-face img {
+  aspect-ratio: 4 / 5 !important;
+  object-fit: contain !important;
+  width: 100% !important;
+  padding: 1.5rem !important;
+}

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" role="img" aria-label="Akhil, mentor portrait placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0%" stop-color="#0c1418"/>
+      <stop offset="100%" stop-color="#070b0e"/>
+    </linearGradient>
+    <linearGradient id="suit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a242c"/>
+      <stop offset="100%" stop-color="#10161a"/>
+    </linearGradient>
+    <radialGradient id="rim" cx="50%" cy="32%" r="42%">
+      <stop offset="0%" stop-color="#00f5d4" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00f5d4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <rect width="800" height="1000" fill="url(#rim)"/>
+  <!-- shoulders / suit -->
+  <path d="M140 1000V720c40-120 140-190 260-190h0c120 0 220 70 260 190v280z" fill="url(#suit)"/>
+  <path d="M360 560c8 48 28 72 40 78 12-6 32-30 40-78" fill="#0e1418"/>
+  <path d="M390 630h20v370h-20z" fill="#0a1014" opacity="0.7"/>
+  <!-- head -->
+  <ellipse cx="400" cy="360" rx="118" ry="132" fill="#2a343c"/>
+  <!-- hair -->
+  <path d="M282 340c8-110 70-170 118-170s110 60 118 170c-18-48-58-78-118-78s-100 30-118 78z" fill="#1a2228"/>
+  <!-- neck -->
+  <rect x="368" y="470" width="64" height="70" rx="12" fill="#243038"/>
+  <!-- collar -->
+  <path d="M300 560h200l-40 90H340z" fill="#e8eef2" opacity="0.12"/>
+  <text x="400" y="820" text-anchor="middle" fill="#00f5d4" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="600" letter-spacing="8">AKHIL</text>
+  <text x="400" y="860" text-anchor="middle" fill="#6b7a82" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="3">PHOTO COMING SOON</text>
+</svg>

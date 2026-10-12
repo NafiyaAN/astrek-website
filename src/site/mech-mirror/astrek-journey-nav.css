@@ -1,0 +1,627 @@
+/* =====================================================================
+   JOURNEY NAV: match reference snip exactly
+   Translucent dark bar over hero (NOT solid black slab)
+   Larger logo · spaced uppercase links · EN (teal) | AR | JA
+   Hover highlight appears on approach, clears when pointer leaves
+   ===================================================================== */
+
+body.mech-mirror-active [data-testid="site-header"],
+body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] {
+  position: fixed !important;
+  inset-inline: 0 !important;
+  top: 0 !important;
+  z-index: 60 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-bottom: 0 !important;
+  overflow: visible !important;
+  /* Soft dark wash: hero shows through, like the reference */
+  background: linear-gradient(
+    180deg,
+    rgba(8, 10, 12, 0.72) 0%,
+    rgba(8, 10, 12, 0.42) 70%,
+    rgba(8, 10, 12, 0) 100%
+  ) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(2px) !important;
+  -webkit-backdrop-filter: blur(2px) !important;
+}
+
+body.mech-mirror-active [data-testid="site-header"].is-scrolled,
+body.mech-mirror-active #mech-mirror-root [data-testid="site-header"].is-scrolled {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.7) 80%,
+    rgba(0, 0, 0, 0.35) 100%
+  ) !important;
+  backdrop-filter: blur(8px) saturate(1.05) !important;
+  -webkit-backdrop-filter: blur(8px) saturate(1.05) !important;
+}
+
+body.mech-mirror-active [data-testid="site-header"] > div.mech-header-inner,
+body.mech-mirror-active [data-testid="site-header"] > div,
+body.mech-mirror-active .mech-header-inner,
+body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] > div,
+body.mech-mirror-active [data-testid="site-header"].is-scrolled > div,
+body.mech-mirror-active [data-testid="site-header"].is-scrolled .mech-header-inner {
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) auto !important;
+  grid-template-areas: "logo nav actions" !important;
+  align-items: center !important;
+  column-gap: 0.85rem !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 5rem !important;
+  margin-inline: 0 !important;
+  padding-inline: clamp(1.75rem, 5vw, 3.75rem) !important;
+  border-radius: 0 !important;
+  border: 0 !important;
+  border-color: transparent !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+/* ---- Logo (reference scale) ---- */
+body.mech-mirror-active [data-testid="nav-logo"],
+body.mech-mirror-active #mech-mirror-root [data-testid="nav-logo"] {
+  grid-area: logo !important;
+  position: relative !important;
+  z-index: 2 !important;
+  flex-shrink: 0 !important;
+  max-width: 16rem !important;
+  overflow: hidden !important;
+  transition: opacity 200ms ease, filter 200ms ease, transform 200ms ease !important;
+}
+
+body.mech-mirror-active [data-testid="nav-logo"]:hover {
+  filter: brightness(1.1) drop-shadow(0 0 12px rgba(0, 196, 180, 0.4)) !important;
+  transform: translateY(-1px) !important;
+}
+
+body.mech-mirror-active #astrek-site [data-testid="nav-logo"] img,
+body.mech-mirror-active [data-testid="site-header"] [data-testid="nav-logo"] img,
+body.mech-mirror-active [data-testid="nav-logo"] img,
+body.mech-mirror-active #mech-mirror-root [data-testid="nav-logo"] img,
+body.mech-mirror-active #astrek-site [data-testid="site-header"] img {
+  height: 3.15rem !important;
+  width: auto !important;
+  max-width: 16rem !important;
+  max-height: 3.15rem !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  filter: none !important;
+}
+
+/* ---- Primary links ---- */
+body.mech-mirror-active nav.ajh-nav[aria-label="Primary"],
+body.mech-mirror-active nav[aria-label="Primary"].ajh-nav,
+body.mech-mirror-active #mech-mirror-root nav.ajh-nav[aria-label="Primary"] {
+  display: none !important;
+  grid-area: nav !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: clamp(1.15rem, 2.2vw, 2.15rem) !important;
+  min-width: 0 !important;
+}
+
+@media (min-width: 1024px) {
+  body.mech-mirror-active nav.ajh-nav[aria-label="Primary"],
+  body.mech-mirror-active nav[aria-label="Primary"].ajh-nav,
+  body.mech-mirror-active #mech-mirror-root nav.ajh-nav[aria-label="Primary"] {
+    display: flex !important;
+    grid-area: nav !important;
+    justify-content: flex-end !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    gap: clamp(1.15rem, 1.8vw, 1.85rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid="nav-link-home"],
+  body.mech-mirror-active [data-testid="nav-link-contact-nav"] {
+    display: none !important;
+  }
+
+  body.mech-mirror-active [data-testid="nav-link-unik-exo"],
+  body.mech-mirror-active [data-testid="nav-cta-partner"] {
+    display: none !important;
+  }
+
+  body.mech-mirror-active nav.ajh-nav[aria-label="Primary"] > a.ajh-nav-link,
+  body.mech-mirror-active #mech-mirror-root nav.ajh-nav > a.ajh-nav-link {
+    font-size: 0.7rem !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  body.mech-mirror-active [data-testid="nav-menu-toggle"] {
+    display: none !important;
+  }
+
+  body.mech-mirror-active [data-testid="site-header"] .ajh-nav-cta,
+  body.mech-mirror-active #mech-mirror-root .ajh-nav-cta {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 2.35rem !important;
+    padding: 0.45rem 0.85rem !important;
+    border-radius: 999px !important;
+    font-family: var(--mech-body, "Manrope", system-ui, sans-serif) !important;
+    font-size: 0.68rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    visibility: visible !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: static !important;
+    clip: auto !important;
+  }
+
+  body.mech-mirror-active [data-testid="site-header"] .ajh-nav-cta--primary {
+    background: #00c4b4 !important;
+    border: 1px solid #00c4b4 !important;
+    color: #041012 !important;
+  }
+
+  body.mech-mirror-active [data-testid="site-header"] .ajh-nav-cta--ghost {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.28) !important;
+    color: #f4f6f8 !important;
+  }
+}
+
+body.mech-mirror-active nav.ajh-nav[aria-label="Primary"] > a.ajh-nav-link,
+body.mech-mirror-active nav[aria-label="Primary"].ajh-nav > a.ajh-nav-link,
+body.mech-mirror-active #mech-mirror-root nav.ajh-nav > a.ajh-nav-link,
+body.mech-mirror-active nav[aria-label="Primary"] > a:not(.mech-drawer-cta):not([data-testid="nav-cta-contact"]) {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  font-family: var(--mech-body, "Manrope", system-ui, sans-serif) !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  /* Lighter, clearer links like the reference */
+  color: rgba(245, 247, 248, 0.88) !important;
+  padding: 0.5rem 0.2rem !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  width: auto !important;
+  min-height: 0 !important;
+  transition:
+    color 200ms ease,
+    transform 200ms ease,
+    text-shadow 200ms ease,
+    opacity 200ms ease !important;
+}
+
+body.mech-mirror-active nav.ajh-nav[aria-label="Primary"] > a.ajh-nav-link span {
+  display: none !important;
+}
+
+body.mech-mirror-active nav.ajh-nav[aria-label="Primary"] > a.ajh-nav-link::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: 1.5px !important;
+  background: #00c4b4 !important;
+  border-radius: 999px !important;
+  transform: scaleX(0) !important;
+  transform-origin: center !important;
+  opacity: 0 !important;
+  transition: transform 220ms ease, opacity 220ms ease !important;
+  display: block !important;
+  box-shadow: 0 0 10px rgba(0, 196, 180, 0.5) !important;
+}
+
+body.mech-mirror-active nav.ajh-nav[aria-label="Primary"] > a.ajh-nav-link:hover,
+body.mech-mirror-active nav.ajh-nav[aria-label="Primary"] > a.ajh-nav-link:focus-visible,
+body.mech-mirror-active nav.ajh-nav[aria-label="Primary"] > a.ajh-nav-link.is-lit,
+body.mech-mirror-active nav[aria-label="Primary"] > a:not(.mech-drawer-cta):not([data-testid="nav-cta-contact"]):hover {
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  background: transparent !important;
+  text-shadow: 0 0 16px rgba(0, 196, 180, 0.4) !important;
+}
+
+body.mech-mirror-active nav.ajh-nav[aria-label="Primary"] > a.ajh-nav-link:hover::after,
+body.mech-mirror-active nav.ajh-nav[aria-label="Primary"] > a.ajh-nav-link:focus-visible::after,
+body.mech-mirror-active nav.ajh-nav[aria-label="Primary"] > a.ajh-nav-link.is-lit::after {
+  transform: scaleX(1) !important;
+  opacity: 1 !important;
+}
+
+/* Hide desktop CTA */
+body.mech-mirror-active[data-ajh-nav] [data-testid="site-header"] [data-testid="nav-cta-contact"],
+body.mech-mirror-active [data-testid="site-header"][data-ajh-nav] [data-testid="nav-cta-contact"],
+body.mech-mirror-active [data-testid="site-header"] [data-testid="nav-cta-contact"]:not(.mech-drawer-cta),
+body.mech-mirror-active [data-testid="site-header"] a[data-ajh-hide-desktop],
+body.mech-mirror-active [data-testid="site-header"] .mech-header-actions > a.bg-brand,
+body.mech-mirror-active [data-testid="site-header"] .mech-header-actions > a[class*="bg-brand"],
+body.mech-mirror-active [data-testid="site-header"] a[data-testid="nav-cta-contact"][hidden] {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  max-width: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0) !important;
+}
+
+body.mech-mirror-active [data-testid="site-header"] .mech-drawer-cta {
+  display: none !important;
+}
+
+body.mech-mirror-active .mech-header-actions,
+body.mech-mirror-active [data-testid="site-header"] > div > div.flex,
+body.mech-mirror-active #mech-mirror-root .mech-header-actions {
+  grid-area: actions !important;
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.9rem !important;
+  flex-shrink: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* ---- Language: EN | العربية | 日本語 ---- */
+body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher,
+body.mech-mirror-active [data-testid="site-header"] .ajh-lang,
+body.mech-mirror-active #mech-mirror-root .ajh-lang {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.7rem !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher button,
+body.mech-mirror-active [data-testid="site-header"] .ajh-lang button,
+body.mech-mirror-active #mech-mirror-root .ajh-lang button,
+body.mech-mirror-active .mech-lang-switcher button {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  border: 0 !important;
+  border-color: transparent !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0.15rem 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  width: auto !important;
+  font-family: var(--mech-body, "Manrope", system-ui, sans-serif) !important;
+  font-size: 0.84rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
+  text-transform: none !important;
+  color: rgba(230, 234, 236, 0.62) !important;
+  cursor: pointer !important;
+  transition:
+    color 180ms ease,
+    transform 180ms ease,
+    text-shadow 180ms ease !important;
+}
+
+body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher button + button::before,
+body.mech-mirror-active [data-testid="site-header"] .ajh-lang button + button::before {
+  content: "|" !important;
+  display: inline !important;
+  margin-right: 0.7rem !important;
+  color: rgba(243, 245, 244, 0.32) !important;
+  font-weight: 400 !important;
+  text-shadow: none !important;
+}
+
+body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher button.is-active,
+body.mech-mirror-active [data-testid="site-header"] .ajh-lang button.is-active,
+body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] .ajh-lang button.is-active,
+body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] .mech-lang-switcher button.is-active,
+body.mech-mirror-active .mech-lang-switcher button.is-active,
+body.mech-mirror-active .ajh-lang button.is-active {
+  color: #00c4b4 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-color: transparent !important;
+  font-weight: 600 !important;
+  box-shadow: none !important;
+}
+
+body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher button:hover,
+body.mech-mirror-active [data-testid="site-header"] .ajh-lang button:hover,
+body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher button.is-lit,
+body.mech-mirror-active [data-testid="site-header"] .ajh-lang button.is-lit,
+body.mech-mirror-active .mech-lang-switcher button:hover {
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  text-shadow: 0 0 12px rgba(0, 196, 180, 0.45) !important;
+}
+
+body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher button.is-active:hover,
+body.mech-mirror-active [data-testid="site-header"] .ajh-lang button.is-active:hover,
+body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher button.is-active.is-lit,
+body.mech-mirror-active [data-testid="site-header"] .ajh-lang button.is-active.is-lit {
+  color: #5aebd4 !important;
+  text-shadow: 0 0 14px rgba(0, 196, 180, 0.55) !important;
+}
+
+@media (max-width: 1023px) {
+  body.mech-mirror-active [data-testid="site-header"] > div.mech-header-inner,
+  body.mech-mirror-active [data-testid="site-header"] > div,
+  body.mech-mirror-active .mech-header-inner,
+  body.mech-mirror-active #mech-mirror-root [data-testid="site-header"] > div {
+    height: 4rem !important;
+    min-height: 4rem !important;
+    grid-template-columns: auto 1fr auto !important;
+    grid-template-areas: "logo . actions" !important;
+    column-gap: 0.65rem !important;
+    padding-inline: clamp(1rem, 4.2vw, 1.35rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid="nav-logo"],
+  body.mech-mirror-active #mech-mirror-root [data-testid="nav-logo"] {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    max-width: min(11.5rem, 46vw) !important;
+  }
+
+  body.mech-mirror-active [data-testid="nav-logo"] img,
+  body.mech-mirror-active #astrek-site [data-testid="nav-logo"] img,
+  body.mech-mirror-active [data-testid="site-header"] [data-testid="nav-logo"] img {
+    height: 2.15rem !important;
+    max-height: 2.15rem !important;
+    max-width: 100% !important;
+  }
+
+  body.mech-mirror-active .mech-header-actions,
+  body.mech-mirror-active [data-testid="site-header"] > div > div.flex,
+  body.mech-mirror-active #mech-mirror-root .mech-header-actions {
+    flex: 0 0 auto !important;
+    gap: 0.45rem !important;
+    min-width: 0 !important;
+    position: relative !important;
+    z-index: 72 !important;
+  }
+
+  body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher,
+  body.mech-mirror-active [data-testid="site-header"] .ajh-lang,
+  body.mech-mirror-active #mech-mirror-root .ajh-lang {
+    display: inline-flex !important;
+    gap: 0.35rem !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher button,
+  body.mech-mirror-active [data-testid="site-header"] .ajh-lang button,
+  body.mech-mirror-active #mech-mirror-root .ajh-lang button,
+  body.mech-mirror-active .mech-lang-switcher button {
+    font-size: 0.72rem !important;
+    padding: 0.1rem 0 !important;
+    line-height: 1.2 !important;
+  }
+
+  body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher button + button::before,
+  body.mech-mirror-active [data-testid="site-header"] .ajh-lang button + button::before {
+    margin-right: 0.35rem !important;
+  }
+
+  body.mech-mirror-active [data-testid="nav-menu-toggle"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    width: 2.35rem !important;
+    height: 2.35rem !important;
+    margin-inline-start: 0.15rem !important;
+    border: 1px solid rgba(0, 196, 180, 0.35) !important;
+    border-radius: 999px !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 73 !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  /* Backdrop: Neura-style dim + blur */
+  body.mech-mirror-active .mech-nav-backdrop {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 200 !important;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: rgba(0, 0, 0, 0.55) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity 320ms ease, visibility 320ms ease !important;
+    cursor: pointer !important;
+  }
+
+  body.mech-mirror-active .mech-nav-backdrop.is-open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  body.mech-mirror-active.mech-nav-open [data-testid="site-header"] {
+    z-index: 210 !important;
+  }
+
+  body.mech-mirror-active.mech-nav-open [data-testid="nav-menu-toggle"] {
+    z-index: 211 !important;
+    border-color: rgba(0, 196, 180, 0.55) !important;
+    background: rgba(0, 0, 0, 0.65) !important;
+  }
+
+  body.mech-mirror-active.mech-nav-open [data-testid="nav-menu-toggle"] svg {
+    transform: rotate(90deg) !important;
+    transition: transform 280ms ease !important;
+  }
+
+  /* Neura-style mobile drawer: portal on body */
+  body.mech-mirror-active .mech-mobile-drawer {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 205 !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    padding: 4.35rem 0.85rem 1.5rem !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 320ms ease, visibility 320ms ease !important;
+  }
+
+  body.mech-mirror-active .mech-mobile-drawer.is-open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  /* Clicks on dimmed area below/around panel close the menu */
+  body.mech-mirror-active .mech-mobile-drawer.is-open::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    display: block !important;
+  }
+
+  body.mech-mirror-active .mech-mobile-drawer__panel {
+    position: relative !important;
+    z-index: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: min(78vh, 32rem) !important;
+    overflow-y: auto !important;
+    padding: 0.35rem 1.35rem 1.35rem !important;
+    border-radius: 1.15rem 1.15rem 1rem 1rem !important;
+    background: rgba(18, 20, 22, 0.94) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55) !important;
+    backdrop-filter: blur(20px) saturate(1.15) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(1.15) !important;
+    transform: translateY(-0.75rem) !important;
+    transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+  }
+
+  body.mech-mirror-active .mech-mobile-drawer.is-open .mech-mobile-drawer__panel {
+    transform: translateY(0) !important;
+  }
+
+  body.mech-mirror-active .mech-mobile-drawer__link {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 1.05rem 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    font-family: var(--mech-body, "Manrope", system-ui, sans-serif) !important;
+    font-size: 1.05rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.01em !important;
+    text-transform: none !important;
+    text-decoration: none !important;
+    color: rgba(245, 247, 248, 0.95) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  body.mech-mirror-active .mech-mobile-drawer__link:last-of-type {
+    border-bottom: 0 !important;
+  }
+
+  body.mech-mirror-active .mech-mobile-drawer__link:active,
+  body.mech-mirror-active .mech-mobile-drawer__link:hover {
+    color: #00c4b4 !important;
+  }
+
+  body.mech-mirror-active .mech-mobile-drawer__cta {
+    display: inline-flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 0.65rem !important;
+    padding: 0.9rem 1.25rem !important;
+    border-radius: 999px !important;
+    background: #00c4b4 !important;
+    color: #041012 !important;
+    font-family: var(--mech-body, "Manrope", system-ui, sans-serif) !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.01em !important;
+    text-transform: none !important;
+    text-decoration: none !important;
+  }
+
+  body.mech-mirror-active .mech-mobile-drawer__cta--ghost {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    color: #f4f6f8 !important;
+  }
+
+  body.mech-mirror-active [data-testid="site-header"] .ajh-nav-cta {
+    display: none !important;
+  }
+
+  /* Keep header nav hidden on mobile: drawer is separate */
+  body.mech-mirror-active nav.ajh-nav[aria-label="Primary"],
+  body.mech-mirror-active nav[aria-label="Primary"].ajh-nav {
+    display: none !important;
+  }
+}
+
+@media (max-width: 399px) {
+  body.mech-mirror-active [data-testid="site-header"] .mech-lang-switcher button,
+  body.mech-mirror-active [data-testid="site-header"] .ajh-lang button,
+  body.mech-mirror-active #mech-mirror-root .ajh-lang button {
+    font-size: 0.64rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  body.mech-mirror-active .mech-mobile-drawer,
+  body.mech-mirror-active .mech-nav-backdrop {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}

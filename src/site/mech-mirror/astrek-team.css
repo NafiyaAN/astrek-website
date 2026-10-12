@@ -1,0 +1,175 @@
+/* Team / mentors: spacing + portrait framing (testimonials → about → team → mentors) */
+
+/* 1. Tighter gap between testimonials and About heading (override astrek-neura padding-block) */
+body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="testimonials-section"] {
+  padding-bottom: clamp(0.75rem, 1.5vw, 1.25rem) !important;
+}
+
+body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="people-section"] {
+  padding-top: clamp(0.75rem, 1.5vw, 1.25rem) !important;
+}
+
+/* 2. Team columns: end at text — no stretched empty space below cards */
+body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] > .mx-auto > .grid.gap-8 {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  align-content: flex-start !important;
+  gap: clamp(1.25rem, 2vw, 2rem) !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  grid-auto-rows: auto !important;
+}
+
+body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] > .mx-auto > .grid.gap-8 > div {
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: fit-content !important;
+  min-height: 0 !important;
+  align-self: flex-start !important;
+}
+
+body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] {
+  display: flex !important;
+  flex-direction: column !important;
+  height: fit-content !important;
+  max-height: fit-content !important;
+  min-height: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] > div.relative.aspect-square {
+  display: block !important;
+  line-height: 0 !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+}
+
+body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] > div.relative.aspect-square img {
+  display: block !important;
+  vertical-align: top !important;
+  aspect-ratio: auto !important;
+  height: 100% !important;
+}
+
+body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] > div.mt-5 {
+  /* astrek-neura.css applies aspect-ratio 1/1 to ALL team-card > div — undo on text block */
+  aspect-ratio: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  background: transparent !important;
+  overflow: visible !important;
+  margin-top: clamp(0.65rem, 1.25vw, 0.875rem) !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+@media (min-width: 640px) {
+  body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] > .mx-auto > .grid.gap-8 > div {
+    flex: 0 0 calc(50% - 1rem) !important;
+    width: calc(50% - 1rem) !important;
+    max-width: calc(50% - 1rem) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] > .mx-auto > .grid.gap-8 > div {
+    flex: 0 0 calc(25% - 1.5rem) !important;
+    width: calc(25% - 1.5rem) !important;
+    max-width: calc(25% - 1.5rem) !important;
+  }
+}
+
+/* 3. Jithin + Vishnu: tall portraits — crop to head/shoulders like Robin & Alex */
+body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="people-section"] [data-testid="team-card-jithin"] img {
+  object-position: center 22% !important;
+}
+
+body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="people-section"] [data-testid="team-card-vishnu"] img {
+  object-position: center 18% !important;
+}
+
+/* 4. Less gap above Mentors block + between intro text and mentor images */
+body.mech-mirror-active [data-testid="people-section"] > .mx-auto > .mt-28.md\:mt-36 {
+  margin-top: clamp(2.5rem, 5vw, 4rem) !important;
+}
+
+body.mech-mirror-active [data-testid="people-section"] .mt-28.md\:mt-36 > .mb-14 {
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem) !important;
+}
+
+/* 5. Mentor columns: end at text — undo square aspect-ratio on text block */
+body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] .mt-28.md\:mt-36 [data-testid^="mentor-card-"] {
+  display: flex !important;
+  flex-direction: column !important;
+  height: fit-content !important;
+  max-height: fit-content !important;
+  min-height: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] .mt-28.md\:mt-36 [data-testid^="mentor-card-"] > div.mt-5 {
+  aspect-ratio: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  background: transparent !important;
+  overflow: visible !important;
+  margin-top: clamp(0.65rem, 1.25vw, 0.875rem) !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+@media (max-width: 767px) {
+  body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="testimonials-section"] {
+    padding-bottom: clamp(0.5rem, 1.25vw, 1rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="people-section"] {
+    padding-top: clamp(0.5rem, 1.25vw, 1rem) !important;
+  }
+
+  body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] > .mx-auto > .grid.gap-8 {
+    gap: clamp(1rem, 3vw, 1.5rem) !important;
+  }
+
+  body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] > .mx-auto > .grid.gap-8 > div {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] [data-testid^="team-card-"] > div.mt-5 {
+    aspect-ratio: auto !important;
+    height: auto !important;
+    margin-top: clamp(0.5rem, 2vw, 0.75rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="people-section"] [data-testid="team-card-jithin"] img {
+    object-position: center 20% !important;
+  }
+
+  body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="people-section"] [data-testid="team-card-vishnu"] img {
+    object-position: center 16% !important;
+  }
+
+  body.mech-mirror-active [data-testid="people-section"] > .mx-auto > .mt-28.md\:mt-36 {
+    margin-top: clamp(2rem, 4vw, 3rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid="people-section"] .mt-28.md\:mt-36 > .mb-14 {
+    margin-bottom: clamp(1rem, 3vw, 1.5rem) !important;
+  }
+
+  body.mech-mirror-active #astrek-site section#team[data-testid="people-section"] .mt-28.md\:mt-36 [data-testid^="mentor-card-"] > div.mt-5 {
+    aspect-ratio: auto !important;
+    height: auto !important;
+    margin-top: clamp(0.5rem, 2vw, 0.75rem) !important;
+  }
+}

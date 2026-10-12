@@ -1,0 +1,173 @@
+/**
+ * Modes (Rehabilitation) + Specs (Technology) spacing and mode-card polish.
+ */
+
+/* ── 1. Less gap between stats and Rehabilitation ── */
+body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="product-section"] {
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem) !important;
+}
+
+body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="modes-section"] {
+  padding-top: clamp(1.25rem, 2.5vw, 2rem) !important;
+  padding-bottom: clamp(1.25rem, 2.5vw, 2rem) !important;
+}
+
+/* ── 3. Less gap between Learn more and Technology ── */
+body.mech-mirror-active [data-testid="modes-learn-more"] {
+  margin-top: clamp(0.75rem, 1.5vw, 1.25rem) !important;
+}
+
+body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="specs-section"] {
+  padding-top: clamp(1.25rem, 2.5vw, 2rem) !important;
+  padding-bottom: clamp(0.75rem, 1.5vw, 1.25rem) !important;
+}
+
+/* ── Technology: taller stage image — align with Smart control (05) ── */
+body.mech-mirror-active [data-testid="specs-section"] [data-testid="specs-stage"] {
+  transition: box-shadow 0.4s ease !important;
+}
+
+body.mech-mirror-active [data-testid="specs-stage"] img {
+  aspect-ratio: 3 / 4 !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+@media (min-width: 1024px) {
+  body.mech-mirror-active [data-testid="specs-section"] [data-testid="specs-stage"] {
+    min-height: clamp(30rem, 50vh, 38rem) !important;
+    height: clamp(30rem, 50vh, 38rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid="specs-stage"] img {
+    aspect-ratio: auto !important;
+    height: 100% !important;
+    min-height: 100% !important;
+  }
+}
+
+/* Shake + shadow when spec image swaps */
+body.mech-mirror-active [data-testid="specs-stage"].astrek-specs-stage-active {
+  box-shadow:
+    0 22px 52px rgba(0, 0, 0, 0.55),
+    0 10px 28px rgba(47, 224, 181, 0.1),
+    0 0 0 1px rgba(47, 224, 181, 0.14) !important;
+}
+
+body.mech-mirror-active [data-testid="specs-stage"].astrek-specs-stage-active img {
+  animation: none !important;
+  transform: scale(1.03) !important;
+  transition: transform 0.55s ease !important;
+}
+
+/* ── Less gap between Technology and Testimonials ── */
+body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="testimonials-section"] {
+  padding-top: clamp(0.75rem, 1.5vw, 1.25rem) !important;
+  padding-bottom: clamp(2rem, 4vw, 3rem) !important;
+}
+
+/* Mobile/tablet: quote above image (desktop keeps image left, quote right) */
+@media (max-width: 1023px) {
+  body.mech-mirror-active [data-testid="testimonials-section"] .grid.lg\:grid-cols-12 {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  body.mech-mirror-active [data-testid="testimonials-section"] .grid.lg\:grid-cols-12 > .lg\:col-span-7 {
+    order: 1 !important;
+  }
+
+  body.mech-mirror-active [data-testid="testimonials-section"] .grid.lg\:grid-cols-12 > .lg\:col-span-5 {
+    order: 2 !important;
+  }
+}
+
+/* ── 2. Mode images: full color, sharp ── */
+body.mech-mirror-active [data-testid^="mode-card-"] .relative.aspect-\[4\/3\] {
+  transition: box-shadow 0.4s ease !important;
+  background: #0a0c10 !important;
+}
+
+body.mech-mirror-active [data-testid^="mode-card-"] img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  aspect-ratio: 4 / 3 !important;
+  filter: none !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  transform: translateZ(0) !important;
+  image-rendering: auto !important;
+}
+
+body.mech-mirror-active [data-testid^="mode-card-"] img.grayscale-\[0\.4\] {
+  filter: none !important;
+}
+
+/* Hover: shake + shadow on active card only */
+body.mech-mirror-active [data-testid^="mode-card-"].astrek-mode-card-active .relative.aspect-\[4\/3\] {
+  box-shadow:
+    0 22px 52px rgba(0, 0, 0, 0.55),
+    0 10px 28px rgba(47, 224, 181, 0.1),
+    0 0 0 1px rgba(47, 224, 181, 0.14) !important;
+}
+
+body.mech-mirror-active [data-testid^="mode-card-"].astrek-mode-card-active img {
+  animation: none !important;
+  transform: scale(1.03) !important;
+  transition: transform 0.55s ease !important;
+  filter: none !important;
+}
+
+@media (max-width: 767px) {
+  body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="modes-section"] {
+    padding-top: clamp(1rem, 4vw, 1.5rem) !important;
+    padding-bottom: clamp(1rem, 4vw, 1.5rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="specs-section"] {
+    padding-top: clamp(1rem, 4vw, 1.5rem) !important;
+    padding-bottom: clamp(0.5rem, 2vw, 1rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid="specs-section"] [data-testid="specs-stage"] {
+    min-height: auto !important;
+  }
+
+  body.mech-mirror-active [data-testid="specs-stage"] img {
+    aspect-ratio: 3 / 4 !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="testimonials-section"] {
+    padding-top: clamp(0.5rem, 2vw, 1rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid="specs-stage"].astrek-specs-stage-active {
+    box-shadow:
+      0 14px 36px rgba(0, 0, 0, 0.5),
+      0 6px 18px rgba(47, 224, 181, 0.08) !important;
+  }
+
+  body.mech-mirror-active [data-testid="astrek-site"] section[data-testid="product-section"] {
+    padding-bottom: clamp(1.25rem, 4vw, 2rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid^="mode-card-"].astrek-mode-card-active .relative.aspect-\[4\/3\] {
+    box-shadow:
+      0 14px 36px rgba(0, 0, 0, 0.5),
+      0 6px 18px rgba(47, 224, 181, 0.08) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.mech-mirror-active [data-testid^="mode-card-"].astrek-mode-card-active img,
+  body.mech-mirror-active [data-testid="specs-stage"].astrek-specs-stage-active img {
+    animation: none !important;
+    transform: none !important;
+  }
+}

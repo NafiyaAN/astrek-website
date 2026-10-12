@@ -1,0 +1,248 @@
+/**
+ * Unik Exo product section — heading, image alignment, callout hover, stats spacing.
+ * Scoped to [data-testid="product-section"] only.
+ */
+
+/* ── 1. Heading: single line, all caps ── */
+body.mech-mirror-active [data-testid="product-section"] h2,
+body.mech-mirror-active [data-testid="product-section"] .astrek-product-heading {
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.1 !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 639px) {
+  body.mech-mirror-active [data-testid="product-section"] h2,
+  body.mech-mirror-active [data-testid="product-section"] .astrek-product-heading {
+    font-size: clamp(1.65rem, 7.5vw, 2.15rem) !important;
+    letter-spacing: 0.05em !important;
+    white-space: normal !important;
+  }
+}
+
+/* ── 2. Spec tags: align top, clear gap before 01–04 grid ── */
+body.mech-mirror-active [data-testid="product-section"] > .mx-auto > .mb-14 {
+  align-items: flex-start !important;
+  gap: clamp(1rem, 2vw, 1.5rem) !important;
+}
+
+body.mech-mirror-active [data-testid="product-section"] > .mx-auto > .mb-14 > .flex.flex-wrap {
+  align-self: flex-start !important;
+  margin-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+@media (min-width: 768px) {
+  body.mech-mirror-active [data-testid="product-section"] > .mx-auto > .mb-14 {
+    align-items: flex-start !important;
+    margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem) !important;
+  }
+
+  body.mech-mirror-active [data-testid="product-section"] > .mx-auto > .mb-14 > .max-w-2xl {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  body.mech-mirror-active [data-testid="product-section"] > .mx-auto > .mb-14 > div:not(.max-w-2xl) {
+    flex: 0 1 auto !important;
+    max-width: min(100%, 22rem) !important;
+    align-self: flex-start !important;
+  }
+}
+
+/* ── Image row aligns under intro copy on desktop ── */
+@media (min-width: 1024px) {
+  body.mech-mirror-active [data-testid="product-section"] > .mx-auto > .grid.lg\:grid-cols-12 {
+    align-items: start !important;
+    margin-top: 0 !important;
+    gap: clamp(1.5rem, 2.5vw, 2rem) clamp(2rem, 3vw, 4rem) !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  body.mech-mirror-active [data-testid="product-section"] > .mx-auto > .mb-14 {
+    margin-bottom: clamp(1.25rem, 4vw, 1.75rem) !important;
+  }
+}
+
+/* ── Product image: studio close-up, HD clarity + calm hover ── */
+body.mech-mirror-active [data-testid="product-stage"] .studio-panel {
+  aspect-ratio: 4 / 5 !important;
+  transition: box-shadow 0.45s ease !important;
+  overflow: hidden !important;
+  background: #0a0c10 !important;
+}
+
+body.mech-mirror-active [data-testid="product-stage"] .studio-panel img,
+body.mech-mirror-active [data-testid="product-stage"] .astrek-product-stage-img {
+  aspect-ratio: 4 / 5 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  image-rendering: auto !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  transform: translateZ(0) scale(1) !important;
+  transition: transform 0.55s ease !important;
+  filter: none !important;
+}
+
+body.mech-mirror-active [data-testid="product-stage"]:hover .studio-panel {
+  box-shadow:
+    0 22px 52px rgba(0, 0, 0, 0.55),
+    0 10px 28px rgba(47, 224, 181, 0.12),
+    0 0 0 1px rgba(47, 224, 181, 0.16) !important;
+}
+
+body.mech-mirror-active [data-testid="product-stage"]:hover .studio-panel img {
+  animation: none !important;
+  transform: translateZ(0) scale(1.03) !important;
+}
+
+/* ── Callout grid highlight (01–04) ── */
+body.mech-mirror-active [data-testid^="product-callout-"] {
+  border-radius: 0 !important;
+  transition:
+    background-color 0.35s ease,
+    box-shadow 0.35s ease !important;
+}
+
+body.mech-mirror-active [data-testid^="product-callout-"].astrek-callout-active {
+  background: rgba(47, 224, 181, 0.07) !important;
+  box-shadow: inset 0 0 0 1px rgba(47, 224, 181, 0.22) !important;
+}
+
+body.mech-mirror-active [data-testid^="product-callout-"].astrek-callout-active h3 {
+  color: #f4f6f8 !important;
+}
+
+body.mech-mirror-active [data-testid^="product-callout-"].astrek-callout-active .font-mono.text-brand,
+body.mech-mirror-active [data-testid^="product-callout-"].astrek-callout-active span.font-mono {
+  color: #2fe0b5 !important;
+}
+
+/* ── “Real robotics” block closer to image / callouts ── */
+body.mech-mirror-active [data-testid="product-section"] > .mx-auto > .mt-24,
+body.mech-mirror-active [data-testid="product-section"] > .mx-auto > div.mt-24 {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem) !important;
+}
+
+@media (max-width: 767px) {
+  body.mech-mirror-active [data-testid="product-stage"]:hover .studio-panel {
+    box-shadow:
+      0 14px 36px rgba(0, 0, 0, 0.5),
+      0 6px 18px rgba(47, 224, 181, 0.08) !important;
+  }
+
+  body.mech-mirror-active [data-testid="product-section"] > .mx-auto > .mt-24,
+  body.mech-mirror-active [data-testid="product-section"] > .mx-auto > div.mt-24 {
+    margin-top: clamp(1.25rem, 5vw, 1.75rem) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.mech-mirror-active [data-testid="product-stage"] .studio-panel img,
+  body.mech-mirror-active [data-testid="product-stage"]:hover .studio-panel img {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ── Impact stats: 120+ patients and 15+ centres lead the row ── */
+body.mech-mirror-active [data-testid="impact-stats"] {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0.85rem !important;
+  align-items: stretch !important;
+}
+
+body.mech-mirror-active [data-testid="impact-stats"] > [data-testid^="stat-"] {
+  min-width: 0 !important;
+  padding: 1.15rem 1.1rem 1.25rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-patients-tra"],
+body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-rehabilitati"] {
+  padding: 1.45rem 1.35rem 1.55rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+body.mech-mirror-active [data-testid="impact-stats"] [data-testid^="stat-"] p.font-display,
+body.mech-mirror-active [data-testid="impact-stats"] [data-testid^="stat-"] .font-display {
+  margin: 0 !important;
+  font-family: var(--mech-display, "Outfit", system-ui, sans-serif) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.03em !important;
+  word-spacing: 0.04em !important;
+  line-height: 0.95 !important;
+  color: #f4f6f8 !important;
+}
+
+body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-patients-tra"] p.font-display,
+body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-rehabilitati"] p.font-display,
+body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-patients-tra"] .font-display,
+body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-rehabilitati"] .font-display {
+  font-size: clamp(3.6rem, 8vw, 5.6rem) !important;
+  font-weight: 700 !important;
+  color: #f4f6f8 !important;
+}
+
+body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-patients-tra"] .text-brand,
+body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-rehabilitati"] .text-brand,
+body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-patients-tra"] span,
+body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-rehabilitati"] span {
+  color: #f4f6f8 !important;
+}
+
+body.mech-mirror-active [data-testid="impact-stats"] [data-testid^="stat-"] p.mt-3 {
+  margin: 0.75rem 0 0 !important;
+  font-family: var(--mech-body, "Manrope", system-ui, sans-serif) !important;
+  font-size: 0.88rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em !important;
+  word-spacing: 0.08em !important;
+  line-height: 1.45 !important;
+  color: rgba(244, 246, 248, 0.55) !important;
+}
+
+body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-patients-tra"] p.mt-3,
+body.mech-mirror-active [data-testid="impact-stats"] [data-testid="stat-rehabilitati"] p.mt-3 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  word-spacing: 0.1em !important;
+  color: #f4f6f8 !important;
+}
+
+body.mech-mirror-active [data-testid="product-section"] > .mx-auto > .mt-24 h3,
+body.mech-mirror-active [data-testid="product-section"] > .mx-auto > div.mt-24 h3 {
+  letter-spacing: -0.025em !important;
+  word-spacing: 0.06em !important;
+}
+
+body.mech-mirror-active [data-testid="product-section"] > .mx-auto > .mt-24 p,
+body.mech-mirror-active [data-testid="product-section"] > .mx-auto > div.mt-24 > div p {
+  letter-spacing: 0.01em !important;
+  word-spacing: 0.08em !important;
+}
+
+@media (min-width: 640px) {
+  body.mech-mirror-active [data-testid="impact-stats"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  body.mech-mirror-active [data-testid="impact-stats"] {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1.35fr) minmax(0, 0.85fr) minmax(0, 0.85fr) !important;
+    gap: 1rem !important;
+  }
+}

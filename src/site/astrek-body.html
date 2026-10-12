@@ -1,0 +1,842 @@
+<nav class="scroll-rail" id="scrollRail" aria-label="Section navigation" hidden>
+  <a href="#about" data-label="About"></a>
+  <a href="#product" data-label="Product"></a>
+  <a href="#testimonials" data-label="Stories"></a>
+  <a href="#team" data-label="Team"></a>
+  <a href="#press" data-label="Press"></a>
+  <a href="#blog" data-label="Journal"></a>
+  <a href="#contact" data-label="Contact"></a>
+</nav>
+
+<!-- ============ HERO (Emergent mech showcase) ============ -->
+<section id="top" class="hero rf-hero hero--tronix hero--mech" style="border-top: none" aria-label="Introduction">
+  <div class="hero-bg hero-bg--static mech-grid" aria-hidden="true">
+    <div class="hero-video-overlay mech-spotlight"></div>
+  </div>
+
+  <div class="rf-hero-stage">
+    <div class="rf-hero-copy mech-hero-copy">
+      <div class="lux-hero-badge" aria-hidden="true">
+        <span class="lux-hero-badge__dot"></span>
+        <span>Next-generation rehabilitation robotics</span>
+      </div>
+
+      <h1 class="ux-h1 hero-anim mech-hero-title" data-editable="hero-h1" data-i18n="hero-h1">
+        <span class="mech-hero-line">UNIK</span>
+        <span class="mech-hero-line mech-hero-line--outline">EXO<span class="mech-hero-dot">.</span></span>
+      </h1>
+
+      <p class="hero-eyebrow ux-eyebrow hero-anim" data-editable="hero-eyebrow">Robotic rehabilitation</p>
+      <p class="sub hero-anim" data-editable="hero-sub">Wearable robotics that restore the ability to stand and walk.</p>
+
+      <div class="rf-hero-actions hero-anim">
+        <a class="rf-btn" href="/product">Explore Unik Exo <span aria-hidden="true">→</span></a>
+        <a class="rf-btn rf-btn--ghost" href="https://youtu.be/NpqgceuA6IM" target="_blank" rel="noopener">
+          <span aria-hidden="true">▶</span> Watch overview
+        </a>
+      </div>
+
+      <div class="mech-hero-meta" aria-hidden="true">
+        <span>11.8745° N / 75.3704° E, Kannur, IN</span>
+        <span class="mech-hero-meta-rule"></span>
+        <span>GAIT.SYS // ONLINE</span>
+      </div>
+    </div>
+
+    <div class="rf-hero-visual hero-anim hero-anim-visual mech-hero-visual" id="heroProductStage">
+      <div class="mech-studio-panel">
+        <img
+          id="heroProductImg"
+          src="/images/unik-exo-product.jpg"
+          alt="Unik Exo, lower-limb exoskeleton, studio view"
+          width="1024"
+          height="1536"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+      <div class="mech-orbit" aria-hidden="true"></div>
+      <aside class="mech-walk-card" aria-label="Walk mode">
+        <p class="mech-walk-card__label">Walk Mode</p>
+        <p>A next-generation gait system for standing, walking and independent movement.</p>
+      </aside>
+      <span class="mech-unit-badge">EXO-01 · STUDIO UNIT</span>
+    </div>
+  </div>
+
+  <p class="mech-scroll-hint" aria-hidden="true">↓ Scroll to begin</p>
+</section>
+
+<div class="mech-ticker" aria-hidden="true">
+  <div class="mech-ticker-track">
+    <span>Redefining Mobility</span><span class="mech-ticker-star" aria-hidden="true"><span class="astrek-marquee-dot"></span></span>
+    <span>Advanced Rehabilitation</span><span class="mech-ticker-star" aria-hidden="true"><span class="astrek-marquee-dot"></span></span>
+    <span>Robotic Precision</span><span class="mech-ticker-star" aria-hidden="true"><span class="astrek-marquee-dot"></span></span>
+    <span>Human-Centered Design</span><span class="mech-ticker-star" aria-hidden="true"><span class="astrek-marquee-dot"></span></span>
+    <span>Clinician-Guided Assistance</span><span class="mech-ticker-star" aria-hidden="true"><span class="astrek-marquee-dot"></span></span>
+    <span>Redefining Mobility</span><span class="mech-ticker-star" aria-hidden="true"><span class="astrek-marquee-dot"></span></span>
+    <span>Advanced Rehabilitation</span><span class="mech-ticker-star" aria-hidden="true"><span class="astrek-marquee-dot"></span></span>
+    <span>Robotic Precision</span><span class="mech-ticker-star" aria-hidden="true"><span class="astrek-marquee-dot"></span></span>
+    <span>Human-Centered Design</span><span class="mech-ticker-star" aria-hidden="true"><span class="astrek-marquee-dot"></span></span>
+    <span>Clinician-Guided Assistance</span><span class="mech-ticker-star" aria-hidden="true"><span class="astrek-marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- Secondary hero copy kept for i18n/admin overrides; shown in Key features intro -->
+<p class="flag-hero-carry" data-editable="hero-sub-full" hidden>
+  Unik Exo is an advanced lower-limb exoskeleton that helps people stand, walk, and reclaim independence with clinician-guided robotic assistance.
+</p>
+
+<!-- ============ KEY FEATURES (exploded / hotspot) ============ -->
+<section id="about" class="rf-section ux-section" aria-label="Key features">
+  <div class="wrap">
+    <div class="rf-section-head reveal">
+      <div>
+        <p class="ux-eyebrow">Technology</p>
+        <h2 class="rf-h2 ux-h2" data-editable="about-h2" data-i18n="tech-h2">Key features</h2>
+        <p>
+          We combine advanced robotics, intelligent software and human insight to create adaptive
+          solutions that restore mobility and independence.
+        </p>
+      </div>
+      <a class="rf-btn rf-btn--sm" href="/product">Explore Unik Exo</a>
+    </div>
+
+    <div class="flag-explode flag-explode--features fe-showcase reveal" id="featureExplode">
+      <div class="fe-showcase-view">
+        <div class="flag-explode-stage fe-showcase-stage" data-fe-showcase-stage tabindex="0" aria-roledescription="carousel" aria-label="Key features gallery">
+          <img src="/images/walk-mode.webp" alt="Enhanced mobility with Unik Exo" loading="lazy" />
+          <button type="button" class="fe-showcase-nav fe-showcase-nav--prev" aria-label="Previous feature">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button type="button" class="fe-showcase-nav fe-showcase-nav--next" aria-label="Next feature">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="fe-showcase-caption flag-explode-panel is-open" id="featurePanel" role="status" aria-live="polite">
+          <span class="idx mono">Chapter 01</span>
+          <h3>Enhanced mobility</h3>
+          <p>Precision hardware that supports natural gait and confident movement across sit, stand, and walk therapy.</p>
+        </div>
+        <div class="fe-showcase-dots" id="featureDots" role="tablist" aria-label="Feature slides"></div>
+      </div>
+      <div class="flag-explode-list fe-showcase-data" id="featureCallouts" hidden aria-hidden="true">
+        <button type="button" class="flag-explode-item is-active" data-src="/images/walk-mode.webp" data-idx="01" data-title="Enhanced mobility" data-body="Precision hardware that supports natural gait and confident movement across sit, stand, and walk therapy.">
+          <span class="idx mono">01</span>
+          <span class="flag-explode-icon" aria-hidden="true"></span>
+          <div class="fe-side-copy">
+            <h3>Enhanced mobility</h3>
+            <p>Precision hardware that supports natural gait and confident movement across sit, stand, and walk therapy.</p>
+          </div>
+        </button>
+        <button type="button" class="flag-explode-item" data-src="/images/unikexo-control.webp" data-idx="02" data-title="Advanced AI" data-body="Adaptive algorithms that understand the wearer, stride by stride, so assistance feels personal, not generic.">
+          <span class="idx mono">02</span>
+          <span class="flag-explode-icon" aria-hidden="true"></span>
+          <div class="fe-side-copy">
+            <h3>Advanced AI</h3>
+            <p>Adaptive algorithms that understand the wearer, stride by stride, so assistance feels personal, not generic.</p>
+          </div>
+        </button>
+        <button type="button" class="flag-explode-item" data-src="/images/unikexo-fit.webp" data-idx="03" data-title="Human-centered fit" data-body="Ergonomic design built for real clinics, real people, and the long sessions that make rehabilitation work.">
+          <span class="idx mono">03</span>
+          <span class="flag-explode-icon" aria-hidden="true"></span>
+          <div class="fe-side-copy">
+            <h3>Human-centered fit</h3>
+            <p>Ergonomic design built for real clinics, real people, and the long sessions that make rehabilitation work.</p>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Preserve original feature imagery for SEO/admin; visually driven by explode stage -->
+    <div class="ux-feature-stack" hidden aria-hidden="true">
+      <div class="about-copy" hidden aria-hidden="true">
+        <p data-editable="about-p1">
+          At Astrek, we're pioneers in advanced solutions for disability and rehabilitation. Our
+          expertise in <strong>robotics, machine learning and motion capture</strong> lets us craft
+          transformative devices that revolutionize assistive technology.
+        </p>
+        <p data-editable="about-p2" hidden>
+          Our flagship product, a wearable robotic exoskeleton, is designed to restore mobility for
+          individuals with lower-limb immobility.
+        </p>
+        <p data-editable="vision-text" hidden></p>
+        <p data-editable="mission-text" hidden></p>
+      </div>
+      <article class="ux-feature-row">
+        <div class="ux-feature-media"><img src="/images/walk-mode.webp" alt="Enhanced mobility with Unik Exo" /></div>
+        <div class="ux-feature-copy"><p class="ux-eyebrow">01 Mobility</p><h3>Enhanced mobility</h3></div>
+      </article>
+      <article class="ux-feature-row">
+        <div class="ux-feature-media"><img src="/images/unikexo-control.webp" alt="Advanced AI control unit" /></div>
+        <div class="ux-feature-copy"><p class="ux-eyebrow">02 Intelligence</p><h3>Advanced AI</h3></div>
+      </article>
+      <article class="ux-feature-row">
+        <div class="ux-feature-media"><img src="/images/unikexo-fit.webp" alt="Human-centered wearable design" /></div>
+        <div class="ux-feature-copy"><p class="ux-eyebrow">03 Fit</p><h3>Human-centered fit</h3></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT INTRO ============ -->
+<section id="product" class="rf-section ux-section rf-product">
+  <div class="wrap">
+    <div class="rf-product-intro reveal">
+      <p class="ux-eyebrow">Unik Exo</p>
+      <h2 class="rf-h2 ux-h2" data-i18n="product-h2">Introducing Unik Exo</h2>
+      <p>
+        A lower-limb exoskeleton that combines advanced robotics, intelligent software and human
+        insight to restore mobility and independence.
+      </p>
+      <div class="ux-pillars" aria-label="Product characteristics">
+        <span class="ux-pillar">Intelligent</span>
+        <span class="ux-pillar">Adaptive</span>
+        <span class="ux-pillar">Lightweight</span>
+        <span class="ux-pillar">Human-centered</span>
+        <span class="ux-pillar">Robotic assistance</span>
+      </div>
+      <div class="rf-hero-actions hero-anim">
+        <a class="rf-btn" href="/product">Explore features</a>
+        <a class="rf-btn rf-btn--ghost" href="https://youtu.be/NpqgceuA6IM" target="_blank" rel="noopener">Watch overview</a>
+      </div>
+    </div>
+
+    <div class="rf-product-showcase fe-showcase reveal">
+      <div class="fe-showcase-view">
+        <div class="rf-product-stage fe-showcase-stage" id="productStage" data-fe-showcase-stage tabindex="0" aria-roledescription="carousel" aria-label="Unik Exo feature gallery">
+          <div id="product3DStage" class="product-3d-stage">
+            <div class="product-face product-face--front">
+              <img id="productHeroImg" src="/images/hero-exo-product.png" alt="Unik Exo exoskeleton, studio view" />
+            </div>
+            <div class="product-face product-face--back" aria-hidden="true">
+              <img id="productHeroImgBack" src="/images/hero-exo-product.png" alt="" />
+            </div>
+            <div class="product-face product-face--left" aria-hidden="true">
+              <img id="productHeroImgLeft" src="/images/hero-exo-product.png" alt="" />
+            </div>
+            <div class="product-face product-face--right" aria-hidden="true">
+              <img id="productHeroImgRight" src="/images/hero-exo-product.png" alt="" />
+            </div>
+          </div>
+          <button type="button" class="fe-showcase-nav fe-showcase-nav--prev" aria-label="Previous feature">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button type="button" class="fe-showcase-nav fe-showcase-nav--next" aria-label="Next feature">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="fe-showcase-caption" id="productCaption" role="status" aria-live="polite">
+          <span class="idx mono">01</span>
+          <h3>Hip Assist</h3>
+          <p>Adaptive support for natural motion.</p>
+        </div>
+        <div class="fe-showcase-dots" id="productDots" role="tablist" aria-label="Product feature slides"></div>
+      </div>
+
+      <div class="rf-product-points product-callouts fe-showcase-data" id="productCallouts" hidden aria-hidden="true">
+        <article class="rf-point product-callout is-active" data-src="/images/hero-exo-product.png" tabindex="0" role="button">
+          <div class="idx mono">01</div>
+          <div class="fe-side-copy">
+            <h3>Hip Assist</h3>
+            <p>Adaptive support for natural motion.</p>
+          </div>
+        </article>
+        <article class="rf-point product-callout" data-src="/images/walk-mode.webp" tabindex="0" role="button">
+          <div class="idx mono">02</div>
+          <div class="fe-side-copy">
+            <h3>Knee Actuation</h3>
+            <p>Precision control for stability and safety.</p>
+          </div>
+        </article>
+        <article class="rf-point product-callout" data-src="/images/stand-mode.webp" tabindex="0" role="button">
+          <div class="idx mono">03</div>
+          <div class="fe-side-copy">
+            <h3>Ankle Support</h3>
+            <p>Balanced assistance for confident steps.</p>
+          </div>
+        </article>
+        <article class="rf-point product-callout" data-src="/images/unikexo-control.webp" tabindex="0" role="button">
+          <div class="idx mono">04</div>
+          <div class="fe-side-copy">
+            <h3>Smart Control</h3>
+            <p>Real-time intelligence that adapts to the user.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="ux-impact reveal">
+    <div class="ux-impact-inner wrap">
+      <h2 class="rf-h2 ux-h2">Real robotics. Real impact.</h2>
+      <p>Built for clinics, trusted by therapists, designed around the people who need it most.</p>
+      <div class="ux-stats rf-impact-grid">
+        <div class="ux-stat"><strong class="ds-stat-number" data-count="120" data-suffix="+">120+</strong><span>Patients trained with Unik Exo</span></div>
+        <div class="ux-stat"><strong class="ds-stat-number" data-count="15" data-suffix="+">15+</strong><span>Rehabilitation centers</span></div>
+        <div class="ux-stat"><strong class="ds-stat-number" data-count="10" data-suffix="K+">10K+</strong><span>Therapy sessions completed</span></div>
+        <div class="ux-stat"><strong class="ds-stat-number" data-count="90" data-suffix="%">90%</strong><span>Would recommend Unik Exo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODES ============ -->
+<section id="modes" class="rf-section ux-section">
+  <div class="wrap">
+    <div class="rf-section-head reveal">
+      <div>
+        <p class="ux-eyebrow">Rehabilitation</p>
+        <h2 class="rf-h2 ux-h2" data-i18n="modes-h2">Support through every stage of movement</h2>
+        <p>Unik Exo adapts to each phase of your rehabilitation journey with intelligent assistance and clinician control.</p>
+      </div>
+      <a class="rf-text-link" href="/product">Learn more</a>
+    </div>
+    <div class="rf-mode-grid reveal-stagger">
+      <article class="rf-mode-card">
+        <img src="/images/sit-mode.png" alt="Unik Exo sit mode" width="800" height="600" loading="lazy" decoding="async" />
+        <div class="rf-mode-meta">
+          <h3>Sit mode</h3>
+          <p>Supported seating and transfers</p>
+        </div>
+      </article>
+      <article class="rf-mode-card">
+        <img src="/images/stand-mode.png" alt="Unik Exo stand mode" width="800" height="600" loading="lazy" decoding="async" />
+        <div class="rf-mode-meta">
+          <h3>Stand mode</h3>
+          <p>Assisted standing with stability</p>
+        </div>
+      </article>
+      <article class="rf-mode-card">
+        <img src="/images/walk-mode.png" alt="Unik Exo walk mode" width="800" height="600" loading="lazy" decoding="async" />
+        <div class="rf-mode-meta">
+          <h3>Walk mode</h3>
+          <p>A next-generation gait system</p>
+        </div>
+      </article>
+      <article class="rf-mode-card">
+        <img src="/images/exercise-mode.png" alt="Unik Exo exercise mode" width="800" height="600" loading="lazy" decoding="async" />
+        <div class="rf-mode-meta">
+          <h3>Exercise mode</h3>
+          <p>Structured therapy programs</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPECS / RESEARCH (exploded / hotspot) ============ -->
+<section id="specs" class="rf-section ux-section">
+  <div class="wrap">
+    <div class="rf-section-head reveal">
+      <div>
+        <p class="ux-eyebrow">Technology</p>
+        <h2 class="rf-h2 ux-h2" data-i18n="purpose-h2">Every detail serves a purpose</h2>
+        <p>Every design decision on Unik Exo traces back to one goal: safe, repeatable gait training a therapist can trust.</p>
+      </div>
+      <a class="rf-btn rf-btn--ghost rf-btn--sm" href="/product">View specifications</a>
+    </div>
+
+    <div class="flag-explode flag-explode--specs fe-showcase reveal" id="specsExplode">
+      <div class="fe-showcase-view">
+        <div class="flag-explode-stage fe-showcase-stage" data-fe-showcase-stage tabindex="0" aria-roledescription="carousel" aria-label="Unik Exo specifications gallery">
+          <img id="specsStageImg" src="/images/unikexo-hip.webp" alt="Unik Exo hip module" loading="lazy" />
+          <button type="button" class="fe-showcase-nav fe-showcase-nav--prev" aria-label="Previous specification">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button type="button" class="fe-showcase-nav fe-showcase-nav--next" aria-label="Next specification">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="fe-showcase-caption flag-explode-panel is-open" id="specsPanel" role="status" aria-live="polite">
+          <span class="idx mono">01</span>
+          <h3>Hip module</h3>
+          <p>Adaptive support through the gait cycle.</p>
+        </div>
+        <div class="fe-showcase-dots" id="specsDots" role="tablist" aria-label="Specification slides"></div>
+      </div>
+      <div class="flag-explode-list flag-explode-list--scroll fe-showcase-data" id="specsCallouts" hidden aria-hidden="true">
+        <button type="button" class="flag-explode-item is-active" data-src="/images/unikexo-hip.webp" data-idx="01" data-title="Hip module" data-body="Adaptive support through the gait cycle.">
+          <span class="idx mono">01</span>
+          <div class="fe-side-copy"><h3>Hip module</h3><p>Adaptive support through the gait cycle.</p></div>
+        </button>
+        <button type="button" class="flag-explode-item" data-src="/images/unikexo-knee.webp" data-idx="02" data-title="Knee actuator" data-body="Precision torque for stability and lift.">
+          <span class="idx mono">02</span>
+          <div class="fe-side-copy"><h3>Knee actuator</h3><p>Precision torque for stability and lift.</p></div>
+        </button>
+        <button type="button" class="flag-explode-item" data-src="/images/unikexo-ankle.webp" data-idx="03" data-title="Ankle support" data-body="Balanced assistance for confident steps.">
+          <span class="idx mono">03</span>
+          <div class="fe-side-copy"><h3>Ankle support</h3><p>Balanced assistance for confident steps.</p></div>
+        </button>
+        <button type="button" class="flag-explode-item" data-src="/images/unikexo-fit.webp" data-idx="04" data-title="Comfortable fit" data-body="Clinic-grade padding for long sessions.">
+          <span class="idx mono">04</span>
+          <div class="fe-side-copy"><h3>Comfortable fit</h3><p>Clinic-grade padding for long sessions.</p></div>
+        </button>
+        <button type="button" class="flag-explode-item" data-src="/images/unikexo-control.webp" data-idx="05" data-title="Smart control" data-body="On-device intelligence, stride by stride.">
+          <span class="idx mono">05</span>
+          <div class="fe-side-copy"><h3>Smart control</h3><p>On-device intelligence, stride by stride.</p></div>
+        </button>
+        <button type="button" class="flag-explode-item" data-src="/images/unikexo-front.webp" data-idx="06" data-title="Clinician interface" data-body="Step-wise control under supervision.">
+          <span class="idx mono">06</span>
+          <div class="fe-side-copy"><h3>Clinician interface</h3><p>Step-wise control under supervision.</p></div>
+        </button>
+      </div>
+    </div>
+
+    <div class="rf-part-grid reveal-stagger" hidden aria-hidden="true">
+      <article class="rf-part-card"><img src="/images/unikexo-hip.webp" alt="Unik Exo hip module" /><div class="rf-part-meta"><span class="idx mono">01</span><h3>Hip module</h3><p>Adaptive support through the gait cycle.</p></div></article>
+      <article class="rf-part-card"><img src="/images/unikexo-knee.webp" alt="Unik Exo knee actuator" /><div class="rf-part-meta"><span class="idx mono">02</span><h3>Knee actuator</h3><p>Precision torque for stability and lift.</p></div></article>
+      <article class="rf-part-card"><img src="/images/unikexo-ankle.webp" alt="Unik Exo ankle support" /><div class="rf-part-meta"><span class="idx mono">03</span><h3>Ankle support</h3><p>Balanced assistance for confident steps.</p></div></article>
+      <article class="rf-part-card"><img src="/images/unikexo-fit.webp" alt="Unik Exo comfortable fit" /><div class="rf-part-meta"><span class="idx mono">04</span><h3>Comfortable fit</h3><p>Clinic-grade padding for long sessions.</p></div></article>
+      <article class="rf-part-card"><img src="/images/unikexo-control.webp" alt="Unik Exo smart control unit" /><div class="rf-part-meta"><span class="idx mono">05</span><h3>Smart control</h3><p>On-device intelligence, stride by stride.</p></div></article>
+      <article class="rf-part-card"><img src="/images/unikexo-front.webp" alt="Unik Exo clinician interface" /><div class="rf-part-meta"><span class="idx mono">06</span><h3>Clinician interface</h3><p>Step-wise control under supervision.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials" class="rf-section ux-section rf-story">
+  <div class="wrap">
+    <div class="rf-story-grid reveal">
+      <div class="rf-story-media">
+        <img src="/images/clinical-pilot.webp" alt="A Unik Exo clinical session" />
+      </div>
+      <div class="rf-story-copy">
+        <p class="ux-eyebrow">Rehabilitation journey</p>
+        <h2 class="rf-h2 ux-h2">Every step tells a story</h2>
+        <blockquote class="testimonial-text rf-quote" id="storyQuote">
+          I thought I may never walk again. With Unik Exo, I took my first steps, and it changed everything.
+        </blockquote>
+        <div class="testimonial-author rf-author">
+          <strong id="storyName">Ramesh N.</strong>
+          <span id="storyRole">Stroke Survivor · Kochi, India</span>
+        </div>
+        <div class="rf-story-nav">
+          <div class="testimonial-arrows">
+            <button type="button" id="testimonialPrev" aria-label="Previous story"><svg class="brand-arrow brand-arrow--prev" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button type="button" id="testimonialNext" aria-label="Next story"><svg class="brand-arrow brand-arrow--next" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <div class="elvin-pager" id="testimonialDots"></div>
+          <a class="rf-text-link" href="/testimonials">View all stories</a>
+        </div>
+      </div>
+    </div>
+    <div id="testimonialGrid" class="testimonial-data" hidden>
+      <article class="testimonial-card is-active">
+        <p class="testimonial-text">I thought I may never walk again. With Unik Exo, I took my first steps, and it changed everything.</p>
+        <div class="testimonial-author"><strong>Ramesh N.</strong><span>Stroke Survivor · Kochi, India</span></div>
+      </article>
+      <article class="testimonial-card">
+        <p class="testimonial-text">Unik Exo brings together thoughtful engineering and a clear understanding of what gait rehabilitation actually needs on the clinic floor.</p>
+        <div class="testimonial-author"><strong>Dr. Ananya Menon</strong><span>Rehabilitation Specialist</span></div>
+      </article>
+      <article class="testimonial-card">
+        <p class="testimonial-text">What stood out to us was the team's willingness to listen, test, and improve. The product feels built around the person using it.</p>
+        <div class="testimonial-author"><strong>Clinical Partner</strong><span>Rehabilitation &amp; Mobility</span></div>
+      </article>
+      <article class="testimonial-card">
+        <p class="testimonial-text">The first time a patient stood without our hands under their arms, the room went quiet. That is the moment this work is for.</p>
+        <div class="testimonial-author"><strong>Therapy Lead</strong><span>Gait Rehabilitation</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PEOPLE (team + mentors) ============ -->
+<section id="team" class="rf-section ux-section">
+  <div class="wrap">
+    <div class="ux-people-block">
+      <div class="rf-section-head reveal">
+        <div>
+          <p class="ux-eyebrow">About</p>
+          <h2 class="rf-h2 ux-h2" data-i18n="team-h2">People behind Unik Exo</h2>
+          <p>A founder-led team building hardware, software and clinical partnerships together.</p>
+        </div>
+        <a class="rf-btn rf-btn--ghost rf-btn--sm" href="http://careers.astrekinnovations.com/" target="_blank" rel="noopener">We're hiring</a>
+      </div>
+      <div class="rf-people-grid team-grid reveal-stagger">
+        <article class="rf-person person">
+          <div class="rf-person-media person-img"><img src="/images/robin.jpeg" alt="Robin Kanattu Thomas" /></div>
+          <div class="rf-person-meta person-info">
+            <h4>Robin Kanattu Thomas</h4>
+            <div class="role">CEO</div>
+            <p class="org">Chief Executive Officer.</p>
+            <a class="rf-text-link" href="https://www.linkedin.com/company/astrekinnovations" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </article>
+        <article class="rf-person person">
+          <div class="rf-person-media person-img"><img src="/images/jithin.jpeg" alt="Jithin Vidya Ajith" /></div>
+          <div class="rf-person-meta person-info">
+            <h4>Jithin Vidya Ajith</h4>
+            <div class="role">COO</div>
+            <p class="org">Chief Operating Officer.</p>
+            <a class="rf-text-link" href="https://www.linkedin.com/company/astrekinnovations" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </article>
+        <article class="rf-person person">
+          <div class="rf-person-media person-img"><img src="/images/alex.jpeg" alt="Alex M Sunny" /></div>
+          <div class="rf-person-meta person-info">
+            <h4>Alex M Sunny</h4>
+            <div class="role">CTO</div>
+            <p class="org">Chief Technology Officer.</p>
+            <a class="rf-text-link" href="https://www.linkedin.com/company/astrekinnovations" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </article>
+        <article class="rf-person person">
+          <div class="rf-person-media person-img"><img src="/images/vishnu.jpeg" alt="Vishnu Sankar" /></div>
+          <div class="rf-person-meta person-info">
+            <h4>Vishnu Sankar</h4>
+            <div class="role">CMO</div>
+            <p class="org">Chief Marketing Officer.</p>
+            <a class="rf-text-link" href="https://www.linkedin.com/company/astrekinnovations" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="ux-people-block" id="mentors">
+      <div class="rf-section-head reveal">
+        <div>
+          <p class="ux-eyebrow">Mentors</p>
+          <h2 class="rf-h2 ux-h2" data-i18n="mentors-h2">Guided by experience</h2>
+          <p>Our mentors bring decades of expertise across robotics, healthcare, technology and innovation.</p>
+        </div>
+      </div>
+      <div class="rf-people-grid people-grid reveal-stagger">
+        <article class="rf-person person">
+          <div class="rf-person-media person-img"><img src="/images/Ishaan-Khosla.jpg" alt="Ishaan Khosla" /></div>
+          <div class="rf-person-meta person-info">
+            <h4>Ishaan Khosla</h4>
+            <div class="role">Mentor</div>
+            <p class="org">Founding Partner, Huddle.</p>
+            <a class="rf-text-link" href="https://www.linkedin.com/company/astrekinnovations" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </article>
+        <article class="rf-person person">
+          <div class="rf-person-media person-img"><img src="/images/pradeep_k_jaisingh.jpg" alt="Dr Pradeep K Jaisingh" /></div>
+          <div class="rf-person-meta person-info">
+            <h4>Dr Pradeep K Jaisingh</h4>
+            <div class="role">Mentor</div>
+            <p class="org">Founder / Chairman, Healthstart · Fellow, DCI Stanford.</p>
+            <a class="rf-text-link" href="https://www.linkedin.com/company/astrekinnovations" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </article>
+        <article class="rf-person person">
+          <div class="rf-person-media person-img"><img src="/images/Sanil_Sq.jpeg" alt="Sanil Sachar" /></div>
+          <div class="rf-person-meta person-info">
+            <h4>Sanil Sachar</h4>
+            <div class="role">Mentor</div>
+            <p class="org">Founding Partner, Huddle.</p>
+            <a class="rf-text-link" href="https://www.linkedin.com/company/astrekinnovations" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </article>
+        <article class="rf-person person person--pending">
+          <div class="rf-person-media person-img"><img src="/images/mentor-advisor.svg" alt="Akhil, mentor portrait placeholder" /></div>
+          <div class="rf-person-meta person-info">
+            <h4>Akhil</h4>
+            <div class="role">Mentor</div>
+            <p class="org">Strategic Advisor · Photo coming soon.</p>
+            <a class="rf-text-link" href="https://www.linkedin.com/company/astrekinnovations" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section id="partners" class="rf-section ux-section">
+  <div class="wrap">
+    <div class="rf-section-head reveal">
+      <div>
+        <p class="ux-eyebrow">Partners</p>
+        <h2 class="rf-h2 ux-h2" data-i18n="partners-h2">Trusted by leading partners</h2>
+        <p>We collaborate with institutions, incubators and organisations that share our vision for accessible mobility.</p>
+      </div>
+      <a class="rf-btn rf-btn--ghost rf-btn--sm" href="#contact">Partner with us</a>
+    </div>
+    <div class="ux-partners-row partner-grid partner-grid--uniform reveal-stagger">
+      <span class="partner-logo"><img src="/images/maker-village.svg" alt="Maker Village" /></span>
+      <span class="partner-logo"><img src="/images/ksum.svg" alt="Kerala Startup Mission" /></span>
+      <span class="partner-logo"><img src="/images/startup-chile.svg" alt="Startup Chile" /></span>
+      <span class="partner-logo"><img src="/images/huddle.svg" alt="Huddle" /></span>
+      <span class="partner-logo"><img src="/images/healthstart.svg" alt="HealthStart India" /></span>
+      <span class="partner-logo"><img src="/images/iiit-hyderabad.svg" alt="IIIT Hyderabad" /></span>
+      <span class="partner-logo"><img src="/images/cie-iiit.svg" alt="CIE IIIT Hyderabad" /></span>
+      <span class="partner-logo"><img src="/images/nidhi-prayas.svg" alt="NIDHI PRAYAS" /></span>
+      <span class="partner-logo"><img src="/images/indian-angel-network.svg" alt="Indian Angel Network" /></span>
+      <span class="partner-logo"><img src="/images/meity.svg" alt="MeitY" /></span>
+      <span class="partner-logo"><img src="/images/oist.svg" alt="OIST" /></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRESS ============ -->
+<section id="press" class="rf-section ux-section">
+  <div class="wrap">
+    <div class="rf-section-head reveal">
+      <div>
+        <p class="ux-eyebrow">Media</p>
+        <h2 class="rf-h2 ux-h2">In the spotlight</h2>
+        <p>Stories, features and conversations that highlight the work we are building.</p>
+      </div>
+      <a class="rf-btn rf-btn--ghost rf-btn--sm" href="https://www.thehindubusinessline.com/" target="_blank" rel="noopener">View coverage</a>
+    </div>
+    <div class="rf-press-grid reveal">
+      <article class="rf-press-featured elvin-featured">
+        <div class="rf-press-media">
+          <img src="/images/astrek-lab.webp" alt="Astrek lab" />
+        </div>
+        <div class="rf-press-body">
+          <p class="rf-kicker mono">Featured story</p>
+          <h3>Startups attract ₹80 crore in investments at Seeding Kerala summit</h3>
+          <p>The Hindu Businessline on Kerala’s seeding summit, and the healthtech teams in the room.</p>
+          <a class="rf-text-link" href="https://www.thehindubusinessline.com/news/start-ups-attract-80-crore-investments-at-seeding-kerala-summit/article64966466.ece" target="_blank" rel="noopener">Read article</a>
+        </div>
+      </article>
+      <div class="rf-press-side">
+        <a href="https://restofworld.org/2022/india-startup-founders-chile/" target="_blank" rel="noopener">
+          <h4>Why Indian startup founders are flocking to Chile</h4>
+          <span class="rf-text-link">Rest of World</span>
+        </a>
+        <a href="https://www.vccircle.com/ian-fund-backs-healthcare-startup-astrek-innovations" target="_blank" rel="noopener">
+          <h4>IAN Fund backs healthcare startup Astrek Innovations</h4>
+          <span class="rf-text-link">VCCircle</span>
+        </a>
+        <a href="https://www.businesstoday.in/latest/economy/story/meity-felicitates-winners-of-microprocessor-challenge-participants-get-financial-support-314698-2021-12-07" target="_blank" rel="noopener">
+          <h4>MeitY felicitates winners of the Swadeshi Microprocessor Challenge</h4>
+          <span class="rf-text-link">Business Today</span>
+        </a>
+        <a href="https://www.techcircle.in/2019/07/04/healthtech-startup-astrek-innovations-to-participate-in-startup-chile-programme-seed-g22" target="_blank" rel="noopener">
+          <h4>Astrek selected to Startup Chile programme Seed G22</h4>
+          <span class="rf-text-link">TechCircle</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG ============ -->
+<section id="blog" class="rf-section ux-section">
+  <div class="wrap">
+    <div class="rf-section-head reveal">
+      <div>
+        <p class="ux-eyebrow">Insights</p>
+        <h2 class="rf-h2 ux-h2" data-i18n="blog-h2">Our latest insights</h2>
+        <p>Thoughts, research and stories from the team building the future of mobility.</p>
+      </div>
+      <a class="rf-btn rf-btn--ghost rf-btn--sm" href="/blog">Browse all articles</a>
+    </div>
+    <div class="rf-blog-grid rf-blog-grid--uniform reveal" id="blogGrid">
+      <article
+        class="rf-blog-card blog-card"
+        data-slug="inside-our-first-clinical-pilot"
+        data-image="/images/clinical-pilot.png"
+        data-title="Inside Our First Clinical Pilot"
+        data-date="March 2026"
+        data-tag="RESEARCH"
+        data-excerpt="What we learned fitting Unik Exo on real patients for the first time, and what we changed as a result."
+        data-body="Our first clinical pilot ran across two partner rehabilitation centres over six weeks. Patients with varying degrees of lower-limb impairment used Unik Exo under supervision, and we logged every session, including fit time, gait symmetry, fatigue, and subjective comfort.&#10;&#10;The biggest surprise wasn't mechanical. It was donning time. Our lab benchmark of under five minutes stretched to nearly fifteen in a real clinical setting, mostly due to clothing, transfers and staff familiarity. That single insight reshaped our next hardware revision more than any actuator tweak did.&#10;&#10;We also learned to trust therapists' instincts over our own dashboards. A few sessions where the software reported 'normal' gait symmetry were flagged by therapists as compensatory movement, with patients finding clever ways to trick the metric without truly rehabilitating the pattern. We're now designing detection for exactly that."
+      >
+        <img class="rf-blog-card-media" src="/images/clinical-pilot.png" alt="Clinical pilot session with Unik Exo" width="800" height="500" loading="lazy" decoding="async" />
+        <div class="rf-blog-card-body">
+          <span class="atelier-pill">RESEARCH</span>
+          <h4>Inside Our First Clinical Pilot</h4>
+          <p class="date mono">March 2026</p>
+        </div>
+      </article>
+      <article
+        class="rf-blog-card blog-card"
+        data-slug="what-motion-capture-teaches-us-about-gait"
+        data-image="/images/motion-capture-gait.jpg"
+        data-title="What Motion Capture Teaches Us About Gait"
+        data-date="January 2026"
+        data-tag="TECHNOLOGY"
+        data-excerpt="A short primer on how we use motion capture data to model human gait, and why average gait is a myth."
+        data-body="Every gait cycle looks a little different. Cadence, stride length, and joint angles shift with terrain, fatigue, mood, even footwear. When we started building Unik Exo's control model, we assumed there was a 'normal' gait curve we could design around. There isn't.&#10;&#10;Instead, we capture gait across a wide population using marker-based motion capture, then train our assistive controller to recognise the shape of an individual's gait rather than match them to an average. This lets the exoskeleton assist the wearer's own pattern instead of forcing a generic one onto them.&#10;&#10;It also means every new wearer effectively 'teaches' the device during their first calibration session, a short walk that lets the controller learn their baseline before assistance ramps up."
+      >
+        <img class="rf-blog-card-media" src="/images/motion-capture-gait.jpg" alt="Unik Exo in the Astrek lab" width="800" height="500" loading="lazy" decoding="async" />
+        <div class="rf-blog-card-body">
+          <span class="atelier-pill">TECHNOLOGY</span>
+          <h4>What Motion Capture Teaches Us About Gait</h4>
+          <p class="date mono">January 2026</p>
+        </div>
+      </article>
+      <article
+        class="rf-blog-card blog-card"
+        data-slug="building-astrek-from-startup-chile-to-kannur"
+        data-image="/images/astrek-lab.jpg"
+        data-title="Building Astrek: From Startup Chile to Kannur"
+        data-date="November 2025"
+        data-tag="COMPANY"
+        data-excerpt="A short history of how a college robotics project became a rehabilitation hardware company."
+        data-body="Astrek began as a robotics project between engineering students trying to solve a problem close to home. What started as a proof-of-concept leg brace grew, slowly and with a lot of failed prototypes, into Unik Exo.&#10;&#10;A turning point came at Startup Chile, where we were forced to explain our technology to people with zero context: investors, mentors, and other founders, again and again. It sharpened both the product and the pitch. We came back with a clearer roadmap and, more importantly, a clearer idea of who we were building for.&#10;&#10;Today the team is based out of Kannur and the Maker Village in Kalamassery, closer to the clinics and rehabilitation centres we work with. That proximity has shaped nearly every design decision since."
+      >
+        <img class="rf-blog-card-media" src="/images/astrek-lab.jpg" alt="Astrek lab and Unik Exo development" width="800" height="500" loading="lazy" decoding="async" />
+        <div class="rf-blog-card-body">
+          <span class="atelier-pill">COMPANY</span>
+          <h4>Building Astrek: From Startup Chile to Kannur</h4>
+          <p class="date mono">November 2025</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="blog-modal" id="blogModal">
+  <div class="blog-modal-panel">
+    <button class="blog-modal-close" id="blogModalClose" aria-label="Close">✕</button>
+    <span class="tag mono" id="blogModalTag"></span>
+    <div class="date mono" id="blogModalDate"></div>
+    <h3 id="blogModalTitle"></h3>
+    <div class="body-text" id="blogModalBody"></div>
+  </div>
+</div>
+
+<!-- ============ FAQ (Robot Flow style) ============ -->
+<section id="faq" class="rf-section ux-section rf-faq">
+  <div class="wrap">
+    <div class="rf-section-head reveal">
+      <div>
+        <p class="ux-eyebrow">FAQ</p>
+        <h2 class="rf-h2 ux-h2">FAQs</h2>
+        <p>Common questions about Unik Exo, clinical use, and how we work with partners.</p>
+      </div>
+    </div>
+    <div class="rf-faq-list reveal">
+      <details class="rf-faq-item" open>
+        <summary>Who is Unik Exo designed for?</summary>
+        <div class="rf-faq-body">
+          <p>Unik Exo supports individuals with lower-limb immobility under clinician supervision, including stroke rehabilitation, gait training, and structured therapy programs.</p>
+        </div>
+      </details>
+      <details class="rf-faq-item">
+        <summary>How does Unik Exo ensure safety?</summary>
+        <div class="rf-faq-body">
+          <p>Safety is engineered into the system with emergency stop, motor-locked safety modes, mechanical hard limits, and step-wise therapist control throughout every session.</p>
+        </div>
+      </details>
+      <details class="rf-faq-item">
+        <summary>Can clinics pilot Unik Exo?</summary>
+        <div class="rf-faq-body">
+          <p>Yes. We partner with rehabilitation centers for structured pilots. Contact our team to discuss clinical partnership and onboarding.</p>
+        </div>
+      </details>
+      <details class="rf-faq-item">
+        <summary>What modes does Unik Exo support?</summary>
+        <div class="rf-faq-body">
+          <p>Sit, Stand, Walk, and Exercise modes, so therapists can guide patients through every stage of mobility training with one system.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="rf-cta-band" aria-label="Call to action">
+  <div class="wrap rf-cta-inner reveal">
+    <h2 class="rf-h2 ux-h2">Discover the next step in robotic rehabilitation</h2>
+    <p>Whether you're a clinician, partner, or innovator, let's build mobility that matters.</p>
+    <a class="rf-btn" href="#contact">Talk to our team</a>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="rf-section">
+  <div class="wrap">
+    <div class="rf-contact-grid">
+      <div class="reveal">
+        <p class="rf-kicker mono">Contact</p>
+        <h2 class="rf-h2" data-i18n="contact-h2">Let’s connect. Let’s build what’s next</h2>
+        <p>
+          Whether you're a healthcare provider, researcher, investor or innovator, let's create
+          meaningful impact together.
+        </p>
+        <div class="rf-contact-visual contact-visual">
+          <img src="/images/inline-4bcc708993.webp" alt="Unik Exo in the Astrek lab" />
+        </div>
+        <div class="rf-contact-info">
+          <div>
+            <h4>Let's talk</h4>
+            <p><a href="mailto:info@astrekinnovations.com">info@astrekinnovations.com</a></p>
+            <p><a href="tel:+971503531304">+971 50 353 1304</a></p>
+          </div>
+          <div>
+            <h4>Locations</h4>
+            <p><strong>Head office</strong><br />Astrek Innovations, Kinfra Techno Industrial Park, Kannur, Kerala 670611, India.</p>
+            <p><strong>Innovation hub</strong><br />Maker Village, Kalamassery, Kochi, Kerala 683503, India.</p>
+          </div>
+        </div>
+      </div>
+      <form class="reveal rf-form elvin-form" id="contactForm">
+        <h3>What can we build together?</h3>
+        <div class="frow" style="display:grid;gap:12px">
+          <input type="text" id="cfName" name="name" placeholder="Your name" required autocomplete="name" aria-label="Full name" />
+          <input type="email" id="cfEmail" name="email" placeholder="you@example.com" required autocomplete="email" aria-label="Email address" />
+          <input type="text" id="cfOrg" name="organisation" placeholder="Your organisation" aria-label="Organisation" />
+          <input type="tel" id="cfPhone" name="phone" placeholder="Phone number" autocomplete="tel" aria-label="Phone number" hidden />
+          <select id="cfSubject" name="subject" aria-label="I'm interested in">
+            <option value="">I'm interested in</option>
+            <option>Clinical partnership</option>
+            <option>Pilot program</option>
+            <option>Investment</option>
+            <option>Research collaboration</option>
+            <option>Media / press</option>
+            <option>Other</option>
+          </select>
+          <textarea id="cfMessage" name="message" placeholder="Tell us about your idea, partnership or enquiry..." required aria-label="Message"></textarea>
+        </div>
+        <div class="submit-row" style="margin-top:16px"><button class="rf-btn submit-btn" type="submit">Let's build together</button></div>
+        <p class="rf-form-note">We respect your privacy. Your information is safe with us.</p>
+        <div id="cfStatus" style="font-size: 13px; color: var(--rf-muted); margin-top: 12px; display: none"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="rf-footer">
+  <div class="wrap">
+    <div class="rf-foot elvin-foot">
+      <div>
+        <img src="/images/inline-b213c3cc37.webp" alt="Astrek Innovations" class="rf-foot-logo" />
+        <p>We develop intelligent exoskeleton systems and data-driven solutions that restore mobility and dignity.</p>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="#about">About Us</a>
+        <a href="#team">Team</a>
+        <a href="#partners">Partners</a>
+        <a href="http://careers.astrekinnovations.com/" target="_blank" rel="noopener">Careers</a>
+      </div>
+      <div>
+        <h5>What we do</h5>
+        <a href="/product">Unik Exo</a>
+        <a href="#specs">Research</a>
+        <a href="#product">Technology</a>
+      </div>
+      <div>
+        <h5>Resources</h5>
+        <a href="/#press">Media / Press</a>
+        <a href="/blog">Blog / Insights</a>
+        <a href="/testimonials">Testimonials</a>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <a href="#contact">Contact Us</a>
+        <a href="https://www.linkedin.com/company/astrekinnovations" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/astrek_innovations" target="_blank" rel="noopener">Instagram</a>
+        <div class="footer-newsletter rf-newsletter">
+          <form id="newsletterForm">
+            <input id="nlEmail" type="email" name="email" placeholder="Enter your email" required autocomplete="email" />
+            <button type="submit" class="rf-btn rf-btn--ghost rf-btn--sm">Subscribe</button>
+          </form>
+          <div class="nl-status" id="nlStatus"></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom rf-foot-bottom">
+      <span>© 2026 Astrek Innovations Pvt. Ltd. All rights reserved.</span>
+      <span>Take your first steps again.</span>
+    </div>
+  </div>
+</footer>

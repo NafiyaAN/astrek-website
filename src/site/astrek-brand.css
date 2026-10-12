@@ -1,0 +1,831 @@
+/* =====================================================================
+   Brand polish: last cascade. Restrained medtech/robotics language.
+   Additive: does not duplicate Hero/Technology components.
+   ===================================================================== */
+
+:root {
+  --ink: #07090b;
+  --panel: #101317;
+  --panel2: #161b20;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-soft: rgba(255, 255, 255, 0.05);
+  --teal: #2fe0c0;
+  --teal-dim: #1bb8a0;
+  --teal-glow: rgba(47, 224, 192, 0.12);
+  --hi: #f4f6f7;
+  --lo: #c4ccd2;
+  --lo2: #9aa6ae;
+  --maxw: 1240px;
+  --font-display: "Space Grotesk", "Inter", "Noto Sans Arabic", "Noto Sans JP", sans-serif;
+  --font-body: "Inter", "Noto Sans Arabic", "Noto Sans JP", sans-serif;
+  --font-mono: "IBM Plex Mono", "Inter", monospace;
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  background: var(--ink);
+}
+
+body,
+#astrek-site {
+  background: var(--ink);
+  color: var(--hi);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.display,
+.footer-tag,
+.section-head h2,
+.product-copy h2,
+.elvin-product-copy h1,
+.elvin-product-copy h2,
+.elvin-story-copy h1,
+.page-hero h1,
+.article-wrap h1,
+.elvin-mission {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.028em;
+  line-height: 0.98;
+}
+
+.hero h1,
+.tech-headline {
+  font-family: var(--font-body);
+  font-weight: 650;
+  letter-spacing: -0.045em;
+}
+
+.mono,
+.section-tag,
+.eyebrow,
+.tech-eyebrow,
+.hero-eyebrow,
+.footer-bottom {
+  font-family: var(--font-mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.wrap,
+.hero-stage {
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 4vw, 48px);
+  padding-right: clamp(20px, 4vw, 48px);
+}
+
+.hero-logo-row {
+  padding-left: clamp(20px, 4vw, 48px);
+  padding-right: clamp(20px, 4vw, 48px);
+}
+
+/* ---------- type scale ---------- */
+.section-head h2,
+.page-hero h1,
+.elvin-product-copy h1,
+.elvin-product-copy h2,
+.elvin-story-copy h2,
+.elvin-story-copy h1 {
+  font-size: clamp(46px, 6.2vw, 76px);
+  font-weight: 600;
+  margin-top: 18px;
+  max-width: 16ch;
+  color: var(--hi);
+}
+
+.section-head p,
+.elvin-product-copy p,
+.elvin-story-copy p,
+.about-copy p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--lo2);
+  max-width: 48ch;
+}
+
+.section-head {
+  margin-bottom: 56px;
+}
+
+.section-tag {
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.section-tag::after {
+  width: 28px;
+  opacity: 0.55;
+}
+
+em {
+  color: var(--teal);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* ---------- surfaces & breathing room ---------- */
+section:not(.hero) {
+  padding: clamp(160px, 18vh, 220px) 0;
+  background: var(--ink);
+  border-top: 0;
+  position: relative;
+}
+
+section:not(.hero)::before {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+}
+
+header,
+#siteHeader {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 400 !important;
+  background: rgba(7, 9, 11, 0.78);
+  border-bottom: 1px solid transparent;
+}
+
+header.scrolled,
+#siteHeader.scrolled {
+  background: rgba(7, 9, 11, 0.94);
+  border-bottom-color: var(--line-soft);
+}
+
+.nav-right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+nav.links {
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  color: var(--lo);
+}
+
+nav.links a {
+  position: relative;
+  transition: color 280ms var(--ease-lux);
+}
+
+nav.links a:hover,
+nav.links a.is-active {
+  color: var(--hi);
+}
+
+nav.links a:hover::after,
+nav.links a.is-active::after {
+  width: 100%;
+}
+
+/* ---------- CTAs ---------- */
+.cta-btn,
+.submit-btn,
+.elvin-news button,
+#contactForm button[type="submit"],
+.elvin-form button[type="submit"] {
+  min-height: 48px;
+  padding: 14px 26px;
+  border-radius: 2px;
+  background: var(--hi);
+  color: #081014;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  box-shadow: 0 10px 30px -18px rgba(255, 255, 255, 0.35);
+  transition:
+    transform 280ms var(--ease-lux),
+    background 280ms var(--ease-lux),
+    box-shadow 280ms var(--ease-lux);
+}
+
+.cta-btn:hover,
+.submit-btn:hover,
+.elvin-news button:hover,
+#contactForm button[type="submit"]:hover,
+.elvin-form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  background: #fff;
+  box-shadow: 0 16px 36px -18px rgba(47, 224, 192, 0.35);
+  color: #081014;
+}
+
+.hero-cta {
+  min-height: 48px;
+  padding: 14px 22px;
+  border-color: rgba(47, 224, 192, 0.45);
+}
+
+.play-link {
+  color: var(--lo);
+  transition: color 280ms var(--ease-lux), transform 280ms var(--ease-lux);
+}
+
+.play-link:hover {
+  color: var(--hi);
+  transform: translateY(-1px);
+}
+
+/* ---------- product studio lighting ---------- */
+.elvin-product-stage,
+.elvin-about-visual,
+.contact-visual,
+.tech-visual {
+  position: relative;
+}
+
+.elvin-product-stage::before,
+.contact-visual::before {
+  content: "";
+  position: absolute;
+  inset: 8% 10% 12%;
+  background: radial-gradient(circle at 50% 46%, rgba(47, 224, 192, 0.09), transparent 58%);
+  pointer-events: none;
+}
+
+.elvin-product-stage img,
+.elvin-featured img,
+.contact-visual img,
+.blog-cover {
+  filter: saturate(0.92) contrast(1.04) brightness(0.96);
+}
+
+.elvin-mode img,
+.elvin-part-media img,
+.elvin-cap-card img {
+  filter: none;
+  image-rendering: auto;
+}
+
+.elvin-product-stage img {
+  position: relative;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 82%, transparent 100%);
+}
+
+/* ---------- cards & grids ---------- */
+.elvin-mode,
+.elvin-cap-card,
+.elvin-part-card,
+.person,
+.testimonial-card,
+.elvin-story-chip,
+.blog-card,
+.elvin-featured,
+.elvin-side,
+.elvin-banner,
+.hiring-row,
+.elvin-news,
+.elvin-locations,
+#contactForm,
+form.elvin-form {
+  border: 1px solid var(--line-soft);
+  box-shadow: 0 24px 60px -42px rgba(0, 0, 0, 0.9);
+  background: var(--panel);
+}
+
+.elvin-mode {
+  min-height: 460px;
+}
+
+.elvin-mode .meta,
+.elvin-cap-card .meta,
+.elvin-part-card .meta,
+.person-info {
+  padding: 24px 22px 22px;
+}
+
+.tech-feature {
+  padding: 22px 20px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.elvin-part-card {
+  min-height: 220px;
+}
+
+.elvin-modes,
+.elvin-cap-cards,
+.people-grid,
+.team-grid,
+.elvin-part-grid,
+.elvin-story-picker {
+  gap: 16px;
+}
+
+.elvin-stats {
+  gap: 32px;
+  margin-top: 72px;
+  padding-top: 36px;
+  border-top: 0;
+  background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.elvin-stat span,
+.elvin-mode p,
+.elvin-cap-card p,
+.person-info .role,
+.person-info .org,
+.elvin-foot a,
+.article-body {
+  color: var(--lo);
+}
+
+.elvin-icon {
+  border-color: rgba(47, 224, 192, 0.35);
+}
+
+.partner-grid {
+  gap: 20px 28px;
+  padding: 36px 8px;
+  border-top: 0;
+  border-bottom: 0;
+  background-image:
+    linear-gradient(90deg, transparent, rgba(47, 224, 192, 0.28), transparent),
+    linear-gradient(90deg, transparent, rgba(47, 224, 192, 0.28), transparent);
+  background-size: 100% 1px, 100% 1px;
+  background-repeat: no-repeat;
+  background-position: top, bottom;
+}
+
+.partner-logo {
+  min-height: 72px;
+  padding: 16px 12px;
+}
+
+.partner-logo img {
+  opacity: 0.72;
+  filter: grayscale(1) brightness(1.8);
+  transition: opacity 280ms var(--ease-lux), filter 280ms var(--ease-lux);
+}
+
+.partner-logo:hover img {
+  opacity: 1;
+  filter: grayscale(0) brightness(1.15);
+}
+
+/* ---------- hover polish ---------- */
+.elvin-mode,
+.elvin-cap-card,
+.elvin-part-card,
+.person,
+.blog-card,
+.testimonial-card,
+.elvin-story-chip,
+.elvin-featured,
+.elvin-side a {
+  transition:
+    transform 320ms var(--ease-lux),
+    border-color 320ms var(--ease-lux),
+    box-shadow 320ms var(--ease-lux);
+}
+
+.elvin-mode:hover,
+.elvin-cap-card:hover,
+.elvin-part-card:hover,
+.person:hover,
+.blog-card:hover,
+.testimonial-card:hover,
+.elvin-story-chip:hover,
+.elvin-featured:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 28px 70px -40px rgba(0, 0, 0, 0.95);
+}
+
+.elvin-side a:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.elvin-foot a {
+  transition: color 250ms var(--ease-lux), transform 250ms var(--ease-lux);
+}
+
+.elvin-foot a:hover {
+  color: var(--hi);
+}
+
+/* ---------- people / testimonials imagery ---------- */
+.person-img,
+.person-img img,
+.elvin-story-visual img,
+.elvin-story-chip img,
+.testimonial-card img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.12) brightness(0.9) sepia(0.08);
+  transition:
+    filter 420ms var(--ease-lux),
+    transform 420ms var(--ease-lux);
+}
+
+.person-img,
+.person-img img {
+  aspect-ratio: 3 / 4;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.elvin-story-chip img {
+  width: 72px;
+  height: 72px;
+  aspect-ratio: 1 / 1;
+}
+
+.person {
+  min-height: 0;
+}
+
+.person:hover img,
+.elvin-story-chip:hover img,
+.elvin-story-visual:hover img,
+.testimonial-card:hover img {
+  filter: grayscale(0.15) contrast(1.04) saturate(0.95) brightness(1);
+}
+
+.person::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, transparent 48%, rgba(7, 9, 11, 0.9) 100%);
+  pointer-events: none;
+}
+
+.person-info {
+  z-index: 2;
+}
+
+.elvin-story-copy .quote-mark {
+  color: rgba(47, 224, 192, 0.55);
+}
+
+.elvin-story-copy .rule,
+.elvin-featured .rule {
+  height: 1px;
+  background: linear-gradient(90deg, var(--teal), transparent);
+}
+
+.elvin-story-copy blockquote {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.2vw, 30px);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- contact / footer ---------- */
+#contactForm,
+form.elvin-form {
+  padding: 36px 32px;
+}
+
+.elvin-news,
+.elvin-banner,
+.hiring-row {
+  padding: 28px 32px;
+}
+
+.elvin-mission {
+  background:
+    radial-gradient(ellipse at 18% 50%, rgba(47, 224, 192, 0.08), transparent 55%),
+    var(--panel);
+  border-color: var(--line-soft);
+}
+
+footer {
+  padding: 72px 0 32px;
+  border-top: 0;
+  background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+}
+
+/* ---------- motion ---------- */
+.reveal {
+  transform: translateY(18px);
+  transition:
+    opacity 420ms var(--ease-lux),
+    transform 420ms var(--ease-lux);
+}
+
+.reveal-stagger > * {
+  transform: translateY(16px);
+  transition:
+    opacity 380ms var(--ease-lux),
+    transform 380ms var(--ease-lux);
+}
+
+.premium-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 420ms var(--ease-lux),
+    transform 420ms var(--ease-lux);
+}
+
+.premium-reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+.premium-progress {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--teal), transparent);
+  box-shadow: none;
+}
+
+/* keep hero/tech cinematic blacks, with charcoal around them */
+.hero,
+.tech-section {
+  background: #050607;
+}
+
+.tech-feature p {
+  color: rgba(244, 246, 247, 0.62);
+}
+
+.tech-caption {
+  color: rgba(244, 246, 247, 0.55);
+}
+
+.hero p.sub,
+.tech-support {
+  color: rgba(244, 246, 247, 0.68);
+}
+
+@media (max-width: 700px) {
+  section:not(.hero) {
+    padding: 120px 0;
+  }
+  .section-head h2,
+  .page-hero h1,
+  .elvin-product-copy h1,
+  .elvin-product-copy h2 {
+    max-width: 100%;
+    font-size: clamp(34px, 10vw, 46px);
+  }
+  .person,
+  .person-img,
+  .person-img img {
+    min-height: 0;
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elvin-mode,
+  .elvin-cap-card,
+  .elvin-part-card,
+  .person,
+  .blog-card,
+  .testimonial-card,
+  .elvin-story-chip,
+  .elvin-featured,
+  .cta-btn,
+  .submit-btn {
+    transition: none;
+  }
+  .elvin-mode:hover,
+  .elvin-cap-card:hover,
+  .person:hover,
+  .cta-btn:hover {
+    transform: none;
+  }
+}
+
+/* ---------- studio product photography ---------- */
+.studio-frame {
+  position: relative;
+  isolation: isolate;
+}
+.studio-frame::before {
+  content: "";
+  position: absolute;
+  inset: 8% 6% 14%;
+  background:
+    radial-gradient(ellipse 55% 48% at 62% 38%, rgba(47, 224, 192, 0.1), transparent 62%),
+    radial-gradient(ellipse 40% 50% at 28% 70%, rgba(255, 255, 255, 0.04), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.studio-frame img,
+#techProductImg,
+#productHeroImg {
+  position: relative;
+  z-index: 1;
+  transform: perspective(1400px) rotateY(-7deg) rotateX(2deg) translateY(-6px);
+  filter: contrast(1.08) saturate(0.92) brightness(0.96);
+  -webkit-mask-image: radial-gradient(ellipse 88% 92% at 50% 44%, #000 52%, transparent 92%);
+  mask-image: radial-gradient(ellipse 88% 92% at 50% 44%, #000 52%, transparent 92%);
+}
+
+.hero #heroProductImg {
+  transform: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.studio-floor {
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: 8%;
+  height: 28px;
+  z-index: 0;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.55), transparent 72%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+/* ---------- hero feature rail ---------- */
+.hero-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  z-index: 3;
+}
+.hero-rail-item,
+.elvin-feature-list .product-callout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: inherit;
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+  text-align: start;
+}
+.hero-rail-idx,
+.elvin-feature-list .product-callout .idx {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--teal);
+  margin-bottom: 6px;
+}
+.hero-rail-item h3,
+.elvin-feature-list .product-callout h3 {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 4px;
+  color: var(--hi);
+}
+.hero-rail-item p,
+.elvin-feature-list .product-callout p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--lo2);
+  max-width: 28ch;
+}
+.hero-rail-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  display: grid;
+  place-items: center;
+  color: var(--hi);
+  font-size: 14px;
+  transition:
+    border-color 280ms var(--ease-lux),
+    transform 280ms var(--ease-lux),
+    background 280ms var(--ease-lux);
+}
+.hero-rail-item:hover .hero-rail-btn,
+.elvin-feature-list .product-callout:hover .hero-rail-btn,
+.elvin-feature-list .product-callout.is-active .hero-rail-btn {
+  border-color: var(--teal);
+  background: rgba(47, 224, 192, 0.08);
+  transform: translateX(3px);
+}
+
+.hero .hero-inner .hero-rail.hero-anim,
+.hero .hero-rail.hero-anim {
+  animation-delay: 0.52s;
+}
+
+/* ---------- people cards ---------- */
+.person-info {
+  position: relative !important;
+  background: #101317 !important;
+  padding: 22px 20px 20px !important;
+}
+.person::after {
+  display: none;
+}
+.person-rule {
+  display: block;
+  width: 28px;
+  height: 1px;
+  margin: 8px 0 6px;
+  background: rgba(47, 224, 192, 0.55);
+}
+.person-info .org {
+  margin: 0 0 12px;
+}
+.person-social {
+  margin-top: auto;
+}
+.person-social a,
+.elvin-in {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--teal);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.elvin-in::before {
+  content: "in";
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(47, 224, 192, 0.45);
+  border-radius: 2px;
+  display: grid;
+  place-items: center;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.section-aside {
+  color: var(--lo2);
+  font-size: 16px;
+  line-height: 1.85;
+  max-width: 46ch;
+  margin: 0;
+  padding-bottom: 8px;
+}
+
+.elvin-head-row .section-head {
+  margin-bottom: 0;
+}
+
+/* ---------- header / page offset ---------- */
+header,
+#siteHeader {
+  padding: 16px clamp(20px, 4vw, 48px);
+  min-height: 76px;
+}
+.page-hero {
+  padding-top: 132px;
+}
+
+@media (max-width: 1100px) {
+  .hero-rail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 24px;
+  }
+  .studio-frame img,
+  #techProductImg,
+  #productHeroImg {
+    transform: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-rail {
+    grid-template-columns: 1fr;
+  }
+  .elvin-head-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
